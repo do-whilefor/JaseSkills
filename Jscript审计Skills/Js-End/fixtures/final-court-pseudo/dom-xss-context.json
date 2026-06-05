@@ -1,0 +1,6 @@
+{
+  "claimed_capability": "DOM XSS detector",
+  "status": "negative_fixture_detects_pseudo_or_missing_runtime",
+  "real_implementation": "未发现 source/sink/context/sanitizer model",
+  "upgrade_required": "新增 dom_xss_semantic_detector.py"
+}

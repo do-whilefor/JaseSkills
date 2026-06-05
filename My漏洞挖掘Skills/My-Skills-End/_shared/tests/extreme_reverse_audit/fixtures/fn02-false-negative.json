@@ -1,0 +1,5 @@
+{
+  "id": "FN02",
+  "risk": "只看后端源码，漏 JS 构建产物",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

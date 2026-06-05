@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SecKB Evidence Manifest Schema",
+  "type": "object",
+  "required": [
+    "validation_id",
+    "scope",
+    "authorization_checked",
+    "evidence_items",
+    "conclusion",
+    "cannot_report_reasons"
+  ],
+  "properties": {
+    "validation_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "scope": {
+      "enum": [
+        "local_lab",
+        "ctf_lab",
+        "local_open_source_project",
+        "explicit_authorized_asset"
+      ]
+    },
+    "authorization_checked": {
+      "type": "boolean"
+    },
+    "src_boundary_checked": {
+      "type": "boolean"
+    },
+    "template_used": {
+      "type": "string"
+    },
+    "target_version_evidence": {
+      "type": "array"
+    },
+    "preconditions": {
+      "type": "array"
+    },
+    "non_destructive_probe": {
+      "type": "boolean"
+    },
+    "reproduction_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "code_evidence": {
+      "type": "array"
+    },
+    "dynamic_evidence": {
+      "type": "array"
+    },
+    "impact_evidence": {
+      "type": "array"
+    },
+    "fix_recommendation": {
+      "type": "string"
+    },
+    "conclusion": {
+      "enum": [
+        "confirmed",
+        "likely",
+        "unverified",
+        "false_positive",
+        "out_of_scope",
+        "cannot_report"
+      ]
+    },
+    "cannot_report_reasons": {
+      "type": "array"
+    }
+  }
+}

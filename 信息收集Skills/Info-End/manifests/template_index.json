@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "template_root": "templates",
+  "templates": [
+    {
+      "id": "asset-ledger",
+      "path": "templates/asset-ledger.md",
+      "used_by": [
+        "02",
+        "03",
+        "04",
+        "05",
+        "07"
+      ],
+      "purpose": "asset table and evidence status"
+    },
+    {
+      "id": "cannot-deliver-reasons",
+      "path": "templates/cannot-deliver-reasons.md",
+      "used_by": [
+        "07",
+        "08"
+      ],
+      "purpose": "indexed template; review purpose before report use"
+    },
+    {
+      "id": "cross-skill-handoff",
+      "path": "templates/cross-skill-handoff.md",
+      "used_by": [
+        "07",
+        "08"
+      ],
+      "purpose": "indexed template; review purpose before report use"
+    },
+    {
+      "id": "deployment-surface-checklist",
+      "path": "templates/deployment-surface-checklist.md",
+      "used_by": [
+        "07",
+        "08"
+      ],
+      "purpose": "indexed template; review purpose before report use"
+    },
+    {
+      "id": "final-report",
+      "path": "templates/final-report.md",
+      "used_by": [
+        "07"
+      ],
+      "purpose": "final or staged report"
+    },
+    {
+      "id": "finding-detail",
+      "path": "templates/finding-detail.md",
+      "used_by": [
+        "04",
+        "07"
+      ],
+      "purpose": "per-finding report body"
+    },
+    {
+      "id": "finding-qg-score",
+      "path": "templates/finding-qg-score.md",
+      "used_by": [
+        "07"
+      ],
+      "purpose": "QG-01..QG-10 per-finding scoring"
+    },
+    {
+      "id": "graphql-nondestructive-validation",
+      "path": "templates/graphql-nondestructive-validation.md",
+      "used_by": [
+        "04"
+      ],
+      "purpose": "GraphQL safe validation"
+    },
+    {
+      "id": "grpc-rpc-schema-aware-readonly-validation",
+      "path": "templates/grpc-rpc-schema-aware-readonly-validation.md",
+      "used_by": [
+        "02",
+        "04"
+      ],
+      "purpose": "RPC schema-aware readonly validation"
+    },
+    {
+      "id": "info-type-reverse-checklist",
+      "path": "templates/info-type-reverse-checklist.md",
+      "used_by": [
+        "07",
+        "08"
+      ],
+      "purpose": "indexed template; review purpose before report use"
+    },
+    {
+      "id": "non-reportable-decision-tree",
+      "path": "templates/non-reportable-decision-tree.md",
+      "used_by": [
+        "07"
+      ],
+      "purpose": "candidate disposition"
+    },
+    {
+      "id": "playwright-browser-storage-collection",
+      "path": "templates/playwright-browser-storage-collection.md",
+      "used_by": [
+        "05"
+      ],
+      "purpose": "browser storage collection contract"
+    },
+    {
+      "id": "playwright-mcp-browser-storage-runbook",
+      "path": "templates/playwright-mcp-browser-storage-runbook.md",
+      "used_by": [
+        "05"
+      ],
+      "purpose": "MCP/browser evidence capture runbook"
+    },
+    {
+      "id": "protocol-surface-validation",
+      "path": "templates/protocol-surface-validation.md",
+      "used_by": [
+        "02",
+        "04"
+      ],
+      "purpose": "protocol surface validation"
+    },
+    {
+      "id": "redaction-rules",
+      "path": "templates/redaction-rules.md",
+      "used_by": [
+        "04",
+        "05",
+        "07"
+      ],
+      "purpose": "evidence redaction"
+    },
+    {
+      "id": "reflection-checklist",
+      "path": "templates/reflection-checklist.md",
+      "used_by": [
+        "07",
+        "08"
+      ],
+      "purpose": "indexed template; review purpose before report use"
+    },
+    {
+      "id": "second-pass-reflection-runbook",
+      "path": "templates/second-pass-reflection-runbook.md",
+      "used_by": [
+        "07",
+        "08"
+      ],
+      "purpose": "indexed template; review purpose before report use"
+    },
+    {
+      "id": "unified-quality-gate",
+      "path": "templates/unified-quality-gate.md",
+      "used_by": [
+        "07",
+        "08"
+      ],
+      "purpose": "unified QG rules"
+    }
+  ],
+  "validation_rules": [
+    "Every template path must exist.",
+    "Every templates/*.md file must be indexed exactly once.",
+    "Every reportable finding must reference evidence and QG scoring templates.",
+    "Templates are not detectors; detector coverage is declared separately in detectors/*.yaml."
+  ]
+}

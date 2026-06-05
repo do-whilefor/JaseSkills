@@ -1,0 +1,6 @@
+{
+  "id": "AR16",
+  "title": "多框架混淆样本",
+  "scenario": "framework confusion must not force wrong analyzer",
+  "expected_status": "needs_human_review"
+}

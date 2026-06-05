@@ -1,0 +1,85 @@
+{
+  "id": "C17-graphql-access-control-candidate-positive",
+  "expected_template_id": "C17-graphql-access-control",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C17-graphql-access-control.py",
+          "line": 1,
+          "route": "/fixture/C17-graphql-access-control",
+          "method": "GET",
+          "handler": "graphql resolver fragment operation introspection subscription"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C17-graphql-access-control.sink",
+          "line": 2,
+          "sink": "graphql resolver fragment operation introspection subscription"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C17-graphql-access-control.js",
+          "line": 1,
+          "target": "/api/C17-graphql-access-control",
+          "client": "fetch graphql resolver fragment operation introspection subscription"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C17-graphql-access-control.js",
+          "line": 2,
+          "target": "/api/C17-graphql-access-control",
+          "type": "graphql resolver fragment operation introspection subscription"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C17-graphql-access-control.js",
+          "line": 3,
+          "operation_or_fragment": "graphql resolver fragment operation introspection subscription"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C17-graphql-access-control.md",
+          "signal": "graphql resolver fragment operation introspection subscription"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C17-graphql-access-control.worker",
+          "signal": "graphql resolver fragment operation introspection subscription"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "graphql resolver fragment operation introspection subscription"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "graphql resolver fragment operation introspection subscription"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C17-graphql-access-control.surface",
+          "route": "/surface/C17-graphql-access-control",
+          "method": "GET",
+          "evidence": "graphql resolver fragment operation introspection subscription"
+        }
+      ]
+    }
+  }
+}

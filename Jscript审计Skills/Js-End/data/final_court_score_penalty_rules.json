@@ -1,0 +1,58 @@
+[
+  {
+    "item": "Skills 包结构",
+    "original": 7,
+    "penalty": "无 dashboard/report/schema/index/e2e 强闭环，结构分不能代表能力",
+    "corrected": 5,
+    "evidence": "scripts/package_self_check.py 只检查文件存在和缓存"
+  },
+  {
+    "item": "信息收集能力",
+    "original": 6,
+    "penalty": "未证明子域/URL/HAR/Burp/Playwright 与 JS 审计闭环",
+    "corrected": 3,
+    "evidence": "缺少 info_js runtime bridge 和 replay"
+  },
+  {
+    "item": "JS 收集能力",
+    "original": 8,
+    "penalty": "没有 Source Map 真实解析，JS 收集最高 70%；同时缺 role/tenant runtime chunk",
+    "corrected": 5,
+    "evidence": "缺 sourcemap_parser.py、role_chunk_diff_collector.py"
+  },
+  {
+    "item": "JS AST / 语义审计能力",
+    "original": 5,
+    "penalty": "没有真实 AST backend，JS 审计最高不得超过 40%；当前 detector 也缺失",
+    "corrected": 3,
+    "evidence": "未发现 Babel/TS/tree-sitter backend"
+  },
+  {
+    "item": "严重 JS 漏洞发现能力",
+    "original": 7,
+    "penalty": "没有多角色/多租户 replay，严重漏洞发现最高 60%；没有 detector 继续扣分",
+    "corrected": 4,
+    "evidence": "缺 role_tenant_replay.py 与 severe detector harness"
+  },
+  {
+    "item": "动态验证与证据链",
+    "original": 3,
+    "penalty": "没有 Playwright/Burp/HAR 动态证据，动态验证最高 30%",
+    "corrected": 2,
+    "evidence": "缺 playwright_bridge.py、burp_har_bridge.py、har_importer.py"
+  },
+  {
+    "item": "测试与回放",
+    "original": 4,
+    "penalty": "没有完整 positive/negative/blocked/review 样本和真实 OSS replay，测试最高 40%",
+    "corrected": 2,
+    "evidence": "fixtures 多为占位，缺 replay/real-oss"
+  },
+  {
+    "item": "知识库与模板保真度",
+    "original": 4,
+    "penalty": "存在不等于索引/调用；缺 hash baseline 和 index checker",
+    "corrected": 3,
+    "evidence": "缺 knowledge_template_index_checker.py"
+  }
+]

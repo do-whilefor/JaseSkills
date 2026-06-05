@@ -1,0 +1,6 @@
+{
+  "id": "AR01",
+  "title": "空目录任务",
+  "scenario": "empty directory should not trigger vulnerability confirmation",
+  "expected_status": "rejected"
+}

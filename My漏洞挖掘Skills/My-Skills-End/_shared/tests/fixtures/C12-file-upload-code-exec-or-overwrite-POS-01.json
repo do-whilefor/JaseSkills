@@ -1,0 +1,309 @@
+{
+  "candidate_id": "CAND-C12-file-upload-code-exec-or-overwrite-POS-01",
+  "template_id": "C12-file-upload-code-exec-or-overwrite",
+  "vulnerability_type": "文件上传导致代码执行或敏感文件覆盖",
+  "authorization_scope": "local_authorized_fixture_only",
+  "fixture_type": "positive_control",
+  "expected_status": "confirmed",
+  "must_not_confirm": false,
+  "state": "confirmed",
+  "state_history": [
+    {
+      "from_state": null,
+      "to_state": "discovered",
+      "changed_at": "2026-06-05T04:20:00Z",
+      "reason": "P0 repair normalized candidate state transition to discovered"
+    },
+    {
+      "from_state": "discovered",
+      "to_state": "mapped",
+      "changed_at": "2026-06-05T04:20:00Z",
+      "reason": "P0 repair normalized candidate state transition to mapped"
+    },
+    {
+      "from_state": "mapped",
+      "to_state": "triaged",
+      "changed_at": "2026-06-05T04:20:00Z",
+      "reason": "P0 repair normalized candidate state transition to triaged"
+    },
+    {
+      "from_state": "triaged",
+      "to_state": "validation_planned",
+      "changed_at": "2026-06-05T04:20:00Z",
+      "reason": "P0 repair normalized candidate state transition to validation_planned"
+    },
+    {
+      "from_state": "validation_planned",
+      "to_state": "reproduced",
+      "changed_at": "2026-06-05T04:20:00Z",
+      "reason": "P0 repair normalized candidate state transition to reproduced"
+    },
+    {
+      "from_state": "reproduced",
+      "to_state": "negative_control_passed",
+      "changed_at": "2026-06-05T04:20:00Z",
+      "reason": "P0 repair normalized candidate state transition to negative_control_passed"
+    },
+    {
+      "from_state": "negative_control_passed",
+      "to_state": "quality_gate_passed",
+      "changed_at": "2026-06-05T04:20:00Z",
+      "reason": "P0 repair normalized candidate state transition to quality_gate_passed"
+    },
+    {
+      "from_state": "quality_gate_passed",
+      "to_state": "confirmed",
+      "changed_at": "2026-06-05T04:20:00Z",
+      "reason": "P0 repair normalized candidate state transition to confirmed"
+    }
+  ],
+  "source_file": "fixtures/C12-file-upload-code-exec-or-overwrite/handler.example",
+  "source_line": 12,
+  "route": "/fixture/C12-file-upload-code-exec-or-overwrite/resource",
+  "method": "GET",
+  "parameter": "id",
+  "auth_context": {
+    "actor": "fixture_user",
+    "role": "user",
+    "session_state": "authenticated",
+    "authorization_model": "fixture_rbac_abac"
+  },
+  "tenant_context": {
+    "tenant_id_source": "fixture_seed",
+    "actor_tenant": "tenant_a",
+    "target_tenant": "tenant_a",
+    "tenant_model": "single_or_multi_tenant_fixture"
+  },
+  "request_summary": {
+    "method": "GET",
+    "route": "/fixture/C12-file-upload-code-exec-or-overwrite/resource",
+    "parameters": {
+      "id": "redacted-fixture-id"
+    },
+    "headers_redacted": true
+  },
+  "response_summary": {
+    "status_code": 200,
+    "security_relevant_delta": "fixture status controls expected quality-gate outcome",
+    "body_redacted": true
+  },
+  "code_evidence": [
+    {
+      "file": "fixtures/C12-file-upload-code-exec-or-overwrite/handler.example",
+      "line": 12,
+      "rule_id": "C12-file-upload-code-exec-or-overwrite.static.required_check",
+      "snippet_hash": "8853588c5d11b705",
+      "explanation": "Synthetic local fixture shows the code location required to evaluate 文件上传导致代码执行或敏感文件覆盖; not a weaponized exploit."
+    }
+  ],
+  "dynamic_evidence": [
+    {
+      "case_id": "CAND-C12-file-upload-code-exec-or-overwrite-POS-01-DYN-01",
+      "non_destructive": true,
+      "request_summary": {
+        "method": "GET",
+        "route": "/fixture/C12-file-upload-code-exec-or-overwrite/resource",
+        "parameters": {
+          "id": "redacted-fixture-id"
+        },
+        "headers_redacted": true
+      },
+      "response_summary": {
+        "status_code": 200,
+        "security_relevant_delta": "authorized fixture demonstrates controlled differential behavior",
+        "body_redacted": true
+      },
+      "observation": "Non-destructive local fixture evidence reproduction 1/3; artifact hash is unique to this reproduction group.",
+      "artifacts": [
+        {
+          "type": "request",
+          "path": "_shared/tests/artifacts/CAND-C12-file-upload-code-exec-or-overwrite-POS-01/repro_01_request.redacted.json",
+          "sha256": "92c1cc9773163627727b7cf13f3bcf10b2e19ba69e9703fcea874955bdd23a52",
+          "redacted": true,
+          "note": "Synthetic local replay request artifact; not a live target probe."
+        },
+        {
+          "type": "response",
+          "path": "_shared/tests/artifacts/CAND-C12-file-upload-code-exec-or-overwrite-POS-01/repro_01_response.redacted.json",
+          "sha256": "caf038cc7010bbe59120bec1d04e67604167c87cc5c3ac52d423da0d00644686",
+          "redacted": true,
+          "note": "Synthetic local replay response artifact; body redacted."
+        }
+      ]
+    },
+    {
+      "case_id": "CAND-C12-file-upload-code-exec-or-overwrite-POS-01-DYN-02",
+      "non_destructive": true,
+      "request_summary": {
+        "method": "GET",
+        "route": "/fixture/C12-file-upload-code-exec-or-overwrite/resource",
+        "parameters": {
+          "id": "redacted-fixture-id"
+        },
+        "headers_redacted": true
+      },
+      "response_summary": {
+        "status_code": 200,
+        "security_relevant_delta": "authorized fixture demonstrates controlled differential behavior",
+        "body_redacted": true
+      },
+      "observation": "Non-destructive local fixture evidence reproduction 2/3; artifact hash is unique to this reproduction group.",
+      "artifacts": [
+        {
+          "type": "request",
+          "path": "_shared/tests/artifacts/CAND-C12-file-upload-code-exec-or-overwrite-POS-01/repro_02_request.redacted.json",
+          "sha256": "2015ab5fd632094a1f34c7fe6a6eec791908e8abda05d52ab348994f5ab9e89e",
+          "redacted": true,
+          "note": "Synthetic local replay request artifact; not a live target probe."
+        },
+        {
+          "type": "response",
+          "path": "_shared/tests/artifacts/CAND-C12-file-upload-code-exec-or-overwrite-POS-01/repro_02_response.redacted.json",
+          "sha256": "27ca30c1152d391b352a5ef4aa6a47764eb07f4ca0009f2c7722a640654146d9",
+          "redacted": true,
+          "note": "Synthetic local replay response artifact; body redacted."
+        }
+      ]
+    },
+    {
+      "case_id": "CAND-C12-file-upload-code-exec-or-overwrite-POS-01-DYN-03",
+      "non_destructive": true,
+      "request_summary": {
+        "method": "GET",
+        "route": "/fixture/C12-file-upload-code-exec-or-overwrite/resource",
+        "parameters": {
+          "id": "redacted-fixture-id"
+        },
+        "headers_redacted": true
+      },
+      "response_summary": {
+        "status_code": 200,
+        "security_relevant_delta": "authorized fixture demonstrates controlled differential behavior",
+        "body_redacted": true
+      },
+      "observation": "Non-destructive local fixture evidence reproduction 3/3; artifact hash is unique to this reproduction group.",
+      "artifacts": [
+        {
+          "type": "request",
+          "path": "_shared/tests/artifacts/CAND-C12-file-upload-code-exec-or-overwrite-POS-01/repro_03_request.redacted.json",
+          "sha256": "48cd93780c193a894bdb4a1aa34ba14102d48902bd20a983ea13746a0cfe65e8",
+          "redacted": true,
+          "note": "Synthetic local replay request artifact; not a live target probe."
+        },
+        {
+          "type": "response",
+          "path": "_shared/tests/artifacts/CAND-C12-file-upload-code-exec-or-overwrite-POS-01/repro_03_response.redacted.json",
+          "sha256": "79fcdd6e7d4e7087421e21b7af28faab1b9e6ae08746608812a8e1578587b59a",
+          "redacted": true,
+          "note": "Synthetic local replay response artifact; body redacted."
+        }
+      ]
+    }
+  ],
+  "negative_control": [
+    {
+      "case_id": "C12-file-upload-code-exec-or-overwrite-NEG-01",
+      "result": "control_behavior_observed",
+      "expected_behavior": "Authorized control path must not expose or modify unauthorized data."
+    }
+  ],
+  "reproduction_count": 3,
+  "impact": {
+    "security_impact": "fixture impact statement only; no real target affected",
+    "affected_asset": "local replay fixture",
+    "impact_boundary": "local authorized fixture only"
+  },
+  "risk": "high",
+  "false_positive_notes": "Confirmed only when code, dynamic evidence, negative control and specialized fields all pass; fixture is non-destructive.",
+  "quality_gate_score": {
+    "total": 100,
+    "passed": true,
+    "reasons": [],
+    "computed_by": "quality_gate_v4_1.py@3.3_fixture_recomputed"
+  },
+  "final_status": "confirmed",
+  "non_destructive_boundary": {
+    "allowed": [
+      "read-only local fixture replay",
+      "schema validation",
+      "quality scoring"
+    ],
+    "forbidden": [
+      "third-party target probing",
+      "destructive write",
+      "privilege abuse",
+      "DoS"
+    ],
+    "validation_mode": "local_fixture_only"
+  },
+  "tool_snapshot": {
+    "mode": "fixture_runtime_snapshot",
+    "ready_tools": [
+      "python",
+      "jsonschema"
+    ],
+    "missing_tools": [],
+    "manual_required": false
+  },
+  "specialized_evidence": {
+    "fields": {
+      "upload_handler": "upload_handler_fixture_value",
+      "stored_path_resolution": "stored_path_resolution_fixture_value",
+      "executable_or_sensitive_target": "executable_or_sensitive_target_fixture_value",
+      "content_validation": "content_validation_fixture_value"
+    },
+    "field_source": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/EVIDENCE_FIELDS.json"
+  },
+  "extractor_trace": {
+    "skill_route": [
+      "01-authorized-maximum-orchestrator",
+      "03-code-knowledge-graph",
+      "05-js-audit-runtime",
+      "07-vulnerability-hunting-engine",
+      "08-evidence-quality-gate"
+    ],
+    "template_dispatch": "C12-file-upload-code-exec-or-overwrite",
+    "extractor_mode": "fixture_static_and_js_mapping"
+  },
+  "chain_nodes": [
+    {
+      "stage": "route",
+      "skill": "01-authorized-maximum-orchestrator"
+    },
+    {
+      "stage": "candidate",
+      "skill": "07-vulnerability-hunting-engine"
+    },
+    {
+      "stage": "quality_gate",
+      "skill": "08-evidence-quality-gate"
+    }
+  ],
+  "report_sections": [
+    "summary",
+    "evidence",
+    "impact",
+    "remediation"
+  ],
+  "report_template": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/REPORT_TEMPLATE.md",
+  "taint_review": {
+    "untrusted_sources_reviewed": [
+      "README",
+      "source_comments",
+      "sourcemap",
+      "HAR",
+      "fixture",
+      "report_sections"
+    ],
+    "prompt_injection_markers_found": [],
+    "decision": "clean",
+    "reviewed_by": "selftest"
+  },
+  "report_renderer": {
+    "renderer_id": "renderer-C12-file-upload-code-exec-or-overwrite",
+    "template_id": "C12-file-upload-code-exec-or-overwrite",
+    "generic_renderer_forbidden": true,
+    "quality_gate_checked": true,
+    "renderer_path": "_shared/reporting/renderers/C12-file-upload-code-exec-or-overwrite.md"
+  }
+}

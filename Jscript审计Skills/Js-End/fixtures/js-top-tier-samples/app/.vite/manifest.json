@@ -1,0 +1,11 @@
+{
+  "src/main.ts": {
+    "file": "assets/main.abc123.js",
+    "imports": [
+      "assets/chunk-tenant.js"
+    ],
+    "dynamicImports": [
+      "assets/feature-refund.js"
+    ]
+  }
+}

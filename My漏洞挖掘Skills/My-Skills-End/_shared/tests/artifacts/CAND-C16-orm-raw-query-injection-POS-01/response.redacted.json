@@ -1,0 +1,10 @@
+{
+  "candidate_id": "CAND-C16-orm-raw-query-injection-POS-01",
+  "response_summary": {
+    "status_code": 200,
+    "security_relevant_delta": "fixture status controls expected quality-gate outcome",
+    "body_redacted": true
+  },
+  "redaction": "body redacted",
+  "scope": "local_authorized_fixture_only"
+}

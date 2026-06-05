@@ -1,0 +1,14 @@
+source_skill,core_skill,relationship,status,notes
+00-scope-authority-quality-gate,01-authorized-maximum-orchestrator,merged,promoted,Authorization and quality gate rules preserved in orchestrator.
+01-recon-surface-toolchain,02-project-intelligence,merged,promoted,Project inventory and toolchain reconnaissance preserved.
+02-js-api-runtime-intelligence,05-js-audit-runtime,merged,promoted,JS collection and runtime API intelligence preserved.
+03-owasp-top10-web-validation,07-vulnerability-hunting-engine,merged,needs_review,OWASP patterns mapped to canonical 23 template index.
+04-authz-idor-ab-tenant,03-code-knowledge-graph,split,promoted,Authz and tenant graph edges preserved.
+04-authz-idor-ab-tenant,07-vulnerability-hunting-engine,split,promoted,Authz/IDOR/tenant vulnerability templates preserved.
+05-business-file-storage-logic,04-attack-surface-mapping,split,promoted,File/storage/business surface discovery preserved.
+05-business-file-storage-logic,07-vulnerability-hunting-engine,split,promoted,High-risk file and business logic candidates preserved.
+06-client-app-miniprogram-electron,05-js-audit-runtime,merged,needs_review,Electron/extension/miniprogram extraction requires runtime fixture proof.
+07-code-audit-semgrep,03-code-knowledge-graph,merged,needs_review,Semgrep-derived rules are candidate generators only.
+08-finding-queue-evidence-report,08-evidence-quality-gate,split,promoted,Evidence queues and quality gate preserved.
+08-finding-queue-evidence-report,09-reporting-disclosure,split,promoted,Report generation preserved.
+09-toolchain-environment-safe-runner,10-regression-selftest-dashboard,merged,promoted,Selftest and dashboard runner preserved.

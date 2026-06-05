@@ -1,0 +1,85 @@
+{
+  "id": "C21-cors-high-risk-candidate-positive",
+  "expected_template_id": "C21-cors-high-risk",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C21-cors-high-risk.py",
+          "line": 1,
+          "route": "/fixture/C21-cors-high-risk",
+          "method": "GET",
+          "handler": "cors Access-Control-Allow-Origin credentials origin"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C21-cors-high-risk.sink",
+          "line": 2,
+          "sink": "cors Access-Control-Allow-Origin credentials origin"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C21-cors-high-risk.js",
+          "line": 1,
+          "target": "/api/C21-cors-high-risk",
+          "client": "fetch cors Access-Control-Allow-Origin credentials origin"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C21-cors-high-risk.js",
+          "line": 2,
+          "target": "/api/C21-cors-high-risk",
+          "type": "cors Access-Control-Allow-Origin credentials origin"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C21-cors-high-risk.js",
+          "line": 3,
+          "operation_or_fragment": "cors Access-Control-Allow-Origin credentials origin"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C21-cors-high-risk.md",
+          "signal": "cors Access-Control-Allow-Origin credentials origin"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C21-cors-high-risk.worker",
+          "signal": "cors Access-Control-Allow-Origin credentials origin"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "cors Access-Control-Allow-Origin credentials origin"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "cors Access-Control-Allow-Origin credentials origin"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C21-cors-high-risk.surface",
+          "route": "/surface/C21-cors-high-risk",
+          "method": "GET",
+          "evidence": "cors Access-Control-Allow-Origin credentials origin"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+const {contextBridge, ipcRenderer}=require("electron"); contextBridge.exposeInMainWorld("api", {readFile:p=>ipcRenderer.invoke("readFile",p)}); window.postMessage({oauth:"callback"},"*");

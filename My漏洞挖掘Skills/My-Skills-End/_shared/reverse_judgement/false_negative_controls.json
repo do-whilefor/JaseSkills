@@ -1,0 +1,171 @@
+{
+  "schema": "false_negative_controls_v1",
+  "count": 15,
+  "items": [
+    {
+      "risk_id": "FN01",
+      "risk": "只看 HTTP route，漏 worker/queue/cron/CLI",
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "non_http_surfaces[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn01-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to non_http_surfaces[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN01: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN02",
+      "risk": "只看后端源码，漏 JS 构建产物",
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "bundle_assets[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn02-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to bundle_assets[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN02: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN03",
+      "risk": "只看源码，漏 sourcemap",
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "source_map_reentry[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn03-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to source_map_reentry[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN03: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN04",
+      "risk": "只看当前 chunk，漏旧 chunk",
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "chunk_lineage[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn04-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to chunk_lineage[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN04: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN05",
+      "risk": "只看显式 API，漏 feature flag 功能",
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "feature_flags[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn05-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to feature_flags[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN05: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN06",
+      "risk": "只看常规权限，漏租户边界",
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "role_object_tenant_ledger.entries[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn06-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to role_object_tenant_ledger.entries[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN06: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN07",
+      "risk": "只看 controller，漏 middleware order",
+      "responsible_skill": "skills/03-code-knowledge-graph/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "middleware_order_findings[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn07-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to middleware_order_findings[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN07: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN08",
+      "risk": "只看普通接口，漏 webhook",
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "async_surfaces[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn08-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to async_surfaces[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN08: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN09",
+      "risk": "只看 REST，漏 GraphQL/RPC/gRPC",
+      "responsible_skill": "skills/03-code-knowledge-graph/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "graphql_schema[]/rpc_services[]/grpc_services[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn09-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to graphql_schema[]/rpc_services[]/grpc_services[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN09: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN10",
+      "risk": "只看 Web，漏 Electron/extension/小程序",
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "legacy_cross_platform_surfaces[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn10-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to legacy_cross_platform_surfaces[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN10: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN11",
+      "risk": "只看数据库查询，漏 ORM raw query",
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "orm_models[].raw_query_flag must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn11-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to orm_models[].raw_query_flag when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN11: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN12",
+      "risk": "只看上传，漏预览转换解压导入导出",
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "file_workflow_surfaces[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn12-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to file_workflow_surfaces[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN12: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN13",
+      "risk": "只看同步请求，漏异步任务",
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "non_http_surfaces[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn13-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to non_http_surfaces[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN13: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN14",
+      "risk": "只看 auth required，漏 auth optional fallback",
+      "responsible_skill": "skills/03-code-knowledge-graph/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "middleware_order_findings[] must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn14-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to middleware_order_findings[] when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN14: candidate/report cannot omit source class when fixture contains signal"
+    },
+    {
+      "risk_id": "FN15",
+      "risk": "只看当前版本，漏 legacy route",
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "current_rule_can_detect": true,
+      "why_it_can_still_miss": "will miss if extractor output is empty without unsupported_reason or if E2E sample does not assert the field",
+      "new_rule": "chunk_lineage[].legacy_endpoint must be emitted as non-empty or explicit unsupported_reason with source path evidence",
+      "new_test": "_shared/tests/extreme_reverse_audit/fixtures/fn15-false-negative.json",
+      "manifest_linkage": "manifest must include linkage to chunk_lineage[].legacy_endpoint when a C01-C23 candidate derives from it",
+      "quality_gate": "QG-FN-FN15: candidate/report cannot omit source class when fixture contains signal"
+    }
+  ]
+}

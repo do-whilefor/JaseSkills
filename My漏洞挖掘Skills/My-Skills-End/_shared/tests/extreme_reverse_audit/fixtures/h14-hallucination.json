@@ -1,0 +1,5 @@
+{
+  "id": "H14",
+  "risk": "缺失败处理继续报告",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

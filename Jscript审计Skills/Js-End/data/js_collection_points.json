@@ -1,0 +1,282 @@
+[
+  {
+    "id": "01",
+    "name": "HTML 中 script src 提取",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "02",
+    "name": "动态加载 JS 提取",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "03",
+    "name": "Webpack chunk",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "04",
+    "name": "Vite chunk",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "05",
+    "name": "Next.js chunk",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "06",
+    "name": "Nuxt chunk",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "07",
+    "name": "Angular chunk",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "08",
+    "name": "React lazy chunk",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "09",
+    "name": "SvelteKit chunk",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Source Map 发现下载解析反混淆原始路径还原",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "11",
+    "name": "JS asset 版本识别与 hash 去重",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "CDN/静态资源域/跨域 JS",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "13",
+    "name": "第三方 SDK/埋点/支付/客服/地图/风控",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Service Worker/Manifest/PWA cache/Workbox",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Web Worker/Shared Worker/WASM glue code",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "16",
+    "name": "GraphQL schema/query/mutation/subscription",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "17",
+    "name": "REST/RPC/WebSocket/SSE endpoint",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "18",
+    "name": "postMessage/BroadcastChannel/storage event",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "19",
+    "name": "IndexedDB/localStorage/sessionStorage",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "20",
+    "name": "路由表/权限表/菜单表/角色表/feature flag/tenant flag",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "21",
+    "name": "隐藏接口/灰度接口/debug/admin/internal",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "22",
+    "name": "secret/token/API key/JWT/OAuth client id/bucket/Firebase/Supabase/GraphQL endpoint",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "23",
+    "name": "Electron app/Chrome Extension/Firefox Extension/mobile webview JS bundle",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "24",
+    "name": "NEXT_PUBLIC/VITE_/REACT_APP_ 环境变量泄露",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "25",
+    "name": "robots/sitemap/asset-manifest/precache-manifest/build-manifest/routes-manifest/app-build-manifest",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "26",
+    "name": "JS 文件来源账本 URL/hash/size/mime/status/referer/evidence path",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "27",
+    "name": "采集失败处理 401/403/CORS/gzip/br/redirect/chunk404/sourcemap缺失/混淆/超大/二进制误判",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "28",
+    "name": "Playwright 登录前/登录后/多角色/多租户/功能入口/语言/地区/feature flag 运行态采集",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  }
+]

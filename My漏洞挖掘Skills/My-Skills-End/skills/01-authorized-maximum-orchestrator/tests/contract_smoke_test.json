@@ -1,0 +1,10 @@
+{
+  "skill": "01-authorized-maximum-orchestrator",
+  "expected_contract": "EXECUTION_CONTRACT.md",
+  "required_outputs": [
+    "audit_run_plan.json",
+    "candidate_state_transitions.json",
+    "orchestration_trace.md"
+  ],
+  "negative_sample": "第三方非授权目标测试请求必须禁止触发"
+}

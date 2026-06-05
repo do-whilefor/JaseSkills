@@ -1,0 +1,1 @@
+workbox.precaching.precacheAndRoute([{url:"/static/js/old-admin.js",revision:"old"}]);

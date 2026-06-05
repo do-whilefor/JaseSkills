@@ -1,0 +1,19 @@
+{
+  "title": "04-attack-surface-mapping input schema",
+  "type": "object",
+  "required": [
+    "audit_scope",
+    "project_context"
+  ],
+  "properties": {
+    "audit_scope": {
+      "type": "object"
+    },
+    "project_context": {
+      "type": "object"
+    },
+    "previous_outputs": {
+      "type": "object"
+    }
+  }
+}

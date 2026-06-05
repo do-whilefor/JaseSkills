@@ -1,0 +1,5 @@
+{
+  "id": "false-negative-controls",
+  "expected": "15 false-negative risk controls are present and each links owner skill, manifest field, test, and quality gate",
+  "non_destructive": true
+}

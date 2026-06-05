@@ -1,0 +1,1 @@
+const tenantId=sessionStorage.tenantId; fetch(`/api/org/${tenantId}/users`)

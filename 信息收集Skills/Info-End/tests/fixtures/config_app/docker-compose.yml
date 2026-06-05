@@ -1,0 +1,8 @@
+services:
+  app:
+    image: fixture/app:latest
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgres://user:redacted@db/app

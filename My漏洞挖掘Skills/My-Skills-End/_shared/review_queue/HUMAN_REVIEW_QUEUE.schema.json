@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "HUMAN_REVIEW_QUEUE.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "items"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "human_review_queue_v1"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "review_id",
+          "candidate_id",
+          "template_id",
+          "status",
+          "reason",
+          "created_at"
+        ],
+        "properties": {
+          "review_id": {
+            "type": "string"
+          },
+          "candidate_id": {
+            "type": "string"
+          },
+          "template_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "needs_review",
+              "promoted",
+              "rejected",
+              "conflict"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "decision_log": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

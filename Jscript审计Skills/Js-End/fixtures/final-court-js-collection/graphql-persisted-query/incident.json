@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-11",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "GraphQL persisted query",
+  "required_collector": "scripts/graphql_persisted_query_collector.py",
+  "required_replay": "replay/final-court/GraphQL-persisted-query.yaml",
+  "acceptance": "提取 hash/query/mutation/variables 证据",
+  "status": "needs_implementation"
+}

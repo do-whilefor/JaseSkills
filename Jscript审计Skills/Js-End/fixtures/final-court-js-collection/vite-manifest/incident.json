@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-09",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "Vite manifest",
+  "required_collector": "scripts/vite_manifest_collector.py",
+  "required_replay": "replay/final-court/Vite-manifest.yaml",
+  "acceptance": "解析 entry/imports/dynamicImports/css/assets",
+  "status": "needs_implementation"
+}

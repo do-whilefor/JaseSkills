@@ -1,0 +1,1 @@
+{"version": 3, "file": "app.js", "sources": ["webpack://src/admin/refund.ts", "webpack://src/config.ts"], "sourcesContent": ["export const hidden=\"/internal/admin/refund\"; mutation DeleteTenant($id:ID!){deleteTenant(id:$id){id}}", "export const NEXT_PUBLIC_SUPABASE_URL=\"https://demo.supabase.co\"; export const SECRET_TOKEN=\"not-real-fixture\";"], "mappings": ""}

@@ -1,0 +1,85 @@
+{
+  "id": "C18-webhook-signature-bypass-candidate-positive",
+  "expected_template_id": "C18-webhook-signature-bypass",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C18-webhook-signature-bypass.py",
+          "line": 1,
+          "route": "/fixture/C18-webhook-signature-bypass",
+          "method": "GET",
+          "handler": "webhook signature x-hub-signature stripe-signature hmac timestamp"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C18-webhook-signature-bypass.sink",
+          "line": 2,
+          "sink": "webhook signature x-hub-signature stripe-signature hmac timestamp"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C18-webhook-signature-bypass.js",
+          "line": 1,
+          "target": "/api/C18-webhook-signature-bypass",
+          "client": "fetch webhook signature x-hub-signature stripe-signature hmac timestamp"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C18-webhook-signature-bypass.js",
+          "line": 2,
+          "target": "/api/C18-webhook-signature-bypass",
+          "type": "webhook signature x-hub-signature stripe-signature hmac timestamp"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C18-webhook-signature-bypass.js",
+          "line": 3,
+          "operation_or_fragment": "webhook signature x-hub-signature stripe-signature hmac timestamp"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C18-webhook-signature-bypass.md",
+          "signal": "webhook signature x-hub-signature stripe-signature hmac timestamp"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C18-webhook-signature-bypass.worker",
+          "signal": "webhook signature x-hub-signature stripe-signature hmac timestamp"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "webhook signature x-hub-signature stripe-signature hmac timestamp"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "webhook signature x-hub-signature stripe-signature hmac timestamp"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C18-webhook-signature-bypass.surface",
+          "route": "/surface/C18-webhook-signature-bypass",
+          "method": "GET",
+          "evidence": "webhook signature x-hub-signature stripe-signature hmac timestamp"
+        }
+      ]
+    }
+  }
+}

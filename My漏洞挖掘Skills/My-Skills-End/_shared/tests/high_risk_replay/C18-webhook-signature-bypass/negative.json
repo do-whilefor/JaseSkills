@@ -1,0 +1,12 @@
+{
+  "template_id": "C18-webhook-signature-bypass",
+  "case_type": "negative_safe_control",
+  "roles": [
+    "user_a"
+  ],
+  "tenants": [
+    "tenant_a"
+  ],
+  "expected": "no_candidate_or_candidate_rejected",
+  "safe_guard": "owner/tenant/signature/origin/lockfile validation present"
+}

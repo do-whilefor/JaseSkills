@@ -1,0 +1,222 @@
+[
+  {
+    "id": "JS-COLLECT-ACCIDENT-01",
+    "missed_asset": "登录后才加载的 chunk",
+    "why_current_misses": "缺少登录态浏览器采集器和 trace/HAR 资产账本",
+    "missing_collector": "playwright_role_chunk_collector.py",
+    "possible_severe_vulnerability": "账号接管入口、hidden API、token refresh abuse",
+    "new_script": "scripts/playwright_role_chunk_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/authenticated-chunk/",
+    "new_dynamic_replay": "replay/final-court/登录后才加载的-chunk.yaml",
+    "acceptance": "role-login replay 输出 HAR、trace、chunk hash、manifest"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-02",
+    "missed_asset": "管理员角色才加载的 chunk",
+    "why_current_misses": "缺少 admin/user role diff replay",
+    "missing_collector": "role_chunk_diff_collector.py",
+    "possible_severe_vulnerability": "admin endpoint 越权、退款/封禁接口滥用",
+    "new_script": "scripts/role_chunk_diff_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/admin-only-chunk/",
+    "new_dynamic_replay": "replay/final-court/管理员角色才加载的-chunk.yaml",
+    "acceptance": "admin 与普通用户 chunk diff 产生 endpoint 差异证据"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-03",
+    "missed_asset": "租户专属 chunk",
+    "why_current_misses": "缺少 tenant A/B runtime diff",
+    "missing_collector": "tenant_chunk_diff_collector.py",
+    "possible_severe_vulnerability": "tenant-only API、BOLA、跨租户数据读取",
+    "new_script": "scripts/tenant_chunk_diff_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/tenant-only-chunk/",
+    "new_dynamic_replay": "replay/final-court/租户专属-chunk.yaml",
+    "acceptance": "至少两个租户 replay 输出 chunk/API 差异"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-04",
+    "missed_asset": "feature flag 触发的 chunk",
+    "why_current_misses": "缺少 feature flag forced route discovery",
+    "missing_collector": "feature_flag_chunk_collector.py",
+    "possible_severe_vulnerability": "灰度 admin/internal endpoint、隐藏业务流",
+    "new_script": "scripts/feature_flag_chunk_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/feature-flag-chunk/",
+    "new_dynamic_replay": "replay/final-court/feature-flag-触发的-chunk.yaml",
+    "acceptance": "feature flag 组合触发 chunk 并记录来源"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-05",
+    "missed_asset": "stale source map",
+    "why_current_misses": "缺少旧构建 sourcemap 枚举和 freshness gate",
+    "missing_collector": "stale_sourcemap_collector.py",
+    "possible_severe_vulnerability": "源码、secret、hidden API 泄露",
+    "new_script": "scripts/stale_sourcemap_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/stale-sourcemap/",
+    "new_dynamic_replay": "replay/final-court/stale-source-map.yaml",
+    "acceptance": "发现旧 map 并还原 sourcesContent/path"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-06",
+    "missed_asset": "CDN 旧版本 JS",
+    "why_current_misses": "缺少 CDN stale asset resurrection 检查",
+    "missing_collector": "cdn_stale_asset_collector.py",
+    "possible_severe_vulnerability": "旧漏洞代码、已下线 endpoint、secret 残留",
+    "new_script": "scripts/cdn_stale_asset_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/cdn-stale-asset/",
+    "new_dynamic_replay": "replay/final-court/CDN-旧版本-JS.yaml",
+    "acceptance": "同 asset 多版本 hash 差异和历史 URL 证据"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-07",
+    "missed_asset": "Service Worker cache 旧资产",
+    "why_current_misses": "缺少 SW/Cache Storage runtime dump",
+    "missing_collector": "service_worker_cache_collector.py",
+    "possible_severe_vulnerability": "持久 XSS、旧 API、cache poisoning",
+    "new_script": "scripts/service_worker_cache_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/sw-cache-old-assets/",
+    "new_dynamic_replay": "replay/final-court/Service-Worker-cache-旧资产.yaml",
+    "acceptance": "导出 Cache Storage 资产账本"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-08",
+    "missed_asset": "Next.js build manifest",
+    "why_current_misses": "缺少 _next/build-manifest 与 app-build-manifest 解析",
+    "missing_collector": "next_manifest_collector.py",
+    "possible_severe_vulnerability": "未发现页面 chunk、server action/RSC 边界线索",
+    "new_script": "scripts/next_manifest_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/next-build-manifest/",
+    "new_dynamic_replay": "replay/final-court/Next.js-build-manifest.yaml",
+    "acceptance": "解析 pages/app route 到 chunk 映射"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-09",
+    "missed_asset": "Vite manifest",
+    "why_current_misses": "缺少 manifest.json/modulepreload 解析",
+    "missing_collector": "vite_manifest_collector.py",
+    "possible_severe_vulnerability": "动态 import endpoint、env 泄露",
+    "new_script": "scripts/vite_manifest_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/vite-manifest/",
+    "new_dynamic_replay": "replay/final-court/Vite-manifest.yaml",
+    "acceptance": "解析 entry/imports/dynamicImports/css/assets"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-10",
+    "missed_asset": "Webpack runtime chunk",
+    "why_current_misses": "缺少 webpack runtime module id/chunk graph 解析",
+    "missing_collector": "webpack_runtime_chunk_collector.py",
+    "possible_severe_vulnerability": "隐藏模块、异步路由、admin route",
+    "new_script": "scripts/webpack_runtime_chunk_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/webpack-runtime/",
+    "new_dynamic_replay": "replay/final-court/Webpack-runtime-chunk.yaml",
+    "acceptance": "还原 chunk id → URL → module 关系"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-11",
+    "missed_asset": "GraphQL persisted query",
+    "why_current_misses": "缺少 persisted query hash discovery",
+    "missing_collector": "graphql_persisted_query_collector.py",
+    "possible_severe_vulnerability": "hidden mutation、IDOR、tenant bypass",
+    "new_script": "scripts/graphql_persisted_query_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/graphql-persisted-query/",
+    "new_dynamic_replay": "replay/final-court/GraphQL-persisted-query.yaml",
+    "acceptance": "提取 hash/query/mutation/variables 证据"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-12",
+    "missed_asset": "WebSocket schema",
+    "why_current_misses": "缺少 WS message capture/schema inference",
+    "missing_collector": "websocket_schema_collector.py",
+    "possible_severe_vulnerability": "跨用户消息读取、租户越权",
+    "new_script": "scripts/websocket_schema_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/websocket-schema/",
+    "new_dynamic_replay": "replay/final-court/WebSocket-schema.yaml",
+    "acceptance": "捕获消息 schema、auth header、tenant id"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-13",
+    "missed_asset": "Electron preload bundle",
+    "why_current_misses": "缺少 Electron ASAR/preload/ipc 枚举",
+    "missing_collector": "electron_preload_collector.py",
+    "possible_severe_vulnerability": "preload bridge RCE、任意文件读写",
+    "new_script": "scripts/electron_preload_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/electron-preload/",
+    "new_dynamic_replay": "replay/final-court/Electron-preload-bundle.yaml",
+    "acceptance": "提取 preload、contextBridge、ipcRenderer 调用"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-14",
+    "missed_asset": "Browser extension content script",
+    "why_current_misses": "缺少 extension manifest/content/background 采集",
+    "missing_collector": "extension_bundle_collector.py",
+    "possible_severe_vulnerability": "权限提升、token leak、externally_connectable abuse",
+    "new_script": "scripts/extension_bundle_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/browser-extension/",
+    "new_dynamic_replay": "replay/final-court/Browser-extension-content-script.yaml",
+    "acceptance": "解析 manifest/content scripts/host_permissions"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-15",
+    "missed_asset": "Mobile WebView bridge JS",
+    "why_current_misses": "缺少 WebView bridge 名称和 native bridge 调用收集",
+    "missing_collector": "webview_bridge_collector.py",
+    "possible_severe_vulnerability": "移动端账号接管、任意调用 native 方法",
+    "new_script": "scripts/webview_bridge_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/mobile-webview-bridge/",
+    "new_dynamic_replay": "replay/final-court/Mobile-WebView-bridge-JS.yaml",
+    "acceptance": "发现 window.* bridge、JSInterface、schema"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-16",
+    "missed_asset": "WASM glue code",
+    "why_current_misses": "缺少 wasm/js glue 和 imports/exports 解析",
+    "missing_collector": "wasm_glue_collector.py",
+    "possible_severe_vulnerability": "unsafe parser、边界逻辑缺陷、文件处理漏洞线索",
+    "new_script": "scripts/wasm_glue_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/wasm-glue/",
+    "new_dynamic_replay": "replay/final-court/WASM-glue-code.yaml",
+    "acceptance": "输出 wasm import/export、glue sink、调用点"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-17",
+    "missed_asset": "第三方 iframe postMessage JS",
+    "why_current_misses": "缺少 iframe src 与 postMessage runtime 采集",
+    "missing_collector": "iframe_postmessage_collector.py",
+    "possible_severe_vulnerability": "token leak、origin bypass、account takeover",
+    "new_script": "scripts/iframe_postmessage_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/iframe-postmessage/",
+    "new_dynamic_replay": "replay/final-court/第三方-iframe-postMessage-JS.yaml",
+    "acceptance": "记录 origin/source/data schema/sink"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-18",
+    "missed_asset": "支付/退款/优惠券业务 JS",
+    "why_current_misses": "缺少业务域 chunk 标记和敏感流量 replay",
+    "missing_collector": "business_flow_js_collector.py",
+    "possible_severe_vulnerability": "前端价格控制、退款滥用、优惠券逻辑绕过",
+    "new_script": "scripts/business_flow_js_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/payment-refund-coupon/",
+    "new_dynamic_replay": "replay/final-court/支付/退款/优惠券业务-JS.yaml",
+    "acceptance": "敏感业务入口触发 chunk 和 API diff"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-19",
+    "missed_asset": "富文本/Markdown/文件预览 JS",
+    "why_current_misses": "缺少 preview/editor/markdown renderer 资产聚类",
+    "missing_collector": "richtext_preview_collector.py",
+    "possible_severe_vulnerability": "stored DOM XSS、mXSS、SVG/PDF preview XSS",
+    "new_script": "scripts/richtext_preview_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/richtext-preview/",
+    "new_dynamic_replay": "replay/final-court/富文本/Markdown/文件预览-JS.yaml",
+    "acceptance": "提取 renderer、sanitizer、preview sink"
+  },
+  {
+    "id": "JS-COLLECT-ACCIDENT-20",
+    "missed_asset": "localStorage/IndexedDB 敏感缓存",
+    "why_current_misses": "缺少浏览器 storage dump 与差异分析",
+    "missing_collector": "browser_storage_collector.py",
+    "possible_severe_vulnerability": "JWT/PII/tenant cache 泄露、跨标签 token leak",
+    "new_script": "scripts/browser_storage_collector.py",
+    "new_fixture": "fixtures/final-court-js-collection/storage-sensitive-cache/",
+    "new_dynamic_replay": "replay/final-court/localStorage/IndexedDB-敏感缓存.yaml",
+    "acceptance": "导出 local/session/IndexedDB/CacheStorage 证据"
+  }
+]

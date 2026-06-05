@@ -1,0 +1,100 @@
+[
+  {
+    "original_conclusion": "package_self_check.py: ok，所以包结构健康",
+    "claimed_basis": "命令输出显示 ok",
+    "file_evidence": [
+      "scripts/package_self_check.py"
+    ],
+    "test_evidence": [],
+    "risk": "只能证明必需文件和缓存文件检查通过，不能证明 AST、动态验证、report mapping、dashboard 真实闭环",
+    "corrected": "部分证实。包卫生检查通过，但不等于工程能力 ready。",
+    "needed": "增加 workflow 调用链、runtime backend、真实 replay、report generator、dashboard 读取真实产物的测试证据"
+  },
+  {
+    "original_conclusion": "verify_extreme_review_assets.py: ok，极限评审资产完整",
+    "claimed_basis": "校验脚本返回 ok",
+    "file_evidence": [
+      "scripts/verify_extreme_review_assets.py",
+      "12-js-skills-extreme-reviewer/SKILL.md"
+    ],
+    "test_evidence": [],
+    "risk": "校验资产存在，不校验每项能力真实可执行",
+    "corrected": "资产存在证实；能力 ready 未证实。",
+    "needed": "增加每项 JS 收集/审计/漏洞链的执行级测试"
+  },
+  {
+    "original_conclusion": "verify_second_pass_assets.py: ok，二次反审资产完整",
+    "claimed_basis": "校验脚本返回 ok",
+    "file_evidence": [
+      "scripts/verify_second_pass_assets.py",
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md"
+    ],
+    "test_evidence": [],
+    "risk": "只证明二次反审数据文件存在，不证明 detector、browser、HAR、Burp 真实可用",
+    "corrected": "二次反审承载能力部分证实；真实漏洞发现能力仍 missing/partial。",
+    "needed": "增加 detector harness、dynamic replay、schema validation、report mapping 测试"
+  },
+  {
+    "original_conclusion": "修正后总分 32/100 足够严格",
+    "claimed_basis": "second_pass_reverse_audit.py 输出",
+    "file_evidence": [
+      "scripts/second_pass_reverse_audit.py",
+      "tests/last-second-pass-review.json"
+    ],
+    "test_evidence": [
+      "tests/last-second-pass-review.md"
+    ],
+    "risk": "32 分仍可能没有按失败惩罚规则细分 evidence/report/dashboard/replay 扣分",
+    "corrected": "需要按失败惩罚规则再次下调并写明扣分证据。",
+    "needed": "增加 final_court_score_penalty_rules.json 和命令输出"
+  },
+  {
+    "original_conclusion": "知识库和漏洞模板未删除，原有 Skills 能力未削弱",
+    "claimed_basis": "压缩包中仍有 knowledge/templates 目录",
+    "file_evidence": [
+      "knowledge/",
+      "templates/"
+    ],
+    "test_evidence": [],
+    "risk": "存在不等于被索引、被路由、被报告模板调用；未削弱也需要 hash/文件列表对比证明",
+    "corrected": "文件存在部分证实；调用链和能力未削弱未证实。",
+    "needed": "新增 knowledge/template index checker、hash baseline、before/after 对比"
+  },
+  {
+    "original_conclusion": "skill_trigger_tester.py: ok，路由可用",
+    "claimed_basis": "触发测试通过",
+    "file_evidence": [
+      "scripts/skill_trigger_tester.py",
+      "tests/trigger-test-cases.json",
+      "scripts/skill_dispatcher.py"
+    ],
+    "test_evidence": [
+      "tests/last-trigger-test-output.jsonl"
+    ],
+    "risk": "路由测试不是端到端执行，不证明脚本、schema、报告真实闭环",
+    "corrected": "路由规则部分证实；执行链路未证实。",
+    "needed": "新增 e2e workflow runner，校验 route → script → manifest → quality gate → report → dashboard"
+  },
+  {
+    "original_conclusion": "无 __pycache__ / .pyc / .tmp / .bak / .swp",
+    "claimed_basis": "压缩包检查和 self_check",
+    "file_evidence": [
+      "scripts/package_self_check.py"
+    ],
+    "test_evidence": [],
+    "risk": "包卫生结论可信，但不代表能力质量",
+    "corrected": "证实为包卫生项，不应计入 JS 审计能力分。",
+    "needed": "保留为卫生 gate，不扩大解释"
+  },
+  {
+    "original_conclusion": "没有把 AST/runtime/detector 伪装成 ready",
+    "claimed_basis": "二次反审结果中 parser_backend_evidence/runtime_bridge_evidence/detector_evidence 为空",
+    "file_evidence": [
+      "tests/last-second-pass-review.json"
+    ],
+    "test_evidence": [],
+    "risk": "该结论本身可信，但还需要在所有文档和 README 中避免 ready 表述残留",
+    "corrected": "部分证实；仍需全包 grep 文档一致性。",
+    "needed": "新增 final evidence court grep 一致性检查和伪 ready 表"
+  }
+]

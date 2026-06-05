@@ -1,0 +1,5 @@
+{
+  "id": "ai-hallucination-controls",
+  "expected": "covered by extreme_reverse_audit.py",
+  "non_destructive": true
+}

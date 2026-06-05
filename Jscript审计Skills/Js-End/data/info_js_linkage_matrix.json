@@ -1,0 +1,152 @@
+[
+  {
+    "id": "01",
+    "name": "子域名 → JS 资产映射",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "02",
+    "name": "URL crawl → JS 收集",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "03",
+    "name": "截图/页面状态 → chunk 触发",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "04",
+    "name": "登录态 → role-only JS",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "05",
+    "name": "多角色 → endpoint diff",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "06",
+    "name": "多租户 → tenant-only endpoint diff",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "07",
+    "name": "WAF/CDN 指纹 → cache/header/CORS 分析",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "08",
+    "name": "API 文档 → JS endpoint diff",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "09",
+    "name": "robots/sitemap → JS route diff",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "10",
+    "name": "GitHub 泄露 → JS source map/config diff",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Nuclei/被动扫描结果 → JS deep audit focus",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "HAR → request wrapper resolver",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "13",
+    "name": "Burp sitemap → JS endpoint resolver",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Playwright trace → runtime route/chunk resolver",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  },
+  {
+    "id": "15",
+    "name": "报告模板 → evidence manifest → quality gate 闭环",
+    "required_evidence": [
+      "file_path",
+      "script_or_rule",
+      "test_or_fixture",
+      "evidence_output"
+    ]
+  }
+]

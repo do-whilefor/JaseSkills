@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "finding-evidence-chain.schema.json",
+  "title": "Finding Evidence Chain",
+  "type": "object",
+  "required": ["candidate_id", "candidate_vulnerability", "review_status", "source_file", "evidence"],
+  "properties": {
+    "candidate_id": {"type": "string"},
+    "candidate_vulnerability": {"type": "string"},
+    "review_status": {"enum": ["candidate", "needs_review", "blocked", "conflict", "rejected", "confirmed", "reportable", "promoted"]},
+    "source_file": {"type": "string"},
+    "source_line": {"type": ["integer", "null"]},
+    "endpoint": {"type": ["string", "null"]},
+    "method": {"type": ["string", "null"]},
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "evidence_id": {"type": "string"},
+        "path": {"type": "string"},
+        "source_file": {"type": ["string", "null"]},
+        "source_line": {"type": ["integer", "null"]},
+        "request_sample": {"type": ["object", "string", "null"]},
+        "response_sample": {"type": ["object", "string", "null"]},
+        "validation_run_id": {"type": ["string", "null"]},
+        "role_context": {"type": ["string", "array", "object", "null"]},
+        "tenant_context": {"type": ["string", "array", "object", "null"]},
+        "scope_id": {"type": ["string", "null"]},
+        "quality_gate": {"type": ["object", "null"]}
+      }
+    },
+    "quality_gate": {"type": ["object", "null"]},
+    "report_template": {"type": ["string", "null"]},
+    "limitation": {"type": ["string", "null"]}
+  }
+}

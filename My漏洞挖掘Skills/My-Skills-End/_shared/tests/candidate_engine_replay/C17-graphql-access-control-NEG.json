@@ -1,0 +1,29 @@
+{
+  "id": "C17-graphql-access-control-candidate-negative",
+  "forbidden_template_id": "C17-graphql-access-control",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "neutral.py",
+          "line": 1,
+          "route": "/health",
+          "method": "GET",
+          "handler": "health status ping"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "neutral.js",
+          "line": 1,
+          "target": "/health",
+          "client": "fetch"
+        }
+      ]
+    },
+    "inventory": {},
+    "surface": {}
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Minimal evidence manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "candidate_id",
+    "status",
+    "artifacts",
+    "quality"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "const": "evidence_manifest_v1"
+    },
+    "manifest_id": {
+      "type": "string"
+    },
+    "candidate_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "STATIC_CANDIDATE",
+        "DYNAMIC_ATTEMPTED",
+        "DYNAMIC_CONFIRMED",
+        "DYNAMIC_BLOCKED",
+        "DYNAMIC_INCONCLUSIVE",
+        "NOT_TESTED",
+        "UNSAFE_TO_TEST",
+        "NEEDS_REVIEW",
+        "REJECTED"
+      ]
+    },
+    "artifacts": {
+      "type": "array"
+    },
+    "quality": {
+      "type": "object"
+    }
+  }
+}

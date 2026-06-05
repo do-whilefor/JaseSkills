@@ -1,0 +1,12 @@
+{
+  "id": "JS38-js-authz-bypass",
+  "input_sample": {
+    "js_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "permission key/API endpoint guard mismatch"
+  },
+  "expected_output": {
+    "candidate_to_manifest_links[]": "non_empty_or_unsupported_with_reason"
+  },
+  "manifest_field": "manifest.candidates",
+  "quality_gate": "QG-JS-chain-required; JS-derived confirmed finding must have candidate_to_manifest_link, original span when sourcemap exists, and template-specific evidence"
+}

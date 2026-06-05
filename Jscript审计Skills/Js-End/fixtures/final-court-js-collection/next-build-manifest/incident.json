@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-08",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "Next.js build manifest",
+  "required_collector": "scripts/next_manifest_collector.py",
+  "required_replay": "replay/final-court/Next.js-build-manifest.yaml",
+  "acceptance": "解析 pages/app route 到 chunk 映射",
+  "status": "needs_implementation"
+}

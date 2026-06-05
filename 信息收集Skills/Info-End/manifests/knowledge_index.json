@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "knowledge_root": "knowledge",
+  "status_values": [
+    "promoted",
+    "needs_review",
+    "conflict",
+    "rejected"
+  ],
+  "preservation_policy": "Never delete existing knowledge or vulnerability templates during cleanup; mark stale/conflict/rejected explicitly if needed.",
+  "entries": [
+    {
+      "id": "info-collection-coverage",
+      "path": "detectors/info_collection_coverage.yaml",
+      "status": "promoted",
+      "kind": "coverage_map",
+      "used_by": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "06",
+        "08"
+      ]
+    },
+    {
+      "id": "js-audit-coverage",
+      "path": "detectors/js_audit_coverage.yaml",
+      "status": "promoted",
+      "kind": "coverage_map",
+      "used_by": [
+        "03",
+        "04",
+        "05",
+        "08"
+      ]
+    },
+    {
+      "id": "severe-vulnerability-matrix",
+      "path": "detectors/severe_vulnerability_matrix.yaml",
+      "status": "promoted",
+      "kind": "detector_matrix",
+      "used_by": [
+        "03",
+        "04",
+        "05",
+        "07",
+        "08"
+      ]
+    },
+    {
+      "id": "failure-case-library",
+      "path": "docs/failure-case-library.md",
+      "status": "promoted",
+      "kind": "false_positive_and_blocked_cases",
+      "used_by": [
+        "07",
+        "08"
+      ]
+    },
+    {
+      "id": "anti-hallucination-rules",
+      "path": "docs/anti-hallucination-rules.md",
+      "status": "promoted",
+      "kind": "anti_hallucination_rules",
+      "used_by": [
+        "00",
+        "07",
+        "08"
+      ]
+    },
+    {
+      "id": "info-surface-schema",
+      "path": "schemas/info-surface.schema.json",
+      "status": "promoted",
+      "kind": "normalization_schema",
+      "used_by": [
+        "03",
+        "04",
+        "07",
+        "08"
+      ]
+    },
+    {
+      "id": "info-surface-normalizer",
+      "path": "scripts/info-surface-normalizer.py",
+      "status": "promoted",
+      "kind": "normalizer_and_detector_router",
+      "used_by": [
+        "03",
+        "04",
+        "07",
+        "08"
+      ]
+    },
+    {
+      "id": "config-dependency-inventory",
+      "path": "scripts/config-dependency-inventory.py",
+      "status": "promoted",
+      "kind": "config_dependency_inventory",
+      "used_by": [
+        "02",
+        "03",
+        "06",
+        "08"
+      ]
+    },
+    {
+      "id": "js-manifest-expander",
+      "path": "scripts/js-manifest-expander.py",
+      "status": "promoted",
+      "kind": "frontend_manifest_expander",
+      "used_by": [
+        "03",
+        "06",
+        "08"
+      ]
+    }
+  ],
+  "human_review_queue": "human_review/human_review_queue.jsonl",
+  "conflict_policy": "Conflicting knowledge must not be promoted automatically. It must enter human_review/human_review_queue.jsonl with source, conflict_reason, affected_skill, and decision."
+}

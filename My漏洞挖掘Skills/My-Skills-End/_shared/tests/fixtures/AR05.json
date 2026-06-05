@@ -1,0 +1,6 @@
+{
+  "id": "AR05",
+  "title": "前端暴露接口但后端有鉴权",
+  "scenario": "frontend endpoint visible but backend guard exists",
+  "expected_status": "rejected"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-10",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "Webpack runtime chunk",
+  "required_collector": "scripts/webpack_runtime_chunk_collector.py",
+  "required_replay": "replay/final-court/Webpack-runtime-chunk.yaml",
+  "acceptance": "还原 chunk id → URL → module 关系",
+  "status": "needs_implementation"
+}

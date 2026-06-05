@@ -1,0 +1,85 @@
+{
+  "id": "C04-tenant-isolation-bypass-candidate-positive",
+  "expected_template_id": "C04-tenant-isolation-bypass",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C04-tenant-isolation-bypass.py",
+          "line": 1,
+          "route": "/fixture/C04-tenant-isolation-bypass",
+          "method": "GET",
+          "handler": "tenant org workspace company team_id organization_id"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C04-tenant-isolation-bypass.sink",
+          "line": 2,
+          "sink": "tenant org workspace company team_id organization_id"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C04-tenant-isolation-bypass.js",
+          "line": 1,
+          "target": "/api/C04-tenant-isolation-bypass",
+          "client": "fetch tenant org workspace company team_id organization_id"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C04-tenant-isolation-bypass.js",
+          "line": 2,
+          "target": "/api/C04-tenant-isolation-bypass",
+          "type": "tenant org workspace company team_id organization_id"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C04-tenant-isolation-bypass.js",
+          "line": 3,
+          "operation_or_fragment": "tenant org workspace company team_id organization_id"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C04-tenant-isolation-bypass.md",
+          "signal": "tenant org workspace company team_id organization_id"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C04-tenant-isolation-bypass.worker",
+          "signal": "tenant org workspace company team_id organization_id"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "tenant org workspace company team_id organization_id"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "tenant org workspace company team_id organization_id"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C04-tenant-isolation-bypass.surface",
+          "route": "/surface/C04-tenant-isolation-bypass",
+          "method": "GET",
+          "evidence": "tenant org workspace company team_id organization_id"
+        }
+      ]
+    }
+  }
+}

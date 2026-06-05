@@ -1,0 +1,6 @@
+{
+  "claimed_capability": "postMessage detector",
+  "status": "negative_fixture_detects_pseudo_or_missing_runtime",
+  "real_implementation": "未发现 origin/source/data schema/sink 判定",
+  "upgrade_required": "新增 postmessage_origin_detector.py"
+}

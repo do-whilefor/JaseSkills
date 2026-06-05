@@ -1,0 +1,12 @@
+{
+  "id": "JS11-framework-bundles",
+  "input_sample": {
+    "js_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "framework artifact classifiers"
+  },
+  "expected_output": {
+    "framework_artifacts[]": "non_empty_or_unsupported_with_reason"
+  },
+  "manifest_field": "js_graph.framework_artifacts",
+  "quality_gate": "QG-JS-chain-required; JS-derived confirmed finding must have candidate_to_manifest_link, original span when sourcemap exists, and template-specific evidence"
+}

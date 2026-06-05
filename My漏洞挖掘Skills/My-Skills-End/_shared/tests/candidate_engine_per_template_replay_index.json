@@ -1,0 +1,117 @@
+[
+  {
+    "template_id": "C01-auth-bypass",
+    "positive": "_shared/tests/candidate_engine_replay/C01-auth-bypass-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C01-auth-bypass-NEG.json"
+  },
+  {
+    "template_id": "C02-authz-bypass",
+    "positive": "_shared/tests/candidate_engine_replay/C02-authz-bypass-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C02-authz-bypass-NEG.json"
+  },
+  {
+    "template_id": "C03-idor-bola",
+    "positive": "_shared/tests/candidate_engine_replay/C03-idor-bola-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C03-idor-bola-NEG.json"
+  },
+  {
+    "template_id": "C04-tenant-isolation-bypass",
+    "positive": "_shared/tests/candidate_engine_replay/C04-tenant-isolation-bypass-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C04-tenant-isolation-bypass-NEG.json"
+  },
+  {
+    "template_id": "C05-admin-privilege-escalation",
+    "positive": "_shared/tests/candidate_engine_replay/C05-admin-privilege-escalation-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C05-admin-privilege-escalation-NEG.json"
+  },
+  {
+    "template_id": "C06-rce",
+    "positive": "_shared/tests/candidate_engine_replay/C06-rce-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C06-rce-NEG.json"
+  },
+  {
+    "template_id": "C07-command-injection",
+    "positive": "_shared/tests/candidate_engine_replay/C07-command-injection-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C07-command-injection-NEG.json"
+  },
+  {
+    "template_id": "C08-ssti",
+    "positive": "_shared/tests/candidate_engine_replay/C08-ssti-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C08-ssti-NEG.json"
+  },
+  {
+    "template_id": "C09-deserialization",
+    "positive": "_shared/tests/candidate_engine_replay/C09-deserialization-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C09-deserialization-NEG.json"
+  },
+  {
+    "template_id": "C10-arbitrary-file-read",
+    "positive": "_shared/tests/candidate_engine_replay/C10-arbitrary-file-read-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C10-arbitrary-file-read-NEG.json"
+  },
+  {
+    "template_id": "C11-arbitrary-file-write",
+    "positive": "_shared/tests/candidate_engine_replay/C11-arbitrary-file-write-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C11-arbitrary-file-write-NEG.json"
+  },
+  {
+    "template_id": "C12-file-upload-code-exec-or-overwrite",
+    "positive": "_shared/tests/candidate_engine_replay/C12-file-upload-code-exec-or-overwrite-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C12-file-upload-code-exec-or-overwrite-NEG.json"
+  },
+  {
+    "template_id": "C13-ssrf",
+    "positive": "_shared/tests/candidate_engine_replay/C13-ssrf-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C13-ssrf-NEG.json"
+  },
+  {
+    "template_id": "C14-sql-injection",
+    "positive": "_shared/tests/candidate_engine_replay/C14-sql-injection-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C14-sql-injection-NEG.json"
+  },
+  {
+    "template_id": "C15-nosql-injection",
+    "positive": "_shared/tests/candidate_engine_replay/C15-nosql-injection-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C15-nosql-injection-NEG.json"
+  },
+  {
+    "template_id": "C16-orm-raw-query-injection",
+    "positive": "_shared/tests/candidate_engine_replay/C16-orm-raw-query-injection-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C16-orm-raw-query-injection-NEG.json"
+  },
+  {
+    "template_id": "C17-graphql-access-control",
+    "positive": "_shared/tests/candidate_engine_replay/C17-graphql-access-control-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C17-graphql-access-control-NEG.json"
+  },
+  {
+    "template_id": "C18-webhook-signature-bypass",
+    "positive": "_shared/tests/candidate_engine_replay/C18-webhook-signature-bypass-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C18-webhook-signature-bypass-NEG.json"
+  },
+  {
+    "template_id": "C19-jwt-token-validation",
+    "positive": "_shared/tests/candidate_engine_replay/C19-jwt-token-validation-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C19-jwt-token-validation-NEG.json"
+  },
+  {
+    "template_id": "C20-oauth-sso-callback-redirect",
+    "positive": "_shared/tests/candidate_engine_replay/C20-oauth-sso-callback-redirect-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C20-oauth-sso-callback-redirect-NEG.json"
+  },
+  {
+    "template_id": "C21-cors-high-risk",
+    "positive": "_shared/tests/candidate_engine_replay/C21-cors-high-risk-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C21-cors-high-risk-NEG.json"
+  },
+  {
+    "template_id": "C22-sensitive-info-disclosure",
+    "positive": "_shared/tests/candidate_engine_replay/C22-sensitive-info-disclosure-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C22-sensitive-info-disclosure-NEG.json"
+  },
+  {
+    "template_id": "C23-supply-chain-plugin-build-risk",
+    "positive": "_shared/tests/candidate_engine_replay/C23-supply-chain-plugin-build-risk-POS.json",
+    "negative": "_shared/tests/candidate_engine_replay/C23-supply-chain-plugin-build-risk-NEG.json"
+  }
+]

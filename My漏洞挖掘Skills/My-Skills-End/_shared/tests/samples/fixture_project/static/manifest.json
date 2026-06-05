@@ -1,0 +1,8 @@
+{
+  "files": {
+    "app.js": "/static/app.abc123.js"
+  },
+  "entrypoints": [
+    "/static/app.abc123.js"
+  ]
+}

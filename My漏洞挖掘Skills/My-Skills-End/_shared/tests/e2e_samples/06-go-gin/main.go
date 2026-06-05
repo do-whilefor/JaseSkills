@@ -1,0 +1,1 @@
+r.GET("/api/orgs/:orgId/projects/:id", func(c *gin.Context){ db.Raw("select"+c.Param("id")); http.Get(c.Query("url")) })

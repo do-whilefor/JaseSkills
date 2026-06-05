@@ -1,0 +1,14 @@
+{
+  "input": [
+    "project_inventory_v2",
+    "code_graph",
+    "js_audit_graph_v4.1"
+  ],
+  "expected_schema_version": "attack_surface_ledger_v2",
+  "expected_fields": [
+    "attack_surface",
+    "route_to_candidate_inputs",
+    "coverage_obligations"
+  ],
+  "failure": "surface_count == 0 or non_destructive=false"
+}

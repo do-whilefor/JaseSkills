@@ -1,0 +1,36 @@
+{
+  "package": "seckb-claude-skills-complete",
+  "version": "v3",
+  "generated_at_utc": "2026-06-04T08:04:49Z",
+  "default_seckb_root": "D:\\Users\\21452\\AppData\\SecKB",
+  "skills": [
+    "01-seckb-master-orchestrator/SKILL.md",
+    "02-source-collection-freshness/SKILL.md",
+    "03-normalize-index-rag-router/SKILL.md",
+    "04-vuln-template-factory/SKILL.md",
+    "05-code-audit-knowledge/SKILL.md",
+    "06-src-rules-compliance/SKILL.md",
+    "07-toolchain-release-learning/SKILL.md",
+    "08-dynamic-validation-evidence/SKILL.md",
+    "09-variant-learning-patch-diff/SKILL.md",
+    "10-audit-quality-regression/SKILL.md"
+  ],
+  "safety_note": "All v3 additions are governance/test harnesses. They do not perform exploitation, scanning, or third-party target validation.",
+  "name": "seckb-claude-skills-audited-v3",
+  "v2_hardening": [
+    "CAPABILITY_INDEX.md",
+    "quality_gate_policy",
+    "anti_hallucination_policy",
+    "failure_case_library",
+    "self_audit_skills",
+    "smoke_test_package",
+    "document_fingerprint_matrix"
+  ],
+  "added_capabilities": [
+    "claude_code_end_to_end_replay_tests",
+    "quality_gate_100_record_stress_dataset",
+    "index_consistency_checker",
+    "static_html_dashboard",
+    "template_confusion_matrix"
+  ]
+}

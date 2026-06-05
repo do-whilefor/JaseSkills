@@ -1,0 +1,11 @@
+{
+  "candidate_id": "CAND-C18-webhook-signature-bypass-POS-01",
+  "note": "synthetic local replay response artifact; unique per reproduction group",
+  "redacted": true,
+  "reproduction_index": 1,
+  "response_summary": {
+    "body_redacted": true,
+    "security_relevant_delta": "authorized fixture demonstrates controlled differential behavior",
+    "status_code": 200
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "INFO24-debug-interface",
+  "input_sample": {
+    "project_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "debug_route,error_page,debug_flag,environment_guard"
+  },
+  "expected_output": {
+    "attack_surface": "non_empty_or_explicit_empty_with_reason"
+  },
+  "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation"
+}

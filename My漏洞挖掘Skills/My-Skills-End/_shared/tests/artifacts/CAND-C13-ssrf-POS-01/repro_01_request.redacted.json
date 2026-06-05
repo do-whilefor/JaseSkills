@@ -1,0 +1,14 @@
+{
+  "candidate_id": "CAND-C13-ssrf-POS-01",
+  "note": "synthetic local replay request artifact; unique per reproduction group",
+  "redacted": true,
+  "reproduction_index": 1,
+  "request_summary": {
+    "headers_redacted": true,
+    "method": "GET",
+    "parameters": {
+      "id": "redacted-fixture-id"
+    },
+    "route": "/fixture/C13-ssrf/resource"
+  }
+}

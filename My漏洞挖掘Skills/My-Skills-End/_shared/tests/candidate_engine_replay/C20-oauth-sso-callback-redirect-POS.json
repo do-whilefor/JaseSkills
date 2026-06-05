@@ -1,0 +1,85 @@
+{
+  "id": "C20-oauth-sso-callback-redirect-candidate-positive",
+  "expected_template_id": "C20-oauth-sso-callback-redirect",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C20-oauth-sso-callback-redirect.py",
+          "line": 1,
+          "route": "/fixture/C20-oauth-sso-callback-redirect",
+          "method": "GET",
+          "handler": "oauth sso callback redirect_uri state nonce saml oidc"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C20-oauth-sso-callback-redirect.sink",
+          "line": 2,
+          "sink": "oauth sso callback redirect_uri state nonce saml oidc"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C20-oauth-sso-callback-redirect.js",
+          "line": 1,
+          "target": "/api/C20-oauth-sso-callback-redirect",
+          "client": "fetch oauth sso callback redirect_uri state nonce saml oidc"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C20-oauth-sso-callback-redirect.js",
+          "line": 2,
+          "target": "/api/C20-oauth-sso-callback-redirect",
+          "type": "oauth sso callback redirect_uri state nonce saml oidc"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C20-oauth-sso-callback-redirect.js",
+          "line": 3,
+          "operation_or_fragment": "oauth sso callback redirect_uri state nonce saml oidc"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C20-oauth-sso-callback-redirect.md",
+          "signal": "oauth sso callback redirect_uri state nonce saml oidc"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C20-oauth-sso-callback-redirect.worker",
+          "signal": "oauth sso callback redirect_uri state nonce saml oidc"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "oauth sso callback redirect_uri state nonce saml oidc"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "oauth sso callback redirect_uri state nonce saml oidc"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C20-oauth-sso-callback-redirect.surface",
+          "route": "/surface/C20-oauth-sso-callback-redirect",
+          "method": "GET",
+          "evidence": "oauth sso callback redirect_uri state nonce saml oidc"
+        }
+      ]
+    }
+  }
+}

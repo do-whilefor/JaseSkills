@@ -1,0 +1,6 @@
+{
+  "id": "AR09",
+  "title": "source map 有接口但服务端已废弃",
+  "scenario": "dead endpoint from sourcemap is observation only",
+  "expected_status": "rejected"
+}

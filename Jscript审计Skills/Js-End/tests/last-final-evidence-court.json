@@ -1,0 +1,1389 @@
+{
+  "score": 27,
+  "status": {
+    "ast_semantic_audit": "missing/fake-ready risk",
+    "sourcemap_audit": "partial/doc-only",
+    "dynamic_validation": "未动态验证",
+    "role_tenant_replay": "缺少 role/tenant replay",
+    "detector_harness": "candidate-only/doc-only",
+    "schema_validation": "证据不可强校验",
+    "report_mapping": "无法闭环到报告",
+    "dashboard": "展示层伪闭环",
+    "knowledge_template_fidelity": "知识库/模板接入未强证据化",
+    "real_oss_replay": "缺少真实 OSS replay"
+  },
+  "evidence_scan": {
+    "file_count": 153,
+    "skill_files": [
+      "00-js-master-dispatcher/SKILL.md",
+      "01-js-scope-evidence-quality-gate/SKILL.md",
+      "02-js-structure-runtime-graph/SKILL.md",
+      "03-js-source-sink-authz-graph/SKILL.md",
+      "04-js-config-dependency-framework/SKILL.md",
+      "05-js-frontend-build-exposure/SKILL.md",
+      "06-js-high-risk-candidate-hunter/SKILL.md",
+      "07-js-dynamic-validator/SKILL.md",
+      "08-js-evidence-manifest-gate/SKILL.md",
+      "09-js-reverse-review-chain-audit/SKILL.md",
+      "10-js-final-report/SKILL.md",
+      "11-js-special-targets/SKILL.md",
+      "12-js-skills-extreme-reviewer/SKILL.md",
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "14-js-skills-evidence-court/SKILL.md",
+      "15-js-top-tier-collection-analysis-audit/SKILL.md"
+    ],
+    "required_missing": [],
+    "runtime_evidence": {
+      "ast_backend": [],
+      "sourcemap_parser": [],
+      "playwright_burp_har_bridge": [],
+      "role_tenant_replay": [],
+      "detector_registry": [],
+      "schema_validator": [],
+      "report_generator": [],
+      "dashboard_generator": [],
+      "knowledge_template_checker": [],
+      "real_oss_replay": []
+    },
+    "runtime_missing": {
+      "ast_backend": [
+        "parsers/js_ast_parser_backend.py",
+        "scripts/js_ast_parser_backend.py",
+        "scripts/runtime_availability_check.py"
+      ],
+      "sourcemap_parser": [
+        "scripts/sourcemap_parser.py",
+        "tools/sourcemap_parser.py"
+      ],
+      "playwright_burp_har_bridge": [
+        "scripts/playwright_bridge.py",
+        "scripts/burp_har_bridge.py",
+        "scripts/har_importer.py",
+        "scripts/dynamic_evidence_bridge.py"
+      ],
+      "role_tenant_replay": [
+        "scripts/role_tenant_replay.py",
+        "replay/contracts/role-tenant-replay.yaml"
+      ],
+      "detector_registry": [
+        "detectors/js_detector_registry.py",
+        "scripts/detector_registry.py"
+      ],
+      "schema_validator": [
+        "scripts/schema_validator.py"
+      ],
+      "report_generator": [
+        "scripts/report_generator.py",
+        "data/report_mapping.json"
+      ],
+      "dashboard_generator": [
+        "scripts/dashboard_generator.py",
+        "dashboard/index.html"
+      ],
+      "knowledge_template_checker": [
+        "scripts/knowledge_template_index_checker.py",
+        "data/knowledge_template_hash_baseline.json"
+      ],
+      "real_oss_replay": [
+        "replay/real-oss/README.md",
+        "scripts/replay_harness.py"
+      ]
+    },
+    "knowledge_template_hashes": {
+      "knowledge/extreme-js-skills-review-checklist.md": "60d50d8f499d1c919eda9948b05f08a96ff0c84e814d3b611169ea383da332d7",
+      "knowledge/final-evidence-court-rules.md": "8559d4e7c7ca5147f7c56241e6d86e92f4fba7f13b748fa8a301829e595fc6a3",
+      "knowledge/js-severe-vulnerability-chain-taxonomy.md": "014b67a61df9cf581b364a0752a76e348b5ff0fbe03415941e61814c349ac502",
+      "knowledge/js-top-tier-audit-playbook.md": "56252678a7a844f7f927b5bb66e03b0aeff035dd66ddd537bd034e0445e5c281",
+      "knowledge/second-pass-js-audit-fidelity-rules.md": "ff5aef8d2c2ebe1503967fafc00e809b28f28f1a3d299beb5aca5273e8c0baeb",
+      "templates/candidate-vulnerability.md": "06a23ba13886c50305e12e111aba9ada63d8f2fda3d410c1b3552722436b26c9",
+      "templates/evidence-manifest.json": "17f9222d432d2047dd24d406ca4a4bb5b575fd5bff14194d0b42a833deac02c2",
+      "templates/extreme-skills-review-report.md": "2a4909b1c4d702b0c176aa73b439cd69b344c809b24e317393a09e156728d0b2",
+      "templates/final-evidence-court-report.md": "ae1f4020f416cc0805c646d86b1e993e7c333c6460922d10fe754854a31a168c",
+      "templates/final-report.md": "62be5f6a22074a0c4fc77d2643842c68804176d667b352541c6cf324a7f6927a",
+      "templates/js-top-tier-report.md": "8c60ea88d9351550378d9f8ea4b8df40c236ef9ac5b73565fd7494747b45cedd",
+      "templates/not-deliverable-reason.md": "f99f2999647a86f1ab98975afd829ecef7e73e7bc4c7d035beb99f7787302a8c",
+      "templates/quality-gate-decision.md": "c879c1776d59223119da21230af46d5b22f687501a74426e250e00858712f245",
+      "templates/second-pass-reverse-audit-report.md": "ae0d5cd46a8eb88a30cd676572207e02f6bc3032eb3ae91d1b6240666c67ad7c",
+      "templates/single-vulnerability-validation-22-fields.md": "1b646904d9e92b1bc593846df704a2e225e3b9ea403d8847ffdd5ebca2164170"
+    },
+    "forbidden_files": []
+  },
+  "prior_conclusion_trial": [
+    {
+      "original_conclusion": "package_self_check.py: ok，所以包结构健康",
+      "claimed_basis": "命令输出显示 ok",
+      "file_evidence": [
+        "scripts/package_self_check.py"
+      ],
+      "test_evidence": [],
+      "risk": "只能证明必需文件和缓存文件检查通过，不能证明 AST、动态验证、report mapping、dashboard 真实闭环",
+      "corrected": "部分证实。包卫生检查通过，但不等于工程能力 ready。",
+      "needed": "增加 workflow 调用链、runtime backend、真实 replay、report generator、dashboard 读取真实产物的测试证据"
+    },
+    {
+      "original_conclusion": "verify_extreme_review_assets.py: ok，极限评审资产完整",
+      "claimed_basis": "校验脚本返回 ok",
+      "file_evidence": [
+        "scripts/verify_extreme_review_assets.py",
+        "12-js-skills-extreme-reviewer/SKILL.md"
+      ],
+      "test_evidence": [],
+      "risk": "校验资产存在，不校验每项能力真实可执行",
+      "corrected": "资产存在证实；能力 ready 未证实。",
+      "needed": "增加每项 JS 收集/审计/漏洞链的执行级测试"
+    },
+    {
+      "original_conclusion": "verify_second_pass_assets.py: ok，二次反审资产完整",
+      "claimed_basis": "校验脚本返回 ok",
+      "file_evidence": [
+        "scripts/verify_second_pass_assets.py",
+        "13-js-skills-second-pass-reverse-auditor/SKILL.md"
+      ],
+      "test_evidence": [],
+      "risk": "只证明二次反审数据文件存在，不证明 detector、browser、HAR、Burp 真实可用",
+      "corrected": "二次反审承载能力部分证实；真实漏洞发现能力仍 missing/partial。",
+      "needed": "增加 detector harness、dynamic replay、schema validation、report mapping 测试"
+    },
+    {
+      "original_conclusion": "修正后总分 32/100 足够严格",
+      "claimed_basis": "second_pass_reverse_audit.py 输出",
+      "file_evidence": [
+        "scripts/second_pass_reverse_audit.py",
+        "tests/last-second-pass-review.json"
+      ],
+      "test_evidence": [
+        "tests/last-second-pass-review.md"
+      ],
+      "risk": "32 分仍可能没有按失败惩罚规则细分 evidence/report/dashboard/replay 扣分",
+      "corrected": "需要按失败惩罚规则再次下调并写明扣分证据。",
+      "needed": "增加 final_court_score_penalty_rules.json 和命令输出"
+    },
+    {
+      "original_conclusion": "知识库和漏洞模板未删除，原有 Skills 能力未削弱",
+      "claimed_basis": "压缩包中仍有 knowledge/templates 目录",
+      "file_evidence": [
+        "knowledge/",
+        "templates/"
+      ],
+      "test_evidence": [],
+      "risk": "存在不等于被索引、被路由、被报告模板调用；未削弱也需要 hash/文件列表对比证明",
+      "corrected": "文件存在部分证实；调用链和能力未削弱未证实。",
+      "needed": "新增 knowledge/template index checker、hash baseline、before/after 对比"
+    },
+    {
+      "original_conclusion": "skill_trigger_tester.py: ok，路由可用",
+      "claimed_basis": "触发测试通过",
+      "file_evidence": [
+        "scripts/skill_trigger_tester.py",
+        "tests/trigger-test-cases.json",
+        "scripts/skill_dispatcher.py"
+      ],
+      "test_evidence": [
+        "tests/last-trigger-test-output.jsonl"
+      ],
+      "risk": "路由测试不是端到端执行，不证明脚本、schema、报告真实闭环",
+      "corrected": "路由规则部分证实；执行链路未证实。",
+      "needed": "新增 e2e workflow runner，校验 route → script → manifest → quality gate → report → dashboard"
+    },
+    {
+      "original_conclusion": "无 __pycache__ / .pyc / .tmp / .bak / .swp",
+      "claimed_basis": "压缩包检查和 self_check",
+      "file_evidence": [
+        "scripts/package_self_check.py"
+      ],
+      "test_evidence": [],
+      "risk": "包卫生结论可信，但不代表能力质量",
+      "corrected": "证实为包卫生项，不应计入 JS 审计能力分。",
+      "needed": "保留为卫生 gate，不扩大解释"
+    },
+    {
+      "original_conclusion": "没有把 AST/runtime/detector 伪装成 ready",
+      "claimed_basis": "二次反审结果中 parser_backend_evidence/runtime_bridge_evidence/detector_evidence 为空",
+      "file_evidence": [
+        "tests/last-second-pass-review.json"
+      ],
+      "test_evidence": [],
+      "risk": "该结论本身可信，但还需要在所有文档和 README 中避免 ready 表述残留",
+      "corrected": "部分证实；仍需全包 grep 文档一致性。",
+      "needed": "新增 final evidence court grep 一致性检查和伪 ready 表"
+    }
+  ],
+  "js_collection_incidents": [
+    {
+      "id": "JS-COLLECT-ACCIDENT-01",
+      "missed_asset": "登录后才加载的 chunk",
+      "why_current_misses": "缺少登录态浏览器采集器和 trace/HAR 资产账本",
+      "missing_collector": "playwright_role_chunk_collector.py",
+      "possible_severe_vulnerability": "账号接管入口、hidden API、token refresh abuse",
+      "new_script": "scripts/playwright_role_chunk_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/authenticated-chunk/",
+      "new_dynamic_replay": "replay/final-court/登录后才加载的-chunk.yaml",
+      "acceptance": "role-login replay 输出 HAR、trace、chunk hash、manifest"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-02",
+      "missed_asset": "管理员角色才加载的 chunk",
+      "why_current_misses": "缺少 admin/user role diff replay",
+      "missing_collector": "role_chunk_diff_collector.py",
+      "possible_severe_vulnerability": "admin endpoint 越权、退款/封禁接口滥用",
+      "new_script": "scripts/role_chunk_diff_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/admin-only-chunk/",
+      "new_dynamic_replay": "replay/final-court/管理员角色才加载的-chunk.yaml",
+      "acceptance": "admin 与普通用户 chunk diff 产生 endpoint 差异证据"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-03",
+      "missed_asset": "租户专属 chunk",
+      "why_current_misses": "缺少 tenant A/B runtime diff",
+      "missing_collector": "tenant_chunk_diff_collector.py",
+      "possible_severe_vulnerability": "tenant-only API、BOLA、跨租户数据读取",
+      "new_script": "scripts/tenant_chunk_diff_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/tenant-only-chunk/",
+      "new_dynamic_replay": "replay/final-court/租户专属-chunk.yaml",
+      "acceptance": "至少两个租户 replay 输出 chunk/API 差异"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-04",
+      "missed_asset": "feature flag 触发的 chunk",
+      "why_current_misses": "缺少 feature flag forced route discovery",
+      "missing_collector": "feature_flag_chunk_collector.py",
+      "possible_severe_vulnerability": "灰度 admin/internal endpoint、隐藏业务流",
+      "new_script": "scripts/feature_flag_chunk_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/feature-flag-chunk/",
+      "new_dynamic_replay": "replay/final-court/feature-flag-触发的-chunk.yaml",
+      "acceptance": "feature flag 组合触发 chunk 并记录来源"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-05",
+      "missed_asset": "stale source map",
+      "why_current_misses": "缺少旧构建 sourcemap 枚举和 freshness gate",
+      "missing_collector": "stale_sourcemap_collector.py",
+      "possible_severe_vulnerability": "源码、secret、hidden API 泄露",
+      "new_script": "scripts/stale_sourcemap_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/stale-sourcemap/",
+      "new_dynamic_replay": "replay/final-court/stale-source-map.yaml",
+      "acceptance": "发现旧 map 并还原 sourcesContent/path"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-06",
+      "missed_asset": "CDN 旧版本 JS",
+      "why_current_misses": "缺少 CDN stale asset resurrection 检查",
+      "missing_collector": "cdn_stale_asset_collector.py",
+      "possible_severe_vulnerability": "旧漏洞代码、已下线 endpoint、secret 残留",
+      "new_script": "scripts/cdn_stale_asset_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/cdn-stale-asset/",
+      "new_dynamic_replay": "replay/final-court/CDN-旧版本-JS.yaml",
+      "acceptance": "同 asset 多版本 hash 差异和历史 URL 证据"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-07",
+      "missed_asset": "Service Worker cache 旧资产",
+      "why_current_misses": "缺少 SW/Cache Storage runtime dump",
+      "missing_collector": "service_worker_cache_collector.py",
+      "possible_severe_vulnerability": "持久 XSS、旧 API、cache poisoning",
+      "new_script": "scripts/service_worker_cache_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/sw-cache-old-assets/",
+      "new_dynamic_replay": "replay/final-court/Service-Worker-cache-旧资产.yaml",
+      "acceptance": "导出 Cache Storage 资产账本"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-08",
+      "missed_asset": "Next.js build manifest",
+      "why_current_misses": "缺少 _next/build-manifest 与 app-build-manifest 解析",
+      "missing_collector": "next_manifest_collector.py",
+      "possible_severe_vulnerability": "未发现页面 chunk、server action/RSC 边界线索",
+      "new_script": "scripts/next_manifest_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/next-build-manifest/",
+      "new_dynamic_replay": "replay/final-court/Next.js-build-manifest.yaml",
+      "acceptance": "解析 pages/app route 到 chunk 映射"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-09",
+      "missed_asset": "Vite manifest",
+      "why_current_misses": "缺少 manifest.json/modulepreload 解析",
+      "missing_collector": "vite_manifest_collector.py",
+      "possible_severe_vulnerability": "动态 import endpoint、env 泄露",
+      "new_script": "scripts/vite_manifest_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/vite-manifest/",
+      "new_dynamic_replay": "replay/final-court/Vite-manifest.yaml",
+      "acceptance": "解析 entry/imports/dynamicImports/css/assets"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-10",
+      "missed_asset": "Webpack runtime chunk",
+      "why_current_misses": "缺少 webpack runtime module id/chunk graph 解析",
+      "missing_collector": "webpack_runtime_chunk_collector.py",
+      "possible_severe_vulnerability": "隐藏模块、异步路由、admin route",
+      "new_script": "scripts/webpack_runtime_chunk_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/webpack-runtime/",
+      "new_dynamic_replay": "replay/final-court/Webpack-runtime-chunk.yaml",
+      "acceptance": "还原 chunk id → URL → module 关系"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-11",
+      "missed_asset": "GraphQL persisted query",
+      "why_current_misses": "缺少 persisted query hash discovery",
+      "missing_collector": "graphql_persisted_query_collector.py",
+      "possible_severe_vulnerability": "hidden mutation、IDOR、tenant bypass",
+      "new_script": "scripts/graphql_persisted_query_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/graphql-persisted-query/",
+      "new_dynamic_replay": "replay/final-court/GraphQL-persisted-query.yaml",
+      "acceptance": "提取 hash/query/mutation/variables 证据"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-12",
+      "missed_asset": "WebSocket schema",
+      "why_current_misses": "缺少 WS message capture/schema inference",
+      "missing_collector": "websocket_schema_collector.py",
+      "possible_severe_vulnerability": "跨用户消息读取、租户越权",
+      "new_script": "scripts/websocket_schema_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/websocket-schema/",
+      "new_dynamic_replay": "replay/final-court/WebSocket-schema.yaml",
+      "acceptance": "捕获消息 schema、auth header、tenant id"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-13",
+      "missed_asset": "Electron preload bundle",
+      "why_current_misses": "缺少 Electron ASAR/preload/ipc 枚举",
+      "missing_collector": "electron_preload_collector.py",
+      "possible_severe_vulnerability": "preload bridge RCE、任意文件读写",
+      "new_script": "scripts/electron_preload_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/electron-preload/",
+      "new_dynamic_replay": "replay/final-court/Electron-preload-bundle.yaml",
+      "acceptance": "提取 preload、contextBridge、ipcRenderer 调用"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-14",
+      "missed_asset": "Browser extension content script",
+      "why_current_misses": "缺少 extension manifest/content/background 采集",
+      "missing_collector": "extension_bundle_collector.py",
+      "possible_severe_vulnerability": "权限提升、token leak、externally_connectable abuse",
+      "new_script": "scripts/extension_bundle_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/browser-extension/",
+      "new_dynamic_replay": "replay/final-court/Browser-extension-content-script.yaml",
+      "acceptance": "解析 manifest/content scripts/host_permissions"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-15",
+      "missed_asset": "Mobile WebView bridge JS",
+      "why_current_misses": "缺少 WebView bridge 名称和 native bridge 调用收集",
+      "missing_collector": "webview_bridge_collector.py",
+      "possible_severe_vulnerability": "移动端账号接管、任意调用 native 方法",
+      "new_script": "scripts/webview_bridge_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/mobile-webview-bridge/",
+      "new_dynamic_replay": "replay/final-court/Mobile-WebView-bridge-JS.yaml",
+      "acceptance": "发现 window.* bridge、JSInterface、schema"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-16",
+      "missed_asset": "WASM glue code",
+      "why_current_misses": "缺少 wasm/js glue 和 imports/exports 解析",
+      "missing_collector": "wasm_glue_collector.py",
+      "possible_severe_vulnerability": "unsafe parser、边界逻辑缺陷、文件处理漏洞线索",
+      "new_script": "scripts/wasm_glue_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/wasm-glue/",
+      "new_dynamic_replay": "replay/final-court/WASM-glue-code.yaml",
+      "acceptance": "输出 wasm import/export、glue sink、调用点"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-17",
+      "missed_asset": "第三方 iframe postMessage JS",
+      "why_current_misses": "缺少 iframe src 与 postMessage runtime 采集",
+      "missing_collector": "iframe_postmessage_collector.py",
+      "possible_severe_vulnerability": "token leak、origin bypass、account takeover",
+      "new_script": "scripts/iframe_postmessage_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/iframe-postmessage/",
+      "new_dynamic_replay": "replay/final-court/第三方-iframe-postMessage-JS.yaml",
+      "acceptance": "记录 origin/source/data schema/sink"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-18",
+      "missed_asset": "支付/退款/优惠券业务 JS",
+      "why_current_misses": "缺少业务域 chunk 标记和敏感流量 replay",
+      "missing_collector": "business_flow_js_collector.py",
+      "possible_severe_vulnerability": "前端价格控制、退款滥用、优惠券逻辑绕过",
+      "new_script": "scripts/business_flow_js_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/payment-refund-coupon/",
+      "new_dynamic_replay": "replay/final-court/支付/退款/优惠券业务-JS.yaml",
+      "acceptance": "敏感业务入口触发 chunk 和 API diff"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-19",
+      "missed_asset": "富文本/Markdown/文件预览 JS",
+      "why_current_misses": "缺少 preview/editor/markdown renderer 资产聚类",
+      "missing_collector": "richtext_preview_collector.py",
+      "possible_severe_vulnerability": "stored DOM XSS、mXSS、SVG/PDF preview XSS",
+      "new_script": "scripts/richtext_preview_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/richtext-preview/",
+      "new_dynamic_replay": "replay/final-court/富文本/Markdown/文件预览-JS.yaml",
+      "acceptance": "提取 renderer、sanitizer、preview sink"
+    },
+    {
+      "id": "JS-COLLECT-ACCIDENT-20",
+      "missed_asset": "localStorage/IndexedDB 敏感缓存",
+      "why_current_misses": "缺少浏览器 storage dump 与差异分析",
+      "missing_collector": "browser_storage_collector.py",
+      "possible_severe_vulnerability": "JWT/PII/tenant cache 泄露、跨标签 token leak",
+      "new_script": "scripts/browser_storage_collector.py",
+      "new_fixture": "fixtures/final-court-js-collection/storage-sensitive-cache/",
+      "new_dynamic_replay": "replay/final-court/localStorage/IndexedDB-敏感缓存.yaml",
+      "acceptance": "导出 local/session/IndexedDB/CacheStorage 证据"
+    }
+  ],
+  "pseudo_capabilities": [
+    {
+      "claimed_capability": "AST 审计",
+      "real_implementation": "未发现 scripts/js_ast_parser_backend.py、babel/ts/tree-sitter backend",
+      "why_pseudo": "文档/矩阵声明多，真实 parser backend 缺失",
+      "missed_vulnerabilities": "混淆 wrapper、template literal endpoint、复杂 sink/source 漏报",
+      "upgrade": "新增 parser backend + AST snapshot fixture + backend availability check",
+      "acceptance_test": "fixtures/final-court-pseudo/ast-backend-missing.json"
+    },
+    {
+      "claimed_capability": "Source Map 解析",
+      "real_implementation": "未发现 sourcemap_parser.py 或 sourcesContent/path mapping 强测",
+      "why_pseudo": "只记录 source map 点不等于解析原始源码",
+      "missed_vulnerabilities": "secret、hidden API、monorepo path、server logic 泄露漏报",
+      "upgrade": "新增 sourcemap_parser.py，支持 sources/sourcesContent/sourceRoot",
+      "acceptance_test": "fixtures/final-court-pseudo/sourcemap-sourcescontent.json"
+    },
+    {
+      "claimed_capability": "endpoint resolver",
+      "real_implementation": "未发现 baseURL/env/template literal/URLSearchParams resolver",
+      "why_pseudo": "关键词 endpoint 提取不是解析器",
+      "missed_vulnerabilities": "拼接 API、动态 host、租户路径漏报",
+      "upgrade": "新增 endpoint_resolver.py 和拼接用例",
+      "acceptance_test": "fixtures/final-court-pseudo/template-literal-endpoint.json"
+    },
+    {
+      "claimed_capability": "auth-aware detector",
+      "real_implementation": "未发现 token/header/cookie/tenant flow resolver",
+      "why_pseudo": "没有 auth flow 就不能判断权限边界",
+      "missed_vulnerabilities": "client auth bypass、BOLA、WebSocket authz 漏报",
+      "upgrade": "新增 auth_context_resolver.py",
+      "acceptance_test": "fixtures/final-court-pseudo/auth-flow.json"
+    },
+    {
+      "claimed_capability": "source-sink dataflow",
+      "real_implementation": "未发现 CFG/DFG 或 source→transform→sink 输出 schema",
+      "why_pseudo": "候选 sink 列表不是数据流",
+      "missed_vulnerabilities": "DOM XSS、prototype pollution、postMessage chain 漏报",
+      "upgrade": "新增 js_dataflow_engine.py",
+      "acceptance_test": "fixtures/final-court-pseudo/source-sink-chain.json"
+    },
+    {
+      "claimed_capability": "DOM XSS detector",
+      "real_implementation": "未发现 source/sink/context/sanitizer model",
+      "why_pseudo": "sink grep 会产生误报并漏上下文",
+      "missed_vulnerabilities": "stored DOM XSS、mXSS、sanitizer bypass 漏报",
+      "upgrade": "新增 dom_xss_semantic_detector.py",
+      "acceptance_test": "fixtures/final-court-pseudo/dom-xss-context.json"
+    },
+    {
+      "claimed_capability": "postMessage detector",
+      "real_implementation": "未发现 origin/source/data schema/sink 判定",
+      "why_pseudo": "message 关键词不等于漏洞判断",
+      "missed_vulnerabilities": "token leak、account takeover 漏报",
+      "upgrade": "新增 postmessage_origin_detector.py",
+      "acceptance_test": "fixtures/final-court-pseudo/postmessage-origin.json"
+    },
+    {
+      "claimed_capability": "GraphQL detector",
+      "real_implementation": "未发现 query/mutation/variables/permission diff",
+      "why_pseudo": "提取 /graphql URL 不等于 GraphQL 安全审计",
+      "missed_vulnerabilities": "hidden mutation、IDOR、tenant bypass 漏报",
+      "upgrade": "新增 graphql_operation_resolver.py",
+      "acceptance_test": "fixtures/final-court-pseudo/graphql-mutation-diff.json"
+    },
+    {
+      "claimed_capability": "WebSocket detector",
+      "real_implementation": "未发现 message schema/auth/tenant replay",
+      "why_pseudo": "发现 ws URL 不等于鉴权审计",
+      "missed_vulnerabilities": "跨用户消息读取、租户越权漏报",
+      "upgrade": "新增 websocket_authz_replay.py",
+      "acceptance_test": "fixtures/final-court-pseudo/websocket-authz.json"
+    },
+    {
+      "claimed_capability": "dynamic validation",
+      "real_implementation": "未发现 Playwright/Burp/HAR bridge 和截图/请求响应证据",
+      "why_pseudo": "静态候选不能替代动态验证",
+      "missed_vulnerabilities": "所有需要复现的高危链均无法 verified",
+      "upgrade": "新增 dynamic_evidence_bridge.py",
+      "acceptance_test": "fixtures/final-court-pseudo/dynamic-validation-missing.json"
+    }
+  ],
+  "severe_miss_risks": [
+    {
+      "id": "JS-SEVERE-MISS-01",
+      "vulnerability": "Source Map 泄露源码 → hidden API",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：Source Map 泄露源码 → hidden API"
+    },
+    {
+      "id": "JS-SEVERE-MISS-02",
+      "vulnerability": "Source Map 泄露源码 → secret",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：Source Map 泄露源码 → secret"
+    },
+    {
+      "id": "JS-SEVERE-MISS-03",
+      "vulnerability": "JS hidden admin endpoint → 越权",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：JS hidden admin endpoint → 越权"
+    },
+    {
+      "id": "JS-SEVERE-MISS-04",
+      "vulnerability": "JS role guard bypass",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：JS role guard bypass"
+    },
+    {
+      "id": "JS-SEVERE-MISS-05",
+      "vulnerability": "JS tenant id diff → BOLA",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：JS tenant id diff → BOLA"
+    },
+    {
+      "id": "JS-SEVERE-MISS-06",
+      "vulnerability": "GraphQL hidden mutation",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：GraphQL hidden mutation"
+    },
+    {
+      "id": "JS-SEVERE-MISS-07",
+      "vulnerability": "GraphQL persisted query hash 枚举",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：GraphQL persisted query hash 枚举"
+    },
+    {
+      "id": "JS-SEVERE-MISS-08",
+      "vulnerability": "WebSocket authz bypass",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：WebSocket authz bypass"
+    },
+    {
+      "id": "JS-SEVERE-MISS-09",
+      "vulnerability": "postMessage token leak",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：postMessage token leak"
+    },
+    {
+      "id": "JS-SEVERE-MISS-10",
+      "vulnerability": "OAuth redirect_uri/state/nonce/PKCE 缺陷",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：OAuth redirect_uri/state/nonce/PKCE 缺陷"
+    },
+    {
+      "id": "JS-SEVERE-MISS-11",
+      "vulnerability": "JWT refresh abuse",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：JWT refresh abuse"
+    },
+    {
+      "id": "JS-SEVERE-MISS-12",
+      "vulnerability": "Firebase/Supabase/S3/GCS/Azure 未授权读写",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：Firebase/Supabase/S3/GCS/Azure 未授权读写"
+    },
+    {
+      "id": "JS-SEVERE-MISS-13",
+      "vulnerability": "DOM XSS",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：DOM XSS"
+    },
+    {
+      "id": "JS-SEVERE-MISS-14",
+      "vulnerability": "stored DOM XSS",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：stored DOM XSS"
+    },
+    {
+      "id": "JS-SEVERE-MISS-15",
+      "vulnerability": "mXSS",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：mXSS"
+    },
+    {
+      "id": "JS-SEVERE-MISS-16",
+      "vulnerability": "prototype pollution",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：prototype pollution"
+    },
+    {
+      "id": "JS-SEVERE-MISS-17",
+      "vulnerability": "DOM clobbering",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：DOM clobbering"
+    },
+    {
+      "id": "JS-SEVERE-MISS-18",
+      "vulnerability": "Service Worker cache poisoning",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：Service Worker cache poisoning"
+    },
+    {
+      "id": "JS-SEVERE-MISS-19",
+      "vulnerability": "CDN stale asset resurrection",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：CDN stale asset resurrection"
+    },
+    {
+      "id": "JS-SEVERE-MISS-20",
+      "vulnerability": "CORS/JSONP chain",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：CORS/JSONP chain"
+    },
+    {
+      "id": "JS-SEVERE-MISS-21",
+      "vulnerability": "Client-side open redirect → OAuth chain",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：Client-side open redirect → OAuth chain"
+    },
+    {
+      "id": "JS-SEVERE-MISS-22",
+      "vulnerability": "CSP gadget chain",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：CSP gadget chain"
+    },
+    {
+      "id": "JS-SEVERE-MISS-23",
+      "vulnerability": "Electron preload/IPC RCE",
+      "coverage_status": "doc-only/missing-runtime",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：Electron preload/IPC RCE"
+    },
+    {
+      "id": "JS-SEVERE-MISS-24",
+      "vulnerability": "Browser extension privilege escalation",
+      "coverage_status": "doc-only/missing-runtime",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：Browser extension privilege escalation"
+    },
+    {
+      "id": "JS-SEVERE-MISS-25",
+      "vulnerability": "WebView bridge account takeover",
+      "coverage_status": "doc-only/missing-runtime",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：WebView bridge account takeover"
+    },
+    {
+      "id": "JS-SEVERE-MISS-26",
+      "vulnerability": "dependency confusion",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：dependency confusion"
+    },
+    {
+      "id": "JS-SEVERE-MISS-27",
+      "vulnerability": "npm postinstall/prepare malicious script",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：npm postinstall/prepare malicious script"
+    },
+    {
+      "id": "JS-SEVERE-MISS-28",
+      "vulnerability": "frontend-only payment/refund/price control",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：frontend-only payment/refund/price control"
+    },
+    {
+      "id": "JS-SEVERE-MISS-29",
+      "vulnerability": "upload validation bypass → server exploit chain",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：upload validation bypass → server exploit chain"
+    },
+    {
+      "id": "JS-SEVERE-MISS-30",
+      "vulnerability": "WASM boundary parser flaw clue",
+      "coverage_status": "candidate-only/doc-only",
+      "miss_reason": "缺少语义 detector、动态验证、role/tenant replay 或证据 manifest 强校验",
+      "detector_exists": false,
+      "candidate_only": true,
+      "dynamic_validation": false,
+      "evidence_manifest": "partial-template-only",
+      "report_mapping": "not strongly proven",
+      "positive_negative_samples": "测试不足",
+      "false_positive_risk": "高：没有上下文、授权、可达性和复现证据",
+      "fix": "新增 detector/replay/fixture/report mapping：WASM boundary parser flaw clue"
+    }
+  ],
+  "engineering_autopsy": [
+    {
+      "issue": "dashboard 缺失或未读取真实运行产物",
+      "evidence": [
+        "未发现 dashboard_generator.py",
+        "未发现 dashboard/ 目录"
+      ],
+      "danger": "展示层无法证明 route→candidate→evidence→quality→report 闭环",
+      "ability": "dashboard/report confidence",
+      "fix": "新增 dashboard_generator.py 和 dashboard/index.html，读取 last-*.json",
+      "command": "python scripts/dashboard_generator.py ."
+    },
+    {
+      "issue": "report generator 缺失",
+      "evidence": [
+        "templates/final-report.md 存在但未发现 report_generator.py"
+      ],
+      "danger": "模板存在会被误解为自动报告闭环",
+      "ability": "report mapping",
+      "fix": "新增 report_generator.py，强制从 manifest 和 quality gate 填充报告",
+      "command": "python scripts/report_generator.py ."
+    },
+    {
+      "issue": "schema 未被统一强校验",
+      "evidence": [
+        "schemas/*.schema.json 存在",
+        "未发现统一 schema_validator.py"
+      ],
+      "danger": "证据字段可能漂移，无法复核",
+      "ability": "evidence chain",
+      "fix": "新增 schema_validator.py 并纳入 package_self_check",
+      "command": "python scripts/schema_validator.py ."
+    },
+    {
+      "issue": "AST backend 缺失",
+      "evidence": [
+        "未发现 js_ast_parser_backend.py",
+        "未发现 babel/typescript/tree-sitter adapter"
+      ],
+      "danger": "regex/candidate 被误用为语义审计",
+      "ability": "JS semantic audit",
+      "fix": "新增 parsers/js_ast_parser_backend.py 与 runtime availability check",
+      "command": "python scripts/runtime_availability_check.py . --require ast"
+    },
+    {
+      "issue": "Source Map parser 缺失",
+      "evidence": [
+        "未发现 sourcemap_parser.py"
+      ],
+      "danger": "无法还原 sourcesContent、sourceRoot、原始路径",
+      "ability": "sourcemap audit",
+      "fix": "新增 sourcemap_parser.py 和 stale sourcemap fixture",
+      "command": "python scripts/sourcemap_parser.py fixtures/..."
+    },
+    {
+      "issue": "Playwright/Burp/HAR bridge 缺失",
+      "evidence": [
+        "未发现 playwright_bridge.py、burp_har_bridge.py、har_importer.py"
+      ],
+      "danger": "无法动态验证，verified 状态不可信",
+      "ability": "dynamic validation",
+      "fix": "新增 dynamic_evidence_bridge.py",
+      "command": "python scripts/dynamic_evidence_bridge.py --selftest"
+    },
+    {
+      "issue": "role/tenant replay 缺失",
+      "evidence": [
+        "未发现 role_tenant_replay.py",
+        "fixtures 仅为合成占位"
+      ],
+      "danger": "最容易漏报 BOLA/IDOR/admin chunk",
+      "ability": "serious vulnerability discovery",
+      "fix": "新增 role_tenant_replay.py 和多账号 fixture contract",
+      "command": "python scripts/role_tenant_replay.py --fixture fixtures/..."
+    },
+    {
+      "issue": "quality gate scorer 不足",
+      "evidence": [
+        "scripts/strict_quality_gate.py 存在但不覆盖 final_court P0 状态"
+      ],
+      "danger": "无法按失败惩罚规则量化质量",
+      "ability": "quality gate",
+      "fix": "扩展 strict_quality_gate.py 读取 final_court_score_penalty_rules.json",
+      "command": "python scripts/strict_quality_gate.py tests/last-final-evidence-court.json"
+    },
+    {
+      "issue": "knowledge/template 引用链未强制验证",
+      "evidence": [
+        "knowledge/ 和 templates/ 存在",
+        "未发现 template_index_checker.py/knowledge_index_checker.py"
+      ],
+      "danger": "知识库存在可能被误判为已接入",
+      "ability": "knowledge fidelity",
+      "fix": "新增索引检查和 hash baseline",
+      "command": "python scripts/knowledge_template_index_checker.py ."
+    },
+    {
+      "issue": "真实 OSS replay 缺失",
+      "evidence": [
+        "未发现 replay/real-oss/"
+      ],
+      "danger": "合成 fixture 无法证明复杂框架覆盖",
+      "ability": "engineering trust",
+      "fix": "新增 replay/real-oss 合同与脱敏样本清单",
+      "command": "python scripts/replay_harness.py replay/real-oss"
+    }
+  ],
+  "score_penalties": [
+    {
+      "item": "Skills 包结构",
+      "original": 7,
+      "penalty": "无 dashboard/report/schema/index/e2e 强闭环，结构分不能代表能力",
+      "corrected": 5,
+      "evidence": "scripts/package_self_check.py 只检查文件存在和缓存"
+    },
+    {
+      "item": "信息收集能力",
+      "original": 6,
+      "penalty": "未证明子域/URL/HAR/Burp/Playwright 与 JS 审计闭环",
+      "corrected": 3,
+      "evidence": "缺少 info_js runtime bridge 和 replay"
+    },
+    {
+      "item": "JS 收集能力",
+      "original": 8,
+      "penalty": "没有 Source Map 真实解析，JS 收集最高 70%；同时缺 role/tenant runtime chunk",
+      "corrected": 5,
+      "evidence": "缺 sourcemap_parser.py、role_chunk_diff_collector.py"
+    },
+    {
+      "item": "JS AST / 语义审计能力",
+      "original": 5,
+      "penalty": "没有真实 AST backend，JS 审计最高不得超过 40%；当前 detector 也缺失",
+      "corrected": 3,
+      "evidence": "未发现 Babel/TS/tree-sitter backend"
+    },
+    {
+      "item": "严重 JS 漏洞发现能力",
+      "original": 7,
+      "penalty": "没有多角色/多租户 replay，严重漏洞发现最高 60%；没有 detector 继续扣分",
+      "corrected": 4,
+      "evidence": "缺 role_tenant_replay.py 与 severe detector harness"
+    },
+    {
+      "item": "动态验证与证据链",
+      "original": 3,
+      "penalty": "没有 Playwright/Burp/HAR 动态证据，动态验证最高 30%",
+      "corrected": 2,
+      "evidence": "缺 playwright_bridge.py、burp_har_bridge.py、har_importer.py"
+    },
+    {
+      "item": "测试与回放",
+      "original": 4,
+      "penalty": "没有完整 positive/negative/blocked/review 样本和真实 OSS replay，测试最高 40%",
+      "corrected": 2,
+      "evidence": "fixtures 多为占位，缺 replay/real-oss"
+    },
+    {
+      "item": "知识库与模板保真度",
+      "original": 4,
+      "penalty": "存在不等于索引/调用；缺 hash baseline 和 index checker",
+      "corrected": 3,
+      "evidence": "缺 knowledge_template_index_checker.py"
+    }
+  ],
+  "p0_nonnegotiable": [
+    {
+      "id": "P0-COURT-01",
+      "problem": "真实 JS AST backend 缺失",
+      "evidence": "未发现 Babel/TypeScript/tree-sitter adapter",
+      "consequence": "复杂 wrapper、route、sink/source 全部可能漏报",
+      "modify": [
+        "03-js-source-sink-authz-graph/SKILL.md",
+        "scripts/strict_quality_gate.py"
+      ],
+      "add": [
+        "parsers/js_ast_parser_backend.py",
+        "scripts/runtime_availability_check.py"
+      ],
+      "tests": [
+        "fixtures/final-court-p0/ast-positive.js",
+        "fixtures/final-court-p0/ast-negative.js"
+      ],
+      "acceptance": "运行 availability check 和 AST fixture 后输出 AST node/sink/source 证据"
+    },
+    {
+      "id": "P0-COURT-02",
+      "problem": "Source Map parser 缺失",
+      "evidence": "未发现 sourcemap_parser.py",
+      "consequence": "源码、secret、hidden API、monorepo path 泄露漏报",
+      "modify": [
+        "05-js-frontend-build-exposure/SKILL.md"
+      ],
+      "add": [
+        "scripts/sourcemap_parser.py"
+      ],
+      "tests": [
+        "fixtures/final-court-p0/sourcemap-with-sourcesContent.map"
+      ],
+      "acceptance": "输出 sources/sourcesContent/sourceRoot/hash/path 账本"
+    },
+    {
+      "id": "P0-COURT-03",
+      "problem": "Playwright/Burp/HAR 动态证据桥缺失",
+      "evidence": "未发现 playwright_bridge.py/burp_har_bridge.py/har_importer.py",
+      "consequence": "静态候选被误报为 verified，证据链不可复核",
+      "modify": [
+        "07-js-dynamic-validator/SKILL.md",
+        "08-js-evidence-manifest-gate/SKILL.md"
+      ],
+      "add": [
+        "scripts/dynamic_evidence_bridge.py",
+        "schemas/dynamic-evidence.schema.json"
+      ],
+      "tests": [
+        "fixtures/final-court-p0/har-sample.json"
+      ],
+      "acceptance": "生成 HAR、截图、request/response、trace 证据字段"
+    },
+    {
+      "id": "P0-COURT-04",
+      "problem": "role/tenant replay 缺失",
+      "evidence": "未发现 role_tenant_replay.py",
+      "consequence": "admin chunk、tenant chunk、BOLA/IDOR 大量漏报",
+      "modify": [
+        "07-js-dynamic-validator/SKILL.md"
+      ],
+      "add": [
+        "scripts/role_tenant_replay.py",
+        "replay/contracts/role-tenant-replay.yaml"
+      ],
+      "tests": [
+        "fixtures/final-court-p0/role-tenant-diff.json"
+      ],
+      "acceptance": "至少输出 user/admin/tenantA/tenantB endpoint/chunk diff"
+    },
+    {
+      "id": "P0-COURT-05",
+      "problem": "严重 JS 漏洞 detector harness 缺失",
+      "evidence": "未发现 detectors/ 或 detector registry",
+      "consequence": "30 类严重漏洞只能候选化，无法稳定发现",
+      "modify": [
+        "06-js-high-risk-candidate-hunter/SKILL.md"
+      ],
+      "add": [
+        "detectors/js_detector_registry.py",
+        "detectors/dom_xss_semantic_detector.py",
+        "detectors/graphql_operation_detector.py"
+      ],
+      "tests": [
+        "fixtures/final-court-p0/detector-positive.json"
+      ],
+      "acceptance": "每个 detector 输出 evidence id、confidence、blocked/review/verified 状态"
+    },
+    {
+      "id": "P0-COURT-06",
+      "problem": "schema 强校验未统一接入",
+      "evidence": "schemas 存在但缺统一 validator",
+      "consequence": "manifest/report 字段漂移，证据不可强校验",
+      "modify": [
+        "08-js-evidence-manifest-gate/SKILL.md",
+        "scripts/package_self_check.py"
+      ],
+      "add": [
+        "scripts/schema_validator.py"
+      ],
+      "tests": [
+        "fixtures/final-court-p0/schema-invalid.json"
+      ],
+      "acceptance": "无效 manifest 必须失败并列出字段路径"
+    },
+    {
+      "id": "P0-COURT-07",
+      "problem": "report mapping 缺失",
+      "evidence": "模板存在但缺 report_generator.py",
+      "consequence": "漏洞无法从证据闭环进入报告，报告污染风险高",
+      "modify": [
+        "10-js-final-report/SKILL.md"
+      ],
+      "add": [
+        "scripts/report_generator.py",
+        "data/report_mapping.json"
+      ],
+      "tests": [
+        "fixtures/final-court-p0/report-mapping.json"
+      ],
+      "acceptance": "candidate/review/verified 状态在报告中分区输出"
+    },
+    {
+      "id": "P0-COURT-08",
+      "problem": "dashboard 未读取真实产物",
+      "evidence": "未发现 dashboard_generator.py 或 dashboard/",
+      "consequence": "展示层伪闭环，无法追踪 route→evidence→quality",
+      "modify": [
+        "docs/CAPABILITY_INDEX.md"
+      ],
+      "add": [
+        "scripts/dashboard_generator.py",
+        "dashboard/index.html"
+      ],
+      "tests": [
+        "fixtures/final-court-p0/dashboard-input.json"
+      ],
+      "acceptance": "dashboard 从 last-final-evidence-court.json 生成页面"
+    },
+    {
+      "id": "P0-COURT-09",
+      "problem": "positive/negative/blocked/review 样本不足",
+      "evidence": "fixtures 多为 README 或单个 JSON 占位",
+      "consequence": "误报/漏报无法量化",
+      "modify": [
+        "tests/regression-test-plan.md"
+      ],
+      "add": [
+        "fixtures/final-court-matrix/positive",
+        "fixtures/final-court-matrix/negative",
+        "fixtures/final-court-matrix/blocked",
+        "fixtures/final-court-matrix/needs-review"
+      ],
+      "tests": [
+        "tests/final-court-fixture-matrix.json"
+      ],
+      "acceptance": "每类严重漏洞至少四类样本各 1 个"
+    },
+    {
+      "id": "P0-COURT-10",
+      "problem": "知识库/模板保真度未强证据化",
+      "evidence": "缺 hash baseline、knowledge/template index checker",
+      "consequence": "可能误删、误路由或模板孤岛",
+      "modify": [
+        "docs/DOCUMENT_MAPPING_MATRIX.md"
+      ],
+      "add": [
+        "scripts/knowledge_template_index_checker.py",
+        "data/knowledge_template_hash_baseline.json"
+      ],
+      "tests": [
+        "fixtures/final-court-p0/template-index-conflict.json"
+      ],
+      "acceptance": "before/after hash 和索引引用一致"
+    },
+    {
+      "id": "P0-COURT-11",
+      "problem": "真实 OSS replay 缺失",
+      "evidence": "未发现 replay/real-oss/",
+      "consequence": "复杂框架覆盖率不可证实",
+      "modify": [
+        "tests/regression-test-plan.md"
+      ],
+      "add": [
+        "replay/real-oss/README.md",
+        "scripts/replay_harness.py"
+      ],
+      "tests": [
+        "replay/contracts/real-oss-replay.schema.json"
+      ],
+      "acceptance": "至少 10 个授权/本地 OSS replay 合同通过"
+    },
+    {
+      "id": "P0-COURT-12",
+      "problem": "伪 ready 文档一致性 gate 缺失",
+      "evidence": "缺 fake_ready_grep_gate.py",
+      "consequence": "README/SKILL.md 可能把 doc-only 写成 ready",
+      "modify": [
+        "docs/QUALITY_GATE_SPEC.md"
+      ],
+      "add": [
+        "scripts/fake_ready_grep_gate.py"
+      ],
+      "tests": [
+        "fixtures/final-court-p0/fake-ready-doc.md"
+      ],
+      "acceptance": "任何无 backend 证据的 ready 表述导致 CI 失败"
+    }
+  ],
+  "final_findings": {
+    "current_standard": "未达到世界顶级 JS 安全渗透测试 Skills 标准",
+    "revised_total_score": 27,
+    "largest_gaps": [
+      "真实 JS AST backend",
+      "Source Map sourcesContent 解析",
+      "Playwright/Burp/HAR 动态证据桥",
+      "role/tenant replay",
+      "严重漏洞 detector harness",
+      "schema 强校验",
+      "report mapping",
+      "dashboard 读取真实产物",
+      "positive/negative/blocked/review 样本矩阵",
+      "真实 OSS replay"
+    ],
+    "dangerous_fake_ready": [
+      "AST 审计声明",
+      "Source Map 支持声明",
+      "endpoint resolver 声明",
+      "auth-aware 声明",
+      "dataflow 声明",
+      "DOM XSS detector 声明",
+      "postMessage detector 声明",
+      "GraphQL detector 声明",
+      "WebSocket detector 声明",
+      "dynamic validation 声明"
+    ],
+    "most_likely_missed_severe_vulns": [
+      "Source Map 泄露源码 → hidden API",
+      "Source Map 泄露源码 → secret",
+      "JS hidden admin endpoint → 越权",
+      "JS role guard bypass",
+      "JS tenant id diff → BOLA",
+      "GraphQL hidden mutation",
+      "GraphQL persisted query hash 枚举",
+      "WebSocket authz bypass",
+      "postMessage token leak",
+      "OAuth redirect_uri/state/nonce/PKCE 缺陷"
+    ],
+    "hallucination_hotspots": [
+      "README 能力总览",
+      "SKILL.md 中的愿景语句",
+      "data/*.json 矩阵被误当实现",
+      "templates 被误当 detector",
+      "fixtures README 被误当 replay",
+      "schema 存在被误当校验",
+      "quality gate 文档被误当 scorer",
+      "dashboard 目标被误当真实展示",
+      "knowledge 存在被误当接入",
+      "route test 被误当端到端执行"
+    ],
+    "withdrawn_first_round_conclusions": [
+      "资产完整不等于能力 ready",
+      "路由测试通过不等于执行闭环",
+      "模板存在不等于报告闭环",
+      "知识库存在不等于知识接入",
+      "包卫生 ok 不等于 JS 审计质量"
+    ],
+    "scores_to_lower": [
+      "JS AST/语义审计",
+      "严重 JS 漏洞发现",
+      "动态验证与证据链",
+      "测试与 replay",
+      "报告/dashboard 闭环"
+    ],
+    "seven_day_plan": [
+      "Day 1: 建立 runtime_availability_check、fake_ready_grep_gate、schema_validator，阻止伪 ready。",
+      "Day 2: 接入 Babel/TypeScript/tree-sitter AST backend，完成 AST positive/negative fixture。",
+      "Day 3: 实现 Source Map parser，覆盖 sourcesContent/sourceRoot/stale map。",
+      "Day 4: 实现 endpoint/auth/tenant resolver 与 role/tenant diff contract。",
+      "Day 5: 实现 Playwright/HAR bridge 和 request/response/screenshot evidence manifest。",
+      "Day 6: 为 30 类严重 JS 漏洞建立 detector registry 和四象限样本。",
+      "Day 7: 接入 report generator、dashboard、真实 OSS replay、knowledge/template hash baseline。"
+    ],
+    "preserve_kb_templates_proof": "修复后必须运行 knowledge_template_index_checker.py 与 hash baseline，对比新增包前后 knowledge/templates 文件列表与 SHA256。",
+    "no_regression_proof": "修复后必须运行 package_self_check、trigger tester、schema validator、detector fixtures、dynamic replay dry-run、report/dashboard generation，并对比原始 Skill 路由链未减少。"
+  }
+}

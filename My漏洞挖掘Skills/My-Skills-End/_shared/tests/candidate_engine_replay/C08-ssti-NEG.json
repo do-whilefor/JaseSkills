@@ -1,0 +1,29 @@
+{
+  "id": "C08-ssti-candidate-negative",
+  "forbidden_template_id": "C08-ssti",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "neutral.py",
+          "line": 1,
+          "route": "/health",
+          "method": "GET",
+          "handler": "health status ping"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "neutral.js",
+          "line": 1,
+          "target": "/health",
+          "client": "fetch"
+        }
+      ]
+    },
+    "inventory": {},
+    "surface": {}
+  }
+}

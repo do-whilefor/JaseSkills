@@ -1,0 +1,35 @@
+{
+  "package_profile": "cleaned_preserve_knowledge_templates",
+  "install_mode": "single_root_claude_skill_directory",
+  "root_skill_entry": "SKILL.md",
+  "core_skill_count": 10,
+  "schema_count": 6,
+  "canonical_template_count": 23,
+  "vulnerability_research_unit_count": 27,
+  "safety": {
+    "local_authorized_only": true,
+    "non_destructive_dynamic_validation_only": true,
+    "no_direct_candidate_to_confirmed": true,
+    "runtime_readiness_required_for_runtime_claims": true
+  },
+  "preserved_paths": [
+    "_shared/knowledge/",
+    "_shared/knowledge_index.json",
+    "_shared/vulnerability_templates/",
+    "_shared/vulnerability_research_units/",
+    "skills/",
+    "schemas/",
+    "tools/",
+    "tests/",
+    "reports/templates/",
+    "dashboard/"
+  ],
+  "removed_redundancy_classes": [
+    "version_update_notes",
+    "repair_history_reports",
+    "generated_runtime_result_snapshots",
+    "package_hash_snapshots",
+    "historical_tree_snapshots",
+    "transient_capture_artifacts"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "INFO08-controller-handler",
+  "input_sample": {
+    "project_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "handler_symbol,class_or_function,source_span,call_targets"
+  },
+  "expected_output": {
+    "security_graph": "non_empty_or_explicit_empty_with_reason"
+  },
+  "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation"
+}

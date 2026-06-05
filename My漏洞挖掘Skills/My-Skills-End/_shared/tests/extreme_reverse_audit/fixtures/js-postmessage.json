@@ -1,0 +1,12 @@
+{
+  "id": "JS24-postmessage",
+  "input_sample": {
+    "js_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "postMessage origin taint checker"
+  },
+  "expected_output": {
+    "postmessage_edges[]": "non_empty_or_unsupported_with_reason"
+  },
+  "manifest_field": "js_graph.postmessage_edges",
+  "quality_gate": "QG-JS-chain-required; JS-derived confirmed finding must have candidate_to_manifest_link, original span when sourcemap exists, and template-specific evidence"
+}

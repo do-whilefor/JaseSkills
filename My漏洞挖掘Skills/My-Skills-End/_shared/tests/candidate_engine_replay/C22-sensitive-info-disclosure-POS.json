@@ -1,0 +1,85 @@
+{
+  "id": "C22-sensitive-info-disclosure-candidate-positive",
+  "expected_template_id": "C22-sensitive-info-disclosure",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C22-sensitive-info-disclosure.py",
+          "line": 1,
+          "route": "/fixture/C22-sensitive-info-disclosure",
+          "method": "GET",
+          "handler": "secret token apiKey private_key dsn sentry firebase supabase password"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C22-sensitive-info-disclosure.sink",
+          "line": 2,
+          "sink": "secret token apiKey private_key dsn sentry firebase supabase password"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C22-sensitive-info-disclosure.js",
+          "line": 1,
+          "target": "/api/C22-sensitive-info-disclosure",
+          "client": "fetch secret token apiKey private_key dsn sentry firebase supabase password"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C22-sensitive-info-disclosure.js",
+          "line": 2,
+          "target": "/api/C22-sensitive-info-disclosure",
+          "type": "secret token apiKey private_key dsn sentry firebase supabase password"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C22-sensitive-info-disclosure.js",
+          "line": 3,
+          "operation_or_fragment": "secret token apiKey private_key dsn sentry firebase supabase password"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C22-sensitive-info-disclosure.md",
+          "signal": "secret token apiKey private_key dsn sentry firebase supabase password"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C22-sensitive-info-disclosure.worker",
+          "signal": "secret token apiKey private_key dsn sentry firebase supabase password"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "secret token apiKey private_key dsn sentry firebase supabase password"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "secret token apiKey private_key dsn sentry firebase supabase password"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C22-sensitive-info-disclosure.surface",
+          "route": "/surface/C22-sensitive-info-disclosure",
+          "method": "GET",
+          "evidence": "secret token apiKey private_key dsn sentry firebase supabase password"
+        }
+      ]
+    }
+  }
+}

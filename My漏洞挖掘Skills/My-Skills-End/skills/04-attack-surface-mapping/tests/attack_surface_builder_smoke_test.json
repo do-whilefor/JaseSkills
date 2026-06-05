@@ -1,0 +1,22 @@
+{
+  "test_id": "P0-SR-04-04-surface-smoke",
+  "script": "skills/04-attack-surface-mapping/scripts/attack_surface_builder.py",
+  "inputs": [
+    "project_inventory",
+    "code_graph",
+    "js_audit",
+    "dynamic_evidence_bridge_records"
+  ],
+  "expected_output_fields": [
+    "schema_version",
+    "attack_surface",
+    "high_risk_entrypoints",
+    "candidate_seed_queue"
+  ],
+  "failure_if": [
+    "script exits non-zero",
+    "output is non-json",
+    "non_destructive is not true",
+    "surface_count is zero when extractor inputs contain routes"
+  ]
+}

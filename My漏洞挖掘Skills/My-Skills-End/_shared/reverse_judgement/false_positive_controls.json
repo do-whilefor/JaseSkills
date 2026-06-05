@@ -1,0 +1,171 @@
+{
+  "schema": "false_positive_controls_v1",
+  "count": 15,
+  "items": [
+    {
+      "risk_id": "FP01",
+      "false_positive_risk": "不可达代码当漏洞",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP01: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP02",
+      "false_positive_risk": "测试代码当生产漏洞",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP02: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP03",
+      "false_positive_risk": "mock endpoint 当真实漏洞",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP03: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP04",
+      "false_positive_risk": "前端 token 示例当真实泄露",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP04: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP05",
+      "false_positive_risk": "错误信息当敏感信息泄露",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP05: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP06",
+      "false_positive_risk": "正常权限差异当 IDOR",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP06: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP07",
+      "false_positive_risk": "管理员功能当权限提升",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP07: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP08",
+      "false_positive_risk": "预期 CORS 配置当漏洞",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP08: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP09",
+      "false_positive_risk": "防护后 SSRF sink 当漏洞",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP09: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP10",
+      "false_positive_risk": "参数存在当注入漏洞",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP10: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP11",
+      "false_positive_risk": "危险函数存在当 RCE",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP11: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP12",
+      "false_positive_risk": "依赖 CVE 当可利用漏洞",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP12: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP13",
+      "false_positive_risk": "sourcemap 旧代码当当前可利用代码",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP13: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP14",
+      "false_positive_risk": "扫描器 high 当人工 confirmed",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP14: hard-block confirmed unless exclusion checks are passed"
+    },
+    {
+      "risk_id": "FP15",
+      "false_positive_risk": "异常状态码当安全影响",
+      "exclusion_rule": "requires reachability, production-context classification, non-mock classification, template-specific evidence, dynamic negative control, and impact proof before confirmed",
+      "evidence_requirement": "code/source span + route or entrypoint + auth/tenant context + artifact hash; example/test/mock must be marked non-production",
+      "dynamic_validation_requirement": "non-destructive local validation or explicit safe-boundary blocked state; scanner-only never confirms",
+      "impact_proof_requirement": "show authorization/data/control boundary effect, not just existence of sink/parameter/status code",
+      "downgrade_policy": "candidate -> needs_human_review or rejected when exclusion rule is triggered",
+      "report_marking_rule": "report must label as candidate/rejected, not confirmed/high, when exclusion applies",
+      "quality_gate": "QG-FP-FP15: hard-block confirmed unless exclusion checks are passed"
+    }
+  ]
+}

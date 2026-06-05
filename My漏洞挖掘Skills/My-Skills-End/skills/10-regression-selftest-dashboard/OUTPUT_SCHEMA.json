@@ -1,0 +1,30 @@
+{
+  "title": "10-regression-selftest-dashboard output schema",
+  "type": "object",
+  "required": [
+    "skill_id",
+    "status",
+    "outputs",
+    "evidence_manifest_updates"
+  ],
+  "properties": {
+    "skill_id": {
+      "const": "10-regression-selftest-dashboard"
+    },
+    "status": {
+      "enum": [
+        "ready",
+        "degraded",
+        "blocked",
+        "needs_human_review",
+        "failed"
+      ]
+    },
+    "outputs": {
+      "type": "array"
+    },
+    "evidence_manifest_updates": {
+      "type": "array"
+    }
+  }
+}

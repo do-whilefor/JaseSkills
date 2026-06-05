@@ -1,0 +1,5 @@
+{
+  "id": "FN08",
+  "risk": "只看普通接口，漏 webhook",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

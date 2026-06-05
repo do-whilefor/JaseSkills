@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/static/js/app.js",
+    "admin.js": "/static/js/lazy-admin.js",
+    "runtime": "/_next/static/chunks/webpack-runtime.js",
+    "map": "/static/js/app.js.map"
+  },
+  "entrypoints": [
+    "/static/js/app.js",
+    "/_next/static/chunks/webpack-runtime.js"
+  ]
+}

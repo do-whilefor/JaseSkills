@@ -1,0 +1,362 @@
+[
+  {
+    "id": "01",
+    "name": "静态 script",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "02",
+    "name": "动态 import",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "03",
+    "name": "Webpack chunk",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "04",
+    "name": "Vite chunk",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "05",
+    "name": "Next.js chunk",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "06",
+    "name": "Nuxt chunk",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "07",
+    "name": "React lazy chunk",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "08",
+    "name": "Angular chunk",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "09",
+    "name": "Source Map",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "10",
+    "name": "asset-manifest",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "11",
+    "name": "build-manifest",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "12",
+    "name": "routes-manifest",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "13",
+    "name": "precache-manifest",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "14",
+    "name": "Service Worker",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "15",
+    "name": "Web Worker",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "16",
+    "name": "WASM glue",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "17",
+    "name": "GraphQL",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "18",
+    "name": "WebSocket",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "19",
+    "name": "SSE",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "20",
+    "name": "postMessage",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "21",
+    "name": "localStorage/sessionStorage/IndexedDB",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "22",
+    "name": "JS 中隐藏路由",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "23",
+    "name": "JS 中隐藏 API",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "24",
+    "name": "JS 中 role/tenant/feature flag",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "25",
+    "name": "跨域 JS",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "26",
+    "name": "第三方 SDK",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "27",
+    "name": "Electron bundle",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "28",
+    "name": "Browser extension bundle",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "29",
+    "name": "mobile webview bundle",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  },
+  {
+    "id": "30",
+    "name": "登录态、多角色、多租户 runtime JS",
+    "required_evidence": [
+      "具体文件路径",
+      "采集脚本或规则",
+      "测试用例",
+      "失败处理",
+      "ledger/evidence输出"
+    ],
+    "strict_status_rule": "无真实采集器与样本时最高只能 doc-only；只靠 regex 最高 candidate-only/partial"
+  }
+]

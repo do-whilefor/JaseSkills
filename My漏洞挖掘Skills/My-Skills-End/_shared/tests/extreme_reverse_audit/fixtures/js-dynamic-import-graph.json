@@ -1,0 +1,12 @@
+{
+  "id": "JS19-dynamic-import-graph",
+  "input_sample": {
+    "js_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "ImportExpression edge mapping"
+  },
+  "expected_output": {
+    "symbol_graph": "non_empty_or_unsupported_with_reason"
+  },
+  "manifest_field": "js_graph.symbol_graph",
+  "quality_gate": "QG-JS-chain-required; JS-derived confirmed finding must have candidate_to_manifest_link, original span when sourcemap exists, and template-specific evidence"
+}

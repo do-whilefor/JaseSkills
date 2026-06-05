@@ -1,0 +1,13 @@
+{
+  "candidate_id": "CAND-C15-nosql-injection-POS-01",
+  "request_summary": {
+    "method": "GET",
+    "route": "/fixture/C15-nosql-injection/resource",
+    "parameters": {
+      "id": "redacted-fixture-id"
+    },
+    "headers_redacted": true
+  },
+  "redaction": "headers and sensitive values redacted",
+  "scope": "local_authorized_fixture_only"
+}

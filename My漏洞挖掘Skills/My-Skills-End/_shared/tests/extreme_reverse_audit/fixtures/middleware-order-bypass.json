@@ -1,0 +1,11 @@
+{
+  "id": "INFO09-middleware-guard-policy-interceptor",
+  "input_sample": {
+    "project_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "authn_guard,authz_guard,policy,interceptor_order,missing_guard_marker"
+  },
+  "expected_output": {
+    "security_graph": "non_empty_or_explicit_empty_with_reason"
+  },
+  "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation"
+}

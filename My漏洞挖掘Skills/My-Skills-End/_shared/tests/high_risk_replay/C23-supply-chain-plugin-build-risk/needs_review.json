@@ -1,0 +1,6 @@
+{
+  "template_id": "C23-supply-chain-plugin-build-risk",
+  "case_type": "needs_human_review",
+  "expected": "needs_human_review",
+  "reason": "ambiguous auth/tenant/business impact"
+}

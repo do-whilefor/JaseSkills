@@ -1,0 +1,12 @@
+{
+  "id": "JS42-dom-postmessage-prototype",
+  "input_sample": {
+    "js_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "DOM sink + origin + object merge scanner"
+  },
+  "expected_output": {
+    "client_side_security_risks[]": "non_empty_or_unsupported_with_reason"
+  },
+  "manifest_field": "manifest.candidates",
+  "quality_gate": "QG-JS-chain-required; JS-derived confirmed finding must have candidate_to_manifest_link, original span when sourcemap exists, and template-specific evidence"
+}

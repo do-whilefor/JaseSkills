@@ -1,0 +1,644 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Authorized Local Security Audit Evidence Manifest v3.2",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "template_id",
+    "vulnerability_type",
+    "authorization_scope",
+    "state",
+    "state_history",
+    "source_file",
+    "source_line",
+    "route",
+    "method",
+    "parameter",
+    "auth_context",
+    "tenant_context",
+    "request_summary",
+    "response_summary",
+    "code_evidence",
+    "dynamic_evidence",
+    "negative_control",
+    "reproduction_count",
+    "impact",
+    "risk",
+    "false_positive_notes",
+    "quality_gate_score",
+    "final_status",
+    "non_destructive_boundary",
+    "tool_snapshot",
+    "specialized_evidence",
+    "report_sections"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^CAND-[A-Za-z0-9_.:-]+$"
+    },
+    "template_id": {
+      "type": "string",
+      "pattern": "^C\\d{2}-[a-z0-9-]+$"
+    },
+    "vulnerability_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization_scope": {
+      "type": "string",
+      "enum": [
+        "local_authorized_fixture_only",
+        "local_authorized_project_only",
+        "blocked_out_of_scope"
+      ]
+    },
+    "fixture_type": {
+      "type": "string",
+      "enum": [
+        "positive_control",
+        "negative_control",
+        "blocked_boundary",
+        "human_review"
+      ]
+    },
+    "expected_status": {
+      "type": "string",
+      "enum": [
+        "confirmed",
+        "rejected",
+        "blocked",
+        "needs_human_review",
+        "candidate"
+      ]
+    },
+    "must_not_confirm": {
+      "type": "boolean"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "discovered",
+        "mapped",
+        "triaged",
+        "validation_planned",
+        "validation_blocked",
+        "reproduced",
+        "negative_control_passed",
+        "quality_gate_passed",
+        "confirmed",
+        "rejected",
+        "needs_human_review"
+      ]
+    },
+    "state_history": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "from_state",
+          "to_state",
+          "changed_at",
+          "reason"
+        ],
+        "properties": {
+          "from_state": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "to_state": {
+            "type": "string",
+            "enum": [
+              "discovered",
+              "mapped",
+              "triaged",
+              "validation_planned",
+              "validation_blocked",
+              "reproduced",
+              "negative_control_passed",
+              "quality_gate_passed",
+              "confirmed",
+              "rejected",
+              "needs_human_review"
+            ]
+          },
+          "changed_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_manifest_path": {
+            "type": "string"
+          },
+          "blocking_reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "source_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_line": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    },
+    "route": {
+      "type": "string",
+      "minLength": 1
+    },
+    "method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parameter": {
+      "type": "string"
+    },
+    "auth_context": {
+      "type": "object",
+      "required": [
+        "actor",
+        "role",
+        "session_state"
+      ],
+      "properties": {
+        "actor": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "session_state": {
+          "type": "string"
+        },
+        "authorization_model": {
+          "type": "string"
+        }
+      }
+    },
+    "tenant_context": {
+      "type": "object",
+      "required": [
+        "tenant_id_source",
+        "actor_tenant",
+        "target_tenant"
+      ],
+      "properties": {
+        "tenant_id_source": {
+          "type": "string"
+        },
+        "actor_tenant": {
+          "type": "string"
+        },
+        "target_tenant": {
+          "type": "string"
+        },
+        "tenant_model": {
+          "type": "string"
+        }
+      }
+    },
+    "request_summary": {
+      "type": "object",
+      "required": [
+        "method",
+        "route",
+        "parameters",
+        "headers_redacted"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "route": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "headers_redacted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "response_summary": {
+      "type": "object",
+      "required": [
+        "status_code",
+        "security_relevant_delta",
+        "body_redacted"
+      ],
+      "properties": {
+        "status_code": {
+          "type": "integer"
+        },
+        "security_relevant_delta": {
+          "type": "string"
+        },
+        "body_redacted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "code_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "file",
+          "line",
+          "rule_id",
+          "snippet_hash",
+          "explanation"
+        ],
+        "properties": {
+          "file": {
+            "type": "string"
+          },
+          "line": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "rule_id": {
+            "type": "string"
+          },
+          "snippet_hash": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dynamic_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "case_id",
+          "non_destructive",
+          "request_summary",
+          "response_summary",
+          "observation"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "non_destructive": {
+            "type": "boolean"
+          },
+          "request_summary": {
+            "type": "object"
+          },
+          "response_summary": {
+            "type": "object"
+          },
+          "observation": {
+            "type": "string"
+          },
+          "artifacts": {
+            "type": "array",
+            "description": "Local redacted capture artifacts required by quality gate for confirmed findings.",
+            "items": {
+              "type": "object",
+              "required": [
+                "type",
+                "path",
+                "sha256",
+                "redacted"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "request",
+                    "response",
+                    "har",
+                    "burp",
+                    "playwright",
+                    "screenshot",
+                    "log",
+                    "other"
+                  ]
+                },
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-fA-F0-9]{64}$"
+                },
+                "redacted": {
+                  "type": "boolean"
+                },
+                "note": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "negative_control": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "case_id",
+          "result",
+          "expected_behavior"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "expected_behavior": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "reproduction_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "impact": {
+      "type": "object",
+      "required": [
+        "security_impact",
+        "affected_asset",
+        "impact_boundary"
+      ],
+      "properties": {
+        "security_impact": {
+          "type": "string"
+        },
+        "affected_asset": {
+          "type": "string"
+        },
+        "impact_boundary": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "false_positive_notes": {
+      "type": "string"
+    },
+    "quality_gate_score": {
+      "type": "object",
+      "required": [
+        "total",
+        "passed",
+        "reasons"
+      ],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "passed": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "computed_by": {
+          "type": "string"
+        }
+      }
+    },
+    "final_status": {
+      "type": "string",
+      "enum": [
+        "observation",
+        "candidate",
+        "confirmed",
+        "rejected",
+        "blocked",
+        "needs_human_review"
+      ]
+    },
+    "non_destructive_boundary": {
+      "type": "object",
+      "required": [
+        "allowed",
+        "forbidden",
+        "validation_mode"
+      ],
+      "properties": {
+        "allowed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbidden": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validation_mode": {
+          "type": "string"
+        },
+        "blocked_reason": {
+          "type": "string"
+        }
+      }
+    },
+    "tool_snapshot": {
+      "type": "object",
+      "required": [
+        "mode",
+        "ready_tools",
+        "missing_tools",
+        "manual_required"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string"
+        },
+        "ready_tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "manual_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "specialized_evidence": {
+      "type": "object",
+      "required": [
+        "fields"
+      ],
+      "properties": {
+        "fields": {
+          "type": "object"
+        },
+        "field_source": {
+          "type": "string"
+        }
+      }
+    },
+    "extractor_trace": {
+      "type": "object"
+    },
+    "chain_nodes": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "report_sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "report_template": {
+      "description": "fixture-compatible field",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "final_status": {
+            "const": "confirmed"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "extractor_trace"
+        ],
+        "properties": {
+          "state": {
+            "const": "confirmed"
+          },
+          "reproduction_count": {
+            "minimum": 3
+          },
+          "risk": {
+            "enum": [
+              "high",
+              "critical"
+            ]
+          },
+          "code_evidence": {
+            "minItems": 1
+          },
+          "dynamic_evidence": {
+            "minItems": 1
+          },
+          "negative_control": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "final_status": {
+            "const": "blocked"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "state": {
+            "const": "validation_blocked"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "final_status": {
+            "const": "rejected"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "state": {
+            "const": "rejected"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "final_status": {
+            "const": "needs_human_review"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "state": {
+            "const": "needs_human_review"
+          }
+        }
+      }
+    }
+  ],
+  "x_quality_gate_artifact_policy": "For final_status=confirmed, quality_gate_v4_1.py requires dynamic_evidence artifacts with existing local paths and matching sha256 hashes.",
+  "x_successor_schema": "_shared/evidence/EVIDENCE_MANIFEST_SCHEMA.v4.1.json",
+  "x_policy": "v3 remains fixture compatible; v4 is strict additionalProperties=false for new runs"
+}

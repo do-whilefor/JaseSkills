@@ -1,0 +1,6 @@
+{
+  "id": "AR04",
+  "title": "工具告警误报",
+  "scenario": "tool alert only cannot pass quality gate",
+  "expected_status": "rejected"
+}

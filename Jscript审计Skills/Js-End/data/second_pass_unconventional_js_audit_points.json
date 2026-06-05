@@ -1,0 +1,402 @@
+[
+  {
+    "id": "01",
+    "name": "chunk diff across roles",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "02",
+    "name": "tenant-specific chunk exposure",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "03",
+    "name": "feature flag forced route discovery",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "04",
+    "name": "stale source map from old build",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "05",
+    "name": "CDN stale asset resurrection",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "06",
+    "name": "service worker stale cache replay",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "07",
+    "name": "sourcemap sourcesContent partial leak",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "08",
+    "name": "webpack module id guess",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "09",
+    "name": "route guard bypass via hydration mismatch",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "10",
+    "name": "SSR/CSR auth mismatch",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "11",
+    "name": "Next.js server action / RSC boundary clues",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "12",
+    "name": "GraphQL persisted query hash discovery",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "13",
+    "name": "websocket message schema inference",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "14",
+    "name": "postMessage wildcard origin from third-party iframe",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "15",
+    "name": "OAuth popup race / opener risk",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "16",
+    "name": "storage event cross-tab token leak",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "17",
+    "name": "BroadcastChannel token leak",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "18",
+    "name": "IndexedDB sensitive cache recovery",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "19",
+    "name": "frontend-only price/refund/permission control",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "20",
+    "name": "CSP nonce reuse clue",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "21",
+    "name": "JSONP callback pollution",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "22",
+    "name": "prototype pollution gadget mining",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "23",
+    "name": "DOM clobbering",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "24",
+    "name": "Angular template injection edge cases",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "25",
+    "name": "Vue v-html / custom directive sink",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "26",
+    "name": "React dangerouslySetInnerHTML sanitizer bypass",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "27",
+    "name": "markdown preview stored DOM XSS",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "28",
+    "name": "PDF/image/SVG preview XSS",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "29",
+    "name": "Electron remote/preload bridge abuse",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "30",
+    "name": "browser extension externally_connectable abuse",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "31",
+    "name": "WebView JS bridge abuse",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "32",
+    "name": "WASM parser boundary clues",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "33",
+    "name": "npm postinstall / prepare script risk",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "34",
+    "name": "typosquatting dependency risk",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "35",
+    "name": "dependency confusion from private scope leakage",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "36",
+    "name": "abandoned package takeover risk",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "37",
+    "name": "sourcemap path revealing monorepo internal service names",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "38",
+    "name": "build env revealing staging/admin endpoints",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "39",
+    "name": "hidden A/B experiment endpoint abuse",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  },
+  {
+    "id": "40",
+    "name": "localization file endpoint leaks",
+    "add_to_files": [
+      "13-js-skills-second-pass-reverse-auditor/SKILL.md",
+      "data/second_pass_unconventional_js_audit_points.json",
+      "templates/second-pass-reverse-audit-report.md"
+    ],
+    "required_test": "fixtures/second-pass-needs-review/<point>.json 或真实 replay"
+  }
+]

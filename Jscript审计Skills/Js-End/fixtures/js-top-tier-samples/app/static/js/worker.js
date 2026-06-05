@@ -1,0 +1,1 @@
+self.onmessage = e => fetch('/api/internal/worker-task?orgId=' + e.data.orgId);

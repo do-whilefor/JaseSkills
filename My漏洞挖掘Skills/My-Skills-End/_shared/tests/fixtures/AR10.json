@@ -1,0 +1,6 @@
+{
+  "id": "AR10",
+  "title": "SSRF 只有 URL 参数但无服务端请求",
+  "scenario": "url parameter not fetched server-side is rejected",
+  "expected_status": "rejected"
+}

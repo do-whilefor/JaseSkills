@@ -1,0 +1,12 @@
+{
+  "id": "JS44-graphql-auth-risk",
+  "input_sample": {
+    "js_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "operation + fragment + object ID auth join"
+  },
+  "expected_output": {
+    "graphql_access_risks[]": "non_empty_or_unsupported_with_reason"
+  },
+  "manifest_field": "manifest.candidates",
+  "quality_gate": "QG-JS-chain-required; JS-derived confirmed finding must have candidate_to_manifest_link, original span when sourcemap exists, and template-specific evidence"
+}

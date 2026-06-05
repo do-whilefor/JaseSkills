@@ -1,0 +1,51 @@
+[
+  {
+    "id": "C01",
+    "name": "HTML script/modulepreload collector",
+    "status": "implemented-offline",
+    "script": "scripts/js_top_tier_collect.py",
+    "evidence": "js_asset_ledger.json"
+  },
+  {
+    "id": "C02",
+    "name": "manifest collector: asset/build/routes/app/vite/precache",
+    "status": "implemented-offline",
+    "script": "scripts/js_top_tier_collect.py",
+    "evidence": "manifest_asset_reference"
+  },
+  {
+    "id": "C03",
+    "name": "Source Map parser including sourcesContent",
+    "status": "implemented-offline-partial",
+    "script": "scripts/js_top_tier_collect.py",
+    "evidence": "sourcemap.sourcesContent.*"
+  },
+  {
+    "id": "C04",
+    "name": "dynamic import/chunk/worker/wasm collector",
+    "status": "implemented-offline-candidate",
+    "script": "scripts/js_top_tier_collect.py",
+    "evidence": "dynamic_import/worker_reference/wasm_reference"
+  },
+  {
+    "id": "C05",
+    "name": "GraphQL/WebSocket/SSE/postMessage/storage collector",
+    "status": "implemented-offline-candidate",
+    "script": "scripts/js_top_tier_collect.py",
+    "evidence": "graphql/websocket/sse/postmessage/storage candidates"
+  },
+  {
+    "id": "C06",
+    "name": "Playwright/Burp/HAR runtime bridge",
+    "status": "partial-har-only",
+    "script": "scripts/js_top_tier_collect.py",
+    "evidence": "har_*; Playwright/Burp bridge still P0"
+  },
+  {
+    "id": "C07",
+    "name": "role/tenant/feature chunk diff collector",
+    "status": "missing",
+    "script": "P0 to implement",
+    "evidence": "none"
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "id": "H05",
+  "risk": "无动态验证输出 confirmed",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}
