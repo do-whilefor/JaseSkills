@@ -1,0 +1,18 @@
+schema_version: info-collection-coverage-rules.v1
+purpose: "Rules for grading the information collection Skill package."
+statuses:
+  implemented: "Backed by actual file/script/test/output signal. Still candidate-level until runtime validation."
+  partial: "Some file or script exists, but missing tests, output fields, runtime linkage, or evidence manifest integration."
+  missing: "No supporting file/script/rule/template/test was found."
+  unverifiable: "Documented or indexed, but no executed output or target-specific evidence was supplied."
+quality_gates:
+  - id: IC-QG-01
+    rule: "Every claimed capability must map to file path + script/rule/template/test or be downgraded."
+  - id: IC-QG-02
+    rule: "Static candidates must not be reported as confirmed findings."
+  - id: IC-QG-03
+    rule: "Secrets must be represented by type, key name, length/hash, and redacted sample only."
+  - id: IC-QG-04
+    rule: "Runtime, role, tenant, and impact conclusions require authorized dynamic evidence."
+  - id: IC-QG-05
+    rule: "Parser/backend/runtime readiness must be measured, not assumed from documentation."

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "js-schema-alignment.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "schemas",
+    "schema_only_fields"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

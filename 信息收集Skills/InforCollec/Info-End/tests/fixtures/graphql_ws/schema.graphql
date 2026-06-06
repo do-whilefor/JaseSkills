@@ -1,0 +1,2 @@
+type Query { me: User }
+mutation Hidden { x }

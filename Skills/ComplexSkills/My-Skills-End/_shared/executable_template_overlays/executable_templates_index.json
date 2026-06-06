@@ -1,0 +1,1278 @@
+{
+  "schema_version": "executable_templates_index_v1",
+  "template_count": 254,
+  "overlays": [
+    {
+      "template_path": "_shared/vulnerability_templates/TEMPLATE_INDEX.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/10402aec322a.json",
+      "template_id": "TEMPLATE_INDEX"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/95b8c5d4cb0b.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c0b57e68c4c8.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/1550a2c62367.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/8841d0403e7b.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/1c3b67714950.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/b5d742f90580.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/d2032e227fa4.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/95b8dcc9a977.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c6e6414f6d7a.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/b880b4b5d4f2.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C01-auth-bypass/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/dd36dcf13bc6.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/08ef481bd2d9.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/e7c209d99403.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/814937d95666.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/15f79d021619.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7446d6d50b4d.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/0b10716e7466.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c5f1c060d6a1.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/94490d31a791.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/9b13c9c48ecb.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/2d5ef6b5f69c.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C02-authz-bypass/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/313099f94ee7.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/61b123a092a4.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/b9fd4cd37059.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/9d399d898da9.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c4d5f531ea33.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/46fa53511ad0.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/ef7345a2d951.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4cb363a54932.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/8deb33ab82d9.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/434feb5a6480.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/073a89c983b4.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C03-idor-bola/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/adfcdd54985b.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/122c60b2dfb4.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/45d9c23d470b.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/5715eaf96a04.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/1d1652359006.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/59cfa3a53891.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/da92ff66aaf8.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3a0981a337aa.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/dffbc72d8ee8.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/746a30aadd7b.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/47af2884e3b2.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C04-tenant-isolation-bypass/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/6dd96fd3e1c6.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/dd24b3295608.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/eb0cd3e460c0.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/a7f927516180.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/17c6c325f8aa.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/508cbf4279e8.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7e420713b6b3.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/30d53bccf9a8.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/958a8ecd226c.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3479bf88ee8a.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/92629902e127.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C05-admin-privilege-escalation/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/f404ce12b996.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/e05f71107451.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/d246893bdd10.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/fd3a1f0f6fd1.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4503ce675722.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/2a062631582b.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/f7eb2ba6c5a0.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/25dd74667821.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/85d9fe668b46.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/412eb924e295.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/d2e0e5c0cac5.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C06-rce/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7b778017688a.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/e71d9ec93c09.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/bb65e4f0f377.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/f83ce54778ae.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/b7a98eba552e.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/78a9430711d6.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/0908e7c635b7.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3f29ac654e0c.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/2dc58b38514f.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/f92397adaccf.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/8d32aad4bcd4.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C07-command-injection/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4c7ea882e2fe.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/b2abf4be3e4a.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/59d3d582f463.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/2bf8b2aa83db.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/9e74f0063e5b.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/db998ad0db3d.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/aadf04888a3c.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/8cbe9c533c12.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/148e844c9294.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/90276ddc31b2.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3f62463aa87c.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C08-ssti/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/036a30a83dfe.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/69ecfb39ab77.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/0cb225fca350.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/088085469f96.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/ade80b414394.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4cb1de6a06b6.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/0280f6097b39.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/721616ea4c63.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/a27b7f1492a6.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/321f5459d692.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/18c92b342da5.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C09-deserialization/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/391f5a8dadfa.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/2e2d644a1551.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/45fc498f4522.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/5ca5faa488fc.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3903328994a9.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/cef1ad72c976.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/a60099b54282.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4d1ee6aef534.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/a41fd667f87a.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/1c0965d9be6a.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7fae211a6e22.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C10-arbitrary-file-read/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/73efd72894d2.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/61a5591f6c8e.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/e75011c247fc.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/ff530c3003ae.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7c4f7966b348.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/8437a018c5e4.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/d054045213cd.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/71145ed783fa.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/74fa2420883f.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/808dc4ff6494.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/8949d0101b91.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C11-arbitrary-file-write/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/83595ab2b614.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/e39d706ddacf.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3bd1e60f7412.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/5440780c8ff3.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/5575f21d0d31.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4e3b58ae04a9.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/91c091f9431e.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/f4b2be470496.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/9f5974767f30.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7d46071d1fce.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/e136fae7169b.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C12-file-upload-code-exec-or-overwrite/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3c57280acff9.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/80a86379e99e.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/751812c4a470.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/cc69b05e9d8b.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/1123cf7de922.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/df65414e7f05.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/a0cd4b9420c6.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/15edbc70d2ea.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3756bed244b1.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/19b9b9da490c.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/48883d638252.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C13-ssrf/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/5175b25d8cd0.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/aaed57e9ccee.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3c022380e528.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/ecbfc79f0e5d.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3afbedc8085d.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/62951579a7f2.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/15bbfedb4c8d.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/55d498fd7e0d.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/ed54e35b356e.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/bbd218f5e0d3.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4e9109d3040c.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C14-sql-injection/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/fc479e0812b1.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/9b340d3fccf0.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/9ee271842801.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/cd2f6d03f6f5.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/30c0e4ed759b.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/5517f38b3b71.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/52c0aa89f409.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/582c5c63562c.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/851614e503fc.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/cc7f4202fb24.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7a7d34f214f1.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/d3e7214595e8.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/f90f95161c2a.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/277e69ced959.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c16ce03977eb.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/f176e2d199ae.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/551ba200154f.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/076fe6beda9d.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4737f135b444.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4fd0c1efb62d.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/d10817a1a696.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/f0d0ff5e28bb.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C16-orm-raw-query-injection/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/549ce4d32f4f.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/413e05dc94dd.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/70410000a4fa.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/5bf50a8ada74.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/99d58d7e9d9c.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/409db32e91a2.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/0f91cc72be5d.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3a6b7c6f4e2d.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4c149b629961.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/a6d7543f0df3.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/5d5e498f040d.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C17-graphql-access-control/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/b8c6aa27e8a6.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/638cc9aeea29.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/a6d25d8f754b.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/6aa69007d077.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/99fac26ff6cd.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3ddacddab57e.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/13be967945c0.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7d5dd4634fd2.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/f9c0f514a03e.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/5fd2cbae03ee.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/9ca1be27bfb7.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C18-webhook-signature-bypass/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/06c74bdaa86e.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/6d4d5f26454d.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/91e03dab4c40.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/71efe168607e.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/efd92a59375a.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c3fde2108331.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/0830bc985710.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/89be2f488292.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/45fc54e86ad4.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/1b99401ec66e.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/e3a5d2cfff77.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C19-jwt-token-validation/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/de287b77db01.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c437e1475e31.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/703098a1410e.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7f0ed6528179.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/40b6115551b6.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/3c71b6abab2e.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/070600844772.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/b097dcad23d1.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/a3a4c7f58b66.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/0ebc5e221712.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/76ef9afbf999.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C20-oauth-sso-callback-redirect/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/79035fabd3d9.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c23f25675358.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/714a8b46b72c.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/164253475a90.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/b6f7e835031e.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/bd8fbb31bc95.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/502d4ece558b.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/69f1b6f089fe.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/6e23786bb50d.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/bcc8c0ed5a3c.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/1a055840b89b.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C21-cors-high-risk/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/45f9d66e4e4f.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4bb05e259f89.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/643a01941ad9.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/b9e0c90df32d.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/90d5b50c1e8f.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c8b9f3f2801a.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/f7e2255145f2.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/8d8a3fb6b3e3.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c4422ebe79b6.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/b530dd0fcd7c.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/9a5140afc567.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C22-sensitive-info-disclosure/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/4160fc52e039.json",
+      "template_id": "replay_fixture_rev"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/DYNAMIC_VALIDATION_BOUNDARY.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7fd2b02375a8.json",
+      "template_id": "DYNAMIC_VALIDATION_BOUNDARY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/EVIDENCE_FIELDS.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/072221ee11da.json",
+      "template_id": "EVIDENCE_FIELDS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/NEGATIVE_CONTROLS.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/dc9a7c01fa7c.json",
+      "template_id": "NEGATIVE_CONTROLS"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/QUALITY_OVERLAY.yaml",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7968e0ae82d3.json",
+      "template_id": "QUALITY_OVERLAY"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/REPORT_TEMPLATE.md",
+      "overlay_path": "_shared/executable_template_overlays/overlays/7bb37fb0775e.json",
+      "template_id": "REPORT_TEMPLATE"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/TEMPLATE_REQUIREMENTS.v1.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/01a629697b56.json",
+      "template_id": "TEMPLATE_REQUIREMENTS.v1"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/replay_fixture_blk.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/141f586b9b62.json",
+      "template_id": "replay_fixture_blk"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/replay_fixture_neg.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/c6cf4bd2d59e.json",
+      "template_id": "replay_fixture_neg"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/replay_fixture_negative.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/eb2cab112b47.json",
+      "template_id": "replay_fixture_negative"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/replay_fixture_pos.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/1ee3bf980494.json",
+      "template_id": "replay_fixture_pos"
+    },
+    {
+      "template_path": "_shared/vulnerability_templates/canonical_23/C23-supply-chain-plugin-build-risk/replay_fixture_rev.json",
+      "overlay_path": "_shared/executable_template_overlays/overlays/a3b1b81991fa.json",
+      "template_id": "replay_fixture_rev"
+    }
+  ],
+  "overlay_root": "_shared/executable_template_overlays/overlays",
+  "preserves_original_vulnerability_templates": true
+}

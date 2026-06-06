@@ -1,0 +1,8 @@
+我目前让Claude在本机搭建了一个项目，你需要给出你最好的prompt，能够发挥Claude和我这个js审计的skills的最大作用，分析最全面的js，给出你最好的prompt让Claude发挥最大的潜能 
+
+之后让Claude反思自己js审计的办法，偏门，剑走偏锋的思路，让Claude成为世界上顶级的js分析审计专家 
+
+
+
+
+

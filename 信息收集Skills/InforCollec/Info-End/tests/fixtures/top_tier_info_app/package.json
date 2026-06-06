@@ -1,0 +1,1 @@
+{"scripts": {"postinstall": "node scripts/install.js", "dev:debug": "NODE_ENV=development next dev"}, "dependencies": {"express": "4.18.0", "vm2": "3.9.0", "next": "14.0.0", "react": "18.0.0"}}

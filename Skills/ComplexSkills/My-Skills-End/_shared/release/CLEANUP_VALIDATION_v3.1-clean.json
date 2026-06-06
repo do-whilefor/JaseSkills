@@ -1,0 +1,74 @@
+{
+  "package": "My-Skills-End",
+  "version": "3.1-clean",
+  "release_date": "2026-06-06",
+  "status": "passed",
+  "preservation": {
+    "knowledge_hash_preserved": true,
+    "vulnerability_template_hash_preserved": true,
+    "knowledge_files": 2,
+    "vulnerability_template_files": 254
+  },
+  "cleanup": {
+    "file_count": 1915,
+    "trash_remaining": [],
+    "executable_overlay_files": 256
+  },
+  "claim_boundary": "No real target dynamic validation is claimed; confirmed requires target-specific browser/HAR/screenshot/DOM/console/storage, lazy JS ledger, role/tenant matrix, positive/negative replay, variant expansion, evidence manifest and quality gate.",
+  "py_compile": {
+    "_shared/quality/final_claim_guard.py": {
+      "exists": true,
+      "ok": true
+    },
+    "_shared/quality/anti_lazy_browser_proof_gate.py": {
+      "exists": true,
+      "ok": true
+    },
+    "skills/03-code-knowledge-graph/scripts/semantic_graph_builder.py": {
+      "exists": true,
+      "ok": true
+    },
+    "skills/06-dynamic-browser-burp-mcp/scripts/evidence_artifact_importer.py": {
+      "exists": true,
+      "ok": true
+    },
+    "skills/07-vulnerability-hunting-engine/scripts/candidate_to_replay_plan.py": {
+      "exists": true,
+      "ok": true
+    },
+    "_shared/tests/adversarial/top_tier_adversarial_harness.py": {
+      "exists": true,
+      "ok": true
+    },
+    "_shared/dashboard/full_chain_drilldown_generator.py": {
+      "exists": true,
+      "ok": true
+    },
+    "skills/06-dynamic-browser-burp-mcp/scripts/playwright_full_interaction_crawler.py": {
+      "exists": true,
+      "ok": true
+    },
+    "skills/06-dynamic-browser-burp-mcp/scripts/role_tenant_authz_matrix_builder.py": {
+      "exists": true,
+      "ok": true
+    },
+    "skills/07-vulnerability-hunting-engine/scripts/variant_expansion_engine.py": {
+      "exists": true,
+      "ok": true
+    }
+  },
+  "smoke_tests": {
+    "_shared/tests/smoke/anti_lazy_browser_gate_smoke_test.py": {
+      "exists": true,
+      "returncode": 0,
+      "stdout_tail": "{\n  \"schema_version\": \"anti_lazy_browser_gate_smoke_test_v1\",\n  \"passed\": true\n}\n",
+      "stderr_tail": ""
+    },
+    "_shared/tests/smoke/top_tier_completion_gate_smoke_test.py": {
+      "exists": true,
+      "returncode": 0,
+      "stdout_tail": "{\n  \"passed\": true,\n  \"blocked_confirmed_claim\": true,\n  \"blockers\": [\n    \"browser_runtime_not_executed\",\n    \"missing_browser_action:open_page\",\n    \"missing_browser_action:scroll_bottom\",\n    \"browser_no_runtime_assets_or_rows\",\n    \"browser_artifacts_missing\"\n  ]\n}\n",
+      "stderr_tail": ""
+    }
+  }
+}

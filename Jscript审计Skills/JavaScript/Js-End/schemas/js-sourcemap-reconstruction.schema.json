@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "js-sourcemap-reconstruction.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "maps",
+    "written_sources",
+    "findings"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,1 @@
+{"info":{"name":"demo","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},"item":[{"name":"hidden","request":{"method":"POST","url":{"raw":"{{baseUrl}}/api/postman/hidden"}}}]}

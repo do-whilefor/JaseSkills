@@ -1,0 +1,15 @@
+{
+  "schema_version": "oss_replay_fixture_v3",
+  "name": "nestjs-local-controller",
+  "framework": "nestjs",
+  "status": "offline_minimal_fixture_and_import_contract",
+  "not_downloaded_full_oss_project": true,
+  "reason": "internet/source repository not available in this environment; use IMPORT_REAL_OSS_PROJECT.md to bind local clone",
+  "expected_artifacts": [
+    "semantic_graph",
+    "candidate_replay_plan",
+    "browser_matrix_if_runnable",
+    "evidence_manifest",
+    "final_claim_guard"
+  ]
+}

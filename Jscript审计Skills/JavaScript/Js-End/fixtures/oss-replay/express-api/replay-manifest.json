@@ -1,0 +1,21 @@
+{
+  "schema_version": "oss-replay-sample/v1",
+  "name": "express-api",
+  "description": "Express REST/controller/DTO sample",
+  "status": "needs-import",
+  "source_repository": "fill with authorized local clone or OSS URL before replay",
+  "license_review_required": true,
+  "commands": {
+    "setup": "fill in",
+    "start": "fill in",
+    "collect": "python scripts/js_top_tier_collect.py --root <app> --out <out>",
+    "replay": "python scripts/js_playwright_safe_replay_executor.py --plan <plan> --execute --out <out>"
+  },
+  "expected_cases": [
+    "positive",
+    "negative",
+    "blocked",
+    "needs_review"
+  ],
+  "promotion_rule": "not bundled and not real_oss_replay until source tree, license note, replay output, evidence manifest, and quality gate result are present"
+}

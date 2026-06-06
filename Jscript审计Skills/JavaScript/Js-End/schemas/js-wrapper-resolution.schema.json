@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "js-wrapper-resolution.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "instances",
+    "wrappers",
+    "interceptors",
+    "calls"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
