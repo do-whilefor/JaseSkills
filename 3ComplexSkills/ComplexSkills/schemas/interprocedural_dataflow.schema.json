@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Interprocedural dataflow candidate paths",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "path_count",
+    "paths",
+    "precision_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "interprocedural_dataflow_v1"
+    },
+    "path_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "paths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path_id",
+          "source",
+          "sink",
+          "edges",
+          "precision",
+          "state",
+          "evidence_id"
+        ],
+        "properties": {
+          "path_id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "object"
+          },
+          "sink": {
+            "type": "object"
+          },
+          "edges": {
+            "type": "array"
+          },
+          "precision": {
+            "enum": [
+              "same_function",
+              "same_file",
+              "import_graph_candidate",
+              "unresolved_candidate"
+            ]
+          },
+          "state": {
+            "enum": [
+              "candidate",
+              "needs_review"
+            ]
+          },
+          "evidence_id": {
+            "pattern": "^EVID-"
+          },
+          "confirmed": {
+            "const": false
+          }
+        }
+      }
+    },
+    "precision_policy": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

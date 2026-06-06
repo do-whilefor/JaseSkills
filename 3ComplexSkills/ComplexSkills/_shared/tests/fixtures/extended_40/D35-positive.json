@@ -1,0 +1,57 @@
+{
+  "schema_version": "detector_fixture_v2",
+  "detector_id": "D35",
+  "fixture_kind": "positive",
+  "vulnerability_type": "CI/CD secret 泄露",
+  "expected_result": "candidate_expected",
+  "should_emit_confirmed": false,
+  "authorization_scope": "local_authorized_fixture_only",
+  "static_signal": {
+    "source_rule_examples": [
+      "workflow/env/build log"
+    ],
+    "sink_rule_examples": [
+      "CI action/docker build"
+    ],
+    "sanitizer_or_guard_examples": [
+      "secret masking least privilege"
+    ],
+    "file": "tests/fixtures/local_minimal/app.js",
+    "line": 1
+  },
+  "dynamic_obligation": {
+    "required_for_confirmed": true,
+    "non_destructive": true,
+    "request_response_summary_required": true,
+    "negative_or_blocked_control_required": true,
+    "status": "fixture_contract_only_not_runtime_evidence"
+  },
+  "role_tenant_obligation": {
+    "role_matrix_required_for_confirmed": false,
+    "tenant_matrix_required_for_confirmed": false,
+    "status": "planned_or_fixture_contract_only"
+  },
+  "evidence_contract": {
+    "candidate_requires": [
+      "evidence_id",
+      "file_path",
+      "line",
+      "detector_id",
+      "match_reason"
+    ],
+    "confirmed_requires": [
+      "static_code_evidence",
+      "executed_dynamic_evidence",
+      "request_response_summaries",
+      "quality_gate_pass",
+      "evidence_manifest_schema_pass"
+    ],
+    "forbidden": [
+      "auto_confirm_from_static_only",
+      "tool_alert_only_confirm",
+      "unredacted_secret_output"
+    ]
+  },
+  "evidence_id_example": "EVID-D35-POSITIVE-0001",
+  "notes": "This fixture validates detector contract only. It is not proof of a real vulnerability."
+}

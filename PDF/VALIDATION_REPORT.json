@@ -1,0 +1,79 @@
+{
+  "qa": [
+    {
+      "document": "Q3_Control_Template_Normalization.pdf",
+      "pages": 2,
+      "text_len": 493,
+      "obvious_terms_found": [],
+      "question_mark_count": 0,
+      "sha256": "7a3016961b144a0ba311a2ef39da69dc66a10995ab4535aac4b44946fa33b925"
+    },
+    {
+      "document": "Q3_Data_Governance_Internal_Review.pdf",
+      "pages": 8,
+      "text_len": 2684,
+      "obvious_terms_found": [],
+      "question_mark_count": 0,
+      "sha256": "d34f4c0eb3132387423a638b403bc67b740beb1cb95414086f11b06ce46a2aa9"
+    },
+    {
+      "document": "Q3_Interactive_Control_Annex.pdf",
+      "pages": 4,
+      "text_len": 556,
+      "obvious_terms_found": [],
+      "question_mark_count": 0,
+      "sha256": "ba79f736f309d5d5d50449f89aefede667c04617bfb484fe0054dda8636f2c91"
+    },
+    {
+      "document": "Q3_Retention_Workpaper_Extracts.pdf",
+      "pages": 5,
+      "text_len": 881,
+      "obvious_terms_found": [],
+      "question_mark_count": 0,
+      "sha256": "2659e5b5584b7dcceb25b40ec506d1f9f0bd096b67d6d1c21b042c7ed6b50afb"
+    },
+    {
+      "document": "Q3_Supplier_Evidence_Appendix_Scan.pdf",
+      "pages": 3,
+      "text_len": 2,
+      "obvious_terms_found": [],
+      "question_mark_count": 0,
+      "sha256": "f5195f12c839a77623f9d517e55ce2ce519dd1fc78979d2862fc8c9fc2cc5ef0"
+    }
+  ],
+  "object_structure": [
+    {
+      "document": "Q3_Control_Template_Normalization.pdf",
+      "has_objstm": true,
+      "has_old_residual": false
+    },
+    {
+      "document": "Q3_Data_Governance_Internal_Review.pdf",
+      "has_objstm": true,
+      "has_old_residual": false
+    },
+    {
+      "document": "Q3_Interactive_Control_Annex.pdf",
+      "has_objstm": true,
+      "has_old_residual": false
+    },
+    {
+      "document": "Q3_Retention_Workpaper_Extracts.pdf",
+      "has_objstm": true,
+      "has_old_residual": false
+    },
+    {
+      "document": "Q3_Supplier_Evidence_Appendix_Scan.pdf",
+      "has_objstm": true,
+      "has_old_residual": false
+    }
+  ],
+  "pdf_count": 5,
+  "ground_truth_count": 28,
+  "zip_integrity_expected": "created with Python zipfile; verify with unzip -t",
+  "notes": [
+    "PDF body obvious benchmark labels checked by text extraction.",
+    "Question mark count is a rough CJK extraction sanity check.",
+    "Hidden channels are intentionally parser-dependent and carrier-labeled in ground truth."
+  ]
+}

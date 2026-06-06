@@ -1,0 +1,3 @@
+{
+  "required_skipped_reasons": ["binary_file", "large_file_over_2mb", "symlink_skipped"]
+}

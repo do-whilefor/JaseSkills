@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "External parser extraction adapter output",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_root",
+    "readiness",
+    "extracts",
+    "promotion_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "external_parser_extract_v1"
+    },
+    "project_root": {
+      "type": "string"
+    },
+    "readiness": {
+      "type": "object"
+    },
+    "extracts": {
+      "type": "array"
+    },
+    "promotion_policy": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

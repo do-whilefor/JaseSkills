@@ -1,0 +1,4 @@
+[
+  {"url":"ws://127.0.0.1:8765/ws","direction":"sent","payload":"{\"type\":\"subscribe\",\"tenantId\":\"t1\"}","role":"admin_t1","tenant":"t1"},
+  {"url":"ws://127.0.0.1:8765/ws","direction":"received","payload":"{\"type\":\"subscribed\",\"tenantId\":\"t1\"}","role":"admin_t1","tenant":"t1"}
+]

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "js-validation-run.schema.json",
+  "type": "object",
+  "required": ["schema_version", "ok", "checks", "summary"],
+  "properties": {
+    "schema_version": {"const": "js-validation-run/v1"},
+    "ok": {"type": "boolean"},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "cmd", "returncode", "ok", "mode"],
+        "properties": {
+          "name": {"type": "string"},
+          "cmd": {"type": "array", "items": {"type": "string"}},
+          "returncode": {"type": "integer"},
+          "ok": {"type": "boolean"},
+          "mode": {"enum": ["must_pass", "expected_block"]},
+          "stdout_tail": {"type": "string"},
+          "stderr_tail": {"type": "string"}
+        }
+      }
+    },
+    "summary": {"type": "object"}
+  },
+  "additionalProperties": true
+}

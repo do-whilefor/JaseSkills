@@ -1,0 +1,10 @@
+{
+  "name": "info-end-skill-local",
+  "private": true,
+  "description": "Local-only authorized information collection skill. Dependency declaration only; no install script is required.",
+  "type": "module",
+  "devDependencies": {
+    "@babel/parser": ">=7.0.0",
+    "typescript": ">=5.0.0"
+  }
+}

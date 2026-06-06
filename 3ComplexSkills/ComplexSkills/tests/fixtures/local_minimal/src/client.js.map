@@ -1,0 +1,1 @@
+{"version":3,"sources":["client.ts"],"names":[],"mappings":"AAAA","sourcesContent":["export async function apiGet(path:string){}"]}

@@ -1,0 +1,15 @@
+[
+  {
+    "kind": "2",
+    "xref": "58",
+    "from": [
+      54.0,
+      240.0,
+      404.0,
+      264.0
+    ],
+    "uri": "https://intranet.example.invalid/evidence/EV-Q3-206?review_mode=field_only",
+    "id": "fitz-L0",
+    "page": 2
+  }
+]

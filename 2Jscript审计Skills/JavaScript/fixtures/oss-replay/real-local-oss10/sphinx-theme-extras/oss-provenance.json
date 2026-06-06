@@ -1,0 +1,33 @@
+{
+  "schema_version": "real-oss-source-provenance/v2",
+  "slug": "sphinx-theme-extras",
+  "project": "Sphinx theme extras",
+  "source_root": "/usr/share/javascript/sphinxdoc/1.0",
+  "snapshot_path": "/mnt/data/audit_js_end/Js-End/fixtures/oss-replay/real-local-oss10/sphinx-theme-extras",
+  "dpkg_owner": "libjs-sphinxdoc",
+  "copied_files": [
+    "theme_extras.js",
+    "DEBIAN_COPYRIGHT",
+    "index.html"
+  ],
+  "missing_files": [],
+  "file_hashes": [
+    {
+      "path": "theme_extras.js",
+      "sha256": "08de44141ee43bf62443dc0b51cff5e5cd6316ba0f59df5cb3dcaa5a98655e1a",
+      "size": 527
+    },
+    {
+      "path": "DEBIAN_COPYRIGHT",
+      "sha256": "bd01b85d02b34a10b7857e35f7f98b7d212bf507468620e962510512d93348b8",
+      "size": 4940
+    },
+    {
+      "path": "index.html",
+      "sha256": "6e3bbf6d078a73edda3d7673610aa6f44ebb794fc3c919d981f9a7d7a1161ae9",
+      "size": 112
+    }
+  ],
+  "license_or_copyright_file": "DEBIAN_COPYRIGHT",
+  "note": "Local installed open-source package/source subset copied for deterministic static replay. This is not a user authorized web target runtime replay."
+}

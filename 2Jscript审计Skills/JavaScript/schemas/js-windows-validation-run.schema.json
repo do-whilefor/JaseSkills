@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JS Windows Validation Run",
+  "type": "object",
+  "required": ["schema_version", "ok", "python_executable", "checks", "summary", "windows_claim_boundary"],
+  "properties": {
+    "schema_version": {"const": "js-windows-validation-run/v1"},
+    "ok": {"type": "boolean"},
+    "python_executable": {"type": "string"},
+    "checks": {"type": "array", "items": {"type": "object", "required": ["name", "cmd", "returncode", "ok", "mode"]}},
+    "summary": {"type": "object", "required": ["passed", "failed"]},
+    "quality_decision": {"type": ["string", "null"]},
+    "quality_score": {"type": ["number", "null"]},
+    "windows_claim_boundary": {"type": "string"}
+  },
+  "additionalProperties": true
+}

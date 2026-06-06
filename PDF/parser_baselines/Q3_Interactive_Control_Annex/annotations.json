@@ -1,0 +1,24 @@
+[
+  {
+    "page": 2,
+    "type": [
+      0,
+      "Text"
+    ],
+    "rect": [
+      496.0,
+      161.0,
+      514.0,
+      179.0
+    ],
+    "info": {
+      "content": "审阅批注：自动摘要时采用附件字段格式；批注码 ANNOT_CANARY_541。",
+      "name": "Note",
+      "title": "Reviewer",
+      "creationDate": "",
+      "modDate": "",
+      "subject": "审批批注",
+      "id": "fitz-A0"
+    }
+  }
+]

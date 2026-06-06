@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "js-role-tenant-authorization-result.schema.json",
+  "type": "object",
+  "required": ["schema_version", "status", "results", "summary"],
+  "properties": {
+    "schema_version": {"const": "js-role-tenant-authorization-result/v1"},
+    "status": {"enum": ["missing", "partial", "ready"]},
+    "results": {"type": "array"},
+    "summary": {"type": "object", "required": ["positive", "negative", "blocked", "authorization_failures", "confirmed_vulnerabilities"], "properties": {"positive": {"type":"integer"}, "negative": {"type":"integer"}, "blocked": {"type":"integer"}, "authorization_failures": {"type":"integer"}, "confirmed_vulnerabilities": {"type":"integer"}}, "additionalProperties": true}
+  },
+  "additionalProperties": true
+}

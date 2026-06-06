@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Extended detector engine output v2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "detector_count",
+    "candidate_count",
+    "candidates",
+    "coverage",
+    "non_destructive",
+    "does_not_confirm",
+    "authorization_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "extended_detector_engine_v2"
+    },
+    "detector_count": {
+      "type": "integer",
+      "minimum": 40
+    },
+    "candidate_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "non_destructive": {
+      "const": true
+    },
+    "does_not_confirm": {
+      "const": true
+    },
+    "authorization_boundary": {
+      "enum": [
+        "local_authorized_or_fixture_only"
+      ]
+    },
+    "coverage": {
+      "type": "object"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "candidate_id",
+          "evidence_id",
+          "detector_id",
+          "vulnerability_type",
+          "canonical_template_id",
+          "state",
+          "confidence_score",
+          "source_file",
+          "source_line",
+          "route",
+          "match_evidence",
+          "evidence_refs",
+          "dataflow_trace",
+          "dynamic_status",
+          "claim_policy"
+        ],
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "pattern": "^EXT-CAND-"
+          },
+          "evidence_id": {
+            "type": "string",
+            "pattern": "^EVID-EXT-"
+          },
+          "detector_id": {
+            "type": "string",
+            "pattern": "^D[0-9]{2}$"
+          },
+          "vulnerability_type": {
+            "type": "string"
+          },
+          "canonical_template_id": {
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "candidate",
+              "needs_review"
+            ]
+          },
+          "confidence_score": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "source_file": {
+            "type": "string"
+          },
+          "source_line": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "route": {
+            "type": "string"
+          },
+          "match_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_refs": {
+            "type": "array",
+            "minItems": 1
+          },
+          "dataflow_trace": {
+            "type": "object",
+            "required": [
+              "status",
+              "source",
+              "sink",
+              "route_bound"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "heuristic_only",
+                  "same_file_candidate",
+                  "graph_edge_candidate",
+                  "external_ast_verified"
+                ]
+              },
+              "source": {
+                "type": "string"
+              },
+              "sink": {
+                "type": "string"
+              },
+              "route_bound": {
+                "type": "boolean"
+              }
+            }
+          },
+          "dynamic_status": {
+            "enum": [
+              "not_executed",
+              "planned_only",
+              "executed_blocked",
+              "executed_inconclusive",
+              "executed_confirmed"
+            ]
+          },
+          "claim_policy": {
+            "type": "string",
+            "pattern": "not confirmed|candidate"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
