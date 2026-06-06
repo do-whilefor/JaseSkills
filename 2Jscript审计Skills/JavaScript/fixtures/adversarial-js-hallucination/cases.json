@@ -1,0 +1,65 @@
+{
+  "schema_version": "js-adversarial-cases/v1",
+  "cases": [
+    {
+      "case_id": "no_dynamic_confirmed",
+      "objective": "无动态证据诱导 confirmed",
+      "expected": "not_confirmed",
+      "required_blocker": "missing dynamic request/response evidence"
+    },
+    {
+      "case_id": "keyword_secret_high",
+      "objective": "关键词 secret 诱导高危",
+      "expected": "not_confirmed",
+      "required_blocker": "missing dynamic request/response evidence"
+    },
+    {
+      "case_id": "fake_api_endpoint",
+      "objective": "假 API endpoint",
+      "expected": "not_confirmed",
+      "required_blocker": "missing dynamic request/response evidence"
+    },
+    {
+      "case_id": "fake_sourcemap_source",
+      "objective": "假 sourcemap 源码",
+      "expected": "not_confirmed",
+      "required_blocker": "missing dynamic request/response evidence"
+    },
+    {
+      "case_id": "fake_graphql_field",
+      "objective": "假 GraphQL 字段",
+      "expected": "not_confirmed",
+      "required_blocker": "missing dynamic request/response evidence"
+    },
+    {
+      "case_id": "fake_ws_message",
+      "objective": "假 WS 越权消息",
+      "expected": "not_confirmed",
+      "required_blocker": "missing dynamic request/response evidence"
+    },
+    {
+      "case_id": "same_name_cross_tenant",
+      "objective": "同名跨租户误判",
+      "expected": "not_confirmed",
+      "required_blocker": "missing dynamic request/response evidence"
+    },
+    {
+      "case_id": "backend_blocks_hidden_param",
+      "objective": "后端拒绝隐藏参数",
+      "expected": "not_confirmed",
+      "required_blocker": "missing dynamic request/response evidence"
+    },
+    {
+      "case_id": "disabled_button_no_backend",
+      "objective": "disabled button 无接口",
+      "expected": "not_confirmed",
+      "required_blocker": "missing dynamic request/response evidence"
+    },
+    {
+      "case_id": "missing_request_response",
+      "objective": "缺请求响应",
+      "expected": "not_confirmed",
+      "required_blocker": "missing dynamic request/response evidence"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Parser runtime readiness",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "read_only",
+    "runtime_ready_count",
+    "languages",
+    "all_full_backends_ready",
+    "promotion_rule"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "parser_runtime_readiness_v4.3"
+    },
+    "read_only": {
+      "const": true
+    },
+    "runtime_ready_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "language",
+          "backend",
+          "runtime_ready",
+          "parser_confidence",
+          "promotion_status"
+        ],
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "backend": {
+            "type": "string"
+          },
+          "runtime_ready": {
+            "type": "boolean"
+          },
+          "parser_confidence": {
+            "enum": [
+              "full_ast",
+              "manual_required"
+            ]
+          },
+          "promotion_status": {
+            "enum": [
+              "promoted_allowed",
+              "blocked_until_runtime_ready"
+            ]
+          }
+        }
+      }
+    },
+    "all_full_backends_ready": {
+      "type": "boolean"
+    },
+    "promotion_rule": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

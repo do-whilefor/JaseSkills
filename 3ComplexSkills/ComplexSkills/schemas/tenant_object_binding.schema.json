@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tenant/object binding inference",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "binding_count",
+    "bindings",
+    "confidence_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "tenant_object_binding_inference_v1"
+    },
+    "binding_count": {
+      "type": "integer"
+    },
+    "bindings": {
+      "type": "array"
+    },
+    "confidence_policy": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

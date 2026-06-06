@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Command output attestation schema v2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "command_id",
+    "command",
+    "exit_code",
+    "stdout_sha256",
+    "stderr_sha256",
+    "artifact_path",
+    "redacted"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "command_output_attestation_v2"
+    },
+    "command_id": {
+      "type": "string"
+    },
+    "command": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exit_code": {
+      "type": "integer"
+    },
+    "stdout_sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "stderr_sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "artifact_path": {
+      "type": "string"
+    },
+    "redacted": {
+      "const": true
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "real-oss-source-provenance/v2",
+  "slug": "gitweb-static",
+  "project": "Gitweb static JavaScript",
+  "source_root": "/usr/share/gitweb/static",
+  "snapshot_path": "/mnt/data/jswork/Js-End/fixtures/oss-replay/real-local-oss10-debug/gitweb-static",
+  "dpkg_owner": "git",
+  "copied_files": [
+    "gitweb.js",
+    "DEBIAN_COPYRIGHT",
+    "index.html"
+  ],
+  "missing_files": [],
+  "file_hashes": [
+    {
+      "path": "gitweb.js",
+      "sha256": "f6f00cf926604d41601b7174b04c5dd51cd6bc373f4a822183f2edcf714cdf6b",
+      "size": 48825
+    },
+    {
+      "path": "DEBIAN_COPYRIGHT",
+      "sha256": "263a2b847e1809cb78c2379802f090117888995d3f7773e030d2a7ebd80db3ec",
+      "size": 19210
+    },
+    {
+      "path": "index.html",
+      "sha256": "3efed9ed83b61ee4560b42356d5d0797a84ae481abbf218806e85fea6f8f6ffd",
+      "size": 111
+    }
+  ],
+  "license_or_copyright_file": "DEBIAN_COPYRIGHT",
+  "note": "Local installed open-source package/source subset copied for deterministic static replay. This is not a user authorized web target runtime replay."
+}

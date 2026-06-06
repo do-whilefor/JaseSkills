@@ -1,0 +1,1305 @@
+我让Claude在本机搭建了一个开源项目，并且让Claude给我生成一个用于我开源和授权项目的信息收集skills，针对信息收集的要点，针对信息收集的不足，针对隐藏的信息，针对偏门、冷门、剑走偏锋的信息收集路线，请给出你最好的prompt，我们一起让Claude帮我把这个skills改进成世界上最顶级的信息收集skills吧
+给出你最好的prompt
+最好让Claude反思，将这个改进成世界顶级的skills还缺什么？
+
+你现在不是普通的代码助手，而是“本机开源与授权项目的信息收集 Skills 总架构师 / 安全信息收集审计官 / AI 幻觉追责官 / 工程落地验收官”。
+
+你的任务：审查、修复、增强我当前的信息收集 Skills，使它成为面向本机开源项目和明确授权项目的顶级信息收集 Skills。
+
+重要边界：
+
+1. 只允许用于：
+   - 本机项目；
+   - 我拥有的项目；
+   - 明确授权的开源项目；
+   - 明确授权的安全测试目标。
+
+2. 不允许：
+   - 未授权扫描第三方目标；
+   - 绕过认证；
+   - 暴力破解；
+   - 利用泄露凭据；
+   - 偷窃、外传、打印真实敏感信息；
+   - 进行破坏性测试；
+   - 把未验证线索伪装成确定结论。
+
+3. 所有发现必须分级：
+   - confirmed：有文件、命令输出、证据链、复核路径；
+   - candidate：有线索但未完成验证；
+   - needs_review：需要人工判断；
+   - rejected：证据不足或误报。
+
+你的目标不是写漂亮文档，而是让这个 Skills 真正可执行、可复查、可长期使用。
+
+请按照以下流程工作。
+
+一、读取并理解当前 Skills
+
+请先完整审查当前 Skills 目录，至少覆盖：
+
+- README / CLAUDE.md / SKILL.md / rules / prompts；
+- scripts / tools / collectors；
+- schemas / templates / reports；
+- tests / fixtures / examples；
+- knowledge base / 信息收集知识库；
+- 任何漏洞模板、信息收集模板、证据模板；
+- package.json / pyproject.toml / requirements.txt / lock 文件；
+- 配置文件、入口文件、命令说明、质量门槛文件。
+
+输出当前 Skills 的真实结构图，不允许凭空推测。每一个结论都必须对应具体文件路径。
+
+二、审查当前信息收集能力是否完整
+
+你必须逐项检查 Skills 是否覆盖以下信息收集面：
+
+1. 项目结构识别
+
+检查是否能识别：
+
+- 单体项目；
+- 前后端分离项目；
+- monorepo；
+- microservices；
+- serverless；
+- mobile backend；
+- Electron / browser extension；
+- Docker / Kubernetes；
+- IaC；
+- CI/CD；
+- 多语言混合项目。
+
+要求输出：
+
+- 识别依据；
+- 对应文件；
+- 是否已实现；
+- 缺失点；
+- 修复方案。
+
+2. 语言与框架识别
+
+检查是否能识别：
+
+- JavaScript / TypeScript；
+- Python；
+- Java / Kotlin；
+- Go；
+- PHP；
+- Ruby；
+- Rust；
+- C#；
+- Node.js / Express / NestJS / Next.js / Nuxt；
+- Django / Flask / FastAPI；
+- Spring / Spring Boot；
+- Laravel / Symfony；
+- Rails；
+- Gin / Echo / Fiber；
+- GraphQL；
+- gRPC；
+- WebSocket；
+- REST；
+- SSR / SSG / SPA。
+
+要求不能只靠文件名，必须结合依赖、入口文件、路由、配置、构建脚本综合判断。
+
+3. 资产与入口点收集
+
+检查是否能收集：
+
+- HTTP routes；
+- API endpoints；
+- GraphQL schema / query / mutation；
+- WebSocket events；
+- gRPC service；
+- CLI commands；
+- cron / scheduled jobs；
+- webhook handlers；
+- background workers；
+- admin routes；
+- debug routes；
+- health checks；
+- metrics endpoints；
+- upload/download endpoints；
+- callback endpoints；
+- redirect endpoints；
+- OAuth / SSO / SAML / OIDC callback；
+- payment callback；
+- internal API；
+- undocumented API；
+- legacy API；
+- feature-flag-hidden API。
+
+每一个入口点必须尽量绑定：
+
+Route → Method → Handler → Middleware → AuthN → AuthZ → Parameters → Source File → Evidence
+
+4. 参数与数据流收集
+
+检查是否能收集：
+
+- path parameters；
+- query parameters；
+- body parameters；
+- headers；
+- cookies；
+- GraphQL variables；
+- WebSocket payload fields；
+- multipart fields；
+- hidden frontend parameters；
+- 后端接受但前端没有暴露的参数；
+- DTO / schema / validator；
+- ORM model fields；
+- mass assignment 风险字段；
+- role / tenant / org / userId / accountId / projectId / workspaceId 等权限相关字段；
+- pagination / filter / sort / include / expand / debug / preview / draft 等隐藏参数。
+
+要求输出参数来源：
+
+- 前端 JS；
+- 后端 handler；
+- schema；
+- validator；
+- DTO；
+- ORM；
+- OpenAPI；
+- GraphQL；
+- 测试用例；
+- 文档；
+- fixture；
+- seed 数据；
+- Postman / Insomnia collection；
+- HAR / trace。
+
+5. 前端与 JS 深度信息收集
+
+检查是否能收集：
+
+- JS chunk；
+- lazy-loaded chunk；
+- dynamic import；
+- source map；
+- service worker；
+- webpack / vite / next build manifest；
+- route manifest；
+- API wrapper；
+- axios / fetch / request 封装；
+- GraphQL client；
+- hidden endpoints；
+- feature flags；
+- env 注入变量；
+- build-time public config；
+- sourcemap 中的原始路径；
+- 注释、TODO、debug 语句；
+- console 信息；
+- error message；
+- 前端角色判断；
+- 前端隐藏菜单；
+- 前端没有暴露但代码保留的旧接口。
+
+要求不能只 regex 搜索 url，必须做：
+
+- AST 解析；
+- 字符串拼接还原；
+- wrapper resolver；
+- import/export 追踪；
+- chunk lineage；
+- route-to-api 关联；
+- source map reverse mapping。
+
+6. 配置与环境信息收集
+
+检查是否能收集并安全处理：
+
+- .env.example；
+- config 文件；
+- docker-compose；
+- Dockerfile；
+- Kubernetes manifests；
+- Helm chart；
+- Terraform；
+- GitHub Actions；
+- GitLab CI；
+- Jenkinsfile；
+- package scripts；
+- build scripts；
+- deployment scripts；
+- nginx / apache config；
+- reverse proxy config；
+- CORS config；
+- CSP config；
+- auth config；
+- rate limit config；
+- storage config；
+- cloud provider config；
+- queue / cache / database 配置；
+- debug / staging / local / test 环境差异。
+
+真实 secret 必须脱敏，不能打印明文。只允许输出：
+
+- secret 类型；
+- 文件路径；
+- 行号；
+- 哈希指纹；
+- 风险说明；
+- 修复建议。
+
+7. 依赖与供应链信息收集
+
+检查是否能收集：
+
+- package manager；
+- lock file；
+- direct dependencies；
+- transitive dependencies；
+- deprecated packages；
+- risky packages；
+- postinstall scripts；
+- npm scripts；
+- dependency confusion 风险；
+- typosquatting 风险；
+- private registry 配置；
+- Git dependencies；
+- pinned / unpinned versions；
+- Docker base image；
+- GitHub Actions third-party actions；
+- CI secret usage；
+- SBOM 输出。
+
+要求区分：
+
+- 确定风险；
+- 版本过旧；
+- 需要联网核验；
+- 仅本地可疑。
+
+不能编造 CVE。需要联网时必须标记为 needs_online_verification。
+
+8. 文档、测试、历史信息收集
+
+检查是否能收集：
+
+- README；
+- API docs；
+- OpenAPI / Swagger；
+- GraphQL schema；
+- Postman collection；
+- Insomnia collection；
+- tests；
+- fixtures；
+- seed；
+- mock；
+- storybook；
+- examples；
+- changelog；
+- migration；
+- commit history；
+- branches；
+- tags；
+- release notes；
+- issue templates；
+- error examples；
+- sample credentials 是否存在；
+- 文档里提到但代码里隐藏的接口；
+- 测试里出现但正式文档没有的接口。
+
+注意：真实凭据必须脱敏，不允许输出明文。
+
+9. 偏门、冷门、剑走偏锋的信息收集路线
+
+请重点审查当前 Skills 是否覆盖以下高级信息源：
+
+- build manifest；
+- route manifest；
+- sourcemap 原始路径；
+- sourcemap 中被删除的 API；
+- service worker cache；
+- preload / prefetch 资源；
+- hidden HTML comments；
+- robots / sitemap / manifest；
+- favicon / asset hash 指纹；
+- error boundary 信息；
+- telemetry / analytics event name；
+- feature flag key；
+- A/B test key；
+- i18n key；
+- translation file 中隐藏页面名；
+- frontend permission enum；
+- backend enum；
+- protobuf；
+- GraphQL introspection 文件；
+- generated client SDK；
+- OpenAPI generated types；
+- ORM migration；
+- seed data；
+- test snapshots；
+- mock server；
+- Storybook stories；
+- admin panel bundle；
+- mobile app API wrapper；
+- Electron preload；
+- browser extension manifest；
+- CI logs 中的构建路径；
+- Docker layer 暴露的路径；
+- stale route；
+- dead code endpoint；
+- legacy compatibility endpoint；
+- debug-only endpoint；
+- staging-only config；
+- internal hostname；
+- callback URL；
+- webhook secret usage pattern；
+- tenant boundary identifier；
+- role permission matrix。
+
+要求：这些路线只能用于本机文件、本机构建产物、授权项目资料，不允许未授权探测第三方系统。
+
+三、把当前 Skills 从“提示词”升级为“工程系统”
+
+如果当前 Skills 只是 Markdown 或提示词，请把它升级为可执行结构。
+
+至少应包含：
+
+- collectors/
+  - route_collector
+  - js_asset_collector
+  - config_collector
+  - dependency_collector
+  - docs_collector
+  - ci_cd_collector
+  - iac_collector
+  - graphql_collector
+  - websocket_collector
+  - sourcemap_collector
+  - hidden_parameter_collector
+
+- analyzers/
+  - project_fingerprint_analyzer
+  - endpoint_parameter_analyzer
+  - auth_surface_analyzer
+  - role_tenant_surface_analyzer
+  - frontend_backend_correlation_analyzer
+  - secret_redaction_analyzer
+  - evidence_quality_analyzer
+
+- schemas/
+  - information-finding.schema.json
+  - endpoint.schema.json
+  - parameter.schema.json
+  - evidence-manifest.schema.json
+  - collection-run.schema.json
+
+- reports/
+  - markdown report
+  - json report
+  - csv summary
+  - evidence manifest
+
+- tests/
+  - positive fixtures
+  - negative fixtures
+  - hidden endpoint fixture
+  - hidden parameter fixture
+  - sourcemap fixture
+  - GraphQL fixture
+  - WebSocket fixture
+  - config secret redaction fixture
+  - multi-role fixture
+  - multi-tenant fixture
+
+- quality/
+  - quality gate
+  - hallucination guard
+  - scope guard
+  - secret redaction gate
+  - evidence completeness gate
+
+四、质量门槛必须强制执行
+
+请实现或修复质量门槛：
+
+1. scope gate
+
+任何 collector 只能处理授权路径内的文件。
+
+必须防止：
+
+- 路径穿越；
+- 跟随危险 symlink；
+- 扫描授权目录外文件；
+- 把系统目录误当目标；
+- 把用户主目录全部扫入。
+
+2. secret redaction gate
+
+发现疑似 secret 时：
+
+- 不输出明文；
+- 不写入报告明文；
+- 不写入 manifest 明文；
+- 只输出类型、路径、行号、哈希、上下文摘要；
+- redaction 失败直接 FAIL。
+
+3. evidence gate
+
+任何结论必须包含：
+
+- source file；
+- line range；
+- collector name；
+- timestamp；
+- confidence；
+- reason；
+- raw evidence hash；
+- redacted evidence；
+- reproduction command；
+- limitation。
+
+4. anti-hallucination gate
+
+禁止：
+
+- 没有文件证据就说“存在”；
+- 没有执行命令就说“已验证”；
+- 没有 schema 校验就说“格式正确”；
+- 没有测试就说“可运行”；
+- 把 candidate 写成 confirmed；
+- 编造路径；
+- 编造工具输出；
+- 编造 CVE；
+- 编造接口；
+- 编造参数；
+- 编造漏洞。
+
+5. coverage gate
+
+必须输出覆盖率：
+
+- 已分析文件数；
+- 跳过文件数；
+- 跳过原因；
+- endpoint 数量；
+- 参数数量；
+- JS asset 数量；
+- config 数量；
+- docs 数量；
+- 依赖数量；
+- evidence 数量；
+- candidate 数量；
+- confirmed 数量；
+- needs_review 数量。
+
+五、真实执行与自检
+
+请给出并尽量实现以下命令：
+
+- 安装依赖；
+- dry-run；
+- 对测试 fixture 运行；
+- 对本机授权项目运行；
+- 输出 JSON；
+- 输出 Markdown；
+- 输出 evidence manifest；
+- 运行 schema validation；
+- 运行 quality gate；
+- 运行 redaction gate；
+- 运行 anti-hallucination test。
+
+每个命令都必须说明：
+
+- 输入；
+- 输出；
+- 失败条件；
+- 如何复现；
+- 如何判断成功。
+
+六、修复方式
+
+你必须实际修改文件，而不是只写建议。
+
+修复时遵守：
+
+1. 保留原有知识库。
+2. 保留原有漏洞模板。
+3. 保留原有信息收集能力。
+4. 不删除核心能力。
+5. 可以清理冗余、重复、过时、无用、伪能力文档。
+6. 不允许把“未来计划”伪装成“已实现能力”。
+7. 不允许写“世界顶级”但没有对应代码、测试、schema、命令。
+8. 不允许只生成说明文档而不实现可执行逻辑。
+9. 不允许只做 regex，如果必须 regex，要标明能力边界。
+10. 能用 AST 的地方优先 AST；不能 AST 的地方必须输出 limitation。
+
+七、最终输出
+
+请最终输出以下内容：
+
+1. 当前 Skills 真实能力清单。
+2. 当前 Skills 缺陷清单。
+3. 已修复文件列表。
+4. 新增文件列表。
+5. 删除或清理文件列表。
+6. 保留的知识库和漏洞模板清单。
+7. 信息收集能力覆盖矩阵。
+8. 隐藏信息收集路线覆盖矩阵。
+9. 每个 collector 的输入、输出、证据格式。
+10. 每个 analyzer 的输入、输出、判断逻辑。
+11. schema 校验结果。
+12. quality gate 结果。
+13. redaction gate 结果。
+14. anti-hallucination gate 结果。
+15. fixture 测试结果。
+16. 一键运行命令。
+17. 安装说明。
+18. 使用说明。
+19. 已知限制。
+20. 下一步必须人工确认的内容。
+
+八、反思与反向审判
+
+完成修复后，进入“反向审判模式”。
+
+你必须攻击你自己的修复结果，逐条回答：
+
+1. 哪些能力是真正可执行的？
+2. 哪些能力只是候选分析？
+3. 哪些地方仍然依赖 regex？
+4. 哪些地方没有 AST？
+5. 哪些地方没有真实 runtime evidence？
+6. 哪些地方容易误报？
+7. 哪些地方容易漏报？
+8. 哪些地方可能导致 secret 泄露？
+9. 哪些地方可能越权扫描？
+10. 哪些地方可能把 candidate 误升 confirmed？
+11. 哪些地方仍然不配叫顶级？
+12. 如果这个 Skills 在真实授权项目中漏掉隐藏接口，责任最可能在哪里？
+13. 如果这个 Skills 误报一个严重风险，责任最可能在哪里？
+14. 如果这个 Skills 伪造证据，哪个 gate 应该失败？
+15. 当前版本距离真正顶级还缺什么？
+
+九、强制最终判定
+
+最后必须给出冷静评分：
+
+- 信息收集完整性：0-100
+- 隐藏信息发现能力：0-100
+- JS / sourcemap / chunk 分析能力：0-100
+- 参数发现能力：0-100
+- 配置与依赖发现能力：0-100
+- 证据链可信度：0-100
+- 反幻觉能力：0-100
+- 工程可执行性：0-100
+- 安全边界控制：0-100
+- 综合评分：0-100
+
+评分必须严苛。没有文件、代码、测试、schema、命令、证据链支撑的能力不得高分。
+
+最后输出一句明确结论：
+
+“这个 Skills 当前是否已经达到顶级？如果没有，最关键的 10 个缺口是什么？每个缺口对应要改哪个文件、加什么测试、如何验收。”
+
+
+
+
+
+
+
+
+
+
+
+现在不要默认你刚刚的修复是正确的。
+
+你要进入“失职追责式反查模式”。你的任务不是维护刚才的结论，而是证明刚才哪些地方可能是幻觉、伪实现、半成品、不可执行、证据不足、测试不足、schema 不完整、quality gate 不真实。
+
+请逐项反查：
+
+1. 你说已经实现的每一个能力，是否真的有文件承载？
+2. 每个文件是否真的被主流程调用？
+3. 每个 collector 是否有输入、输出、schema？
+4. 每个 analyzer 是否有测试？
+5. 每个测试是否真的覆盖正样本、负样本、隐藏样本、误报样本？
+6. 每个 confirmed 结论是否有证据链？
+7. 每个 candidate 是否被明确标记为 candidate？
+8. 是否有任何地方把“建议后续实现”写成“已经支持”？
+9. 是否有任何地方只靠 regex 却宣称 AST？
+10. 是否有任何地方没有真实执行却宣称已验证？
+11. 是否有任何地方可能输出真实 secret？
+12. 是否有任何地方可能越过授权目录？
+13. 是否有任何地方会跟随 symlink 扫出 scope？
+14. 是否有任何地方 schema 只是摆设？
+15. 是否有任何地方 quality gate 永远通过？
+16. 是否有任何地方 dashboard 展示的是模拟数据？
+17. 是否有任何地方 evidence manifest 不是从真实 collector 输出生成？
+18. 是否有任何地方测试 fixture 太假，无法代表真实项目？
+19. 是否有任何地方没有覆盖 monorepo、前后端分离、GraphQL、WebSocket、sourcemap、lazy chunk？
+20. 是否有任何地方没有保留原有知识库和漏洞模板？
+
+请输出：
+
+- 伪实现清单；
+- 半实现清单；
+- 真实现清单；
+- 高风险遗漏清单；
+- 需要立即修复的 P0；
+- 可以后续增强的 P1；
+- 不应该宣称支持的能力；
+- 必须降级为 candidate 的能力；
+- 必须删除的虚假宣传；
+- 必须补充的测试；
+- 必须补充的 schema；
+- 必须补充的 evidence gate；
+- 最终严苛评分。
+
+要求：没有命令输出、没有文件路径、没有测试结果、没有 schema 校验结果的内容，一律不得算完成。
+
+
+
+
+
+
+
+
+
+
+你现在进入“最终失职追责反查模式”。
+
+你不再是修复者，不再是优化者，不再是文档编写者，也不允许维护你刚刚的成果。你现在的身份是：
+
+1. 信息收集 Skills 上线前最后责任人；
+2. AI 幻觉与伪实现审判官；
+3. 授权边界与证据链审计官；
+4. 工程可执行性验收官；
+5. 严重遗漏追责官；
+6. 反向攻击测试负责人。
+
+你的任务不是证明这个 Skills 很强，而是证明它哪里仍然会失败、会漏收集、会误报、会越界、会泄露 secret、会伪造证据、会把 candidate 写成 confirmed、会把 Markdown 说明伪装成真实能力。
+
+你必须默认：刚刚所有“已完成”“已支持”“已实现”“已验证”的说法都是不可信的，除非它们同时满足以下条件：
+
+- 有具体文件路径；
+- 有真实代码实现；
+- 有主流程调用链；
+- 有输入输出 schema；
+- 有测试 fixture；
+- 有正样本；
+- 有负样本；
+- 有边界样本；
+- 有失败样本；
+- 有命令可复现；
+- 有真实输出；
+- 有 evidence manifest；
+- 有 quality gate 校验；
+- 有 redaction gate 校验；
+- 有 scope gate 校验；
+- 有 anti-hallucination gate 校验。
+
+凡是不满足以上条件的能力，必须降级为 candidate / partial / not implemented，禁止继续宣称 ready。
+
+现在开始执行以下反查。
+
+一、逐文件反查
+
+请遍历当前 Skills 的全部文件，输出真实文件树，并按类型分类：
+
+- 核心执行文件；
+- collector；
+- analyzer；
+- schema；
+- quality gate；
+- redaction gate；
+- scope gate；
+- evidence manifest 生成器；
+- reporter；
+- tests；
+- fixtures；
+- knowledge base；
+- templates；
+- prompt / rule 文档；
+- 安装脚本；
+- 示例输出；
+- 冗余文件；
+- 过时文件；
+- 伪装成能力的文档；
+- 未被调用的孤儿文件。
+
+对每个文件必须回答：
+
+1. 这个文件的真实作用是什么？
+2. 是否被主流程调用？
+3. 被谁调用？
+4. 调用链是否真实存在？
+5. 是否有测试覆盖？
+6. 是否有 schema 约束？
+7. 是否可能只是文档，不是能力？
+8. 是否存在过时描述或虚假宣传？
+9. 是否应该保留、修复、降级、删除？
+
+禁止只说“看起来”“应该”“可能”。必须给出路径和证据。
+
+二、逐能力反查
+
+请逐项反查以下能力是否真实存在，不允许笼统回答“支持”。
+
+每一项都必须给出：
+
+- 状态：ready / partial / candidate / not implemented；
+- 对应文件；
+- 入口函数或命令；
+- 输入格式；
+- 输出格式；
+- schema；
+- 测试文件；
+- fixture；
+- 成功样例；
+- 失败样例；
+- 质量门槛；
+- 已知限制；
+- 是否允许写入 confirmed。
+
+反查能力清单：
+
+1. 授权 scope 限制；
+2. symlink 防逃逸；
+3. 路径穿越防护；
+4. secret 检测；
+5. secret 脱敏；
+6. secret 脱敏失败中断；
+7. evidence manifest 生成；
+8. evidence manifest schema 校验；
+9. anti-hallucination gate；
+10. collector 输出 schema 校验；
+11. endpoint 收集；
+12. hidden endpoint 收集；
+13. route → handler 绑定；
+14. middleware 识别；
+15. AuthN 识别；
+16. AuthZ 识别；
+17. role / tenant 字段识别；
+18. 参数收集；
+19. 后端接受但前端未暴露参数识别；
+20. mass assignment 风险字段识别；
+21. JS asset 收集；
+22. lazy chunk 发现；
+23. dynamic import 追踪；
+24. source map 解析；
+25. source map 原始路径还原；
+26. API wrapper resolver；
+27. fetch / axios / request 封装识别；
+28. 字符串拼接 URL 还原；
+29. GraphQL query / mutation / variable 收集；
+30. WebSocket event / payload 收集；
+31. gRPC / protobuf 收集；
+32. OpenAPI / Swagger 收集；
+33. Postman / Insomnia collection 收集；
+34. Docker / Compose / K8s / Helm 收集；
+35. Terraform / IaC 收集；
+36. CI/CD workflow 收集；
+37. dependency / lockfile 分析；
+38. SBOM 输出；
+39. private registry 风险识别；
+40. postinstall script 风险识别；
+41. docs / tests / fixtures / seed 数据挖掘；
+42. migration / ORM model 字段收集；
+43. feature flag key 收集；
+44. i18n key 隐藏页面发现；
+45. analytics / telemetry event 信息收集；
+46. admin route / debug route 识别；
+47. legacy route / dead code endpoint 识别；
+48. monorepo 支持；
+49. 前后端分离项目支持；
+50. 多语言项目支持；
+51. markdown report；
+52. json report；
+53. csv summary；
+54. dashboard；
+55. 一键运行；
+56. dry-run；
+57. fixture 自测；
+58. 本机授权项目运行；
+59. quality gate；
+60. coverage report。
+
+任何没有真实代码、测试、schema、命令输出的项目，必须明确标记为 not implemented 或 partial。
+
+三、反查“伪顶级”问题
+
+请专门寻找以下问题：
+
+1. 是否有文档里写“顶级”“完整”“全自动”，但代码无法支撑？
+2. 是否有 README 宣称支持 AST，但实际还是 regex？
+3. 是否有 README 宣称支持 source map，但只有文件名搜索？
+4. 是否有 README 宣称支持 GraphQL，但没有解析 query / mutation / variable？
+5. 是否有 README 宣称支持 WebSocket，但没有 payload/event 解析？
+6. 是否有 README 宣称支持多语言，但只支持 JS/Python？
+7. 是否有 README 宣称支持 evidence manifest，但 manifest 不是从 collector 真实输出生成？
+8. 是否有 README 宣称支持 quality gate，但 gate 永远返回 PASS？
+9. 是否有 README 宣称支持 secret redaction，但报告仍可能输出明文？
+10. 是否有 README 宣称支持 scope guard，但 collector 可读取授权目录外文件？
+11. 是否有 dashboard 展示模拟数据？
+12. 是否有测试只测试 happy path？
+13. 是否有 fixture 过于虚假，不代表真实项目？
+14. 是否有 collector 没有异常处理？
+15. 是否有 schema 只检查字段存在，不检查语义？
+16. 是否有 candidate 自动升级 confirmed？
+17. 是否有未执行命令却写“已验证”？
+18. 是否有未联网核验却写 CVE 结论？
+19. 是否有未读取文件却编造接口？
+20. 是否有过度自信评分？
+
+对每一项必须输出：
+
+- 问题是否存在；
+- 证据路径；
+- 触发条件；
+- 危害；
+- 修复方式；
+- 验收命令；
+- 修复前应降级的能力描述。
+
+四、证据链反查
+
+请抽取至少 10 个发现结果，逐条追踪完整证据链。
+
+每个发现必须能追踪：
+
+Finding → Collector → Source File → Line Range → Raw Evidence Hash → Redacted Evidence → Schema Validation → Quality Gate → Report Output
+
+如果任一环节断裂，必须判定该 finding 不允许 confirmed，只能是 candidate 或 rejected。
+
+请重点检查：
+
+1. source file 是否真实存在；
+2. line range 是否准确；
+3. raw evidence hash 是否可复算；
+4. redacted evidence 是否不泄露 secret；
+5. collector name 是否真实；
+6. timestamp 是否真实生成；
+7. confidence 是否有计算逻辑；
+8. reason 是否基于证据；
+9. report 是否引用 manifest；
+10. manifest 是否引用 collector 输出。
+
+五、scope 逃逸攻击测试
+
+你必须设计并执行反向测试，证明 Skills 不会越权读取授权目录外内容。
+
+至少测试：
+
+1. 普通相对路径逃逸：../；
+2. 绝对路径逃逸；
+3. symlink 指向授权目录外；
+4. nested symlink；
+5. Windows junction；
+6. hidden directory；
+7. git submodule；
+8. node_modules 中的 symlink；
+9. Docker volume path；
+10. 临时文件路径；
+11. 用户主目录误扫；
+12. 系统目录误扫。
+
+每个测试必须输出：
+
+- 测试 fixture；
+- 命令；
+- 预期结果；
+- 实际结果；
+- PASS / FAIL；
+- 失败时修复文件；
+- 修复后复测结果。
+
+六、secret 泄露攻击测试
+
+你必须主动构造 secret fixture，验证脱敏系统是否真的有效。
+
+至少包括：
+
+- AWS key；
+- GitHub token；
+- JWT；
+- private key；
+- database URL；
+- Redis URL；
+- Stripe key；
+- Slack token；
+- webhook secret；
+- OAuth client secret；
+- session secret；
+- random high entropy string；
+- .env；
+- YAML；
+- JSON；
+- JS config；
+- CI workflow；
+- Docker compose；
+- log file；
+- test fixture；
+- markdown 文档。
+
+每个测试必须检查：
+
+1. 控制台是否泄露明文；
+2. JSON report 是否泄露明文；
+3. Markdown report 是否泄露明文；
+4. evidence manifest 是否泄露明文；
+5. dashboard 是否泄露明文；
+6. hash 是否稳定；
+7. redaction 失败是否 FAIL；
+8. 是否存在绕过模式。
+
+只要有一个输出通道泄露明文，整体 redaction gate 必须 FAIL。
+
+七、hidden information 反查
+
+请构造或使用 fixture 验证是否真的能发现隐藏信息。
+
+至少覆盖：
+
+1. lazy chunk 中的隐藏 API；
+2. sourcemap 中的旧 API；
+3. service worker cache 中的 API；
+4. build manifest 中的 route；
+5. i18n key 中的隐藏页面；
+6. feature flag 中的隐藏入口；
+7. analytics event 中的业务动作；
+8. test fixture 中的 admin endpoint；
+9. seed 数据中的角色名；
+10. migration 中的敏感字段；
+11. GraphQL fragment 中的隐藏字段；
+12. WebSocket payload 中的隐藏 action；
+13. OpenAPI 未暴露在前端的接口；
+14. Postman collection 中的老接口；
+15. debug config 中的内部路径；
+16. admin bundle 中的隐藏菜单；
+17. mobile API wrapper 中的接口；
+18. Electron preload 中的 bridge API；
+19. browser extension manifest 中的权限与 endpoint；
+20. CI 配置中的部署环境差异。
+
+每一项必须给出：
+
+- fixture；
+- collector；
+- evidence；
+- 是否发现；
+- 是否误报；
+- 是否漏报；
+- 原因；
+- 修复方式。
+
+八、AST 真实性反查
+
+如果 Skills 声称支持 AST，请逐项验证：
+
+1. 是否真的调用 Babel / TypeScript Compiler API / tree-sitter / Python ast / JavaParser / PHP Parser / Go parser / Rust parser？
+2. 是否只是依赖安装了但未调用？
+3. 是否只是 import 了但没有用于分析？
+4. 是否能解析 import/export？
+5. 是否能追踪 wrapper function？
+6. 是否能还原字符串拼接？
+7. 是否能跨文件追踪？
+8. 是否能处理 alias？
+9. 是否能处理 dynamic import？
+10. 是否能处理 decorator / annotation？
+11. 是否能输出 AST 证据位置？
+12. 是否有失败降级逻辑？
+
+如果没有真实 AST 调用链，必须删除“AST 支持”宣传，改为“text/regex candidate extraction”。
+
+九、quality gate 反查
+
+请检查 quality gate 是否真实有效。
+
+必须故意构造以下坏输入，确认 gate 会失败：
+
+1. 缺 source file；
+2. 缺 line range；
+3. 缺 collector；
+4. 缺 evidence hash；
+5. 缺 confidence；
+6. 缺 status；
+7. candidate 写成 confirmed；
+8. secret 未脱敏；
+9. schema 字段类型错误；
+10. scope 越界；
+11. 空 manifest；
+12. dashboard 使用模拟数据；
+13. report 引用不存在 finding；
+14. collector 输出不符合 schema；
+15. CVE 未核验却标 confirmed；
+16. 命令未执行却标 verified；
+17. 文件不存在却有 finding；
+18. line range 超出文件长度；
+19. hash 不匹配；
+20. timestamp 非法。
+
+每个坏输入都必须输出 gate 是否 FAIL。只要 gate 没有 FAIL，就说明质量门槛无效，必须修复。
+
+十、主流程连通性反查
+
+请从一键命令开始追踪整个系统：
+
+命令入口 → 参数解析 → scope 初始化 → collector 调度 → analyzer 调度 → schema 校验 → redaction → manifest → quality gate → report → exit code
+
+要求输出：
+
+1. 主入口文件；
+2. CLI 参数；
+3. 默认配置；
+4. 每个 collector 是否真的被调用；
+5. 每个 analyzer 是否真的被调用；
+6. 失败时是否中断；
+7. exit code 是否正确；
+8. 日志是否脱敏；
+9. 输出路径是否在授权目录内；
+10. 是否有 dry-run；
+11. 是否有 verbose；
+12. 是否有 machine-readable output；
+13. 是否有 deterministic output；
+14. 是否有 hash 稳定性；
+15. 是否会产生无关缓存或冗余文件。
+
+十一、报告可信度反查
+
+请检查最终报告是否存在以下问题：
+
+1. 把 candidate 写成 confirmed；
+2. 把 needs_review 写成 confirmed；
+3. 把 unsupported 写成 supported；
+4. 把未执行命令写成已执行；
+5. 把未联网核验写成已核验；
+6. 把漏洞结论混入信息收集结论；
+7. 把 secret 明文写入报告；
+8. 缺 evidence；
+9. 缺 reproduction command；
+10. 缺 limitation；
+11. 缺 false positive 风险说明；
+12. 缺 skipped files；
+13. 缺 coverage；
+14. 缺 scope；
+15. 缺 collector version / hash；
+16. 缺 schema validation 结果；
+17. 缺 quality gate 结果；
+18. 使用夸大措辞；
+19. 使用无法证明的结论；
+20. 使用“顶级”“完整”“全覆盖”等没有证据的描述。
+
+发现任何问题，必须修改报告模板。
+
+十二、保留能力反查
+
+你必须确认修复过程中没有破坏原有能力。
+
+检查：
+
+1. 原有知识库是否保留；
+2. 原有漏洞模板是否保留；
+3. 原有信息收集模板是否保留；
+4. 原有规则是否仍可访问；
+5. 原有命令是否仍可运行；
+6. 原有目录结构是否有迁移说明；
+7. 原有用户入口是否失效；
+8. 原有测试是否还能通过；
+9. 原有报告格式是否兼容；
+10. 原有文件是否被误删。
+
+输出：
+
+- 保留清单；
+- 迁移清单；
+- 删除清单；
+- 删除理由；
+- 风险说明；
+- 回滚方式。
+
+十三、严苛评分规则
+
+请重新评分，但必须按证据扣分。
+
+评分维度：
+
+1. 授权边界控制：0-100
+2. secret 安全处理：0-100
+3. evidence manifest 可信度：0-100
+4. anti-hallucination 能力：0-100
+5. endpoint 收集能力：0-100
+6. hidden endpoint 发现能力：0-100
+7. 参数发现能力：0-100
+8. JS / chunk / sourcemap 分析能力：0-100
+9. GraphQL / WebSocket / gRPC 收集能力：0-100
+10. 配置 / IaC / CI/CD 收集能力：0-100
+11. 依赖 / 供应链收集能力：0-100
+12. docs / tests / fixture 挖掘能力：0-100
+13. 多语言 / 多框架覆盖：0-100
+14. schema 完整性：0-100
+15. quality gate 有效性：0-100
+16. 测试真实性：0-100
+17. 工程可执行性：0-100
+18. 报告可信度：0-100
+19. 可维护性：0-100
+20. 综合评分：0-100
+
+扣分规则：
+
+- 没有代码实现：该项最高 30 分；
+- 没有测试：该项最高 45 分；
+- 没有 schema：该项最高 55 分；
+- 没有主流程调用：该项最高 40 分；
+- 没有 evidence：该项最高 50 分；
+- 依赖 regex 却宣称 AST：该项最高 35 分；
+- gate 永远 PASS：该项最高 25 分；
+- 可能泄露 secret：secret 安全处理最高 20 分；
+- 可能越权扫描：授权边界控制最高 20 分；
+- candidate 可误升 confirmed：anti-hallucination 最高 30 分；
+- dashboard 使用模拟数据：报告可信度最高 50 分；
+- 没有真实 fixture：测试真实性最高 40 分；
+- 编造能力描述：综合评分最高 60 分。
+
+十四、最终必须输出的审判结果
+
+最终输出必须包含：
+
+1. 真实 ready 能力清单；
+2. partial 能力清单；
+3. candidate 能力清单；
+4. not implemented 能力清单；
+5. 伪实现清单；
+6. 虚假宣传清单；
+7. 高风险安全缺陷清单；
+8. 高风险漏收集点清单；
+9. 高风险误报点清单；
+10. 高风险 secret 泄露点清单；
+11. 高风险 scope 逃逸点清单；
+12. schema 缺陷清单；
+13. quality gate 缺陷清单；
+14. evidence manifest 缺陷清单；
+15. 测试缺陷清单；
+16. fixture 缺陷清单；
+17. 报告模板缺陷清单；
+18. 必须立即修复的 P0；
+19. 应该增强的 P1；
+20. 可以后续优化的 P2；
+21. 必须删除或降级的宣传；
+22. 必须新增的测试；
+23. 必须新增的 schema；
+24. 必须新增的 collector；
+25. 必须新增的 analyzer；
+26. 必须新增的 gate；
+27. 必须新增的 fixture；
+28. 一键验收命令；
+29. 失败时的 exit code 规则；
+30. 最终评分。
+
+十五、最终结论格式
+
+最后必须用以下格式输出，不允许回避：
+
+【最终判定】
+
+这个信息收集 Skills 当前是否已经达到世界顶级：是 / 否。
+
+理由：
+
+1. ...
+2. ...
+3. ...
+
+当前最致命的 10 个缺口：
+
+1. 缺口：
+   - 影响：
+   - 证据：
+   - 需要修改的文件：
+   - 需要新增的测试：
+   - 验收命令：
+   - 修复后应达到的结果：
+
+2. 缺口：
+   - 影响：
+   - 证据：
+   - 需要修改的文件：
+   - 需要新增的测试：
+   - 验收命令：
+   - 修复后应达到的结果：
+
+继续列满 10 个。
+
+【禁止事项】
+
+- 禁止说“已经很完善”但不给证据；
+- 禁止说“建议后续优化”但不给文件和命令；
+- 禁止说“支持 AST”但不给真实 AST 调用链；
+- 禁止说“支持 hidden endpoint”但不给 fixture；
+- 禁止说“支持 secret redaction”但不给泄露测试；
+- 禁止说“支持 scope guard”但不给逃逸测试；
+- 禁止说“quality gate 已完成”但不给失败样本；
+- 禁止说“schema 已完成”但不给 schema validation 输出；
+- 禁止说“报告可信”但不给 manifest 到 report 的映射；
+- 禁止把任何未验证能力写成 confirmed。
+
+现在开始反查。你的目标不是让这个 Skills 看起来顶级，而是让它经得住真实授权项目、本机执行、证据链、失败样本、恶意 fixture 和追责审计。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+在完成以上反查后，不要只输出问题清单。
+
+你必须立即执行 P0 修复，优先级如下：
+
+1. 修复 scope guard，确保不会读取授权目录外文件。
+2. 修复 secret redaction，确保任何输出通道都不泄露明文 secret。
+3. 修复 evidence manifest，确保所有 finding 都能追踪到 source file、line range、collector、hash、redacted evidence。
+4. 修复 schema validation，确保坏输入会失败。
+5. 修复 quality gate，确保 candidate 不能升 confirmed。
+6. 修复 anti-hallucination gate，确保没有证据的结论不能进入报告。
+7. 修复 collector 主流程调用，确保不是孤儿文件。
+8. 修复 report 模板，禁止夸大、禁止伪 confirmed。
+9. 补齐最少 10 个真实 fixture：hidden endpoint、hidden parameter、sourcemap、lazy chunk、GraphQL、WebSocket、secret redaction、scope escape、CI/CD、monorepo。
+10. 输出一键验收命令，并运行自测。
+
+修复后重新执行反查评分。
+
+如果某项暂时无法实现，必须：
+- 从 ready 降级；
+- 删除夸大描述；
+- 标记 limitation；
+- 标记 needs_review；
+- 给出明确的文件级修复计划；
+- 禁止继续宣传为已完成能力。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+{
+  "authorized_use": true,
+  "non_destructive": true,
+  "targets": [
+    "fixtures/worldclass-semantic-sample"
+  ],
+  "roles": [
+    "admin",
+    "user"
+  ],
+  "tenants": [
+    "tenant-a",
+    "tenant-b"
+  ]
+}

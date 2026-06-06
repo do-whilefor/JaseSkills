@@ -1,0 +1,2094 @@
+{
+  "schema_version": "js-detector-registry/v2",
+  "detectors": [
+    {
+      "rule_id": "JS-IDOR-BOLA",
+      "title": "IDOR / BOLA",
+      "module": "authz-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: authorization object id tenant owner boundary",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-IDOR-BOLA/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-IDOR-BOLA/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-IDOR-BOLA/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-IDOR-BOLA/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "authorization",
+        "object",
+        "id",
+        "tenant",
+        "owner",
+        "boundary"
+      ]
+    },
+    {
+      "rule_id": "JS-BFLA",
+      "title": "Broken Function Level Authorization",
+      "module": "authz-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: admin internal role permission route",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-BFLA/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-BFLA/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-BFLA/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-BFLA/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "admin",
+        "internal",
+        "role",
+        "permission",
+        "route"
+      ]
+    },
+    {
+      "rule_id": "JS-TENANT",
+      "title": "多租户越权",
+      "module": "authz-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: tenant org workspace account boundary",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-TENANT/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-TENANT/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-TENANT/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-TENANT/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "tenant",
+        "org",
+        "workspace",
+        "account",
+        "boundary"
+      ]
+    },
+    {
+      "rule_id": "JS-HIDDEN-ADMIN",
+      "title": "前端隐藏管理接口",
+      "module": "authz-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: admin internal hidden route chunk",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-HIDDEN-ADMIN/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-HIDDEN-ADMIN/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-HIDDEN-ADMIN/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-HIDDEN-ADMIN/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "admin",
+        "internal",
+        "hidden",
+        "route",
+        "chunk"
+      ]
+    },
+    {
+      "rule_id": "JS-FRONTEND-AUTHZ",
+      "title": "前端权限绕过",
+      "module": "authz-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: disabled hidden permission map role guard",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-FRONTEND-AUTHZ/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-FRONTEND-AUTHZ/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-FRONTEND-AUTHZ/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-FRONTEND-AUTHZ/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "disabled",
+        "hidden",
+        "permission",
+        "map",
+        "role",
+        "guard"
+      ]
+    },
+    {
+      "rule_id": "JS-JWT-MISUSE",
+      "title": "JWT / token 使用错误",
+      "module": "secret-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: jwt token localStorage sessionStorage cookie",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-JWT-MISUSE/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-JWT-MISUSE/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-JWT-MISUSE/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-JWT-MISUSE/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "jwt",
+        "token",
+        "localStorage",
+        "sessionStorage",
+        "cookie"
+      ]
+    },
+    {
+      "rule_id": "JS-TOKEN-LEAK",
+      "title": "token 泄露",
+      "module": "secret-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: token authorization bearer storage analytics",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-TOKEN-LEAK/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-TOKEN-LEAK/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-TOKEN-LEAK/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-TOKEN-LEAK/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "token",
+        "authorization",
+        "bearer",
+        "storage",
+        "analytics"
+      ]
+    },
+    {
+      "rule_id": "JS-SECRET-LEAK",
+      "title": "API key / secret 泄露",
+      "module": "secret-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: apiKey secret privateKey clientSecret credential",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-SECRET-LEAK/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-SECRET-LEAK/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-SECRET-LEAK/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-SECRET-LEAK/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "apiKey",
+        "secret",
+        "privateKey",
+        "clientSecret",
+        "credential"
+      ]
+    },
+    {
+      "rule_id": "JS-SOURCEMAP-LEAK",
+      "title": "sourcemap 泄露",
+      "module": "sourcemap-analyzer",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: sourceMappingURL sourcesContent map",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-SOURCEMAP-LEAK/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-SOURCEMAP-LEAK/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-SOURCEMAP-LEAK/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-SOURCEMAP-LEAK/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "sourceMappingURL",
+        "sourcesContent",
+        "map"
+      ]
+    },
+    {
+      "rule_id": "JS-INTERNAL-API",
+      "title": "内部接口泄露",
+      "module": "api-extractor",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: internal private debug staging admin",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-INTERNAL-API/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-INTERNAL-API/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-INTERNAL-API/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-INTERNAL-API/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "internal",
+        "private",
+        "debug",
+        "staging",
+        "admin"
+      ]
+    },
+    {
+      "rule_id": "JS-DEBUG-API",
+      "title": "调试接口泄露",
+      "module": "api-extractor",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: debug trace mock test console logger",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-DEBUG-API/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-DEBUG-API/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-DEBUG-API/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-DEBUG-API/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "debug",
+        "trace",
+        "mock",
+        "test",
+        "console",
+        "logger"
+      ]
+    },
+    {
+      "rule_id": "JS-GQL-OVEREXPOSE",
+      "title": "GraphQL 过度暴露",
+      "module": "graphql-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: graphql fragment introspection __schema query mutation",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-GQL-OVEREXPOSE/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-GQL-OVEREXPOSE/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-GQL-OVEREXPOSE/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-GQL-OVEREXPOSE/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "graphql",
+        "fragment",
+        "introspection",
+        "__schema",
+        "query",
+        "mutation"
+      ]
+    },
+    {
+      "rule_id": "JS-GQL-IDOR",
+      "title": "GraphQL IDOR",
+      "module": "graphql-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: graphql id userId tenantId node edge",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-GQL-IDOR/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-GQL-IDOR/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-GQL-IDOR/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-GQL-IDOR/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "graphql",
+        "id",
+        "userId",
+        "tenantId",
+        "node",
+        "edge"
+      ]
+    },
+    {
+      "rule_id": "JS-GQL-INTROSPECTION",
+      "title": "GraphQL introspection 泄露",
+      "module": "graphql-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: __schema __type introspection",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-GQL-INTROSPECTION/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-GQL-INTROSPECTION/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-GQL-INTROSPECTION/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-GQL-INTROSPECTION/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "__schema",
+        "__type",
+        "introspection"
+      ]
+    },
+    {
+      "rule_id": "JS-WS-AUTH-MISSING",
+      "title": "WebSocket 鉴权缺失",
+      "module": "websocket-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: WebSocket send message auth token",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-WS-AUTH-MISSING/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-WS-AUTH-MISSING/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-WS-AUTH-MISSING/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-WS-AUTH-MISSING/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "WebSocket",
+        "send",
+        "message",
+        "auth",
+        "token"
+      ]
+    },
+    {
+      "rule_id": "JS-WS-AUTHZ",
+      "title": "WebSocket 越权消息",
+      "module": "websocket-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: WebSocket admin tenant action messageType",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-WS-AUTHZ/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-WS-AUTHZ/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-WS-AUTHZ/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-WS-AUTHZ/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "WebSocket",
+        "admin",
+        "tenant",
+        "action",
+        "messageType"
+      ]
+    },
+    {
+      "rule_id": "JS-POSTMESSAGE-ORIGIN",
+      "title": "postMessage origin 校验缺陷",
+      "module": "postmessage-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: postMessage message origin addEventListener",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-POSTMESSAGE-ORIGIN/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-POSTMESSAGE-ORIGIN/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-POSTMESSAGE-ORIGIN/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-POSTMESSAGE-ORIGIN/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "postMessage",
+        "message",
+        "origin",
+        "addEventListener"
+      ]
+    },
+    {
+      "rule_id": "JS-DOM-XSS",
+      "title": "DOM XSS",
+      "module": "domxss-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: location hash search innerHTML outerHTML document.write",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-DOM-XSS/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-DOM-XSS/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-DOM-XSS/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-DOM-XSS/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "location",
+        "hash",
+        "search",
+        "innerHTML",
+        "outerHTML",
+        "document.write"
+      ]
+    },
+    {
+      "rule_id": "JS-REFLECTED-XSS-CAND",
+      "title": "reflected XSS candidate",
+      "module": "domxss-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: query param search html render",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-REFLECTED-XSS-CAND/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-REFLECTED-XSS-CAND/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-REFLECTED-XSS-CAND/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-REFLECTED-XSS-CAND/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "query",
+        "param",
+        "search",
+        "html",
+        "render"
+      ]
+    },
+    {
+      "rule_id": "JS-STORED-XSS-CAND",
+      "title": "stored XSS candidate",
+      "module": "domxss-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: api response richtext html render localStorage",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-STORED-XSS-CAND/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-STORED-XSS-CAND/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-STORED-XSS-CAND/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-STORED-XSS-CAND/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "api",
+        "response",
+        "richtext",
+        "html",
+        "render",
+        "localStorage"
+      ]
+    },
+    {
+      "rule_id": "JS-TEMPLATE-INJECTION",
+      "title": "template injection candidate",
+      "module": "domxss-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: template compile render eval Function",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-TEMPLATE-INJECTION/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-TEMPLATE-INJECTION/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-TEMPLATE-INJECTION/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-TEMPLATE-INJECTION/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "template",
+        "compile",
+        "render",
+        "eval",
+        "Function"
+      ]
+    },
+    {
+      "rule_id": "JS-PROTOTYPE-POLLUTION",
+      "title": "prototype pollution",
+      "module": "business-logic-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: __proto__ constructor prototype merge assign",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-PROTOTYPE-POLLUTION/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-PROTOTYPE-POLLUTION/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-PROTOTYPE-POLLUTION/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-PROTOTYPE-POLLUTION/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "__proto__",
+        "constructor",
+        "prototype",
+        "merge",
+        "assign"
+      ]
+    },
+    {
+      "rule_id": "JS-OPEN-REDIRECT",
+      "title": "open redirect",
+      "module": "business-logic-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: redirect returnUrl next url location.href",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-OPEN-REDIRECT/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-OPEN-REDIRECT/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-OPEN-REDIRECT/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-OPEN-REDIRECT/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "redirect",
+        "returnUrl",
+        "next",
+        "url",
+        "location.href"
+      ]
+    },
+    {
+      "rule_id": "JS-SSRF-CAND",
+      "title": "SSRF candidate",
+      "module": "business-logic-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: url callback webhook fetchUrl imageUrl importUrl",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-SSRF-CAND/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-SSRF-CAND/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-SSRF-CAND/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-SSRF-CAND/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "url",
+        "callback",
+        "webhook",
+        "fetchUrl",
+        "imageUrl",
+        "importUrl"
+      ]
+    },
+    {
+      "rule_id": "JS-CORS-MISCONFIG",
+      "title": "CORS misconfiguration",
+      "module": "api-extractor",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: withCredentials credentials Access-Control",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-CORS-MISCONFIG/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-CORS-MISCONFIG/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-CORS-MISCONFIG/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-CORS-MISCONFIG/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "withCredentials",
+        "credentials",
+        "Access-Control"
+      ]
+    },
+    {
+      "rule_id": "JS-CSRF-RISK",
+      "title": "CSRF 风险",
+      "module": "api-extractor",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: csrf xsrf credentials cookie SameSite",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-CSRF-RISK/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-CSRF-RISK/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-CSRF-RISK/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-CSRF-RISK/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "csrf",
+        "xsrf",
+        "credentials",
+        "cookie",
+        "SameSite"
+      ]
+    },
+    {
+      "rule_id": "JS-UPLOAD-BYPASS",
+      "title": "file upload 前端限制绕过 candidate",
+      "module": "business-logic-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: accept file upload size mime extension",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-UPLOAD-BYPASS/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-UPLOAD-BYPASS/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-UPLOAD-BYPASS/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-UPLOAD-BYPASS/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "accept",
+        "file",
+        "upload",
+        "size",
+        "mime",
+        "extension"
+      ]
+    },
+    {
+      "rule_id": "JS-PATH-TRAVERSAL",
+      "title": "path traversal candidate",
+      "module": "business-logic-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: path filename download export ../",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-PATH-TRAVERSAL/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-PATH-TRAVERSAL/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-PATH-TRAVERSAL/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-PATH-TRAVERSAL/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "path",
+        "filename",
+        "download",
+        "export",
+        "../"
+      ]
+    },
+    {
+      "rule_id": "JS-BIZ-PAYMENT",
+      "title": "payment/order/coupon/points/balance/invite/referral 业务逻辑 candidate",
+      "module": "business-logic-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: payment order coupon points balance invite referral refund",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-BIZ-PAYMENT/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-BIZ-PAYMENT/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-BIZ-PAYMENT/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-BIZ-PAYMENT/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "payment",
+        "order",
+        "coupon",
+        "points",
+        "balance",
+        "invite",
+        "referral",
+        "refund"
+      ]
+    },
+    {
+      "rule_id": "JS-RACE-CAND",
+      "title": "race condition candidate",
+      "module": "business-logic-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: retry debounce idempotency nonce payment submit",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-RACE-CAND/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-RACE-CAND/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-RACE-CAND/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-RACE-CAND/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "retry",
+        "debounce",
+        "idempotency",
+        "nonce",
+        "payment",
+        "submit"
+      ]
+    },
+    {
+      "rule_id": "JS-REPLAY-NONCE",
+      "title": "replay / nonce / timestamp 缺陷",
+      "module": "business-logic-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: nonce timestamp signature replay idempotency",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-REPLAY-NONCE/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-REPLAY-NONCE/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-REPLAY-NONCE/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-REPLAY-NONCE/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "nonce",
+        "timestamp",
+        "signature",
+        "replay",
+        "idempotency"
+      ]
+    },
+    {
+      "rule_id": "JS-FEATURE-FLAG",
+      "title": "hidden feature flag",
+      "module": "route-graph",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: featureFlag experiment beta preview enabled flags",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-FEATURE-FLAG/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-FEATURE-FLAG/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-FEATURE-FLAG/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-FEATURE-FLAG/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "featureFlag",
+        "experiment",
+        "beta",
+        "preview",
+        "enabled",
+        "flags"
+      ]
+    },
+    {
+      "rule_id": "JS-ADMIN-ROUTE",
+      "title": "admin route exposure",
+      "module": "route-graph",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: /admin adminRoute management console",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-ADMIN-ROUTE/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-ADMIN-ROUTE/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-ADMIN-ROUTE/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-ADMIN-ROUTE/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "/admin",
+        "adminRoute",
+        "management",
+        "console"
+      ]
+    },
+    {
+      "rule_id": "JS-DIRECT-DOWNLOAD",
+      "title": "insecure direct download",
+      "module": "api-extractor",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: download fileId documentId export url",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-DIRECT-DOWNLOAD/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-DIRECT-DOWNLOAD/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-DIRECT-DOWNLOAD/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-DIRECT-DOWNLOAD/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "download",
+        "fileId",
+        "documentId",
+        "export",
+        "url"
+      ]
+    },
+    {
+      "rule_id": "JS-LOGGER-LEAK",
+      "title": "debug console / logger 泄露",
+      "module": "secret-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: console.log logger debug trace pii",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-LOGGER-LEAK/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-LOGGER-LEAK/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-LOGGER-LEAK/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-LOGGER-LEAK/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "console.log",
+        "logger",
+        "debug",
+        "trace",
+        "pii"
+      ]
+    },
+    {
+      "rule_id": "JS-PII-LEAK",
+      "title": "PII 泄露",
+      "module": "secret-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: email phone ssn idCard address analytics",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-PII-LEAK/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-PII-LEAK/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-PII-LEAK/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-PII-LEAK/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "email",
+        "phone",
+        "ssn",
+        "idCard",
+        "address",
+        "analytics"
+      ]
+    },
+    {
+      "rule_id": "JS-SM-SENSITIVE-LOGIC",
+      "title": "source map 还原敏感逻辑",
+      "module": "sourcemap-analyzer",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: sourcesContent role permission secret route",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-SM-SENSITIVE-LOGIC/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-SM-SENSITIVE-LOGIC/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-SM-SENSITIVE-LOGIC/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-SM-SENSITIVE-LOGIC/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "sourcesContent",
+        "role",
+        "permission",
+        "secret",
+        "route"
+      ]
+    },
+    {
+      "rule_id": "JS-THIRD-PARTY-SDK",
+      "title": "third-party SDK 风险",
+      "module": "secret-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: sentry firebase stripe analytics sdk key",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-THIRD-PARTY-SDK/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-THIRD-PARTY-SDK/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-THIRD-PARTY-SDK/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-THIRD-PARTY-SDK/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "sentry",
+        "firebase",
+        "stripe",
+        "analytics",
+        "sdk",
+        "key"
+      ]
+    },
+    {
+      "rule_id": "JS-DEPENDENCY-RISK",
+      "title": "dependency confusion / dependency risk signal",
+      "module": "business-logic-detector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: package lock npm scoped registry",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-DEPENDENCY-RISK/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-DEPENDENCY-RISK/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-DEPENDENCY-RISK/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-DEPENDENCY-RISK/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "package",
+        "lock",
+        "npm",
+        "scoped",
+        "registry"
+      ]
+    },
+    {
+      "rule_id": "JS-BUILD-ARTIFACT",
+      "title": "build artifact 泄露",
+      "module": "asset-collector",
+      "implementation_status": "partial",
+      "supported_statuses": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "false_positive"
+      ],
+      "trigger_conditions": [
+        "semantic graph or evidence contains one or more normalized signals: manifest chunk source map debug build",
+        "scope guard must pass before detector emits reportable finding"
+      ],
+      "ast_dataflow_runtime_evidence": {
+        "static_ast": [
+          "file",
+          "line",
+          "ast_node_type",
+          "callee/member/path literal when available"
+        ],
+        "dataflow": [
+          "source",
+          "sink",
+          "call_chain when resolver can establish it; otherwise candidate only"
+        ],
+        "runtime": [
+          "HAR/request/response/trace/screenshot/DOM snapshot/role-tenant replay when promotion is attempted"
+        ]
+      },
+      "positive_sample": "fixtures/detector-fixtures/JS-BUILD-ARTIFACT/positive.json",
+      "negative_sample": "fixtures/detector-fixtures/JS-BUILD-ARTIFACT/negative.json",
+      "blocked_sample": "fixtures/detector-fixtures/JS-BUILD-ARTIFACT/blocked.json",
+      "needs_review_sample": "fixtures/detector-fixtures/JS-BUILD-ARTIFACT/needs_review.json",
+      "evidence_schema": "schemas/js-detector-finding.schema.json",
+      "report_template": "templates/candidate-vulnerability.md",
+      "false_positive_downgrade_rules": [
+        "front-end-only visibility is not impact",
+        "blocked backend response downgrades candidate to false_positive or needs_review",
+        "secrets are redacted before reporting; unredacted secret is quality-gate FAIL",
+        "documentation claims without file/line/request/response evidence are ignored"
+      ],
+      "promotion_rule": "candidate may become confirmed only when evidence manifest is ready, scope is authorized, request/response proves backend behavior, and detector-specific dynamic evidence is present; role/tenant issues additionally require multi-role or cross-tenant replay.",
+      "signals": [
+        "manifest",
+        "chunk",
+        "source",
+        "map",
+        "debug",
+        "build"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Report claim schema v2",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "evidence_id",
+    "level",
+    "text"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string"
+    },
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^EVID-"
+    },
+    "level": {
+      "enum": [
+        "candidate",
+        "needs_review",
+        "confirmed",
+        "blocked",
+        "rejected",
+        "inconclusive"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JS dual AST and sourcemap extraction output",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_root",
+    "backends",
+    "files_scanned",
+    "ready_backend_count",
+    "sourcemaps",
+    "dynamic_imports",
+    "api_clients",
+    "wrapper_apis",
+    "precision_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "js_dual_ast_sourcemap_v1"
+    },
+    "project_root": {
+      "type": "string"
+    },
+    "backends": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "backend",
+          "ready",
+          "claim_verified"
+        ],
+        "properties": {
+          "backend": {
+            "type": "string"
+          },
+          "ready": {
+            "type": "boolean"
+          },
+          "claim_verified": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "files_scanned": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "ready_backend_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sourcemaps": {
+      "type": "array"
+    },
+    "dynamic_imports": {
+      "type": "array"
+    },
+    "lazy_chunks": {
+      "type": "array"
+    },
+    "api_clients": {
+      "type": "array"
+    },
+    "wrapper_apis": {
+      "type": "array"
+    },
+    "route_mappings": {
+      "type": "array"
+    },
+    "precision_policy": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

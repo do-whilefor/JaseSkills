@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "js-scope.schema.json",
+  "type": "object",
+  "required": [
+    "authorized_use",
+    "targets",
+    "non_destructive"
+  ],
+  "properties": {
+    "authorized_use": {
+      "const": true
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1
+    },
+    "roles": {
+      "type": "array"
+    },
+    "tenants": {
+      "type": "array"
+    },
+    "non_destructive": {
+      "const": true
+    }
+  }
+}

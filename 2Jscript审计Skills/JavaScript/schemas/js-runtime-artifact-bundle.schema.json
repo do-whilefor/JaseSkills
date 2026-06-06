@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "js-runtime-artifact-bundle.schema.json",
+  "title": "Runtime artifact import bundle",
+  "type": "object",
+  "required": ["schema_version", "status", "requirements", "evidence_root", "artifacts", "request_response_index", "protocol_runtime_evidence"],
+  "properties": {
+    "schema_version": {"const": "js-runtime-artifact-bundle/v1"},
+    "status": {"enum": ["missing", "partial", "ready"]},
+    "requirements": {
+      "type": "object",
+      "required": ["har", "playwright_trace", "screenshot", "dom_snapshot", "console_log", "role_tenant_matrix", "request_response"],
+      "properties": {
+        "har": {"type": "boolean"},
+        "playwright_trace": {"type": "boolean"},
+        "screenshot": {"type": "boolean"},
+        "dom_snapshot": {"type": "boolean"},
+        "console_log": {"type": "boolean"},
+        "role_tenant_matrix": {"type": "boolean"},
+        "request_response": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "evidence_root": {"type": "string"},
+    "artifacts": {"type": "array", "items": {"type": "object", "required": ["path", "kind", "sha256", "size"], "properties": {"path": {"type":"string"}, "kind": {"type":"string"}, "sha256": {"type":"string", "pattern":"^[a-fA-F0-9]{64}$"}, "size": {"type":"integer", "minimum":0}}, "additionalProperties": true}},
+    "request_response_index": {"type": "array"},
+    "protocol_runtime_evidence": {"type": "object"},
+    "promotion_blockers": {"type": "array"}
+  },
+  "additionalProperties": true
+}

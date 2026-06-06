@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "js-detector-registry.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "detectors"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "js-detector-registry/v2"
+    },
+    "detectors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_id",
+          "title",
+          "trigger_conditions",
+          "evidence_schema",
+          "promotion_rule"
+        ]
+      }
+    }
+  }
+}

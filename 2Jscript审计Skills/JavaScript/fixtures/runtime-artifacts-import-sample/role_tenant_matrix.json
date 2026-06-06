@@ -1,0 +1,1 @@
+{"roles":[{"name":"admin_t1","role":"admin","tenant":"t1"},{"name":"user_t1","role":"user","tenant":"t1"},{"name":"admin_t2","role":"admin","tenant":"t2"}],"tenants":["t1","t2"],"source":"fixture-only matrix for importer tests"}

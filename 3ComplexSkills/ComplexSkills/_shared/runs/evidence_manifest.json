@@ -1,0 +1,70 @@
+{
+  "schema_version": "evidence_manifest_strict_v2",
+  "manifest_id": "MANIFEST-PLACEHOLDER-001",
+  "candidate_id": "CAND-PLACEHOLDER-001",
+  "evidence_id": "EVID-PLACEHOLDER-001",
+  "template_id": "C01-auth-bypass",
+  "final_status": "candidate",
+  "authorization_scope": "local_authorized_fixture_only",
+  "state": "triaged",
+  "state_history": [
+    {
+      "from_state": null,
+      "to_state": "discovered",
+      "changed_at": "2026-06-06T00:00:00Z",
+      "reason": "placeholder example only"
+    },
+    {
+      "from_state": "discovered",
+      "to_state": "mapped",
+      "changed_at": "2026-06-06T00:00:00Z",
+      "reason": "placeholder example only"
+    },
+    {
+      "from_state": "mapped",
+      "to_state": "triaged",
+      "changed_at": "2026-06-06T00:00:00Z",
+      "reason": "placeholder example only"
+    }
+  ],
+  "route": "/placeholder",
+  "method": "GET",
+  "parameter": "placeholder",
+  "code_evidence": [],
+  "dynamic_evidence": [],
+  "negative_control": [],
+  "request_response_summaries": [],
+  "command_outputs": [],
+  "quality": {
+    "placeholder": true,
+    "passed": false
+  },
+  "redaction": {
+    "secrets_scanned": true,
+    "second_pass_complete": true
+  },
+  "taint_review": {
+    "decision": "clean"
+  },
+  "report_claims": [
+    {
+      "claim_id": "CLM-PLACEHOLDER-001",
+      "evidence_id": "EVID-PLACEHOLDER-001",
+      "level": "candidate",
+      "text": "Placeholder candidate manifest; not proof."
+    }
+  ],
+  "report_renderer": {
+    "placeholder": true
+  },
+  "tool_snapshot": {
+    "mode": "placeholder",
+    "ready_tools": [],
+    "missing_tools": [],
+    "manual_required": true
+  },
+  "non_destructive_boundary": {
+    "non_destructive": true,
+    "validation_mode": "placeholder_only"
+  }
+}

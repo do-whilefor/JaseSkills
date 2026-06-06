@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: admin-ingress
+spec:
+  rules:
+    - host: admin.localhost
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  template:
+    spec:
+      serviceAccountName: api-sa
+      containers:
+      - name: api
+        image: example/api:1.2.3
+        ports:
+        - containerPort: 8080
+        env:
+        - name: WEBHOOK_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: webhook-secret
+              key: token

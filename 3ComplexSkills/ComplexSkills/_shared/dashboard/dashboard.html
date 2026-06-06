@@ -1,0 +1,566 @@
+<!doctype html><meta charset='utf-8'><title>Authorized Security Audit Dashboard v4.1</title><style>body{font-family:system-ui,Arial,sans-serif;margin:24px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:6px;vertical-align:top}pre{white-space:pre-wrap;background:#f6f6f6;padding:8px}</style><h1>Authorized Security Audit Dashboard v4.1</h1><p>Default schema: EVIDENCE_MANIFEST_SCHEMA.v4.1. Local fixtures and optional local run manifests only. fixture_only_not_proof unless an explicit manifest index is supplied. No external target scanning.</p><h2>Route → Candidate → Evidence → Quality Gate → Report → Taint</h2><table><thead><tr><th>Manifest/hash</th><th>Template</th><th>Route</th><th>Candidate</th><th>Evidence + ledger</th><th>Quality gate</th><th>Renderer</th><th>Taint</th><th>Status</th></tr></thead><tbody><tr><td>_shared/tests/fixtures/C01-auth-bypass-BLK-01.json<br><small>f86f8cacf14b4290</small></td><td>C01-auth-bypass</td><td>GET /fixture/C01-auth-bypass/resource</td><td>CAND-C01-auth-bypass-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=auth_mechanism,bypass_vector,expected_auth_enforcement,unauthenticated_route<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C01-auth-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C01-auth-bypass-NEG-01.json<br><small>c997db6e95fc8051</small></td><td>C01-auth-bypass</td><td>GET /fixture/C01-auth-bypass/resource</td><td>CAND-C01-auth-bypass-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=auth_mechanism,bypass_vector,expected_auth_enforcement,unauthenticated_route<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C01-auth-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C01-auth-bypass-POS-01.json<br><small>a815dd4821a84a95</small></td><td>C01-auth-bypass</td><td>GET /fixture/C01-auth-bypass/resource</td><td>CAND-C01-auth-bypass-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=auth_mechanism,bypass_vector,expected_auth_enforcement,unauthenticated_route<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C01-auth-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C01-auth-bypass-REV-01.json<br><small>8aa9a16866924f3f</small></td><td>C01-auth-bypass</td><td>GET /fixture/C01-auth-bypass/resource</td><td>CAND-C01-auth-bypass-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=auth_mechanism,bypass_vector,expected_auth_enforcement,unauthenticated_route<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C01-auth-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C02-authz-bypass-BLK-01.json<br><small>87439e6ea7fcaee6</small></td><td>C02-authz-bypass</td><td>GET /fixture/C02-authz-bypass/resource</td><td>CAND-C02-authz-bypass-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=authorization_model,missing_guard,resource_action,role_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C02-authz-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C02-authz-bypass-NEG-01.json<br><small>41b6e9211c6f63f9</small></td><td>C02-authz-bypass</td><td>GET /fixture/C02-authz-bypass/resource</td><td>CAND-C02-authz-bypass-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=authorization_model,missing_guard,resource_action,role_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C02-authz-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C02-authz-bypass-POS-01.json<br><small>9e1fc746ce8fcf6e</small></td><td>C02-authz-bypass</td><td>GET /fixture/C02-authz-bypass/resource</td><td>CAND-C02-authz-bypass-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=authorization_model,missing_guard,resource_action,role_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C02-authz-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C02-authz-bypass-REV-01.json<br><small>80d8597ddcb0d47a</small></td><td>C02-authz-bypass</td><td>GET /fixture/C02-authz-bypass/resource</td><td>CAND-C02-authz-bypass-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=authorization_model,missing_guard,resource_action,role_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C02-authz-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C03-idor-bola-BLK-01.json<br><small>943e827e8c7058d6</small></td><td>C03-idor-bola</td><td>GET /fixture/C03-idor-bola/resource</td><td>CAND-C03-idor-bola-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=attacker_actor,object_id_source,owner_check_location,victim_resource<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C03-idor-bola.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C03-idor-bola-NEG-01.json<br><small>d64e02c88e4c3260</small></td><td>C03-idor-bola</td><td>GET /fixture/C03-idor-bola/resource</td><td>CAND-C03-idor-bola-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=attacker_actor,object_id_source,owner_check_location,victim_resource<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C03-idor-bola.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C03-idor-bola-POS-01.json<br><small>3cc0398630376af8</small></td><td>C03-idor-bola</td><td>GET /fixture/C03-idor-bola/resource</td><td>CAND-C03-idor-bola-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=attacker_actor,object_id_source,owner_check_location,victim_resource<br>ledger_complete=True</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C03-idor-bola.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C03-idor-bola-REV-01.json<br><small>eb1fe109b97e1d84</small></td><td>C03-idor-bola</td><td>GET /fixture/C03-idor-bola/resource</td><td>CAND-C03-idor-bola-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=attacker_actor,object_id_source,owner_check_location,victim_resource<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C03-idor-bola.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C04-tenant-isolation-bypass-BLK-01.json<br><small>259474eabd0adcac</small></td><td>C04-tenant-isolation-bypass</td><td>GET /fixture/C04-tenant-isolation-bypass/resource</td><td>CAND-C04-tenant-isolation-bypass-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=cross_tenant_object,isolation_enforcement,tenant_boundary,tenant_id_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C04-tenant-isolation-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C04-tenant-isolation-bypass-NEG-01.json<br><small>83f134c5b56bffda</small></td><td>C04-tenant-isolation-bypass</td><td>GET /fixture/C04-tenant-isolation-bypass/resource</td><td>CAND-C04-tenant-isolation-bypass-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=cross_tenant_object,isolation_enforcement,tenant_boundary,tenant_id_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C04-tenant-isolation-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C04-tenant-isolation-bypass-POS-01.json<br><small>4c0ff15407c0ad3b</small></td><td>C04-tenant-isolation-bypass</td><td>GET /fixture/C04-tenant-isolation-bypass/resource</td><td>CAND-C04-tenant-isolation-bypass-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=cross_tenant_object,isolation_enforcement,tenant_boundary,tenant_id_source<br>ledger_complete=True</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C04-tenant-isolation-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C04-tenant-isolation-bypass-REV-01.json<br><small>1034b0667fdf023f</small></td><td>C04-tenant-isolation-bypass</td><td>GET /fixture/C04-tenant-isolation-bypass/resource</td><td>CAND-C04-tenant-isolation-bypass-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=cross_tenant_object,isolation_enforcement,tenant_boundary,tenant_id_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C04-tenant-isolation-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C05-admin-privilege-escalation-BLK-01.json<br><small>e1dded5d879f5f37</small></td><td>C05-admin-privilege-escalation</td><td>GET /fixture/C05-admin-privilege-escalation/resource</td><td>CAND-C05-admin-privilege-escalation-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=escalation_path,missing_admin_check,privilege_source,target_admin_action<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C05-admin-privilege-escalation.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C05-admin-privilege-escalation-NEG-01.json<br><small>794f4f3cece5eb1f</small></td><td>C05-admin-privilege-escalation</td><td>GET /fixture/C05-admin-privilege-escalation/resource</td><td>CAND-C05-admin-privilege-escalation-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=escalation_path,missing_admin_check,privilege_source,target_admin_action<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C05-admin-privilege-escalation.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C05-admin-privilege-escalation-POS-01.json<br><small>ef4f08c11a773779</small></td><td>C05-admin-privilege-escalation</td><td>GET /fixture/C05-admin-privilege-escalation/resource</td><td>CAND-C05-admin-privilege-escalation-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=escalation_path,missing_admin_check,privilege_source,target_admin_action<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C05-admin-privilege-escalation.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C05-admin-privilege-escalation-REV-01.json<br><small>b1cc7e7bd241a0b5</small></td><td>C05-admin-privilege-escalation</td><td>GET /fixture/C05-admin-privilege-escalation/resource</td><td>CAND-C05-admin-privilege-escalation-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=escalation_path,missing_admin_check,privilege_source,target_admin_action<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C05-admin-privilege-escalation.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C06-rce-BLK-01.json<br><small>49dbdd417377033b</small></td><td>C06-rce</td><td>GET /fixture/C06-rce/resource</td><td>CAND-C06-rce-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=execution_sink,input_to_sink_path,non_destructive_marker,sandbox_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C06-rce.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C06-rce-NEG-01.json<br><small>3f7dc2a624e01c1e</small></td><td>C06-rce</td><td>GET /fixture/C06-rce/resource</td><td>CAND-C06-rce-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=execution_sink,input_to_sink_path,non_destructive_marker,sandbox_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C06-rce.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C06-rce-POS-01.json<br><small>fd24f2008b7d55d9</small></td><td>C06-rce</td><td>GET /fixture/C06-rce/resource</td><td>CAND-C06-rce-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=execution_sink,input_to_sink_path,non_destructive_marker,sandbox_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C06-rce.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C06-rce-REV-01.json<br><small>406da79515026557</small></td><td>C06-rce</td><td>GET /fixture/C06-rce/resource</td><td>CAND-C06-rce-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=execution_sink,input_to_sink_path,non_destructive_marker,sandbox_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C06-rce.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C07-command-injection-BLK-01.json<br><small>69ad5a281ec5c33f</small></td><td>C07-command-injection</td><td>GET /fixture/C07-command-injection/resource</td><td>CAND-C07-command-injection-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=argument_construction,command_sink,input_source,shell_invocation_mode<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C07-command-injection.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C07-command-injection-NEG-01.json<br><small>e610252136c869ae</small></td><td>C07-command-injection</td><td>GET /fixture/C07-command-injection/resource</td><td>CAND-C07-command-injection-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=argument_construction,command_sink,input_source,shell_invocation_mode<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C07-command-injection.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C07-command-injection-POS-01.json<br><small>02ed2bc209889fb4</small></td><td>C07-command-injection</td><td>GET /fixture/C07-command-injection/resource</td><td>CAND-C07-command-injection-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=argument_construction,command_sink,input_source,shell_invocation_mode<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C07-command-injection.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C07-command-injection-REV-01.json<br><small>4e8b39aea13fca91</small></td><td>C07-command-injection</td><td>GET /fixture/C07-command-injection/resource</td><td>CAND-C07-command-injection-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=argument_construction,command_sink,input_source,shell_invocation_mode<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C07-command-injection.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C08-ssti-BLK-01.json<br><small>cf1ed9e62174a617</small></td><td>C08-ssti</td><td>GET /fixture/C08-ssti/resource</td><td>CAND-C08-ssti-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=sandbox_or_escape_mode,template_engine,template_render_call,user_controlled_template_part<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C08-ssti.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C08-ssti-NEG-01.json<br><small>be75fd11f3b523bb</small></td><td>C08-ssti</td><td>GET /fixture/C08-ssti/resource</td><td>CAND-C08-ssti-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=sandbox_or_escape_mode,template_engine,template_render_call,user_controlled_template_part<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C08-ssti.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C08-ssti-POS-01.json<br><small>f1467af3c0306fc9</small></td><td>C08-ssti</td><td>GET /fixture/C08-ssti/resource</td><td>CAND-C08-ssti-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=sandbox_or_escape_mode,template_engine,template_render_call,user_controlled_template_part<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C08-ssti.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C08-ssti-REV-01.json<br><small>1b37bd23020de944</small></td><td>C08-ssti</td><td>GET /fixture/C08-ssti/resource</td><td>CAND-C08-ssti-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=sandbox_or_escape_mode,template_engine,template_render_call,user_controlled_template_part<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C08-ssti.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C09-deserialization-BLK-01.json<br><small>589c7d7c3f8cd9e9</small></td><td>C09-deserialization</td><td>GET /fixture/C09-deserialization/resource</td><td>CAND-C09-deserialization-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=deserializer,gadget_surface_assessment,serialized_input_source,type_allowlist<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C09-deserialization.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C09-deserialization-NEG-01.json<br><small>883c83c0610c6296</small></td><td>C09-deserialization</td><td>GET /fixture/C09-deserialization/resource</td><td>CAND-C09-deserialization-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=deserializer,gadget_surface_assessment,serialized_input_source,type_allowlist<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C09-deserialization.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C09-deserialization-POS-01.json<br><small>326e8cea0abaf9ba</small></td><td>C09-deserialization</td><td>GET /fixture/C09-deserialization/resource</td><td>CAND-C09-deserialization-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=deserializer,gadget_surface_assessment,serialized_input_source,type_allowlist<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C09-deserialization.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C09-deserialization-REV-01.json<br><small>3aa1946f5073488f</small></td><td>C09-deserialization</td><td>GET /fixture/C09-deserialization/resource</td><td>CAND-C09-deserialization-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=deserializer,gadget_surface_assessment,serialized_input_source,type_allowlist<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C09-deserialization.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C10-arbitrary-file-read-BLK-01.json<br><small>b585277b94f91f81</small></td><td>C10-arbitrary-file-read</td><td>GET /fixture/C10-arbitrary-file-read/resource</td><td>CAND-C10-arbitrary-file-read-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=allowed_base_directory,file_read_sink,path_input_source,path_normalization<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C10-arbitrary-file-read.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C10-arbitrary-file-read-NEG-01.json<br><small>8b61286acad949c4</small></td><td>C10-arbitrary-file-read</td><td>GET /fixture/C10-arbitrary-file-read/resource</td><td>CAND-C10-arbitrary-file-read-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=allowed_base_directory,file_read_sink,path_input_source,path_normalization<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C10-arbitrary-file-read.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C10-arbitrary-file-read-POS-01.json<br><small>ec908eed99fe823c</small></td><td>C10-arbitrary-file-read</td><td>GET /fixture/C10-arbitrary-file-read/resource</td><td>CAND-C10-arbitrary-file-read-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=allowed_base_directory,file_read_sink,path_input_source,path_normalization<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C10-arbitrary-file-read.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C10-arbitrary-file-read-REV-01.json<br><small>3f1d3191c5e02a4e</small></td><td>C10-arbitrary-file-read</td><td>GET /fixture/C10-arbitrary-file-read/resource</td><td>CAND-C10-arbitrary-file-read-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=allowed_base_directory,file_read_sink,path_input_source,path_normalization<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C10-arbitrary-file-read.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C11-arbitrary-file-write-BLK-01.json<br><small>2ec31c643e001fc6</small></td><td>C11-arbitrary-file-write</td><td>GET /fixture/C11-arbitrary-file-write/resource</td><td>CAND-C11-arbitrary-file-write-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=file_write_sink,overwrite_or_create_mode,path_input_source,write_scope<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C11-arbitrary-file-write.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C11-arbitrary-file-write-NEG-01.json<br><small>1a65f482d993a029</small></td><td>C11-arbitrary-file-write</td><td>GET /fixture/C11-arbitrary-file-write/resource</td><td>CAND-C11-arbitrary-file-write-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=file_write_sink,overwrite_or_create_mode,path_input_source,write_scope<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C11-arbitrary-file-write.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C11-arbitrary-file-write-POS-01.json<br><small>b8dab7ded79e0e1a</small></td><td>C11-arbitrary-file-write</td><td>GET /fixture/C11-arbitrary-file-write/resource</td><td>CAND-C11-arbitrary-file-write-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=file_write_sink,overwrite_or_create_mode,path_input_source,write_scope<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C11-arbitrary-file-write.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C11-arbitrary-file-write-REV-01.json<br><small>2e9243996eb58096</small></td><td>C11-arbitrary-file-write</td><td>GET /fixture/C11-arbitrary-file-write/resource</td><td>CAND-C11-arbitrary-file-write-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=file_write_sink,overwrite_or_create_mode,path_input_source,write_scope<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C11-arbitrary-file-write.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C12-file-upload-code-exec-or-overwrite-BLK-01.json<br><small>be8ead8dbbfd1054</small></td><td>C12-file-upload-code-exec-or-overwrite</td><td>GET /fixture/C12-file-upload-code-exec-or-overwrite/resource</td><td>CAND-C12-file-upload-code-exec-or-overwrite-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=content_validation,executable_or_sensitive_target,stored_path_resolution,upload_handler<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C12-file-upload-code-exec-or-overwrite.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C12-file-upload-code-exec-or-overwrite-NEG-01.json<br><small>aae0d721daaf0fe9</small></td><td>C12-file-upload-code-exec-or-overwrite</td><td>GET /fixture/C12-file-upload-code-exec-or-overwrite/resource</td><td>CAND-C12-file-upload-code-exec-or-overwrite-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=content_validation,executable_or_sensitive_target,stored_path_resolution,upload_handler<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C12-file-upload-code-exec-or-overwrite.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C12-file-upload-code-exec-or-overwrite-POS-01.json<br><small>31651ed740a79122</small></td><td>C12-file-upload-code-exec-or-overwrite</td><td>GET /fixture/C12-file-upload-code-exec-or-overwrite/resource</td><td>CAND-C12-file-upload-code-exec-or-overwrite-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=content_validation,executable_or_sensitive_target,stored_path_resolution,upload_handler<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C12-file-upload-code-exec-or-overwrite.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C12-file-upload-code-exec-or-overwrite-REV-01.json<br><small>f454c8612d023879</small></td><td>C12-file-upload-code-exec-or-overwrite</td><td>GET /fixture/C12-file-upload-code-exec-or-overwrite/resource</td><td>CAND-C12-file-upload-code-exec-or-overwrite-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=content_validation,executable_or_sensitive_target,stored_path_resolution,upload_handler<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C12-file-upload-code-exec-or-overwrite.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C13-ssrf-BLK-01.json<br><small>a43cfd6dd4759cf1</small></td><td>C13-ssrf</td><td>GET /fixture/C13-ssrf/resource</td><td>CAND-C13-ssrf-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=egress_boundary,metadata_or_internal_target_guard,url_fetch_sink,url_input_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C13-ssrf.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C13-ssrf-NEG-01.json<br><small>ef6c9f84f214fa68</small></td><td>C13-ssrf</td><td>GET /fixture/C13-ssrf/resource</td><td>CAND-C13-ssrf-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=egress_boundary,metadata_or_internal_target_guard,url_fetch_sink,url_input_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C13-ssrf.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C13-ssrf-POS-01.json<br><small>ff7759685c70e3d0</small></td><td>C13-ssrf</td><td>GET /fixture/C13-ssrf/resource</td><td>CAND-C13-ssrf-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=egress_boundary,metadata_or_internal_target_guard,url_fetch_sink,url_input_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C13-ssrf.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C13-ssrf-REV-01.json<br><small>342011d5d0fb589a</small></td><td>C13-ssrf</td><td>GET /fixture/C13-ssrf/resource</td><td>CAND-C13-ssrf-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=egress_boundary,metadata_or_internal_target_guard,url_fetch_sink,url_input_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C13-ssrf.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C14-sql-injection-BLK-01.json<br><small>dd361b110cea5fb0</small></td><td>C14-sql-injection</td><td>GET /fixture/C14-sql-injection/resource</td><td>CAND-C14-sql-injection-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=db_role_scope,parameter_binding,query_construction,sql_sink<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C14-sql-injection.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C14-sql-injection-NEG-01.json<br><small>4711a6151e943c50</small></td><td>C14-sql-injection</td><td>GET /fixture/C14-sql-injection/resource</td><td>CAND-C14-sql-injection-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=db_role_scope,parameter_binding,query_construction,sql_sink<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C14-sql-injection.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C14-sql-injection-POS-01.json<br><small>2a9f37d53f29727d</small></td><td>C14-sql-injection</td><td>GET /fixture/C14-sql-injection/resource</td><td>CAND-C14-sql-injection-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=db_role_scope,parameter_binding,query_construction,sql_sink<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C14-sql-injection.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C14-sql-injection-REV-01.json<br><small>0be6613f1650923f</small></td><td>C14-sql-injection</td><td>GET /fixture/C14-sql-injection/resource</td><td>CAND-C14-sql-injection-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=db_role_scope,parameter_binding,query_construction,sql_sink<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C14-sql-injection.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C15-nosql-injection-BLK-01.json<br><small>1d397ad475f59283</small></td><td>C15-nosql-injection</td><td>GET /fixture/C15-nosql-injection/resource</td><td>CAND-C15-nosql-injection-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=input_shape,nosql_sink,operator_injection_surface,query_filter_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C15-nosql-injection.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C15-nosql-injection-NEG-01.json<br><small>3b357ee387ff00e4</small></td><td>C15-nosql-injection</td><td>GET /fixture/C15-nosql-injection/resource</td><td>CAND-C15-nosql-injection-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=input_shape,nosql_sink,operator_injection_surface,query_filter_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C15-nosql-injection.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C15-nosql-injection-POS-01.json<br><small>3be07fe08f1b58e7</small></td><td>C15-nosql-injection</td><td>GET /fixture/C15-nosql-injection/resource</td><td>CAND-C15-nosql-injection-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=input_shape,nosql_sink,operator_injection_surface,query_filter_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C15-nosql-injection.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C15-nosql-injection-REV-01.json<br><small>64f6d5053c305310</small></td><td>C15-nosql-injection</td><td>GET /fixture/C15-nosql-injection/resource</td><td>CAND-C15-nosql-injection-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=input_shape,nosql_sink,operator_injection_surface,query_filter_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C15-nosql-injection.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C16-orm-raw-query-injection-BLK-01.json<br><small>eb7e2d214a37100e</small></td><td>C16-orm-raw-query-injection</td><td>GET /fixture/C16-orm-raw-query-injection/resource</td><td>CAND-C16-orm-raw-query-injection-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=binding_mechanism,model_scope,orm_raw_query_call,raw_fragment_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C16-orm-raw-query-injection.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C16-orm-raw-query-injection-NEG-01.json<br><small>73a7c9e8ac435768</small></td><td>C16-orm-raw-query-injection</td><td>GET /fixture/C16-orm-raw-query-injection/resource</td><td>CAND-C16-orm-raw-query-injection-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=binding_mechanism,model_scope,orm_raw_query_call,raw_fragment_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C16-orm-raw-query-injection.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C16-orm-raw-query-injection-POS-01.json<br><small>0f108ef75fca54d5</small></td><td>C16-orm-raw-query-injection</td><td>GET /fixture/C16-orm-raw-query-injection/resource</td><td>CAND-C16-orm-raw-query-injection-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=binding_mechanism,model_scope,orm_raw_query_call,raw_fragment_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C16-orm-raw-query-injection.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C16-orm-raw-query-injection-REV-01.json<br><small>f5189ad557a7497b</small></td><td>C16-orm-raw-query-injection</td><td>GET /fixture/C16-orm-raw-query-injection/resource</td><td>CAND-C16-orm-raw-query-injection-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=binding_mechanism,model_scope,orm_raw_query_call,raw_fragment_source<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C16-orm-raw-query-injection.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C17-graphql-access-control-BLK-01.json<br><small>92b890113f68c2be</small></td><td>C17-graphql-access-control</td><td>GET /fixture/C17-graphql-access-control/resource</td><td>CAND-C17-graphql-access-control-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=graphql_operation,object_relationship,query_cost_or_introspection_control,resolver_auth_location<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C17-graphql-access-control.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C17-graphql-access-control-NEG-01.json<br><small>f4ad2a541bbef17c</small></td><td>C17-graphql-access-control</td><td>GET /fixture/C17-graphql-access-control/resource</td><td>CAND-C17-graphql-access-control-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=graphql_operation,object_relationship,query_cost_or_introspection_control,resolver_auth_location<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C17-graphql-access-control.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C17-graphql-access-control-POS-01.json<br><small>8e3f56803ef8db29</small></td><td>C17-graphql-access-control</td><td>GET /fixture/C17-graphql-access-control/resource</td><td>CAND-C17-graphql-access-control-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=graphql_operation,object_relationship,query_cost_or_introspection_control,resolver_auth_location<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C17-graphql-access-control.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C17-graphql-access-control-REV-01.json<br><small>1862f5ca51183b2e</small></td><td>C17-graphql-access-control</td><td>GET /fixture/C17-graphql-access-control/resource</td><td>CAND-C17-graphql-access-control-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=graphql_operation,object_relationship,query_cost_or_introspection_control,resolver_auth_location<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C17-graphql-access-control.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C18-webhook-signature-bypass-BLK-01.json<br><small>7623ad3534724e67</small></td><td>C18-webhook-signature-bypass</td><td>GET /fixture/C18-webhook-signature-bypass/resource</td><td>CAND-C18-webhook-signature-bypass-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=replay_or_timestamp_guard,signature_header,verification_routine,webhook_endpoint<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C18-webhook-signature-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C18-webhook-signature-bypass-NEG-01.json<br><small>b1c2a484b75bebea</small></td><td>C18-webhook-signature-bypass</td><td>GET /fixture/C18-webhook-signature-bypass/resource</td><td>CAND-C18-webhook-signature-bypass-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=replay_or_timestamp_guard,signature_header,verification_routine,webhook_endpoint<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C18-webhook-signature-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C18-webhook-signature-bypass-POS-01.json<br><small>e25e9db138ea7390</small></td><td>C18-webhook-signature-bypass</td><td>GET /fixture/C18-webhook-signature-bypass/resource</td><td>CAND-C18-webhook-signature-bypass-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=replay_or_timestamp_guard,signature_header,verification_routine,webhook_endpoint<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C18-webhook-signature-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C18-webhook-signature-bypass-REV-01.json<br><small>dfdf9f0edba7256d</small></td><td>C18-webhook-signature-bypass</td><td>GET /fixture/C18-webhook-signature-bypass/resource</td><td>CAND-C18-webhook-signature-bypass-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=replay_or_timestamp_guard,signature_header,verification_routine,webhook_endpoint<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C18-webhook-signature-bypass.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C19-jwt-token-validation-BLK-01.json<br><small>2a2d538a67cd6744</small></td><td>C19-jwt-token-validation</td><td>GET /fixture/C19-jwt-token-validation/resource</td><td>CAND-C19-jwt-token-validation-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=claim_enforcement,key_or_algorithm_source,token_parser,verification_options<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C19-jwt-token-validation.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C19-jwt-token-validation-NEG-01.json<br><small>d299a29948f9cf53</small></td><td>C19-jwt-token-validation</td><td>GET /fixture/C19-jwt-token-validation/resource</td><td>CAND-C19-jwt-token-validation-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=claim_enforcement,key_or_algorithm_source,token_parser,verification_options<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C19-jwt-token-validation.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C19-jwt-token-validation-POS-01.json<br><small>2c577de3374d6b34</small></td><td>C19-jwt-token-validation</td><td>GET /fixture/C19-jwt-token-validation/resource</td><td>CAND-C19-jwt-token-validation-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=claim_enforcement,key_or_algorithm_source,token_parser,verification_options<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C19-jwt-token-validation.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C19-jwt-token-validation-REV-01.json<br><small>3a7e4657b9167fa7</small></td><td>C19-jwt-token-validation</td><td>GET /fixture/C19-jwt-token-validation/resource</td><td>CAND-C19-jwt-token-validation-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=claim_enforcement,key_or_algorithm_source,token_parser,verification_options<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C19-jwt-token-validation.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C20-oauth-sso-callback-redirect-BLK-01.json<br><small>a5055a1903550a9c</small></td><td>C20-oauth-sso-callback-redirect</td><td>GET /fixture/C20-oauth-sso-callback-redirect/resource</td><td>CAND-C20-oauth-sso-callback-redirect-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=callback_handler,oauth_flow,redirect_uri_check,state_nonce_check<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C20-oauth-sso-callback-redirect.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C20-oauth-sso-callback-redirect-NEG-01.json<br><small>6147d68e9a8d0fb8</small></td><td>C20-oauth-sso-callback-redirect</td><td>GET /fixture/C20-oauth-sso-callback-redirect/resource</td><td>CAND-C20-oauth-sso-callback-redirect-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=callback_handler,oauth_flow,redirect_uri_check,state_nonce_check<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C20-oauth-sso-callback-redirect.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C20-oauth-sso-callback-redirect-POS-01.json<br><small>17ac40191f6871f0</small></td><td>C20-oauth-sso-callback-redirect</td><td>GET /fixture/C20-oauth-sso-callback-redirect/resource</td><td>CAND-C20-oauth-sso-callback-redirect-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=callback_handler,oauth_flow,redirect_uri_check,state_nonce_check<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C20-oauth-sso-callback-redirect.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C20-oauth-sso-callback-redirect-REV-01.json<br><small>5d5c94daec024a33</small></td><td>C20-oauth-sso-callback-redirect</td><td>GET /fixture/C20-oauth-sso-callback-redirect/resource</td><td>CAND-C20-oauth-sso-callback-redirect-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=callback_handler,oauth_flow,redirect_uri_check,state_nonce_check<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C20-oauth-sso-callback-redirect.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C21-cors-high-risk-BLK-01.json<br><small>5295b0a12485e26b</small></td><td>C21-cors-high-risk</td><td>GET /fixture/C21-cors-high-risk/resource</td><td>CAND-C21-cors-high-risk-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=cors_origin_policy,credential_mode,origin_reflection_guard,sensitive_endpoint<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C21-cors-high-risk.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C21-cors-high-risk-NEG-01.json<br><small>66a5165009f56599</small></td><td>C21-cors-high-risk</td><td>GET /fixture/C21-cors-high-risk/resource</td><td>CAND-C21-cors-high-risk-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=cors_origin_policy,credential_mode,origin_reflection_guard,sensitive_endpoint<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C21-cors-high-risk.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C21-cors-high-risk-POS-01.json<br><small>776a449cf21ff26b</small></td><td>C21-cors-high-risk</td><td>GET /fixture/C21-cors-high-risk/resource</td><td>CAND-C21-cors-high-risk-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=cors_origin_policy,credential_mode,origin_reflection_guard,sensitive_endpoint<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C21-cors-high-risk.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C21-cors-high-risk-REV-01.json<br><small>c9b12cdc63ecf0ce</small></td><td>C21-cors-high-risk</td><td>GET /fixture/C21-cors-high-risk/resource</td><td>CAND-C21-cors-high-risk-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=cors_origin_policy,credential_mode,origin_reflection_guard,sensitive_endpoint<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C21-cors-high-risk.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C22-sensitive-info-disclosure-BLK-01.json<br><small>65fe182700ca37bb</small></td><td>C22-sensitive-info-disclosure</td><td>GET /fixture/C22-sensitive-info-disclosure/resource</td><td>CAND-C22-sensitive-info-disclosure-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=credential_scope,exposure_location,revocation_requirement,secret_type<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C22-sensitive-info-disclosure.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C22-sensitive-info-disclosure-NEG-01.json<br><small>49d0a0ecc51a7e5d</small></td><td>C22-sensitive-info-disclosure</td><td>GET /fixture/C22-sensitive-info-disclosure/resource</td><td>CAND-C22-sensitive-info-disclosure-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=credential_scope,exposure_location,revocation_requirement,secret_type<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C22-sensitive-info-disclosure.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C22-sensitive-info-disclosure-POS-01.json<br><small>4d019e5162a5f92d</small></td><td>C22-sensitive-info-disclosure</td><td>GET /fixture/C22-sensitive-info-disclosure/resource</td><td>CAND-C22-sensitive-info-disclosure-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=credential_scope,exposure_location,revocation_requirement,secret_type<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C22-sensitive-info-disclosure.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C22-sensitive-info-disclosure-REV-01.json<br><small>50cb91390006c3ea</small></td><td>C22-sensitive-info-disclosure</td><td>GET /fixture/C22-sensitive-info-disclosure/resource</td><td>CAND-C22-sensitive-info-disclosure-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=credential_scope,exposure_location,revocation_requirement,secret_type<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C22-sensitive-info-disclosure.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr><tr><td>_shared/tests/fixtures/C23-supply-chain-plugin-build-risk-BLK-01.json<br><small>7ae71b3415169b1f</small></td><td>C23-supply-chain-plugin-build-risk</td><td>GET /fixture/C23-supply-chain-plugin-build-risk/resource</td><td>CAND-C23-supply-chain-plugin-build-risk-BLK-01</td><td>code=0<br>dynamic=0<br>negative=0<br>specialized=install_or_build_hook,lockfile_or_source_integrity,package_or_plugin_entry,trust_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>50<br>pass=False<br>blocks=out_of_scope</td><td>_shared/reporting/renderers/C23-supply-chain-plugin-build-risk.md<br>generic_forbidden=True</td><td>clean</td><td>blocked</td></tr><tr><td>_shared/tests/fixtures/C23-supply-chain-plugin-build-risk-NEG-01.json<br><small>4c483bacfcaf1f76</small></td><td>C23-supply-chain-plugin-build-risk</td><td>GET /fixture/C23-supply-chain-plugin-build-risk/resource</td><td>CAND-C23-supply-chain-plugin-build-risk-NEG-01</td><td>code=0<br>dynamic=0<br>negative=1<br>specialized=install_or_build_hook,lockfile_or_source_integrity,package_or_plugin_entry,trust_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>60<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C23-supply-chain-plugin-build-risk.md<br>generic_forbidden=True</td><td>clean</td><td>rejected</td></tr><tr><td>_shared/tests/fixtures/C23-supply-chain-plugin-build-risk-POS-01.json<br><small>7f0e64e1c58c77c1</small></td><td>C23-supply-chain-plugin-build-risk</td><td>GET /fixture/C23-supply-chain-plugin-build-risk/resource</td><td>CAND-C23-supply-chain-plugin-build-risk-POS-01</td><td>code=1<br>dynamic=3<br>negative=1<br>specialized=install_or_build_hook,lockfile_or_source_integrity,package_or_plugin_entry,trust_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>100<br>pass=True<br>blocks=</td><td>_shared/reporting/renderers/C23-supply-chain-plugin-build-risk.md<br>generic_forbidden=True</td><td>clean</td><td>confirmed</td></tr><tr><td>_shared/tests/fixtures/C23-supply-chain-plugin-build-risk-REV-01.json<br><small>65d1f441354247ed</small></td><td>C23-supply-chain-plugin-build-risk</td><td>GET /fixture/C23-supply-chain-plugin-build-risk/resource</td><td>CAND-C23-supply-chain-plugin-build-risk-REV-01</td><td>code=1<br>dynamic=0<br>negative=1<br>specialized=install_or_build_hook,lockfile_or_source_integrity,package_or_plugin_entry,trust_boundary<br>ledger_complete=None</td><td>quality_gate_result_v4.1<br>75<br>pass=False<br>blocks=</td><td>_shared/reporting/renderers/C23-supply-chain-plugin-build-risk.md<br>generic_forbidden=True</td><td>clean</td><td>needs_human_review</td></tr></tbody></table><h2>Status counts</h2><pre>{
+  &quot;blocked&quot;: 23,
+  &quot;rejected&quot;: 23,
+  &quot;confirmed&quot;: 23,
+  &quot;needs_human_review&quot;: 23
+}</pre><h2>Hard blocks</h2><pre>{
+  &quot;out_of_scope&quot;: 23
+}</pre><h2>Template counts</h2><pre>{
+  &quot;C01-auth-bypass&quot;: 4,
+  &quot;C02-authz-bypass&quot;: 4,
+  &quot;C03-idor-bola&quot;: 4,
+  &quot;C04-tenant-isolation-bypass&quot;: 4,
+  &quot;C05-admin-privilege-escalation&quot;: 4,
+  &quot;C06-rce&quot;: 4,
+  &quot;C07-command-injection&quot;: 4,
+  &quot;C08-ssti&quot;: 4,
+  &quot;C09-deserialization&quot;: 4,
+  &quot;C10-arbitrary-file-read&quot;: 4,
+  &quot;C11-arbitrary-file-write&quot;: 4,
+  &quot;C12-file-upload-code-exec-or-overwrite&quot;: 4,
+  &quot;C13-ssrf&quot;: 4,
+  &quot;C14-sql-injection&quot;: 4,
+  &quot;C15-nosql-injection&quot;: 4,
+  &quot;C16-orm-raw-query-injection&quot;: 4,
+  &quot;C17-graphql-access-control&quot;: 4,
+  &quot;C18-webhook-signature-bypass&quot;: 4,
+  &quot;C19-jwt-token-validation&quot;: 4,
+  &quot;C20-oauth-sso-callback-redirect&quot;: 4,
+  &quot;C21-cors-high-risk&quot;: 4,
+  &quot;C22-sensitive-info-disclosure&quot;: 4,
+  &quot;C23-supply-chain-plugin-build-risk&quot;: 4
+}</pre><h2>E2E exact replay samples</h2><pre>{
+  &quot;schema_version&quot;: &quot;e2e_replay_index_v4.1_exact&quot;,
+  &quot;samples&quot;: [
+    {
+      &quot;id&quot;: &quot;01-express-next&quot;,
+      &quot;path&quot;: &quot;_shared/tests/e2e_samples/01-express-next&quot;,
+      &quot;expected_exact_candidate_count&quot;: 82,
+      &quot;expected_exact_route_count&quot;: 2,
+      &quot;expected_exact_routes&quot;: [
+        &quot;GET /admin/export&quot;,
+        &quot;GET /api/users/:id&quot;
+      ],
+      &quot;expected_exact_js_api_count&quot;: 4,
+      &quot;expected_exact_js_api_targets&quot;: [
+        &quot;/admin/export&quot;,
+        &quot;/api/users/:id&quot;
+      ],
+      &quot;expected_exact_templates&quot;: [
+        &quot;C01-auth-bypass&quot;,
+        &quot;C02-authz-bypass&quot;,
+        &quot;C03-idor-bola&quot;,
+        &quot;C04-tenant-isolation-bypass&quot;,
+        &quot;C05-admin-privilege-escalation&quot;,
+        &quot;C08-ssti&quot;,
+        &quot;C10-arbitrary-file-read&quot;,
+        &quot;C11-arbitrary-file-write&quot;,
+        &quot;C12-file-upload-code-exec-or-overwrite&quot;,
+        &quot;C13-ssrf&quot;,
+        &quot;C14-sql-injection&quot;,
+        &quot;C16-orm-raw-query-injection&quot;,
+        &quot;C18-webhook-signature-bypass&quot;,
+        &quot;C23-supply-chain-plugin-build-risk&quot;
+      ],
+      &quot;forbidden_templates&quot;: [
+        &quot;C06-rce&quot;,
+        &quot;C07-command-injection&quot;,
+        &quot;C09-deserialization&quot;,
+        &quot;C15-nosql-injection&quot;,
+        &quot;C17-graphql-access-control&quot;,
+        &quot;C19-jwt-token-validation&quot;,
+        &quot;C20-oauth-sso-callback-redirect&quot;,
+        &quot;C21-cors-high-risk&quot;,
+        &quot;C22-sensitive-info-disclosure&quot;
+      ],
+      &quot;expected_exact_sink_types&quot;: [
+        &quot;database_query&quot;,
+        &quot;network_request&quot;
+      ],
+      &quot;expected_graph_node_min&quot;: 5,
+      &quot;expected_graph_edge_min&quot;: 8,
+      &quot;expected_role_object_tenant_unresolved_count&quot;: 8,
+      &quot;candidate_density_max&quot;: 13.67,
+      &quot;expected_schemas&quot;: {
+        &quot;inventory&quot;: &quot;project_inventory_v2&quot;,
+        &quot;code&quot;: &quot;security_graph_v3&quot;,
+        &quot;js&quot;: &quot;js_audit_graph_v4.1&quot;,
+        &quot;surface&quot;: &quot;attack_surface_ledger_v2&quot;,
+        &quot;engine&quot;: &quot;vulnerability_candidate_engine_v4&quot;
+      },
+      &quot;exact_assertion_policy&quot;: &quot;route/js/template/candidate-count exact; graph node/edge minimum; forbidden templates must not appear; candidate density must not exceed bound&quot;
+    },
+    {
+      &quot;id&quot;: &quot;02-django-fastapi&quot;,
+      &quot;path&quot;: &quot;_shared/tests/e2e_samples/02-django-fastapi&quot;,
+      &quot;expected_exact_candidate_count&quot;: 54,
+      &quot;expected_exact_route_count&quot;: 2,
+      &quot;expected_exact_routes&quot;: [
+        &quot;GET /api/projects/{id}&quot;,
+        &quot;POST /webhook/stripe&quot;
+      ],
+      &quot;expected_exact_js_api_count&quot;: 0,
+      &quot;expected_exact_js_api_targets&quot;: [],
+      &quot;expected_exact_templates&quot;: [
+        &quot;C01-auth-bypass&quot;,
+        &quot;C02-authz-bypass&quot;,
+        &quot;C03-idor-bola&quot;,
+        &quot;C04-tenant-isolation-bypass&quot;,
+        &quot;C05-admin-privilege-escalation&quot;,
+        &quot;C08-ssti&quot;,
+        &quot;C10-arbitrary-file-read&quot;,
+        &quot;C11-arbitrary-file-write&quot;,
+        &quot;C12-file-upload-code-exec-or-overwrite&quot;,
+        &quot;C13-ssrf&quot;,
+        &quot;C18-webhook-signature-bypass&quot;,
+        &quot;C23-supply-chain-plugin-build-risk&quot;
+      ],
+      &quot;forbidden_templates&quot;: [
+        &quot;C06-rce&quot;,
+        &quot;C07-command-injection&quot;,
+        &quot;C09-deserialization&quot;,
+        &quot;C14-sql-injection&quot;,
+        &quot;C15-nosql-injection&quot;,
+        &quot;C16-orm-raw-query-injection&quot;,
+        &quot;C17-graphql-access-control&quot;,
+        &quot;C19-jwt-token-validation&quot;,
+        &quot;C20-oauth-sso-callback-redirect&quot;,
+        &quot;C21-cors-high-risk&quot;,
+        &quot;C22-sensitive-info-disclosure&quot;
+      ],
+      &quot;expected_exact_sink_types&quot;: [],
+      &quot;expected_graph_node_min&quot;: 10,
+      &quot;expected_graph_edge_min&quot;: 10,
+      &quot;expected_role_object_tenant_unresolved_count&quot;: 10,
+      &quot;candidate_density_max&quot;: 27.0,
+      &quot;expected_schemas&quot;: {
+        &quot;inventory&quot;: &quot;project_inventory_v2&quot;,
+        &quot;code&quot;: &quot;security_graph_v3&quot;,
+        &quot;js&quot;: &quot;js_audit_graph_v4.1&quot;,
+        &quot;surface&quot;: &quot;attack_surface_ledger_v2&quot;,
+        &quot;engine&quot;: &quot;vulnerability_candidate_engine_v4&quot;
+      },
+      &quot;exact_assertion_policy&quot;: &quot;route/js/template/candidate-count exact; graph node/edge minimum; forbidden templates must not appear; candidate density must not exceed bound&quot;
+    },
+    {
+      &quot;id&quot;: &quot;03-spring&quot;,
+      &quot;path&quot;: &quot;_shared/tests/e2e_samples/03-spring&quot;,
+      &quot;expected_exact_candidate_count&quot;: 18,
+      &quot;expected_exact_route_count&quot;: 1,
+      &quot;expected_exact_routes&quot;: [
+        &quot;GET /api/admin/users/{id}&quot;
+      ],
+      &quot;expected_exact_js_api_count&quot;: 0,
+      &quot;expected_exact_js_api_targets&quot;: [],
+      &quot;expected_exact_templates&quot;: [
+        &quot;C01-auth-bypass&quot;,
+        &quot;C02-authz-bypass&quot;,
+        &quot;C03-idor-bola&quot;,
+        &quot;C04-tenant-isolation-bypass&quot;,
+        &quot;C05-admin-privilege-escalation&quot;,
+        &quot;C14-sql-injection&quot;,
+        &quot;C16-orm-raw-query-injection&quot;
+      ],
+      &quot;forbidden_templates&quot;: [
+        &quot;C06-rce&quot;,
+        &quot;C07-command-injection&quot;,
+        &quot;C08-ssti&quot;,
+        &quot;C09-deserialization&quot;,
+        &quot;C10-arbitrary-file-read&quot;,
+        &quot;C11-arbitrary-file-write&quot;,
+        &quot;C12-file-upload-code-exec-or-overwrite&quot;,
+        &quot;C13-ssrf&quot;,
+        &quot;C15-nosql-injection&quot;,
+        &quot;C17-graphql-access-control&quot;,
+        &quot;C18-webhook-signature-bypass&quot;,
+        &quot;C19-jwt-token-validation&quot;,
+        &quot;C20-oauth-sso-callback-redirect&quot;,
+        &quot;C21-cors-high-risk&quot;,
+        &quot;C22-sensitive-info-disclosure&quot;,
+        &quot;C23-supply-chain-plugin-build-risk&quot;
+      ],
+      &quot;expected_exact_sink_types&quot;: [
+        &quot;database_query&quot;
+      ],
+      &quot;expected_graph_node_min&quot;: 6,
+      &quot;expected_graph_edge_min&quot;: 6,
+      &quot;expected_role_object_tenant_unresolved_count&quot;: 1,
+      &quot;candidate_density_max&quot;: 18.0,
+      &quot;expected_schemas&quot;: {
+        &quot;inventory&quot;: &quot;project_inventory_v2&quot;,
+        &quot;code&quot;: &quot;security_graph_v3&quot;,
+        &quot;js&quot;: &quot;js_audit_graph_v4.1&quot;,
+        &quot;surface&quot;: &quot;attack_surface_ledger_v2&quot;,
+        &quot;engine&quot;: &quot;vulnerability_candidate_engine_v4&quot;
+      },
+      &quot;exact_assertion_policy&quot;: &quot;route/js/template/candidate-count exact; graph node/edge minimum; forbidden templates must not appear; candidate density must not exceed bound&quot;
+    },
+    {
+      &quot;id&quot;: &quot;04-laravel&quot;,
+      &quot;path&quot;: &quot;_shared/tests/e2e_samples/04-laravel&quot;,
+      &quot;expected_exact_candidate_count&quot;: 20,
+      &quot;expected_exact_route_count&quot;: 2,
+      &quot;expected_exact_routes&quot;: [
+        &quot;GET /api/invoices/{id}&quot;,
+        &quot;POST /webhook/github&quot;
+      ],
+      &quot;expected_exact_js_api_count&quot;: 0,
+      &quot;expected_exact_js_api_targets&quot;: [],
+      &quot;expected_exact_templates&quot;: [
+        &quot;C01-auth-bypass&quot;,
+        &quot;C02-authz-bypass&quot;,
+        &quot;C03-idor-bola&quot;,
+        &quot;C04-tenant-isolation-bypass&quot;,
+        &quot;C13-ssrf&quot;,
+        &quot;C14-sql-injection&quot;,
+        &quot;C16-orm-raw-query-injection&quot;,
+        &quot;C18-webhook-signature-bypass&quot;
+      ],
+      &quot;forbidden_templates&quot;: [
+        &quot;C05-admin-privilege-escalation&quot;,
+        &quot;C06-rce&quot;,
+        &quot;C07-command-injection&quot;,
+        &quot;C08-ssti&quot;,
+        &quot;C09-deserialization&quot;,
+        &quot;C10-arbitrary-file-read&quot;,
+        &quot;C11-arbitrary-file-write&quot;,
+        &quot;C12-file-upload-code-exec-or-overwrite&quot;,
+        &quot;C15-nosql-injection&quot;,
+        &quot;C17-graphql-access-control&quot;,
+        &quot;C19-jwt-token-validation&quot;,
+        &quot;C20-oauth-sso-callback-redirect&quot;,
+        &quot;C21-cors-high-risk&quot;,
+        &quot;C22-sensitive-info-disclosure&quot;,
+        &quot;C23-supply-chain-plugin-build-risk&quot;
+      ],
+      &quot;expected_exact_sink_types&quot;: [
+        &quot;database_query&quot;
+      ],
+      &quot;expected_graph_node_min&quot;: 4,
+      &quot;expected_graph_edge_min&quot;: 5,
+      &quot;expected_role_object_tenant_unresolved_count&quot;: 2,
+      &quot;candidate_density_max&quot;: 10.0,
+      &quot;expected_schemas&quot;: {
+        &quot;inventory&quot;: &quot;project_inventory_v2&quot;,
+        &quot;code&quot;: &quot;security_graph_v3&quot;,
+        &quot;js&quot;: &quot;js_audit_graph_v4.1&quot;,
+        &quot;surface&quot;: &quot;attack_surface_ledger_v2&quot;,
+        &quot;engine&quot;: &quot;vulnerability_candidate_engine_v4&quot;
+      },
+      &quot;exact_assertion_policy&quot;: &quot;route/js/template/candidate-count exact; graph node/edge minimum; forbidden templates must not appear; candidate density must not exceed bound&quot;
+    },
+    {
+      &quot;id&quot;: &quot;05-rails&quot;,
+      &quot;path&quot;: &quot;_shared/tests/e2e_samples/05-rails&quot;,
+      &quot;expected_exact_candidate_count&quot;: 64,
+      &quot;expected_exact_route_count&quot;: 2,
+      &quot;expected_exact_routes&quot;: [
+        &quot;GET /api/files/:id&quot;,
+        &quot;POST /api/plugins/upload&quot;
+      ],
+      &quot;expected_exact_js_api_count&quot;: 0,
+      &quot;expected_exact_js_api_targets&quot;: [],
+      &quot;expected_exact_templates&quot;: [
+        &quot;C01-auth-bypass&quot;,
+        &quot;C02-authz-bypass&quot;,
+        &quot;C03-idor-bola&quot;,
+        &quot;C04-tenant-isolation-bypass&quot;,
+        &quot;C06-rce&quot;,
+        &quot;C07-command-injection&quot;,
+        &quot;C08-ssti&quot;,
+        &quot;C10-arbitrary-file-read&quot;,
+        &quot;C11-arbitrary-file-write&quot;,
+        &quot;C12-file-upload-code-exec-or-overwrite&quot;,
+        &quot;C13-ssrf&quot;,
+        &quot;C18-webhook-signature-bypass&quot;,
+        &quot;C23-supply-chain-plugin-build-risk&quot;
+      ],
+      &quot;forbidden_templates&quot;: [
+        &quot;C05-admin-privilege-escalation&quot;,
+        &quot;C09-deserialization&quot;,
+        &quot;C14-sql-injection&quot;,
+        &quot;C15-nosql-injection&quot;,
+        &quot;C16-orm-raw-query-injection&quot;,
+        &quot;C17-graphql-access-control&quot;,
+        &quot;C19-jwt-token-validation&quot;,
+        &quot;C20-oauth-sso-callback-redirect&quot;,
+        &quot;C21-cors-high-risk&quot;,
+        &quot;C22-sensitive-info-disclosure&quot;
+      ],
+      &quot;expected_exact_sink_types&quot;: [
+        &quot;command_execution&quot;,
+        &quot;upload&quot;
+      ],
+      &quot;expected_graph_node_min&quot;: 8,
+      &quot;expected_graph_edge_min&quot;: 8,
+      &quot;expected_role_object_tenant_unresolved_count&quot;: 2,
+      &quot;candidate_density_max&quot;: 32.0,
+      &quot;expected_schemas&quot;: {
+        &quot;inventory&quot;: &quot;project_inventory_v2&quot;,
+        &quot;code&quot;: &quot;security_graph_v3&quot;,
+        &quot;js&quot;: &quot;js_audit_graph_v4.1&quot;,
+        &quot;surface&quot;: &quot;attack_surface_ledger_v2&quot;,
+        &quot;engine&quot;: &quot;vulnerability_candidate_engine_v4&quot;
+      },
+      &quot;exact_assertion_policy&quot;: &quot;route/js/template/candidate-count exact; graph node/edge minimum; forbidden templates must not appear; candidate density must not exceed bound&quot;
+    },
+    {
+      &quot;id&quot;: &quot;06-go-gin&quot;,
+      &quot;path&quot;: &quot;_shared/tests/e2e_samples/06-go-gin&quot;,
+      &quot;expected_exact_candidate_count&quot;: 10,
+      &quot;expected_exact_route_count&quot;: 1,
+      &quot;expected_exact_routes&quot;: [
+        &quot;GET /api/orgs/:orgId/projects/:id&quot;
+      ],
+      &quot;expected_exact_js_api_count&quot;: 0,
+      &quot;expected_exact_js_api_targets&quot;: [],
+      &quot;expected_exact_templates&quot;: [
+        &quot;C01-auth-bypass&quot;,
+        &quot;C02-authz-bypass&quot;,
+        &quot;C03-idor-bola&quot;,
+        &quot;C04-tenant-isolation-bypass&quot;
+      ],
+      &quot;forbidden_templates&quot;: [
+        &quot;C05-admin-privilege-escalation&quot;,
+        &quot;C06-rce&quot;,
+        &quot;C07-command-injection&quot;,
+        &quot;C08-ssti&quot;,
+        &quot;C09-deserialization&quot;,
+        &quot;C10-arbitrary-file-read&quot;,
+        &quot;C11-arbitrary-file-write&quot;,
+        &quot;C12-file-upload-code-exec-or-overwrite&quot;,
+        &quot;C13-ssrf&quot;,
+        &quot;C14-sql-injection&quot;,
+        &quot;C15-nosql-injection&quot;,
+        &quot;C16-orm-raw-query-injection&quot;,
+        &quot;C17-graphql-access-control&quot;,
+        &quot;C18-webhook-signature-bypass&quot;,
+        &quot;C19-jwt-token-validation&quot;,
+        &quot;C20-oauth-sso-callback-redirect&quot;,
+        &quot;C21-cors-high-risk&quot;,
+        &quot;C22-sensitive-info-disclosure&quot;,
+        &quot;C23-supply-chain-plugin-build-risk&quot;
+      ],
+      &quot;expected_exact_sink_types&quot;: [
+        &quot;network_request&quot;
+      ],
+      &quot;expected_graph_node_min&quot;: 5,
+      &quot;expected_graph_edge_min&quot;: 5,
+      &quot;expected_role_object_tenant_unresolved_count&quot;: 1,
+      &quot;candidate_density_max&quot;: 10.0,
+      &quot;expected_schemas&quot;: {
+        &quot;inventory&quot;: &quot;project_inventory_v2&quot;,
+        &quot;code&quot;: &quot;security_graph_v3&quot;,
+        &quot;js&quot;: &quot;js_audit_graph_v4.1&quot;,
+        &quot;surface&quot;: &quot;attack_surface_ledger_v2&quot;,
+        &quot;engine&quot;: &quot;vulnerability_candidate_engine_v4&quot;
+      },
+      &quot;exact_assertion_policy&quot;: &quot;route/js/template/candidate-count exact; graph node/edge minimum; forbidden templates must not appear; candidate density must not exceed bound&quot;
+    },
+    {
+      &quot;id&quot;: &quot;07-rust-axum&quot;,
+      &quot;path&quot;: &quot;_shared/tests/e2e_samples/07-rust-axum&quot;,
+      &quot;expected_exact_candidate_count&quot;: 17,
+      &quot;expected_exact_route_count&quot;: 1,
+      &quot;expected_exact_routes&quot;: [
+        &quot;POST /api/admin/run&quot;
+      ],
+      &quot;expected_exact_js_api_count&quot;: 0,
+      &quot;expected_exact_js_api_targets&quot;: [],
+      &quot;expected_exact_templates&quot;: [
+        &quot;C01-auth-bypass&quot;,
+        &quot;C02-authz-bypass&quot;,
+        &quot;C03-idor-bola&quot;,
+        &quot;C04-tenant-isolation-bypass&quot;,
+        &quot;C05-admin-privilege-escalation&quot;,
+        &quot;C06-rce&quot;,
+        &quot;C07-command-injection&quot;,
+        &quot;C13-ssrf&quot;,
+        &quot;C18-webhook-signature-bypass&quot;
+      ],
+      &quot;forbidden_templates&quot;: [
+        &quot;C08-ssti&quot;,
+        &quot;C09-deserialization&quot;,
+        &quot;C10-arbitrary-file-read&quot;,
+        &quot;C11-arbitrary-file-write&quot;,
+        &quot;C12-file-upload-code-exec-or-overwrite&quot;,
+        &quot;C14-sql-injection&quot;,
+        &quot;C15-nosql-injection&quot;,
+        &quot;C16-orm-raw-query-injection&quot;,
+        &quot;C17-graphql-access-control&quot;,
+        &quot;C19-jwt-token-validation&quot;,
+        &quot;C20-oauth-sso-callback-redirect&quot;,
+        &quot;C21-cors-high-risk&quot;,
+        &quot;C22-sensitive-info-disclosure&quot;,
+        &quot;C23-supply-chain-plugin-build-risk&quot;
+      ],
+      &quot;expected_exact_sink_types&quot;: [
+        &quot;command_execution&quot;
+      ],
+      &quot;expected_graph_node_min&quot;: 4,
+      &quot;expected_graph_edge_min&quot;: 4,
+      &quot;expected_role_object_tenant_unresolved_count&quot;: 1,
+      &quot;candidate_density_max&quot;: 17.0,
+      &quot;expected_schemas&quot;: {
+        &quot;inventory&quot;: &quot;project_inventory_v2&quot;,
+        &quot;code&quot;: &quot;security_graph_v3&quot;,
+        &quot;js&quot;: &quot;js_audit_graph_v4.1&quot;,
+        &quot;surface&quot;: &quot;attack_surface_ledger_v2&quot;,
+        &quot;engine&quot;: &quot;vulnerability_candidate_engine_v4&quot;
+      },
+      &quot;exact_assertion_policy&quot;: &quot;route/js/template/candidate-count exact; graph node/edge minimum; forbidden templates must not appear; candidate density must not exceed bound&quot;
+    },
+    {
+      &quot;id&quot;: &quot;08-graphql-apollo&quot;,
+      &quot;path&quot;: &quot;_shared/tests/e2e_samples/08-graphql-apollo&quot;,
+      &quot;expected_exact_candidate_count&quot;: 42,
+      &quot;expected_exact_route_count&quot;: 0,
+      &quot;expected_exact_routes&quot;: [],
+      &quot;expected_exact_js_api_count&quot;: 0,
+      &quot;expected_exact_js_api_targets&quot;: [],
+      &quot;expected_exact_templates&quot;: [
+        &quot;C01-auth-bypass&quot;,
+        &quot;C02-authz-bypass&quot;,
+        &quot;C04-tenant-isolation-bypass&quot;,
+        &quot;C13-ssrf&quot;,
+        &quot;C14-sql-injection&quot;,
+        &quot;C16-orm-raw-query-injection&quot;,
+        &quot;C17-graphql-access-control&quot;,
+        &quot;C18-webhook-signature-bypass&quot;,
+        &quot;C19-jwt-token-validation&quot;
+      ],
+      &quot;forbidden_templates&quot;: [
+        &quot;C03-idor-bola&quot;,
+        &quot;C05-admin-privilege-escalation&quot;,
+        &quot;C06-rce&quot;,
+        &quot;C07-command-injection&quot;,
+        &quot;C08-ssti&quot;,
+        &quot;C09-deserialization&quot;,
+        &quot;C10-arbitrary-file-read&quot;,
+        &quot;C11-arbitrary-file-write&quot;,
+        &quot;C12-file-upload-code-exec-or-overwrite&quot;,
+        &quot;C15-nosql-injection&quot;,
+        &quot;C20-oauth-sso-callback-redirect&quot;,
+        &quot;C21-cors-high-risk&quot;,
+        &quot;C22-sensitive-info-disclosure&quot;,
+        &quot;C23-supply-chain-plugin-build-risk&quot;
+      ],
+      &quot;expected_exact_sink_types&quot;: [
+        &quot;database_query&quot;
+      ],
+      &quot;expected_graph_node_min&quot;: 4,
+      &quot;expected_graph_edge_min&quot;: 3,
+      &quot;expected_role_object_tenant_unresolved_count&quot;: 0,
+      &quot;candidate_density_max&quot;: 42.0,
+      &quot;expected_schemas&quot;: {
+        &quot;inventory&quot;: &quot;project_inventory_v2&quot;,
+        &quot;code&quot;: &quot;security_graph_v3&quot;,
+        &quot;js&quot;: &quot;js_audit_graph_v4.1&quot;,
+        &quot;surface&quot;: &quot;attack_surface_ledger_v2&quot;,
+        &quot;engine&quot;: &quot;vulnerability_candidate_engine_v4&quot;
+      },
+      &quot;exact_assertion_policy&quot;: &quot;route/js/template/candidate-count exact; graph node/edge minimum; forbidden templates must not appear; candidate density must not exceed bound&quot;
+    },
+    {
+      &quot;id&quot;: &quot;09-electron&quot;,
+      &quot;path&quot;: &quot;_shared/tests/e2e_samples/09-electron&quot;,
+      &quot;expected_exact_candidate_count&quot;: 40,
+      &quot;expected_exact_route_count&quot;: 0,
+      &quot;expected_exact_routes&quot;: [],
+      &quot;expected_exact_js_api_count&quot;: 0,
+      &quot;expected_exact_js_api_targets&quot;: [],
+      &quot;expected_exact_templates&quot;: [
+        &quot;C01-auth-bypass&quot;,
+        &quot;C02-authz-bypass&quot;,
+        &quot;C08-ssti&quot;,
+        &quot;C10-arbitrary-file-read&quot;,
+        &quot;C11-arbitrary-file-write&quot;,
+        &quot;C12-file-upload-code-exec-or-overwrite&quot;,
+        &quot;C19-jwt-token-validation&quot;,
+        &quot;C20-oauth-sso-callback-redirect&quot;,
+        &quot;C23-supply-chain-plugin-build-risk&quot;
+      ],
+      &quot;forbidden_templates&quot;: [
+        &quot;C03-idor-bola&quot;,
+        &quot;C04-tenant-isolation-bypass&quot;,
+        &quot;C05-admin-privilege-escalation&quot;,
+        &quot;C06-rce&quot;,
+        &quot;C07-command-injection&quot;,
+        &quot;C09-deserialization&quot;,
+        &quot;C13-ssrf&quot;,
+        &quot;C14-sql-injection&quot;,
+        &quot;C15-nosql-injection&quot;,
+        &quot;C16-orm-raw-query-injection&quot;,
+        &quot;C17-graphql-access-control&quot;,
+        &quot;C18-webhook-signature-bypass&quot;,
+        &quot;C21-cors-high-risk&quot;,
+        &quot;C22-sensitive-info-disclosure&quot;
+      ],
+      &quot;expected_exact_sink_types&quot;: [],
+      &quot;expected_graph_node_min&quot;: 2,
+      &quot;expected_graph_edge_min&quot;: 0,
+      &quot;expected_role_object_tenant_unresolved_count&quot;: 0,
+      &quot;candidate_density_max&quot;: 40.0,
+      &quot;expected_schemas&quot;: {
+        &quot;inventory&quot;: &quot;project_inventory_v2&quot;,
+        &quot;code&quot;: &quot;security_graph_v3&quot;,
+        &quot;js&quot;: &quot;js_audit_graph_v4.1&quot;,
+        &quot;surface&quot;: &quot;attack_surface_ledger_v2&quot;,
+        &quot;engine&quot;: &quot;vulnerability_candidate_engine_v4&quot;
+      },
+      &quot;exact_assertion_policy&quot;: &quot;route/js/template/candidate-count exact; graph node/edge minimum; forbidden templates must not appear; candidate density must not exceed bound&quot;
+    },
+    {
+      &quot;id&quot;: &quot;10-extension-miniprogram&quot;,
+      &quot;path&quot;: &quot;_shared/tests/e2e_samples/10-extension-miniprogram&quot;,
+      &quot;expected_exact_candidate_count&quot;: 7,
+      &quot;expected_exact_route_count&quot;: 0,
+      &quot;expected_exact_routes&quot;: [],
+      &quot;expected_exact_js_api_count&quot;: 0,
+      &quot;expected_exact_js_api_targets&quot;: [],
+      &quot;expected_exact_templates&quot;: [
+        &quot;C13-ssrf&quot;,
+        &quot;C18-webhook-signature-bypass&quot;,
+        &quot;C19-jwt-token-validation&quot;,
+        &quot;C22-sensitive-info-disclosure&quot;,
+        &quot;C23-supply-chain-plugin-build-risk&quot;
+      ],
+      &quot;forbidden_templates&quot;: [
+        &quot;C01-auth-bypass&quot;,
+        &quot;C02-authz-bypass&quot;,
+        &quot;C03-idor-bola&quot;,
+        &quot;C04-tenant-isolation-bypass&quot;,
+        &quot;C05-admin-privilege-escalation&quot;,
+        &quot;C06-rce&quot;,
+        &quot;C07-command-injection&quot;,
+        &quot;C08-ssti&quot;,
+        &quot;C09-deserialization&quot;,
+        &quot;C10-arbitrary-file-read&quot;,
+        &quot;C11-arbitrary-file-write&quot;,
+        &quot;C12-file-upload-code-exec-or-overwrite&quot;,
+        &quot;C14-sql-injection&quot;,
+        &quot;C15-nosql-injection&quot;,
+        &quot;C16-orm-raw-query-injection&quot;,
+        &quot;C17-graphql-access-control&quot;,
+        &quot;C20-oauth-sso-callback-redirect&quot;,
+        &quot;C21-cors-high-risk&quot;
+      ],
+      &quot;expected_exact_sink_types&quot;: [],
+      &quot;expected_graph_node_min&quot;: 1,
+      &quot;expected_graph_edge_min&quot;: 0,
+      &quot;expected_role_object_tenant_unresolved_count&quot;: 0,
+      &quot;candidate_density_max&quot;: 7.0,
+      &quot;expected_schemas&quot;: {
+        &quot;inventory&quot;: &quot;project_inventory_v2&quot;,
+        &quot;code&quot;: &quot;security_graph_v3&quot;,
+        &quot;js&quot;: &quot;js_audit_graph_v4.1&quot;,
+        &quot;surface&quot;: &quot;attack_surface_ledger_v2&quot;,
+        &quot;engine&quot;: &quot;vulnerability_candidate_engine_v4&quot;
+      },
+      &quot;exact_assertion_policy&quot;: &quot;route/js/template/candidate-count exact; graph node/edge minimum; forbidden templates must not appear; candidate density must not exceed bound&quot;
+    }
+  ]
+}</pre><h2>Human review queue</h2><pre>{
+  &quot;schema_version&quot;: &quot;human_review_queue_v1&quot;,
+  &quot;items&quot;: []
+}</pre>

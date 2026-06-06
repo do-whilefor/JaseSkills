@@ -1,0 +1,33 @@
+{
+  "schema_version": "real-oss-source-provenance/v2",
+  "slug": "sphinx-language-data",
+  "project": "Sphinx language data",
+  "source_root": "/usr/share/javascript/sphinxdoc/1.0",
+  "snapshot_path": "/mnt/data/jswork/Js-End/fixtures/oss-replay/real-local-oss10-debug2/sphinx-language-data",
+  "dpkg_owner": "libjs-sphinxdoc",
+  "copied_files": [
+    "language_data.js",
+    "DEBIAN_COPYRIGHT",
+    "index.html"
+  ],
+  "missing_files": [],
+  "file_hashes": [
+    {
+      "path": "language_data.js",
+      "sha256": "3bc311563b7fc5e80fcab2f8629774bf3cb6b30202000df36dff8e695a9023b7",
+      "size": 4598
+    },
+    {
+      "path": "DEBIAN_COPYRIGHT",
+      "sha256": "bd01b85d02b34a10b7857e35f7f98b7d212bf507468620e962510512d93348b8",
+      "size": 4940
+    },
+    {
+      "path": "index.html",
+      "sha256": "3247e9c249e2a4657d8a1511075d7426421f62bebbd448864bde8745900ae92c",
+      "size": 114
+    }
+  ],
+  "license_or_copyright_file": "DEBIAN_COPYRIGHT",
+  "note": "Local installed open-source package/source subset copied for deterministic static replay. This is not a user authorized web target runtime replay."
+}
