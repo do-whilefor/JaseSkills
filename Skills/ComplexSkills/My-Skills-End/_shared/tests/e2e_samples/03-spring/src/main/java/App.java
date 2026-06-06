@@ -1,0 +1,1 @@
+@RestController class App { @GetMapping("/api/admin/users/{id}") public User u(String id){ if(isAdmin()) return repo.raw("select"+id); } }

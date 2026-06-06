@@ -1,0 +1,11 @@
+{
+  "id": "INFO17-tenant-model",
+  "input_sample": {
+    "project_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "tenant_field,org_field,project_field,propagation_path"
+  },
+  "expected_output": {
+    "role_object_tenant_ledger": "non_empty_or_explicit_empty_with_reason"
+  },
+  "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation"
+}

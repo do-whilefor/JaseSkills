@@ -1,3 +1,0 @@
-type Query { user(id: ID!): User }
-type Mutation { updateUserRole(userId: ID!, role: String!, tenantId: ID!): User }
-type User { id: ID!, email: String! }

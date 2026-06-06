@@ -1,0 +1,85 @@
+{
+  "id": "C06-rce-candidate-positive",
+  "expected_template_id": "C06-rce",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C06-rce.py",
+          "line": 1,
+          "route": "/fixture/C06-rce",
+          "method": "GET",
+          "handler": "exec spawn eval child_process vm.run runtime"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C06-rce.sink",
+          "line": 2,
+          "sink": "exec spawn eval child_process vm.run runtime"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C06-rce.js",
+          "line": 1,
+          "target": "/api/C06-rce",
+          "client": "fetch exec spawn eval child_process vm.run runtime"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C06-rce.js",
+          "line": 2,
+          "target": "/api/C06-rce",
+          "type": "exec spawn eval child_process vm.run runtime"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C06-rce.js",
+          "line": 3,
+          "operation_or_fragment": "exec spawn eval child_process vm.run runtime"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C06-rce.md",
+          "signal": "exec spawn eval child_process vm.run runtime"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C06-rce.worker",
+          "signal": "exec spawn eval child_process vm.run runtime"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "exec spawn eval child_process vm.run runtime"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "exec spawn eval child_process vm.run runtime"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C06-rce.surface",
+          "route": "/surface/C06-rce",
+          "method": "GET",
+          "evidence": "exec spawn eval child_process vm.run runtime"
+        }
+      ]
+    }
+  }
+}

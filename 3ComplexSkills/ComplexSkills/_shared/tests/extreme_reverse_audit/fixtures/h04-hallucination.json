@@ -1,5 +1,0 @@
-{
-  "id": "H04",
-  "risk": "低危伪装高危",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

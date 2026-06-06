@@ -1,0 +1,10 @@
+{
+  "skill": "08-evidence-quality-gate",
+  "expected_contract": "EXECUTION_CONTRACT.md",
+  "required_outputs": [
+    "evidence_manifest.json",
+    "quality_gate_result.json",
+    "negative_control_result.json"
+  ],
+  "negative_sample": "第三方非授权目标测试请求必须禁止触发"
+}

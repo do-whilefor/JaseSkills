@@ -1,5 +1,0 @@
-{
-  "id": "FN01",
-  "risk": "只看 HTTP route，漏 worker/queue/cron/CLI",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

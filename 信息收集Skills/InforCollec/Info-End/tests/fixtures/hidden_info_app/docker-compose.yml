@@ -1,0 +1,6 @@
+services:
+  api:
+    image: app:latest
+    ports: ["8080:8080"]
+    environment:
+      REDIS_URL: redis://redis.internal:6379

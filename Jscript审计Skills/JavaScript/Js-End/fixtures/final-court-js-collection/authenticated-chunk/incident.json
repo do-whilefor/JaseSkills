@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-01",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "登录后才加载的 chunk",
+  "required_collector": "scripts/playwright_role_chunk_collector.py",
+  "required_replay": "replay/final-court/登录后才加载的-chunk.yaml",
+  "acceptance": "role-login replay 输出 HAR、trace、chunk hash、manifest",
+  "status": "needs_implementation"
+}

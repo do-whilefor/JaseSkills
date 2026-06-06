@@ -1,6 +1,0 @@
-{
-  "id": "AR03",
-  "title": "只有报错但无安全影响",
-  "scenario": "500/error only must be rejected",
-  "expected_status": "rejected"
-}

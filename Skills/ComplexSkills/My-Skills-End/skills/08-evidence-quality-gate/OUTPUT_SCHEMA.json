@@ -1,0 +1,30 @@
+{
+  "title": "08-evidence-quality-gate output schema",
+  "type": "object",
+  "required": [
+    "skill_id",
+    "status",
+    "outputs",
+    "evidence_manifest_updates"
+  ],
+  "properties": {
+    "skill_id": {
+      "const": "08-evidence-quality-gate"
+    },
+    "status": {
+      "enum": [
+        "ready",
+        "degraded",
+        "blocked",
+        "needs_human_review",
+        "failed"
+      ]
+    },
+    "outputs": {
+      "type": "array"
+    },
+    "evidence_manifest_updates": {
+      "type": "array"
+    }
+  }
+}

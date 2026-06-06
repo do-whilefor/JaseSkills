@@ -1,0 +1,5 @@
+{
+  "id": "FN12",
+  "risk": "只看上传，漏预览转换解压导入导出",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

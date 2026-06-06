@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-02",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "管理员角色才加载的 chunk",
+  "required_collector": "scripts/role_chunk_diff_collector.py",
+  "required_replay": "replay/final-court/管理员角色才加载的-chunk.yaml",
+  "acceptance": "admin 与普通用户 chunk diff 产生 endpoint 差异证据",
+  "status": "needs_implementation"
+}

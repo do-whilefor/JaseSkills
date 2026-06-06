@@ -1,0 +1,22 @@
+{
+  "schema_version": "js-graphql-ws-runtime-scenarios/v1",
+  "scenarios": [
+    {
+      "name": "local-graphql-viewer-query-placeholder",
+      "protocol": "graphql",
+      "url": "http://127.0.0.1:1/graphql",
+      "query": "query Viewer { viewer { id } }",
+      "variables": {},
+      "role": "unauthenticated-placeholder",
+      "tenant": "none"
+    },
+    {
+      "name": "local-websocket-action-placeholder",
+      "protocol": "websocket",
+      "url": "ws://127.0.0.1:1/ws",
+      "message": {"type": "ping"},
+      "role": "unauthenticated-placeholder",
+      "tenant": "none"
+    }
+  ]
+}

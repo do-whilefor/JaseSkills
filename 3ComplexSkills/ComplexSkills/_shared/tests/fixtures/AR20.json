@@ -1,6 +1,0 @@
-{
-  "id": "AR20",
-  "title": "三次复现失败样本",
-  "scenario": "unstable reproduction cannot confirm",
-  "expected_status": "validation_blocked"
-}

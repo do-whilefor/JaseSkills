@@ -1,0 +1,11 @@
+{
+  "id": "INFO18-database-model",
+  "input_sample": {
+    "project_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "schema_file,tables,relations,sensitive_objects"
+  },
+  "expected_output": {
+    "project_inventory": "non_empty_or_explicit_empty_with_reason"
+  },
+  "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-14",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "Browser extension content script",
+  "required_collector": "scripts/extension_bundle_collector.py",
+  "required_replay": "replay/final-court/Browser-extension-content-script.yaml",
+  "acceptance": "解析 manifest/content scripts/host_permissions",
+  "status": "needs_implementation"
+}

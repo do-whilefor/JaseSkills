@@ -1,0 +1,804 @@
+{
+  "schema": "information_collection_coverage_v1",
+  "count": 42,
+  "items": [
+    {
+      "id": "INFO01-project-directory-structure",
+      "information_source": "项目目录结构",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO01-project-directory-structure.md",
+      "required_rule": "project_tree,file_inventory,ignored_runtime_artifacts",
+      "output_field": "project_inventory.entries[]",
+      "manifest_field": "project_inventory_v2.file_inventory",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/project-tree-with-hidden-admin.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO02-language-detection",
+      "information_source": "语言识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO02-language-detection.md",
+      "required_rule": "language_signals,extension_histogram,parser_probe",
+      "output_field": "project_inventory.languages[]",
+      "manifest_field": "project_inventory_v2.languages",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/language-polyglot.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO03-framework-detection",
+      "information_source": "框架识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO03-framework-detection.md",
+      "required_rule": "framework_signals,dependency_manifest,config_signature",
+      "output_field": "project_inventory.frameworks[]",
+      "manifest_field": "project_inventory_v2.frameworks",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/framework-mixed-express-django.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO04-dependency-version-lockfile",
+      "information_source": "依赖识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO04-dependency-version-lockfile.md",
+      "required_rule": "manifest_versions,lockfile_versions,reachability_obligation,build_script_risk",
+      "output_field": "project_inventory.dependencies[]",
+      "manifest_field": "project_inventory_v2.dependencies",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/dependency-lockfile-reachability.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO05-config-files",
+      "information_source": "配置文件识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO05-config-files.md",
+      "required_rule": "config_path,framework_semantics,secret_reference,exposure_flag",
+      "output_field": "project_inventory.configs[]",
+      "manifest_field": "project_inventory_v2.configs",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/config-framework-semantics.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO06-environment-variable",
+      "information_source": "环境变量识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO06-environment-variable.md",
+      "required_rule": "env_name,source_file,classification,secret_redaction_required",
+      "output_field": "project_inventory.env_vars[]",
+      "manifest_field": "project_inventory_v2.env_vars",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/env-vars-redacted.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO07-route-detection",
+      "information_source": "路由识别",
+      "covered": true,
+      "responsible_skill": "skills/03-code-knowledge-graph/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO07-route-detection.md",
+      "required_rule": "route,method,handler,source_span,framework",
+      "output_field": "security_graph.routes[]",
+      "manifest_field": "security_graph_v3.nodes/edges",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/route-controller-guard.json",
+      "expected_output": {
+        "security_graph": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO08-controller-handler",
+      "information_source": "控制器识别",
+      "covered": true,
+      "responsible_skill": "skills/03-code-knowledge-graph/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO08-controller-handler.md",
+      "required_rule": "handler_symbol,class_or_function,source_span,call_targets",
+      "output_field": "security_graph.handlers[]",
+      "manifest_field": "security_graph_v3.nodes",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/controller-handler-symbol.json",
+      "expected_output": {
+        "security_graph": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO09-middleware-guard-policy-interceptor",
+      "information_source": "middleware / guard / policy / interceptor 识别",
+      "covered": true,
+      "responsible_skill": "skills/03-code-knowledge-graph/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO09-middleware-guard-policy-interceptor.md",
+      "required_rule": "authn_guard,authz_guard,policy,interceptor_order,missing_guard_marker",
+      "output_field": "security_graph.auth_chain[]",
+      "manifest_field": "security_graph_v3.edges",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/middleware-order-bypass.json",
+      "expected_output": {
+        "security_graph": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO10-api-doc",
+      "information_source": "API 文档识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO10-api-doc.md",
+      "required_rule": "api_doc_path,source_type,declared_route,auth_hint",
+      "output_field": "project_inventory.api_docs[]",
+      "manifest_field": "project_inventory_v2.api_docs",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/api-docs-openapi.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P1",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO11-swagger-openapi",
+      "information_source": "Swagger / OpenAPI 识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO11-swagger-openapi.md",
+      "required_rule": "openapi_version,paths,security_schemes,servers",
+      "output_field": "project_inventory.openapi[]",
+      "manifest_field": "project_inventory_v2.api_docs",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/openapi-security-schemes.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO12-graphql-schema",
+      "information_source": "GraphQL schema 识别",
+      "covered": true,
+      "responsible_skill": "skills/03-code-knowledge-graph/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO12-graphql-schema.md",
+      "required_rule": "schema_path,type,field,resolver,auth_directive",
+      "output_field": "security_graph.graphql_schema[]",
+      "manifest_field": "security_graph_v3.nodes",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/graphql-schema-resolver-auth.json",
+      "expected_output": {
+        "security_graph": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO13-grpc-proto",
+      "information_source": "gRPC proto 识别",
+      "covered": true,
+      "responsible_skill": "skills/03-code-knowledge-graph/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO13-grpc-proto.md",
+      "required_rule": "proto_file,service,method,message,auth_interceptor",
+      "output_field": "security_graph.grpc_services[]",
+      "manifest_field": "security_graph_v3.nodes",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/grpc-proto-service.json",
+      "expected_output": {
+        "security_graph": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P1",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO14-rpc-schema",
+      "information_source": "RPC schema 识别",
+      "covered": true,
+      "responsible_skill": "skills/03-code-knowledge-graph/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO14-rpc-schema.md",
+      "required_rule": "rpc_schema_path,service,method,transport,auth_context",
+      "output_field": "security_graph.rpc_services[]",
+      "manifest_field": "security_graph_v3.nodes",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/rpc-schema-jsonrpc.json",
+      "expected_output": {
+        "security_graph": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P1",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO15-auth-mechanism",
+      "information_source": "认证机制识别",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO15-auth-mechanism.md",
+      "required_rule": "session,jwt,oauth,saml,api_key,magic_link,sso",
+      "output_field": "attack_surface.auth_mechanisms[]",
+      "manifest_field": "surface_manifest_v2.auth",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/auth-mechanisms.json",
+      "expected_output": {
+        "attack_surface": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO16-authorization-model",
+      "information_source": "授权模型识别",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO16-authorization-model.md",
+      "required_rule": "rbac,abac,acl,owner_check,policy_path",
+      "output_field": "attack_surface.authorization_model[]",
+      "manifest_field": "surface_manifest_v2.authorization",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/authorization-rbac-abac.json",
+      "expected_output": {
+        "attack_surface": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO17-tenant-model",
+      "information_source": "租户模型识别",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO17-tenant-model.md",
+      "required_rule": "tenant_field,org_field,project_field,propagation_path",
+      "output_field": "role_object_tenant_ledger.entries[]",
+      "manifest_field": "surface_manifest_v2.role_object_tenant_ledger",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/tenant-ledger.json",
+      "expected_output": {
+        "role_object_tenant_ledger": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO18-database-model",
+      "information_source": "数据库模型识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO18-database-model.md",
+      "required_rule": "schema_file,tables,relations,sensitive_objects",
+      "output_field": "project_inventory.database_models[]",
+      "manifest_field": "project_inventory_v2.database",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/database-model-relations.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO19-orm-model",
+      "information_source": "ORM model 识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO19-orm-model.md",
+      "required_rule": "model_file,model_name,owner_field,tenant_field,raw_query_flag",
+      "output_field": "project_inventory.orm_models[]",
+      "manifest_field": "project_inventory_v2.orm",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/orm-owner-tenant.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO20-migration-seed-fixture",
+      "information_source": "migration / seed / fixture 识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO20-migration-seed-fixture.md",
+      "required_rule": "migration,seed,factory,fixture,default_account",
+      "output_field": "project_inventory.seed_fixture_signals[]",
+      "manifest_field": "project_inventory_v2.test_data",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/migration-seed-objects.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO21-default-account",
+      "information_source": "默认账号识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO21-default-account.md",
+      "required_rule": "account_source,credential_redacted,role,environment_only",
+      "output_field": "project_inventory.accounts[]",
+      "manifest_field": "project_inventory_v2.accounts",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/default-accounts-redacted.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO22-test-account",
+      "information_source": "测试账号识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO22-test-account.md",
+      "required_rule": "test_account_source,scope,role,tenant,redacted_secret",
+      "output_field": "project_inventory.test_accounts[]",
+      "manifest_field": "project_inventory_v2.accounts",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/test-accounts.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P1",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO23-admin-backend",
+      "information_source": "管理后台识别",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO23-admin-backend.md",
+      "required_rule": "admin_route,admin_menu_key,guard,role_required",
+      "output_field": "attack_surface.admin_surfaces[]",
+      "manifest_field": "surface_manifest_v2.admin",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/admin-shadow-route.json",
+      "expected_output": {
+        "attack_surface": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO24-debug-interface",
+      "information_source": "调试接口识别",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO24-debug-interface.md",
+      "required_rule": "debug_route,error_page,debug_flag,environment_guard",
+      "output_field": "attack_surface.debug_surfaces[]",
+      "manifest_field": "surface_manifest_v2.debug",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/debug-interface.json",
+      "expected_output": {
+        "attack_surface": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO25-file-and-conversion-entrypoints",
+      "information_source": "上传下载导入导出预览转换解压入口识别",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO25-file-and-conversion-entrypoints.md",
+      "required_rule": "upload,download,import,export,preview,convert,extract",
+      "output_field": "attack_surface.file_workflow_surfaces[]",
+      "manifest_field": "surface_manifest_v2.file_workflows",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/file-workflow-entrypoints.json",
+      "expected_output": {
+        "attack_surface": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO26-non-http-entrypoints",
+      "information_source": "webhook / worker / queue / cron / CLI / RPC 入口识别",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO26-non-http-entrypoints.md",
+      "required_rule": "webhook,worker,queue,cron,cli,rpc,consumer",
+      "output_field": "attack_surface.non_http_surfaces[]",
+      "manifest_field": "surface_manifest_v2.non_http",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/non-http-entrypoints.json",
+      "expected_output": {
+        "attack_surface": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO27-container-cicd",
+      "information_source": "Docker / Kubernetes / CI/CD 暴露面识别",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO27-container-cicd.md",
+      "required_rule": "dockerfile,k8s_manifest,github_actions,gitlab_ci,secrets_ref",
+      "output_field": "project_inventory.deployment_surfaces[]",
+      "manifest_field": "project_inventory_v2.deployment",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/container-cicd-exposure.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO28-error-fallback",
+      "information_source": "日志错误页debug flag fallback route 识别",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO28-error-fallback.md",
+      "required_rule": "error_handler,fallback_route,catch_all,middleware_order",
+      "output_field": "attack_surface.fallback_surfaces[]",
+      "manifest_field": "surface_manifest_v2.fallback",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/fallback-route-order.json",
+      "expected_output": {
+        "attack_surface": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO29-i18n-hidden-feature",
+      "information_source": "从 i18n 文案反推隐藏功能",
+      "covered": true,
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO29-i18n-hidden-feature.md",
+      "required_rule": "i18n_key,module_guess,admin_hint,route_link",
+      "output_field": "js_audit.i18n_signals[]",
+      "manifest_field": "js_audit_graph_v4.1.i18n_signals",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/i18n-hidden-admin.json",
+      "expected_output": {
+        "js_audit": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P1",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO30-telemetry-events",
+      "information_source": "从埋点事件反推业务模块",
+      "covered": true,
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO30-telemetry-events.md",
+      "required_rule": "event_name,feature,object_type,route_hint",
+      "output_field": "js_audit.telemetry_events[]",
+      "manifest_field": "js_audit_graph_v4.1.telemetry_events",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/telemetry-hidden-module.json",
+      "expected_output": {
+        "js_audit": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P1",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO31-feature-flag",
+      "information_source": "从 feature flag 反推灰度接口",
+      "covered": true,
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO31-feature-flag.md",
+      "required_rule": "flag_name,default_state,guarded_route,api_endpoint",
+      "output_field": "js_audit.feature_flags[]",
+      "manifest_field": "js_audit_graph_v4.1.feature_flags",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/feature-flag-api.json",
+      "expected_output": {
+        "js_audit": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO32-menu-key",
+      "information_source": "从前端菜单 key 反推后台接口",
+      "covered": true,
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO32-menu-key.md",
+      "required_rule": "menu_key,route,permission_key,admin_endpoint",
+      "output_field": "js_audit.menu_permission_signals[]",
+      "manifest_field": "js_audit_graph_v4.1.frontend_permissions",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/menu-key-admin.json",
+      "expected_output": {
+        "js_audit": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P1",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO33-permission-key",
+      "information_source": "从权限 key 反推角色模型",
+      "covered": true,
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO33-permission-key.md",
+      "required_rule": "permission_key,role,guarded_action,backend_mapping",
+      "output_field": "js_audit.permission_keys[]",
+      "manifest_field": "js_audit_graph_v4.1.frontend_permissions",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/permission-key-role.json",
+      "expected_output": {
+        "js_audit": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO34-sourcemap-recovery",
+      "information_source": "从 sourcemap 反推源码注释接口",
+      "covered": true,
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO34-sourcemap-recovery.md",
+      "required_rule": "map_file,sourcesContent,original_span,api_endpoint,comment_taint",
+      "output_field": "js_audit.source_map_reentry[]",
+      "manifest_field": "js_audit_graph_v4.1.source_map_reentry",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/sourcemap-sourcescontent-api.json",
+      "expected_output": {
+        "js_audit": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO35-old-chunk-service-worker",
+      "information_source": "从旧 chunk、缓存、service worker 反推遗留 API",
+      "covered": true,
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO35-old-chunk-service-worker.md",
+      "required_rule": "service_worker,cache_name,old_chunk,legacy_endpoint",
+      "output_field": "js_audit.chunk_lineage[]",
+      "manifest_field": "js_audit_graph_v4.1.chunk_lineage",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/service-worker-old-chunk.json",
+      "expected_output": {
+        "js_audit": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO36-storybook-mock-msw-e2e",
+      "information_source": "从 Storybook/mock/MSW/fixture/E2E 测试反推业务流",
+      "covered": true,
+      "responsible_skill": "skills/02-project-intelligence/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO36-storybook-mock-msw-e2e.md",
+      "required_rule": "storybook_story,msw_handler,e2e_flow,mock_api",
+      "output_field": "project_inventory.test_flow_signals[]",
+      "manifest_field": "project_inventory_v2.test_flows",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/storybook-msw-e2e-flow.json",
+      "expected_output": {
+        "project_inventory": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P1",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO37-migration-seed-idor-object",
+      "information_source": "从 migration / seed 反推越权对象关系",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO37-migration-seed-idor-object.md",
+      "required_rule": "seed_owner,tenant_field,object_relation,cross_actor_path",
+      "output_field": "role_object_tenant_ledger.seed_paths[]",
+      "manifest_field": "surface_manifest_v2.role_object_tenant_ledger",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/seed-idor-object-path.json",
+      "expected_output": {
+        "role_object_tenant_ledger": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO38-soft-delete-state-machine",
+      "information_source": "从软删除归档状态机字段反推边界绕过路径",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO38-soft-delete-state-machine.md",
+      "required_rule": "soft_delete_field,archive_field,state_field,transition_guard",
+      "output_field": "attack_surface.state_boundary_surfaces[]",
+      "manifest_field": "surface_manifest_v2.state_boundaries",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/state-machine-boundary.json",
+      "expected_output": {
+        "attack_surface": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO39-fallback-middleware-order",
+      "information_source": "从 fallback route / catch-all / middleware 顺序反推认证绕过",
+      "covered": true,
+      "responsible_skill": "skills/03-code-knowledge-graph/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO39-fallback-middleware-order.md",
+      "required_rule": "catch_all_route,order,auth_optional,shadow_route",
+      "output_field": "security_graph.middleware_order_findings[]",
+      "manifest_field": "security_graph_v3.edges",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/catchall-middleware-order.json",
+      "expected_output": {
+        "security_graph": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO40-legacy-mobile-electron-extension",
+      "information_source": "兼容/mobile/小程序/Electron/extension API 遗留暴露面",
+      "covered": true,
+      "responsible_skill": "skills/05-js-audit-runtime/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO40-legacy-mobile-electron-extension.md",
+      "required_rule": "legacy_api,mobile_api,miniapp_api,electron_ipc,extension_script",
+      "output_field": "js_audit.legacy_cross_platform_surfaces[]",
+      "manifest_field": "js_audit_graph_v4.1.cross_platform",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/legacy-mobile-electron-extension.json",
+      "expected_output": {
+        "js_audit": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO41-async-webhook-consumer",
+      "information_source": "webhook 异步任务队列 consumer 非 HTTP 攻击面",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO41-async-webhook-consumer.md",
+      "required_rule": "webhook_handler,queue_topic,consumer,signature_check",
+      "output_field": "attack_surface.async_surfaces[]",
+      "manifest_field": "surface_manifest_v2.non_http",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/webhook-queue-consumer.json",
+      "expected_output": {
+        "attack_surface": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    },
+    {
+      "id": "INFO42-template-report-plugin-risk",
+      "information_source": "模板报表文件转换富文本插件机制高危入口",
+      "covered": true,
+      "responsible_skill": "skills/04-attack-surface-mapping/SKILL.md",
+      "rule_file": "_shared/reverse_judgement/rules/INFO42-template-report-plugin-risk.md",
+      "required_rule": "template_engine,report_export,converter,rich_text,plugin_loader",
+      "output_field": "attack_surface.high_risk_workflows[]",
+      "manifest_field": "surface_manifest_v2.high_risk_workflows",
+      "candidate_linkage": "must create candidate linkage when source implies one of C01-C23; otherwise asset-ledger only",
+      "test_file": "_shared/tests/extreme_reverse_audit/fixtures/template-report-plugin.json",
+      "expected_output": {
+        "attack_surface": "non_empty_or_explicit_empty_with_reason"
+      },
+      "failure_judgement": "fail if omitted, silently empty without unsupported_reason, or promoted without evidence",
+      "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation",
+      "priority": "P0",
+      "non_destructive_boundary": "local authorized filesystem and local fixtures only"
+    }
+  ]
+}

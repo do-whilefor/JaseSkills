@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "skills": [
+    {
+      "id": "01",
+      "name": "01-authorized-maximum-orchestrator",
+      "skill_md": "skills/01-authorized-maximum-orchestrator/SKILL.md",
+      "execution_contract": "skills/01-authorized-maximum-orchestrator/EXECUTION_CONTRACT.md",
+      "status": "promoted"
+    },
+    {
+      "id": "02",
+      "name": "02-project-intelligence",
+      "skill_md": "skills/02-project-intelligence/SKILL.md",
+      "execution_contract": "skills/02-project-intelligence/EXECUTION_CONTRACT.md",
+      "status": "promoted"
+    },
+    {
+      "id": "03",
+      "name": "03-code-knowledge-graph",
+      "skill_md": "skills/03-code-knowledge-graph/SKILL.md",
+      "execution_contract": "skills/03-code-knowledge-graph/EXECUTION_CONTRACT.md",
+      "status": "promoted"
+    },
+    {
+      "id": "04",
+      "name": "04-attack-surface-mapping",
+      "skill_md": "skills/04-attack-surface-mapping/SKILL.md",
+      "execution_contract": "skills/04-attack-surface-mapping/EXECUTION_CONTRACT.md",
+      "status": "promoted"
+    },
+    {
+      "id": "05",
+      "name": "05-js-audit-runtime",
+      "skill_md": "skills/05-js-audit-runtime/SKILL.md",
+      "execution_contract": "skills/05-js-audit-runtime/EXECUTION_CONTRACT.md",
+      "status": "promoted"
+    },
+    {
+      "id": "06",
+      "name": "06-dynamic-browser-burp-mcp",
+      "skill_md": "skills/06-dynamic-browser-burp-mcp/SKILL.md",
+      "execution_contract": "skills/06-dynamic-browser-burp-mcp/EXECUTION_CONTRACT.md",
+      "status": "promoted"
+    },
+    {
+      "id": "07",
+      "name": "07-vulnerability-hunting-engine",
+      "skill_md": "skills/07-vulnerability-hunting-engine/SKILL.md",
+      "execution_contract": "skills/07-vulnerability-hunting-engine/EXECUTION_CONTRACT.md",
+      "status": "promoted"
+    },
+    {
+      "id": "08",
+      "name": "08-evidence-quality-gate",
+      "skill_md": "skills/08-evidence-quality-gate/SKILL.md",
+      "execution_contract": "skills/08-evidence-quality-gate/EXECUTION_CONTRACT.md",
+      "status": "promoted"
+    },
+    {
+      "id": "09",
+      "name": "09-reporting-disclosure",
+      "skill_md": "skills/09-reporting-disclosure/SKILL.md",
+      "execution_contract": "skills/09-reporting-disclosure/EXECUTION_CONTRACT.md",
+      "status": "promoted"
+    },
+    {
+      "id": "10",
+      "name": "10-regression-selftest-dashboard",
+      "skill_md": "skills/10-regression-selftest-dashboard/SKILL.md",
+      "execution_contract": "skills/10-regression-selftest-dashboard/EXECUTION_CONTRACT.md",
+      "status": "promoted"
+    }
+  ],
+  "extreme_reverse_judgement_gate": "_shared/reverse_judgement/extreme_reverse_audit.py",
+  "extreme_reverse_judgement_standard": "_shared/reverse_judgement/EXTREME_REVERSE_JUDGEMENT_AND_STANDARD.v4.2.md",
+  "evaluation_claim_traceability": "_shared/reverse_judgement/evaluation_claim_traceability.json",
+  "information_collection_review_matrix": "_shared/reverse_judgement/information_collection_coverage_matrix.json",
+  "js_audit_review_matrix": "_shared/reverse_judgement/js_audit_coverage_matrix.json",
+  "vulnerability_review_matrix_23": "_shared/reverse_judgement/vulnerability_coverage_matrix_23.json",
+  "package_variant": "single_skill_v4_2_extreme_reverse_judgement_2026_06_05"
+}

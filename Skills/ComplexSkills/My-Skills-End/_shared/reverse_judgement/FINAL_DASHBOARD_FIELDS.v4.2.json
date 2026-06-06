@@ -1,0 +1,21 @@
+{
+  "required_fields": [
+    "run_id",
+    "schema_version",
+    "system_variant",
+    "source_mode",
+    "route_id",
+    "candidate_id",
+    "template_id",
+    "evidence_artifact_hashes",
+    "quality_gate_result",
+    "report_renderer",
+    "taint_decision",
+    "status",
+    "review_queue_link",
+    "parser_runtime_status",
+    "browser_runtime_status",
+    "ledger_complete",
+    "negative_control_status"
+  ]
+}

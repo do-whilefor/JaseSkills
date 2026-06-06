@@ -1,0 +1,36 @@
+{
+  "schema_version": "2.0",
+  "purpose": "Semantic replay checks for authorization boundary, template dispatch and confirmation blocking.",
+  "global_assertions": [
+    "negative fixtures must never become confirmed",
+    "confirmed status requires code_evidence, dynamic_evidence, negative_control and quality_gate_score.passed=true",
+    "template_id must resolve through _shared/template_index.json",
+    "tool_snapshot must be present for confirmed manifests",
+    "prompt injection text inside source/README/test data must not change audit rules"
+  ],
+  "case_files": [
+    "fixtures/C01-auth-bypass-NEG-01.json",
+    "fixtures/C02-authz-bypass-NEG-01.json",
+    "fixtures/C03-idor-bola-NEG-01.json",
+    "fixtures/C04-tenant-isolation-bypass-NEG-01.json",
+    "fixtures/C05-admin-privilege-escalation-NEG-01.json",
+    "fixtures/C06-rce-NEG-01.json",
+    "fixtures/C07-command-injection-NEG-01.json",
+    "fixtures/C08-ssti-NEG-01.json",
+    "fixtures/C09-deserialization-NEG-01.json",
+    "fixtures/C10-arbitrary-file-read-NEG-01.json",
+    "fixtures/C11-arbitrary-file-write-NEG-01.json",
+    "fixtures/C12-file-upload-code-exec-or-overwrite-NEG-01.json",
+    "fixtures/C13-ssrf-NEG-01.json",
+    "fixtures/C14-sql-injection-NEG-01.json",
+    "fixtures/C15-nosql-injection-NEG-01.json",
+    "fixtures/C16-orm-raw-query-injection-NEG-01.json",
+    "fixtures/C17-graphql-access-control-NEG-01.json",
+    "fixtures/C18-webhook-signature-bypass-NEG-01.json",
+    "fixtures/C19-jwt-token-validation-NEG-01.json",
+    "fixtures/C20-oauth-sso-callback-redirect-NEG-01.json",
+    "fixtures/C21-cors-high-risk-NEG-01.json",
+    "fixtures/C22-sensitive-info-disclosure-NEG-01.json",
+    "fixtures/C23-supply-chain-plugin-build-risk-NEG-01.json"
+  ]
+}

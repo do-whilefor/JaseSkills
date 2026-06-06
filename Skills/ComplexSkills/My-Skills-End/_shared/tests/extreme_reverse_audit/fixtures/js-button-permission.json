@@ -1,0 +1,12 @@
+{
+  "id": "JS28-button-permission",
+  "input_sample": {
+    "js_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "permission key/button visibility scanner"
+  },
+  "expected_output": {
+    "button_permissions[]": "non_empty_or_unsupported_with_reason"
+  },
+  "manifest_field": "js_graph.frontend_permissions",
+  "quality_gate": "QG-JS-chain-required; JS-derived confirmed finding must have candidate_to_manifest_link, original span when sourcemap exists, and template-specific evidence"
+}

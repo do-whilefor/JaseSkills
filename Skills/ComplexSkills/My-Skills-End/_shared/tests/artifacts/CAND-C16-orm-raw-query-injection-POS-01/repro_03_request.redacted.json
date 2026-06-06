@@ -1,0 +1,14 @@
+{
+  "candidate_id": "CAND-C16-orm-raw-query-injection-POS-01",
+  "note": "synthetic local replay request artifact; unique per reproduction group",
+  "redacted": true,
+  "reproduction_index": 3,
+  "request_summary": {
+    "headers_redacted": true,
+    "method": "GET",
+    "parameters": {
+      "id": "redacted-fixture-id"
+    },
+    "route": "/fixture/C16-orm-raw-query-injection/resource"
+  }
+}

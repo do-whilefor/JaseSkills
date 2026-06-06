@@ -1,0 +1,738 @@
+[
+  {
+    "id": "C01-auth-bypass-POS-01",
+    "input_fixture": "fixtures/C01-auth-bypass-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C01-auth-bypass",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C01-auth-bypass-NEG-01",
+    "input_fixture": "fixtures/C01-auth-bypass-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C01-auth-bypass",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C01-auth-bypass-BLK-01",
+    "input_fixture": "fixtures/C01-auth-bypass-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C01-auth-bypass",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C01-auth-bypass-REV-01",
+    "input_fixture": "fixtures/C01-auth-bypass-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C01-auth-bypass",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C02-authz-bypass-POS-01",
+    "input_fixture": "fixtures/C02-authz-bypass-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C02-authz-bypass",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C02-authz-bypass-NEG-01",
+    "input_fixture": "fixtures/C02-authz-bypass-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C02-authz-bypass",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C02-authz-bypass-BLK-01",
+    "input_fixture": "fixtures/C02-authz-bypass-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C02-authz-bypass",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C02-authz-bypass-REV-01",
+    "input_fixture": "fixtures/C02-authz-bypass-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C02-authz-bypass",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C03-idor-bola-POS-01",
+    "input_fixture": "fixtures/C03-idor-bola-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C03-idor-bola",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C03-idor-bola-NEG-01",
+    "input_fixture": "fixtures/C03-idor-bola-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C03-idor-bola",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C03-idor-bola-BLK-01",
+    "input_fixture": "fixtures/C03-idor-bola-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C03-idor-bola",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C03-idor-bola-REV-01",
+    "input_fixture": "fixtures/C03-idor-bola-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C03-idor-bola",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C04-tenant-isolation-bypass-POS-01",
+    "input_fixture": "fixtures/C04-tenant-isolation-bypass-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C04-tenant-isolation-bypass",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C04-tenant-isolation-bypass-NEG-01",
+    "input_fixture": "fixtures/C04-tenant-isolation-bypass-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C04-tenant-isolation-bypass",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C04-tenant-isolation-bypass-BLK-01",
+    "input_fixture": "fixtures/C04-tenant-isolation-bypass-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C04-tenant-isolation-bypass",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C04-tenant-isolation-bypass-REV-01",
+    "input_fixture": "fixtures/C04-tenant-isolation-bypass-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C04-tenant-isolation-bypass",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C05-admin-privilege-escalation-POS-01",
+    "input_fixture": "fixtures/C05-admin-privilege-escalation-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C05-admin-privilege-escalation",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C05-admin-privilege-escalation-NEG-01",
+    "input_fixture": "fixtures/C05-admin-privilege-escalation-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C05-admin-privilege-escalation",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C05-admin-privilege-escalation-BLK-01",
+    "input_fixture": "fixtures/C05-admin-privilege-escalation-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C05-admin-privilege-escalation",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C05-admin-privilege-escalation-REV-01",
+    "input_fixture": "fixtures/C05-admin-privilege-escalation-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C05-admin-privilege-escalation",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C06-rce-POS-01",
+    "input_fixture": "fixtures/C06-rce-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C06-rce",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C06-rce-NEG-01",
+    "input_fixture": "fixtures/C06-rce-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C06-rce",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C06-rce-BLK-01",
+    "input_fixture": "fixtures/C06-rce-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C06-rce",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C06-rce-REV-01",
+    "input_fixture": "fixtures/C06-rce-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C06-rce",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C07-command-injection-POS-01",
+    "input_fixture": "fixtures/C07-command-injection-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C07-command-injection",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C07-command-injection-NEG-01",
+    "input_fixture": "fixtures/C07-command-injection-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C07-command-injection",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C07-command-injection-BLK-01",
+    "input_fixture": "fixtures/C07-command-injection-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C07-command-injection",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C07-command-injection-REV-01",
+    "input_fixture": "fixtures/C07-command-injection-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C07-command-injection",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C08-ssti-POS-01",
+    "input_fixture": "fixtures/C08-ssti-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C08-ssti",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C08-ssti-NEG-01",
+    "input_fixture": "fixtures/C08-ssti-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C08-ssti",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C08-ssti-BLK-01",
+    "input_fixture": "fixtures/C08-ssti-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C08-ssti",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C08-ssti-REV-01",
+    "input_fixture": "fixtures/C08-ssti-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C08-ssti",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C09-deserialization-POS-01",
+    "input_fixture": "fixtures/C09-deserialization-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C09-deserialization",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C09-deserialization-NEG-01",
+    "input_fixture": "fixtures/C09-deserialization-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C09-deserialization",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C09-deserialization-BLK-01",
+    "input_fixture": "fixtures/C09-deserialization-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C09-deserialization",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C09-deserialization-REV-01",
+    "input_fixture": "fixtures/C09-deserialization-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C09-deserialization",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C10-arbitrary-file-read-POS-01",
+    "input_fixture": "fixtures/C10-arbitrary-file-read-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C10-arbitrary-file-read",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C10-arbitrary-file-read-NEG-01",
+    "input_fixture": "fixtures/C10-arbitrary-file-read-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C10-arbitrary-file-read",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C10-arbitrary-file-read-BLK-01",
+    "input_fixture": "fixtures/C10-arbitrary-file-read-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C10-arbitrary-file-read",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C10-arbitrary-file-read-REV-01",
+    "input_fixture": "fixtures/C10-arbitrary-file-read-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C10-arbitrary-file-read",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C11-arbitrary-file-write-POS-01",
+    "input_fixture": "fixtures/C11-arbitrary-file-write-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C11-arbitrary-file-write",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C11-arbitrary-file-write-NEG-01",
+    "input_fixture": "fixtures/C11-arbitrary-file-write-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C11-arbitrary-file-write",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C11-arbitrary-file-write-BLK-01",
+    "input_fixture": "fixtures/C11-arbitrary-file-write-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C11-arbitrary-file-write",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C11-arbitrary-file-write-REV-01",
+    "input_fixture": "fixtures/C11-arbitrary-file-write-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C11-arbitrary-file-write",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C12-file-upload-code-exec-or-overwrite-POS-01",
+    "input_fixture": "fixtures/C12-file-upload-code-exec-or-overwrite-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C12-file-upload-code-exec-or-overwrite",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C12-file-upload-code-exec-or-overwrite-NEG-01",
+    "input_fixture": "fixtures/C12-file-upload-code-exec-or-overwrite-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C12-file-upload-code-exec-or-overwrite",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C12-file-upload-code-exec-or-overwrite-BLK-01",
+    "input_fixture": "fixtures/C12-file-upload-code-exec-or-overwrite-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C12-file-upload-code-exec-or-overwrite",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C12-file-upload-code-exec-or-overwrite-REV-01",
+    "input_fixture": "fixtures/C12-file-upload-code-exec-or-overwrite-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C12-file-upload-code-exec-or-overwrite",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C13-ssrf-POS-01",
+    "input_fixture": "fixtures/C13-ssrf-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C13-ssrf",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C13-ssrf-NEG-01",
+    "input_fixture": "fixtures/C13-ssrf-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C13-ssrf",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C13-ssrf-BLK-01",
+    "input_fixture": "fixtures/C13-ssrf-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C13-ssrf",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C13-ssrf-REV-01",
+    "input_fixture": "fixtures/C13-ssrf-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C13-ssrf",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C14-sql-injection-POS-01",
+    "input_fixture": "fixtures/C14-sql-injection-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C14-sql-injection",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C14-sql-injection-NEG-01",
+    "input_fixture": "fixtures/C14-sql-injection-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C14-sql-injection",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C14-sql-injection-BLK-01",
+    "input_fixture": "fixtures/C14-sql-injection-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C14-sql-injection",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C14-sql-injection-REV-01",
+    "input_fixture": "fixtures/C14-sql-injection-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C14-sql-injection",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C15-nosql-injection-POS-01",
+    "input_fixture": "fixtures/C15-nosql-injection-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C15-nosql-injection",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C15-nosql-injection-NEG-01",
+    "input_fixture": "fixtures/C15-nosql-injection-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C15-nosql-injection",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C15-nosql-injection-BLK-01",
+    "input_fixture": "fixtures/C15-nosql-injection-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C15-nosql-injection",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C15-nosql-injection-REV-01",
+    "input_fixture": "fixtures/C15-nosql-injection-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C15-nosql-injection",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C16-orm-raw-query-injection-POS-01",
+    "input_fixture": "fixtures/C16-orm-raw-query-injection-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C16-orm-raw-query-injection",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C16-orm-raw-query-injection-NEG-01",
+    "input_fixture": "fixtures/C16-orm-raw-query-injection-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C16-orm-raw-query-injection",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C16-orm-raw-query-injection-BLK-01",
+    "input_fixture": "fixtures/C16-orm-raw-query-injection-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C16-orm-raw-query-injection",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C16-orm-raw-query-injection-REV-01",
+    "input_fixture": "fixtures/C16-orm-raw-query-injection-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C16-orm-raw-query-injection",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C17-graphql-access-control-POS-01",
+    "input_fixture": "fixtures/C17-graphql-access-control-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C17-graphql-access-control",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C17-graphql-access-control-NEG-01",
+    "input_fixture": "fixtures/C17-graphql-access-control-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C17-graphql-access-control",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C17-graphql-access-control-BLK-01",
+    "input_fixture": "fixtures/C17-graphql-access-control-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C17-graphql-access-control",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C17-graphql-access-control-REV-01",
+    "input_fixture": "fixtures/C17-graphql-access-control-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C17-graphql-access-control",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C18-webhook-signature-bypass-POS-01",
+    "input_fixture": "fixtures/C18-webhook-signature-bypass-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C18-webhook-signature-bypass",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C18-webhook-signature-bypass-NEG-01",
+    "input_fixture": "fixtures/C18-webhook-signature-bypass-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C18-webhook-signature-bypass",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C18-webhook-signature-bypass-BLK-01",
+    "input_fixture": "fixtures/C18-webhook-signature-bypass-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C18-webhook-signature-bypass",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C18-webhook-signature-bypass-REV-01",
+    "input_fixture": "fixtures/C18-webhook-signature-bypass-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C18-webhook-signature-bypass",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C19-jwt-token-validation-POS-01",
+    "input_fixture": "fixtures/C19-jwt-token-validation-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C19-jwt-token-validation",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C19-jwt-token-validation-NEG-01",
+    "input_fixture": "fixtures/C19-jwt-token-validation-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C19-jwt-token-validation",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C19-jwt-token-validation-BLK-01",
+    "input_fixture": "fixtures/C19-jwt-token-validation-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C19-jwt-token-validation",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C19-jwt-token-validation-REV-01",
+    "input_fixture": "fixtures/C19-jwt-token-validation-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C19-jwt-token-validation",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C20-oauth-sso-callback-redirect-POS-01",
+    "input_fixture": "fixtures/C20-oauth-sso-callback-redirect-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C20-oauth-sso-callback-redirect",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C20-oauth-sso-callback-redirect-NEG-01",
+    "input_fixture": "fixtures/C20-oauth-sso-callback-redirect-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C20-oauth-sso-callback-redirect",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C20-oauth-sso-callback-redirect-BLK-01",
+    "input_fixture": "fixtures/C20-oauth-sso-callback-redirect-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C20-oauth-sso-callback-redirect",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C20-oauth-sso-callback-redirect-REV-01",
+    "input_fixture": "fixtures/C20-oauth-sso-callback-redirect-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C20-oauth-sso-callback-redirect",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C21-cors-high-risk-POS-01",
+    "input_fixture": "fixtures/C21-cors-high-risk-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C21-cors-high-risk",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C21-cors-high-risk-NEG-01",
+    "input_fixture": "fixtures/C21-cors-high-risk-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C21-cors-high-risk",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C21-cors-high-risk-BLK-01",
+    "input_fixture": "fixtures/C21-cors-high-risk-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C21-cors-high-risk",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C21-cors-high-risk-REV-01",
+    "input_fixture": "fixtures/C21-cors-high-risk-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C21-cors-high-risk",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C22-sensitive-info-disclosure-POS-01",
+    "input_fixture": "fixtures/C22-sensitive-info-disclosure-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C22-sensitive-info-disclosure",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C22-sensitive-info-disclosure-NEG-01",
+    "input_fixture": "fixtures/C22-sensitive-info-disclosure-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C22-sensitive-info-disclosure",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C22-sensitive-info-disclosure-BLK-01",
+    "input_fixture": "fixtures/C22-sensitive-info-disclosure-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C22-sensitive-info-disclosure",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C22-sensitive-info-disclosure-REV-01",
+    "input_fixture": "fixtures/C22-sensitive-info-disclosure-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C22-sensitive-info-disclosure",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C23-supply-chain-plugin-build-risk-POS-01",
+    "input_fixture": "fixtures/C23-supply-chain-plugin-build-risk-POS-01.json",
+    "expected_status": "confirmed",
+    "template_id": "C23-supply-chain-plugin-build-risk",
+    "fixture_type": "positive_control",
+    "quality_gate_required": true
+  },
+  {
+    "id": "C23-supply-chain-plugin-build-risk-NEG-01",
+    "input_fixture": "fixtures/C23-supply-chain-plugin-build-risk-NEG-01.json",
+    "expected_status": "rejected",
+    "template_id": "C23-supply-chain-plugin-build-risk",
+    "fixture_type": "negative_control",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C23-supply-chain-plugin-build-risk-BLK-01",
+    "input_fixture": "fixtures/C23-supply-chain-plugin-build-risk-BLK-01.json",
+    "expected_status": "blocked",
+    "template_id": "C23-supply-chain-plugin-build-risk",
+    "fixture_type": "blocked_boundary",
+    "quality_gate_required": false
+  },
+  {
+    "id": "C23-supply-chain-plugin-build-risk-REV-01",
+    "input_fixture": "fixtures/C23-supply-chain-plugin-build-risk-REV-01.json",
+    "expected_status": "needs_human_review",
+    "template_id": "C23-supply-chain-plugin-build-risk",
+    "fixture_type": "human_review",
+    "quality_gate_required": false
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "id": "JS-VULN-TEST",
+  "title": "test",
+  "type": "idor",
+  "severity": "high",
+  "status": "verified",
+  "scope": {
+    "authorized": true,
+    "target": "local",
+    "environment": "test",
+    "non_destructive": true
+  },
+  "code_evidence": [
+    {
+      "path": "01-code/a.js"
+    }
+  ],
+  "dynamic_requests": [],
+  "dynamic_responses": [],
+  "screenshots": [],
+  "logs": [],
+  "reproductions": [],
+  "reproduce_count": 0,
+  "accounts_used": [],
+  "impact": "",
+  "false_positive_checks": [],
+  "fix": ""
+}

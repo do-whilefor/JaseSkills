@@ -1,5 +1,0 @@
-{
-  "case": "Markdown 写了 Playwright/Burp/HAR，但只有验证计划，没有桥接脚本",
-  "expected_status": "doc-only",
-  "expected_priority": "P0"
-}

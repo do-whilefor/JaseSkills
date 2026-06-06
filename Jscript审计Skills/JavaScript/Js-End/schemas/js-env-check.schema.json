@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "js-env-check.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "ready",
+    "checks"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

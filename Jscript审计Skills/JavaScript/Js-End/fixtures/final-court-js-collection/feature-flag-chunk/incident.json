@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-04",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "feature flag 触发的 chunk",
+  "required_collector": "scripts/feature_flag_chunk_collector.py",
+  "required_replay": "replay/final-court/feature-flag-触发的-chunk.yaml",
+  "acceptance": "feature flag 组合触发 chunk 并记录来源",
+  "status": "needs_implementation"
+}

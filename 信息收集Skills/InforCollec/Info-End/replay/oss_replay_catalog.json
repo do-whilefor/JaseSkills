@@ -1,0 +1,456 @@
+{
+  "schema_version": "oss-replay-catalog.v1",
+  "network_policy": "no-download-no-network",
+  "projects": [
+    {
+      "id": "oss-01-express",
+      "stack": "express",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-02-nextjs",
+      "stack": "nextjs",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-03-nestjs",
+      "stack": "nestjs",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-04-django",
+      "stack": "django",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-05-fastapi",
+      "stack": "fastapi",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-06-spring",
+      "stack": "spring",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-07-laravel",
+      "stack": "laravel",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-08-rails",
+      "stack": "rails",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-09-go-gin",
+      "stack": "go-gin",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-10-go-chi",
+      "stack": "go-chi",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-11-rust-actix",
+      "stack": "rust-actix",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-12-rust-axum",
+      "stack": "rust-axum",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-13-monorepo-js-python",
+      "stack": "monorepo-js-python",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-14-serverless-node",
+      "stack": "serverless-node",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-15-serverless-python",
+      "stack": "serverless-python",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-16-electron",
+      "stack": "electron",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-17-browser-extension",
+      "stack": "browser-extension",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-18-mobile-react-native",
+      "stack": "mobile-react-native",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-19-vue-nuxt",
+      "stack": "vue-nuxt",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-20-sveltekit",
+      "stack": "sveltekit",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-21-graphql-node",
+      "stack": "graphql-node",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-22-grpc-go",
+      "stack": "grpc-go",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-23-k8s-helm",
+      "stack": "k8s-helm",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-24-terraform-cloud",
+      "stack": "terraform-cloud",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-25-docker-compose",
+      "stack": "docker-compose",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-26-ci-heavy",
+      "stack": "ci-heavy",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-27-microservices",
+      "stack": "microservices",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-28-php-symfony",
+      "stack": "php-symfony",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-29-ruby-rails",
+      "stack": "ruby-rails",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    },
+    {
+      "id": "oss-30-java-quarkus",
+      "stack": "java-quarkus",
+      "status": "planned_requires_local_source",
+      "local_path": "",
+      "required_coverage": [
+        "scope",
+        "routes",
+        "auth",
+        "config",
+        "hidden-info",
+        "manifest",
+        "quality-gate"
+      ]
+    }
+  ]
+}

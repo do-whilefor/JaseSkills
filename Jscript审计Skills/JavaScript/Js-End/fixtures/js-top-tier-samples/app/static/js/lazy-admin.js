@@ -1,0 +1,1 @@
+export function admin(){ return fetch('/admin/internal/refund/debug?userId=123'); }

@@ -1,0 +1,6 @@
+{
+  "claimed_capability": "WebSocket detector",
+  "status": "negative_fixture_detects_pseudo_or_missing_runtime",
+  "real_implementation": "未发现 message schema/auth/tenant replay",
+  "upgrade_required": "新增 websocket_authz_replay.py"
+}

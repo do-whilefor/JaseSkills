@@ -1,0 +1,1 @@
+Route::get('/api/invoices/{id}', function($id){ return DB::raw('select '.$id); }); Route::post('/webhook/github','W@h');

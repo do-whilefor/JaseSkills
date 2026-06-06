@@ -1,0 +1,1 @@
+fetch("/api/feature/ab-test")

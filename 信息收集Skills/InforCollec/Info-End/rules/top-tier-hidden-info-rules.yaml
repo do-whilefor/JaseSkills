@@ -1,0 +1,107 @@
+schema_version: top-tier-hidden-info-rules.v1
+safety:
+  authorization_only: true
+  no_network_default: true
+  redact_secrets: true
+  candidate_not_finding: true
+rules:
+  - id: js_hidden_api
+    signals: ["/api/", "/internal/", "/admin/", "fetch(", "axios", "XMLHttpRequest"]
+    collector: scripts/js_deep_info_collector.py
+    report_section: frontend-js
+  - id: source_map_source_leak
+    signals: ["sourceMappingURL=", ".map", "sourcesContent", "webpack://"]
+    collector: scripts/js_deep_info_collector.py
+    report_section: frontend-js
+  - id: service_worker_cache_endpoint
+    signals: ["precache", "addAll", "registerRoute", "workbox"]
+    collector: scripts/js_deep_info_collector.py
+    report_section: frontend-js
+  - id: graphql_operation
+    signals: ["query ", "mutation ", "subscription ", "schema.graphql"]
+    collector: scripts/route_api_extractor.py
+    report_section: route-api-inventory
+  - id: websocket_event
+    signals: ["socket.on", "socket.emit", "channel", "subscribe"]
+    collector: scripts/route_api_extractor.py
+    report_section: route-api-inventory
+  - id: openapi_unused_endpoint
+    signals: ["openapi", "swagger", "paths"]
+    collector: scripts/route_api_extractor.py
+    report_section: route-api-inventory
+  - id: backend_not_frontend_referenced_route
+    signals: ["router.", "@GetMapping", "Route::", "FastAPI"]
+    collector: scripts/route_api_extractor.py
+    report_section: route-api-inventory
+  - id: test_account_signal
+    signals: ["test", "demo", "fixture", "seed", "admin@example"]
+    collector: scripts/hidden_info_collector.py
+    report_section: hidden-information
+  - id: default_admin_signal
+    signals: ["admin", "superuser", "default", "password"]
+    collector: scripts/hidden_info_collector.py
+    report_section: hidden-information
+  - id: seed_data_signal
+    signals: ["seed", "factory", "migration", "fixture"]
+    collector: scripts/hidden_info_collector.py
+    report_section: hidden-information
+  - id: mock_data_signal
+    signals: ["mock", "stub", "faker", "sample"]
+    collector: scripts/hidden_info_collector.py
+    report_section: hidden-information
+  - id: migration_sensitive_field
+    signals: ["password", "token", "api_key", "tenant_id", "role"]
+    collector: scripts/hidden_info_collector.py
+    report_section: hidden-information
+  - id: cicd_deploy_domain
+    signals: ["deploy", "staging", "production", "registry", "secrets."]
+    collector: scripts/config_secret_signal_collector.py
+    report_section: configuration-deployment
+  - id: docker_k8s_internal_service
+    signals: ["containerPort", "service", "image", "ConfigMap", "Secret", "Ingress"]
+    collector: scripts/config_secret_signal_collector.py
+    report_section: configuration-deployment
+  - id: terraform_cloud_asset
+    signals: ["aws_s3_bucket", "google_storage_bucket", "azurerm", "iam", "vpc", "queue"]
+    collector: scripts/config_secret_signal_collector.py
+    report_section: configuration-deployment
+  - id: oauth_redirect_uri
+    signals: ["redirect_uri", "callback", "allowedRedirect", "trustedOrigin"]
+    collector: scripts/config_secret_signal_collector.py
+    report_section: configuration-deployment
+  - id: cors_allowlist
+    signals: ["Access-Control-Allow-Origin", "allowedOrigins", "cors"]
+    collector: scripts/config_secret_signal_collector.py
+    report_section: configuration-deployment
+  - id: csp_connect_src
+    signals: ["Content-Security-Policy", "connect-src"]
+    collector: scripts/config_secret_signal_collector.py
+    report_section: configuration-deployment
+  - id: cloud_bucket_name
+    signals: ["s3", "bucket", "oss", "cos"]
+    collector: scripts/config_secret_signal_collector.py
+    report_section: configuration-deployment
+  - id: notification_template_hidden_link
+    signals: ["email", "sms", "notification", "invite", "reset"]
+    collector: scripts/hidden_info_collector.py
+    report_section: hidden-information
+  - id: reverse_proxy_hidden_path
+    signals: ["location", "proxy_pass", "PathPrefix", "RewriteRule", "handle_path"]
+    collector: scripts/hidden_info_collector.py
+    report_section: hidden-information
+  - id: comment_old_endpoint
+    signals: ["deprecated", "legacy", "old api", "TODO endpoint"]
+    collector: scripts/hidden_info_collector.py
+    report_section: hidden-information
+  - id: backup_temp_file
+    signals: [".bak", ".old", ".orig", ".tmp", "backup"]
+    collector: scripts/hidden_info_collector.py
+    report_section: hidden-information
+  - id: environment_variant_diff
+    signals: ["development", "staging", "test", "local", ".env"]
+    collector: scripts/config_secret_signal_collector.py
+    report_section: configuration-deployment
+  - id: role_tenant_keyword_family
+    signals: ["role", "tenant", "organization", "owner", "admin", "permission", "scope", "policy"]
+    collector: scripts/auth_boundary_collector.py
+    report_section: auth-role-tenant

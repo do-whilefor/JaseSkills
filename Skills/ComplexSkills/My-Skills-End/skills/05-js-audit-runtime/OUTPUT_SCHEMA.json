@@ -1,0 +1,30 @@
+{
+  "title": "05-js-audit-runtime output schema",
+  "type": "object",
+  "required": [
+    "skill_id",
+    "status",
+    "outputs",
+    "evidence_manifest_updates"
+  ],
+  "properties": {
+    "skill_id": {
+      "const": "05-js-audit-runtime"
+    },
+    "status": {
+      "enum": [
+        "ready",
+        "degraded",
+        "blocked",
+        "needs_human_review",
+        "failed"
+      ]
+    },
+    "outputs": {
+      "type": "array"
+    },
+    "evidence_manifest_updates": {
+      "type": "array"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "claimed_capability": "Source Map 解析",
+  "status": "negative_fixture_detects_pseudo_or_missing_runtime",
+  "real_implementation": "未发现 sourcemap_parser.py 或 sourcesContent/path mapping 强测",
+  "upgrade_required": "新增 sourcemap_parser.py，支持 sources/sourcesContent/sourceRoot"
+}

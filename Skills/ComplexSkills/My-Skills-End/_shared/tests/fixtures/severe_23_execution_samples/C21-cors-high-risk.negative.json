@@ -1,0 +1,20 @@
+{
+  "schema_version": "severe_class_execution_fixture_v1",
+  "class_id": "C21-cors-high-risk",
+  "fixture_type": "negative",
+  "status": "fixture_contract_not_real_target_execution",
+  "input": {
+    "route": "/authorized/local/fixture",
+    "method": "GET",
+    "actor": "replace_with_test_account",
+    "tenant": "replace_with_test_tenant"
+  },
+  "expected": "cross-role/cross-tenant or unsafe variant is blocked",
+  "evidence_required": [
+    "request",
+    "response",
+    "code_reference",
+    "quality_gate_result"
+  ],
+  "promotion_policy": "confirmed disallowed for these fixtures until run against authorized local target with evidence"
+}

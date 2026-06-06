@@ -1,0 +1,5 @@
+{
+  "id": "FN04",
+  "risk": "只看当前 chunk，漏旧 chunk",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

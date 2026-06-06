@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "js-top-tier-ledger.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "root",
+    "stats",
+    "assets",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "js-top-tier-ledger/v1"
+    },
+    "root": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "stats": {
+      "type": "object"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "asset_id",
+          "path",
+          "kind",
+          "source",
+          "evidence",
+          "related"
+        ]
+      }
+    },
+    "evidence": {
+      "type": "array"
+    }
+  }
+}

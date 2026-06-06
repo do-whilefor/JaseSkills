@@ -1,0 +1,5 @@
+{
+  "id": "FN09",
+  "risk": "只看 REST，漏 GraphQL/RPC/gRPC",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

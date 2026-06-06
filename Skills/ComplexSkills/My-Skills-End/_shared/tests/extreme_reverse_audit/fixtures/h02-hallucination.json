@@ -1,0 +1,5 @@
+{
+  "id": "H02",
+  "risk": "工具告警直接升级漏洞",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

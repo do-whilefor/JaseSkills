@@ -1,0 +1,11 @@
+{
+  "id": "INFO15-auth-mechanism",
+  "input_sample": {
+    "project_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "session,jwt,oauth,saml,api_key,magic_link,sso"
+  },
+  "expected_output": {
+    "attack_surface": "non_empty_or_explicit_empty_with_reason"
+  },
+  "quality_gate": "QG-INFO-coverage-required; missing P0 source blocks top-tier evaluation"
+}

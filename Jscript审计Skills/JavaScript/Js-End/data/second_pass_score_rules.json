@@ -1,0 +1,26 @@
+{
+  "principle": "文档、模板、矩阵、fixture、README 声明不能替代真实实现分。没有 parser backend、runtime bridge、role/tenant replay、positive/negative/blocked/review 样本时必须强扣分。",
+  "corrected_score_caps": {
+    "semantic_audit_without_parser_backend": 2,
+    "dynamic_without_playwright_burp_har_bridge": 2,
+    "js_collection_without_real_collectors": 4,
+    "severe_without_detectors": 5,
+    "tests_without_real_oss_replay": 4
+  },
+  "status_terms": [
+    "ready",
+    "partial",
+    "doc-only",
+    "fake-ready",
+    "missing",
+    "conflict",
+    "candidate-only",
+    "未证实",
+    "未动态验证",
+    "缺少 role/tenant replay",
+    "测试不足",
+    "证据不可强校验",
+    "无法闭环到报告",
+    "无法量化质量"
+  ]
+}

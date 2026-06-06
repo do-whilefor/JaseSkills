@@ -1,0 +1,85 @@
+{
+  "id": "C10-arbitrary-file-read-candidate-positive",
+  "expected_template_id": "C10-arbitrary-file-read",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C10-arbitrary-file-read.py",
+          "line": 1,
+          "route": "/fixture/C10-arbitrary-file-read",
+          "method": "GET",
+          "handler": "readFile createReadStream open download preview export sendfile"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C10-arbitrary-file-read.sink",
+          "line": 2,
+          "sink": "readFile createReadStream open download preview export sendfile"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C10-arbitrary-file-read.js",
+          "line": 1,
+          "target": "/api/C10-arbitrary-file-read",
+          "client": "fetch readFile createReadStream open download preview export sendfile"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C10-arbitrary-file-read.js",
+          "line": 2,
+          "target": "/api/C10-arbitrary-file-read",
+          "type": "readFile createReadStream open download preview export sendfile"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C10-arbitrary-file-read.js",
+          "line": 3,
+          "operation_or_fragment": "readFile createReadStream open download preview export sendfile"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C10-arbitrary-file-read.md",
+          "signal": "readFile createReadStream open download preview export sendfile"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C10-arbitrary-file-read.worker",
+          "signal": "readFile createReadStream open download preview export sendfile"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "readFile createReadStream open download preview export sendfile"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "readFile createReadStream open download preview export sendfile"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C10-arbitrary-file-read.surface",
+          "route": "/surface/C10-arbitrary-file-read",
+          "method": "GET",
+          "evidence": "readFile createReadStream open download preview export sendfile"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "id": "H11",
+  "risk": "模型假设环境已安装",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

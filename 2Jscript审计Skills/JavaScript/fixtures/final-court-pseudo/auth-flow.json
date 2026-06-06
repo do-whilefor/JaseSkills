@@ -1,6 +1,0 @@
-{
-  "claimed_capability": "auth-aware detector",
-  "status": "negative_fixture_detects_pseudo_or_missing_runtime",
-  "real_implementation": "未发现 token/header/cookie/tenant flow resolver",
-  "upgrade_required": "新增 auth_context_resolver.py"
-}

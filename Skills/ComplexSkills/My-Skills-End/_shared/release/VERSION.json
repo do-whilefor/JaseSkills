@@ -1,0 +1,15 @@
+{
+  "package_name": "My-Skills-End",
+  "version": "3.1-clean",
+  "release_date": "2026-06-06",
+  "profile": "top_tier_pentest_skills_clean_release",
+  "base_version": "3.0-top-tier-pentest-skills",
+  "preservation_policy": {
+    "knowledge_original_files_preserved": true,
+    "vulnerability_templates_original_files_preserved": true,
+    "executable_template_overlays_moved_out_of_original_template_tree": true,
+    "no_runtime_result_snapshots_in_release": true
+  },
+  "hard_claim_policy": "candidate_only_until_browser_lazy_role_tenant_variant_quality_gates_pass",
+  "dynamic_validation_boundary": "No target browser run is claimed in this release package; real authorized target execution must create HAR, screenshot, DOM, console, storage, role/tenant matrix and evidence manifest before confirmed findings."
+}

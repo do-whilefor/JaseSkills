@@ -1,0 +1,1 @@
+window.__price=1; fetch("/api/refund/force")

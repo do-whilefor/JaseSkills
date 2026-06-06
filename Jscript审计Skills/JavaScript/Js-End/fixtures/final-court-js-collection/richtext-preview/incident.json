@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-19",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "富文本/Markdown/文件预览 JS",
+  "required_collector": "scripts/richtext_preview_collector.py",
+  "required_replay": "replay/final-court/富文本/Markdown/文件预览-JS.yaml",
+  "acceptance": "提取 renderer、sanitizer、preview sink",
+  "status": "needs_implementation"
+}

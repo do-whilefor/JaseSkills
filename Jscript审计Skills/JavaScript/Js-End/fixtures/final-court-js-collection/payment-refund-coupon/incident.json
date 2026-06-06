@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-18",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "支付/退款/优惠券业务 JS",
+  "required_collector": "scripts/business_flow_js_collector.py",
+  "required_replay": "replay/final-court/支付/退款/优惠券业务-JS.yaml",
+  "acceptance": "敏感业务入口触发 chunk 和 API diff",
+  "status": "needs_implementation"
+}

@@ -1,0 +1,5 @@
+{
+  "id": "skill-contract-completeness",
+  "expected": "all 10 SKILL.md files contain trigger, forbidden, input, output, steps, evidence, failure handling, and quality gate contract fields",
+  "non_destructive": true
+}

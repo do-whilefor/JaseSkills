@@ -1,0 +1,6 @@
+{
+  "template_id": "C04-tenant-isolation-bypass",
+  "case_type": "needs_human_review",
+  "expected": "needs_human_review",
+  "reason": "ambiguous auth/tenant/business impact"
+}

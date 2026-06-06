@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Second Pass Reverse JS Skills Review Result",
+  "type": "object",
+  "required": ["ok", "package", "corrected_scores", "final_assessment", "conclusion_recheck_rows", "js_collection_reverse_rows", "js_audit_reverse_rows", "severe_chain_reverse_rows"],
+  "properties": {
+    "ok": {"type": "boolean"},
+    "package": {
+      "type": "object",
+      "required": ["root", "file_count", "skill_count"],
+      "properties": {
+        "root": {"type": "string"},
+        "file_count": {"type": "integer"},
+        "skill_count": {"type": "integer"}
+      }
+    },
+    "status_terms": {"type": "array", "items": {"type": "string"}},
+    "runtime_evidence": {"type": "object"},
+    "corrected_scores": {
+      "type": "object",
+      "required": ["总分"],
+      "properties": {"总分": {"type": "integer", "minimum": 0, "maximum": 100}},
+      "additionalProperties": true
+    },
+    "final_assessment": {
+      "type": "object",
+      "required": ["corrected_total_score", "is_world_class", "core_defects", "shortest_path"],
+      "properties": {
+        "corrected_total_score": {"type": "integer", "minimum": 0, "maximum": 100},
+        "is_world_class": {"type": "string"},
+        "core_defects": {"type": "array", "items": {"type": "string"}},
+        "shortest_path": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "conclusion_recheck_rows": {"type": "array"},
+    "js_collection_reverse_rows": {"type": "array"},
+    "js_audit_reverse_rows": {"type": "array"},
+    "severe_chain_reverse_rows": {"type": "array"},
+    "file_coverage_rows": {"type": "array"},
+    "score_reverse_rows": {"type": "array"},
+    "fix_executability_rows": {"type": "array"},
+    "unconventional_rows": {"type": "array"}
+  }
+}

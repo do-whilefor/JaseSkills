@@ -1,0 +1,52 @@
+{
+  "schema_version": "role_tenant_matrix_v4.3",
+  "roles": [
+    {
+      "role": "user_a",
+      "tenant": "tenant_a",
+      "login_state": "manual_cookie_or_storage_required",
+      "headers": {
+        "X-Local-Test-Actor": "user_a",
+        "X-Local-Test-Tenant": "tenant_a"
+      },
+      "cookies": [],
+      "localStorage": {}
+    },
+    {
+      "role": "user_b",
+      "tenant": "tenant_b",
+      "login_state": "manual_cookie_or_storage_required",
+      "headers": {
+        "X-Local-Test-Actor": "user_b",
+        "X-Local-Test-Tenant": "tenant_b"
+      },
+      "cookies": [],
+      "localStorage": {}
+    },
+    {
+      "role": "admin",
+      "tenant": "tenant_a",
+      "login_state": "manual_cookie_or_storage_required",
+      "headers": {
+        "X-Local-Test-Actor": "admin",
+        "X-Local-Test-Tenant": "tenant_a"
+      },
+      "cookies": [],
+      "localStorage": {}
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "cross_tenant_read_must_not_match_owner_response",
+      "role": "user_b",
+      "tenant": "tenant_b",
+      "expect_same_or_less_privilege": true
+    },
+    {
+      "name": "anonymous_must_not_equal_authenticated",
+      "role": "anonymous",
+      "tenant": "public",
+      "expect_same_or_less_privilege": true
+    }
+  ]
+}

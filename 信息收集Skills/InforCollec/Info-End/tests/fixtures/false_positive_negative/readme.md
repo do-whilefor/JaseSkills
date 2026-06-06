@@ -1,0 +1,1 @@
+This text mentions token as a concept, not a credential.

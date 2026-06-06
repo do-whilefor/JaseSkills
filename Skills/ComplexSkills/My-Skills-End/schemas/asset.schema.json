@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Local audit asset",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "asset_id",
+    "asset_type",
+    "source",
+    "scope"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "const": "asset_v1"
+    },
+    "asset_id": {
+      "type": "string"
+    },
+    "asset_type": {
+      "enum": [
+        "source_file",
+        "route",
+        "api",
+        "js",
+        "config",
+        "dependency",
+        "service",
+        "openapi",
+        "graphql",
+        "websocket",
+        "storage",
+        "secret_like",
+        "other"
+      ]
+    },
+    "source": {
+      "type": "object"
+    },
+    "scope": {
+      "enum": [
+        "local_authorized",
+        "fixture",
+        "mock",
+        "unknown"
+      ]
+    }
+  }
+}

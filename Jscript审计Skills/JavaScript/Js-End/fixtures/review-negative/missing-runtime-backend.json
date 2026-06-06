@@ -1,0 +1,5 @@
+{
+  "case": "声明 parser ready 但无 parser backend、无 runtime check、无测试",
+  "expected_status": "fake-ready",
+  "expected_priority": "P0"
+}

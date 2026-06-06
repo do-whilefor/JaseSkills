@@ -1,0 +1,5 @@
+{
+  "id": "H12",
+  "risk": "模板错误路由",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

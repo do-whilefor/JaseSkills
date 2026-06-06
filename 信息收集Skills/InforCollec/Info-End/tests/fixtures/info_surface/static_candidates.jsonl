@@ -1,0 +1,3 @@
+{"asset_id":"SURF-test1","type":"http_route","source_file":"app.py","line":6,"value":"/api/users/<user_id>","dynamic_status":"not_validated"}
+{"asset_id":"JS-test2","type":"url_or_endpoint_literal","source_file":"static.js","line":3,"value":"/api/admin/export?userId=123&tenantId=tenant-1","dynamic_status":"not_validated"}
+{"asset_id":"JS-test3","type":"graphql_operation_hint","source_file":"static.js","line":5,"value":{"operation":"mutation","name":"UpdateRole"},"dynamic_status":"not_validated"}

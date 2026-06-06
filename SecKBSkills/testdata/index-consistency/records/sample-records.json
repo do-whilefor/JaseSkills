@@ -1,0 +1,186 @@
+[
+  {
+    "id": "SAMPLE-001",
+    "title": "SecKB synthetic promoted record 001",
+    "type": "advisory",
+    "category": "rce",
+    "severity": "medium",
+    "cwe": [],
+    "owasp": [],
+    "affected_products": [
+      "SyntheticProduct1"
+    ],
+    "affected_versions": [
+      "1.0.0-1.2.3"
+    ],
+    "fixed_versions": [
+      "1.2.4"
+    ],
+    "published_date": "2026-06-03",
+    "updated_date": "2026-06-03",
+    "source_urls": [
+      "https://example.invalid/seckb/source/1"
+    ],
+    "source_type": "official",
+    "source_confidence": 90,
+    "summary": "Synthetic sample for SecKB quality-gate stress testing, not a real vulnerability.",
+    "root_cause": "Synthetic root cause description for testing only.",
+    "attack_preconditions": [
+      "local lab only",
+      "synthetic precondition"
+    ],
+    "impact": "Synthetic impact statement for gate validation.",
+    "dynamic_validation_safe_method": "Use only local lab synthetic fixture; do not target third parties.",
+    "local_lab_only": true,
+    "false_positive_conditions": [
+      "keyword only",
+      "tool alert only"
+    ],
+    "cannot_report_reasons": [
+      "synthetic record",
+      "no real target evidence"
+    ],
+    "evidence_requirements": [
+      "source",
+      "version",
+      "code evidence",
+      "dynamic evidence",
+      "impact evidence"
+    ],
+    "patch_or_mitigation": "Upgrade to fixed version or apply configuration hardening.",
+    "related_records": [],
+    "tags": [
+      "rce",
+      "promoted",
+      "synthetic"
+    ],
+    "last_checked": "2026-06-04",
+    "review_status": "promoted",
+    "freshness_scope": "historical_high_value",
+    "example_only": false
+  },
+  {
+    "id": "SAMPLE-002",
+    "title": "SecKB synthetic promoted record 002",
+    "type": "src_rule",
+    "category": "idor",
+    "severity": "medium",
+    "cwe": [
+      "CWE-862"
+    ],
+    "owasp": [
+      "A01:2021-Broken Access Control"
+    ],
+    "affected_products": [
+      "SyntheticProduct2"
+    ],
+    "affected_versions": [
+      "1.0.0-1.2.3"
+    ],
+    "fixed_versions": [
+      "1.2.4"
+    ],
+    "published_date": "2026-06-02",
+    "updated_date": "2026-06-02",
+    "source_urls": [
+      "https://example.invalid/seckb/source/2"
+    ],
+    "source_type": "official",
+    "source_confidence": 90,
+    "summary": "Synthetic sample for SecKB quality-gate stress testing, not a real vulnerability.",
+    "root_cause": "Synthetic root cause description for testing only.",
+    "attack_preconditions": [
+      "local lab only",
+      "synthetic precondition"
+    ],
+    "impact": "Synthetic impact statement for gate validation.",
+    "dynamic_validation_safe_method": "Use only local lab synthetic fixture; do not target third parties.",
+    "local_lab_only": true,
+    "false_positive_conditions": [
+      "keyword only",
+      "tool alert only"
+    ],
+    "cannot_report_reasons": [
+      "synthetic record",
+      "no real target evidence"
+    ],
+    "evidence_requirements": [
+      "source",
+      "version",
+      "code evidence",
+      "dynamic evidence",
+      "impact evidence"
+    ],
+    "patch_or_mitigation": "Upgrade to fixed version or apply configuration hardening.",
+    "related_records": [],
+    "tags": [
+      "idor",
+      "promoted",
+      "synthetic"
+    ],
+    "last_checked": "2026-06-04",
+    "review_status": "promoted",
+    "freshness_scope": "last_30_days",
+    "example_only": false
+  },
+  {
+    "id": "TPL-SAMPLE-001",
+    "title": "SecKB synthetic promoted record 003",
+    "type": "vuln_template",
+    "category": "info_disclosure",
+    "severity": "medium",
+    "cwe": [],
+    "owasp": [],
+    "affected_products": [
+      "SyntheticProduct3"
+    ],
+    "affected_versions": [
+      "1.0.0-1.2.3"
+    ],
+    "fixed_versions": [
+      "1.2.4"
+    ],
+    "published_date": "2026-06-01",
+    "updated_date": "2026-06-01",
+    "source_urls": [
+      "https://example.invalid/seckb/source/3"
+    ],
+    "source_type": "official",
+    "source_confidence": 90,
+    "summary": "Synthetic sample for SecKB quality-gate stress testing, not a real vulnerability.",
+    "root_cause": "Synthetic root cause description for testing only.",
+    "attack_preconditions": [
+      "local lab only",
+      "synthetic precondition"
+    ],
+    "impact": "Synthetic impact statement for gate validation.",
+    "dynamic_validation_safe_method": "Use only local lab synthetic fixture; do not target third parties.",
+    "local_lab_only": true,
+    "false_positive_conditions": [
+      "keyword only",
+      "tool alert only"
+    ],
+    "cannot_report_reasons": [
+      "synthetic record",
+      "no real target evidence"
+    ],
+    "evidence_requirements": [
+      "source",
+      "version",
+      "code evidence",
+      "dynamic evidence",
+      "impact evidence"
+    ],
+    "patch_or_mitigation": "Upgrade to fixed version or apply configuration hardening.",
+    "related_records": [],
+    "tags": [
+      "info_disclosure",
+      "promoted",
+      "synthetic"
+    ],
+    "last_checked": "2026-06-04",
+    "review_status": "needs_review",
+    "freshness_scope": "historical_high_value",
+    "example_only": false
+  }
+]

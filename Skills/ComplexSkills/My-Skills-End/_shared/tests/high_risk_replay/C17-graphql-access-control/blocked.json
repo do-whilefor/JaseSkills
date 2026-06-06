@@ -1,0 +1,6 @@
+{
+  "template_id": "C17-graphql-access-control",
+  "case_type": "blocked_destructive_or_out_of_scope",
+  "expected": "validation_blocked",
+  "reason": "destructive method or non-local target"
+}

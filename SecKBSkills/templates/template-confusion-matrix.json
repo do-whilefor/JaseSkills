@@ -1,0 +1,94 @@
+{
+  "version": "v3",
+  "purpose": "Prevent similar vulnerability templates from being misrouted or overgeneralized.",
+  "pairs": [
+    {
+      "pair": "SSRF vs URL fetch",
+      "template_a": "SSRF",
+      "template_b": "URL fetch dangerous pattern",
+      "distinguish_by": [
+        "是否可控 URL 被服务器端请求",
+        "是否能访问内网/本地元数据/受保护资源",
+        "是否存在响应回显或可验证的出站请求证据"
+      ],
+      "wrong_route_risk": "把任意 URL 请求函数都当 SSRF",
+      "minimum_evidence": [
+        "可控输入到服务端请求调用链",
+        "授权环境非破坏性验证",
+        "误报排除：固定白名单、仅客户端请求、不可控 URL"
+      ],
+      "cannot_report_when": [
+        "只有代码中出现 fetch/http client",
+        "无法控制目标 URL",
+        "无安全影响或只有错误页面"
+      ]
+    },
+    {
+      "pair": "RCE vs command execution dangerous function",
+      "template_a": "RCE",
+      "template_b": "dangerous command execution pattern",
+      "distinguish_by": [
+        "是否存在外部输入到命令执行的完整链路",
+        "是否能在授权本地环境最小化证明命令影响",
+        "是否有有效过滤/固定命令/参数化机制"
+      ],
+      "wrong_route_risk": "把危险函数存在直接报告为 RCE",
+      "minimum_evidence": [
+        "输入源",
+        "污点传播",
+        "执行点",
+        "本地授权最小证明",
+        "修复建议"
+      ],
+      "cannot_report_when": [
+        "只有 exec/spawn 关键词",
+        "参数不可控",
+        "仅测试代码或构建脚本"
+      ]
+    },
+    {
+      "pair": "信息泄露 vs 可报告敏感数据暴露",
+      "template_a": "generic information disclosure",
+      "template_b": "reportable sensitive data exposure",
+      "distinguish_by": [
+        "泄露内容是否敏感",
+        "是否影响真实权限/业务/资产",
+        "是否属于公开文档/测试数据/版本信息"
+      ],
+      "wrong_route_risk": "把版本号、README、错误页面都写成高危",
+      "minimum_evidence": [
+        "敏感字段类型",
+        "访问控制缺失",
+        "影响证明但不读取真实敏感数据",
+        "脱敏证据"
+      ],
+      "cannot_report_when": [
+        "只有版本号",
+        "只有 README 示例密钥",
+        "只有错误页面且无敏感内容"
+      ]
+    },
+    {
+      "pair": "IDOR vs normal privilege difference",
+      "template_a": "IDOR/BOLA",
+      "template_b": "normal role-based difference",
+      "distinguish_by": [
+        "是否跨用户/跨租户访问不属于自己的对象",
+        "是否绕过服务端授权检查",
+        "角色差异是否符合设计"
+      ],
+      "wrong_route_risk": "把正常 RBAC 差异误报为越权",
+      "minimum_evidence": [
+        "两个授权账户",
+        "对象归属证据",
+        "请求替换最小复现",
+        "服务端授权缺陷代码或日志证据"
+      ],
+      "cannot_report_when": [
+        "只有 UI 按钮差异",
+        "管理员正常可见",
+        "缺少第二账户或对象归属证据"
+      ]
+    }
+  ]
+}

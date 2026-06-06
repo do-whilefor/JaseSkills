@@ -1,0 +1,6 @@
+{
+  "id": "AR11",
+  "title": "filename 参数但安全 join",
+  "scenario": "safe path join prevents traversal/file read",
+  "expected_status": "rejected"
+}

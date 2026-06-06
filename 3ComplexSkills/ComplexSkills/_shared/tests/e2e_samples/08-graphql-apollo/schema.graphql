@@ -1,1 +1,0 @@
-type Query { user(id: ID!): User } type User { id: ID! tenantId: ID! role: String }

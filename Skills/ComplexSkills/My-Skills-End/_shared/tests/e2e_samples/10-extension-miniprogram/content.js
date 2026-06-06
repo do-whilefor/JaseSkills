@@ -1,0 +1,1 @@
+chrome.runtime.sendMessage({token:"demo-token"}); window.postMessage({type:"bridge"},"*"); wx.request({url:"/api/mobile/user?id=1"});

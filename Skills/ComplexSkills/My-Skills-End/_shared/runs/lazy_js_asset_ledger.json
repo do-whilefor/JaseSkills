@@ -1,0 +1,23 @@
+{
+  "schema_version": "lazy_js_asset_ledger_v1",
+  "placeholder": true,
+  "non_destructive": true,
+  "root": "<local-authorized-project>",
+  "files_scanned": 0,
+  "static_js_assets": [],
+  "html_js_references": [],
+  "build_manifests": [],
+  "source_maps": [],
+  "service_workers": [],
+  "dynamic_imports": [],
+  "framework_lazy_routes": [],
+  "frontend_routes": [],
+  "api_clients": [],
+  "graphql": [],
+  "websocket_sse": [],
+  "feature_flags": [],
+  "hidden_route_signals": [],
+  "browser_trigger_required": [],
+  "evidence_gaps": [{"placeholder": true, "reason": "run lazy_js_asset_discovery.py against a local authorized project"}],
+  "completion_policy": "placeholder blocks completion claims"
+}

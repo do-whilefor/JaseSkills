@@ -1,3 +1,0 @@
-type Query { adminReport(tenantId: ID!): Report }
-type Mutation { rotateToken(userId: ID!): Boolean }
-mutation RotateToken($userId: ID!) { rotateToken(userId: $userId) }

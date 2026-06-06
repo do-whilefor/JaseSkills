@@ -1,0 +1,2 @@
+type Mutation { hiddenMutation(input: String): String }
+mutation RotateSecret { rotateSecret }

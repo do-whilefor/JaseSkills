@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-03",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "租户专属 chunk",
+  "required_collector": "scripts/tenant_chunk_diff_collector.py",
+  "required_replay": "replay/final-court/租户专属-chunk.yaml",
+  "acceptance": "至少两个租户 replay 输出 chunk/API 差异",
+  "status": "needs_implementation"
+}

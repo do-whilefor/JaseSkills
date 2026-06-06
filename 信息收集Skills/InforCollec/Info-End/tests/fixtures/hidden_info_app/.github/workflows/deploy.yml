@@ -1,0 +1,7 @@
+name: deploy
+jobs:
+  deploy:
+    steps:
+      - run: docker push registry.internal.example/app:${{ github.sha }}
+        env:
+          PROD_API_TOKEN: ${{ secrets.PROD_API_TOKEN }}

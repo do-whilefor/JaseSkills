@@ -1,0 +1,17 @@
+{
+  "schema_version": "oss_replay_adapter_v4.3",
+  "adapter_id": "OSS33-n8n",
+  "repository": "n8n-io/n8n",
+  "stack": "node",
+  "focus": "Workflow/plugin",
+  "local_checkout_env": "OSS_REPLAY_33_PATH",
+  "required_runtime_probe": true,
+  "promotion_rule": "not promoted unless local checkout exists, commit is recorded, parser/browser probes are ready if required, and exact assertions pass",
+  "expected_assertions": [
+    "inventory_non_empty",
+    "routes_or_entrypoints_detected",
+    "js_or_code_graph_present",
+    "candidate_density_below_threshold",
+    "no_out_of_scope_network"
+  ]
+}

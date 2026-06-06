@@ -1,5 +1,0 @@
-{
-  "id": "FN07",
-  "risk": "只看 controller，漏 middleware order",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "executable_template_overlay_v1",
+  "template_path": "_shared/vulnerability_templates/canonical_23/C15-nosql-injection/REPORT_TEMPLATE.md",
+  "template_id": "REPORT_TEMPLATE",
+  "triggers": [
+    "route_or_sink_match",
+    "source_to_sink_candidate",
+    "browser_or_api_replay_available"
+  ],
+  "sources": [
+    "request_path",
+    "query",
+    "body",
+    "headers",
+    "cookies",
+    "uploaded_file",
+    "websocket_message",
+    "graphql_operation"
+  ],
+  "sinks": [
+    "database_or_interpreter"
+  ],
+  "guards": [
+    "parameterization",
+    "input_validation"
+  ],
+  "positive_tests": [
+    {
+      "name": "positive_authorized_baseline",
+      "status": "fixture_required",
+      "must_be_non_destructive": true
+    }
+  ],
+  "negative_tests": [
+    {
+      "name": "negative_low_privilege_or_cross_tenant_blocked",
+      "status": "fixture_required",
+      "must_show_block_or_redaction": true
+    }
+  ],
+  "blocked_tests": [
+    {
+      "name": "unsafe_destructive_or_public_target_blocked",
+      "status": "always_block_without_explicit_authorization"
+    }
+  ],
+  "needs_review_tests": [
+    {
+      "name": "ambiguous_business_logic_or_sensitive_data_review",
+      "status": "manual_review_required"
+    }
+  ],
+  "evidence_required": [
+    "code_location",
+    "request_response_or_har",
+    "positive_control",
+    "negative_control",
+    "role_tenant_matrix_if_authz",
+    "variant_expansion",
+    "quality_gate_result"
+  ],
+  "promotion_policy": "candidate only until executable positive/negative tests and evidence manifest pass final_claim_guard"
+}

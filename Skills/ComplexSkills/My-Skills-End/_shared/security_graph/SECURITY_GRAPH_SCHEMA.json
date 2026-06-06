@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Authorized Security Knowledge Graph Schema v3",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "metadata",
+    "nodes",
+    "edges",
+    "provenance",
+    "routes",
+    "sinks",
+    "source_sink_paths"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "const": "security_graph_v3"
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "project_path",
+        "generated_at",
+        "scope",
+        "extractor",
+        "parser_backends"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "project_path": {
+          "type": "string"
+        },
+        "generated_at": {
+          "type": "string"
+        },
+        "scope": {
+          "const": "local_authorized_read_only"
+        },
+        "extractor": {
+          "type": "string"
+        },
+        "parser_backends": {
+          "type": "object"
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "label",
+          "properties"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "enum": [
+              "file",
+              "module",
+              "class",
+              "function",
+              "route",
+              "parameter",
+              "actor",
+              "asset",
+              "trust_boundary",
+              "guard",
+              "policy",
+              "middleware",
+              "data_model",
+              "database_query",
+              "file_operation",
+              "network_request",
+              "command_execution",
+              "template_render",
+              "deserialization",
+              "upload",
+              "download",
+              "source",
+              "sink",
+              "evidence",
+              "report_section",
+              "candidate_context"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "properties": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "type",
+          "properties"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "imports",
+              "calls",
+              "handles",
+              "validates",
+              "guards",
+              "crosses_boundary",
+              "flows_to",
+              "reads",
+              "writes",
+              "produces_candidate",
+              "supports_evidence",
+              "appears_in_report",
+              "belongs_to_actor",
+              "accesses_asset",
+              "maps_to_frontend",
+              "same_file_candidate"
+            ]
+          },
+          "properties": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "claim_policy",
+        "node_id_policy",
+        "edge_id_policy"
+      ],
+      "additionalProperties": true
+    },
+    "routes": {
+      "type": "array"
+    },
+    "sinks": {
+      "type": "array"
+    },
+    "source_sink_paths": {
+      "type": "array"
+    }
+  }
+}

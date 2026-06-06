@@ -1,0 +1,6 @@
+{
+  "claimed_capability": "GraphQL detector",
+  "status": "negative_fixture_detects_pseudo_or_missing_runtime",
+  "real_implementation": "未发现 query/mutation/variables/permission diff",
+  "upgrade_required": "新增 graphql_operation_resolver.py"
+}

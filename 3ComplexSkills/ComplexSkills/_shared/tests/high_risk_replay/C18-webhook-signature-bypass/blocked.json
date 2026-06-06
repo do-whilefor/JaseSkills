@@ -1,6 +1,0 @@
-{
-  "template_id": "C18-webhook-signature-bypass",
-  "case_type": "blocked_destructive_or_out_of_scope",
-  "expected": "validation_blocked",
-  "reason": "destructive method or non-local target"
-}

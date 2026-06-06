@@ -1,0 +1,10 @@
+{
+  "status": "placeholder-only",
+  "warning": "This matrix proves fixture categories exist, not that real detector/replay has been implemented.",
+  "required_categories": [
+    "positive",
+    "negative",
+    "blocked",
+    "needs-review"
+  ]
+}

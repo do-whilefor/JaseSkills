@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quality result",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "passed",
+    "final_status",
+    "hard_blocks",
+    "needs_review"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "const": "quality_result_v1"
+    },
+    "candidate_id": {
+      "type": "string"
+    },
+    "passed": {
+      "type": "boolean"
+    },
+    "final_status": {
+      "enum": [
+        "confirmed",
+        "candidate",
+        "blocked",
+        "inconclusive",
+        "needs_review",
+        "rejected"
+      ]
+    },
+    "hard_blocks": {
+      "type": "array"
+    },
+    "needs_review": {
+      "type": "array"
+    },
+    "score": {
+      "type": "integer"
+    },
+    "report_allowed": {
+      "type": "boolean"
+    }
+  }
+}

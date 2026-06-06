@@ -1,6 +1,0 @@
-{
-  "id": "AR13",
-  "title": "命令执行函数存在但参数不可控",
-  "scenario": "uncontrolled command input absent",
-  "expected_status": "rejected"
-}

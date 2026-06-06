@@ -1,1 +1,0 @@
-self.__BUILD_MANIFEST={__rewrites:{beforeFiles:[]},'/admin':['static/chunks/admin.js']};

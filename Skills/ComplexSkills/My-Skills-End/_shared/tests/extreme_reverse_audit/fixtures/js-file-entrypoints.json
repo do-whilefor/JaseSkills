@@ -1,0 +1,12 @@
+{
+  "id": "JS40-js-file-entrypoints",
+  "input_sample": {
+    "js_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "file API method/body/content-type detector"
+  },
+  "expected_output": {
+    "file_entrypoints[]": "non_empty_or_unsupported_with_reason"
+  },
+  "manifest_field": "manifest.candidates",
+  "quality_gate": "QG-JS-chain-required; JS-derived confirmed finding must have candidate_to_manifest_link, original span when sourcemap exists, and template-specific evidence"
+}

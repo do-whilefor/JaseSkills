@@ -1,0 +1,5 @@
+{
+  "id": "H07",
+  "risk": "无影响证明输出 high/critical",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

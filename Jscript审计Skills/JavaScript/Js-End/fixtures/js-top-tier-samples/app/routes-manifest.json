@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "dynamicRoutes": [
+    {
+      "page": "/admin/refund",
+      "regex": "^/admin/refund$"
+    }
+  ]
+}

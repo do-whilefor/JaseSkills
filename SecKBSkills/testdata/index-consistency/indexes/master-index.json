@@ -1,0 +1,19 @@
+{
+  "records": [
+    {
+      "id": "SAMPLE-001",
+      "type": "advisory",
+      "path": "records/sample-records.json"
+    },
+    {
+      "id": "SAMPLE-002",
+      "type": "src_rule",
+      "path": "records/sample-records.json"
+    },
+    {
+      "id": "TPL-SAMPLE-001",
+      "type": "vuln_template",
+      "path": "records/sample-records.json"
+    }
+  ]
+}

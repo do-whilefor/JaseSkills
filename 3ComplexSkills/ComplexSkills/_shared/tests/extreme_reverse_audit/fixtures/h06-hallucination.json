@@ -1,5 +1,0 @@
-{
-  "id": "H06",
-  "risk": "无代码证据输出 confirmed",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

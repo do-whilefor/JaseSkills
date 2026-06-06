@@ -1,6 +1,0 @@
-{
-  "id": "AR06",
-  "title": "同租户正常访问",
-  "scenario": "same-tenant allowed access is not IDOR",
-  "expected_status": "rejected"
-}

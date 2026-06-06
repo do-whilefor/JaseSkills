@@ -1,5 +1,0 @@
-{
-  "id": "H10",
-  "risk": "扫描器覆盖人工判断",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

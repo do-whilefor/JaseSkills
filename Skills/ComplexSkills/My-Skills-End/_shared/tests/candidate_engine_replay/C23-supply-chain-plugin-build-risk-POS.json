@@ -1,0 +1,85 @@
+{
+  "id": "C23-supply-chain-plugin-build-risk-candidate-positive",
+  "expected_template_id": "C23-supply-chain-plugin-build-risk",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C23-supply-chain-plugin-build-risk.py",
+          "line": 1,
+          "route": "/fixture/C23-supply-chain-plugin-build-risk",
+          "method": "GET",
+          "handler": "plugin postinstall preinstall build loader extension dependency package.json"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C23-supply-chain-plugin-build-risk.sink",
+          "line": 2,
+          "sink": "plugin postinstall preinstall build loader extension dependency package.json"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C23-supply-chain-plugin-build-risk.js",
+          "line": 1,
+          "target": "/api/C23-supply-chain-plugin-build-risk",
+          "client": "fetch plugin postinstall preinstall build loader extension dependency package.json"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C23-supply-chain-plugin-build-risk.js",
+          "line": 2,
+          "target": "/api/C23-supply-chain-plugin-build-risk",
+          "type": "plugin postinstall preinstall build loader extension dependency package.json"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C23-supply-chain-plugin-build-risk.js",
+          "line": 3,
+          "operation_or_fragment": "plugin postinstall preinstall build loader extension dependency package.json"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C23-supply-chain-plugin-build-risk.md",
+          "signal": "plugin postinstall preinstall build loader extension dependency package.json"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C23-supply-chain-plugin-build-risk.worker",
+          "signal": "plugin postinstall preinstall build loader extension dependency package.json"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "plugin postinstall preinstall build loader extension dependency package.json"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "plugin postinstall preinstall build loader extension dependency package.json"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C23-supply-chain-plugin-build-risk.surface",
+          "route": "/surface/C23-supply-chain-plugin-build-risk",
+          "method": "GET",
+          "evidence": "plugin postinstall preinstall build loader extension dependency package.json"
+        }
+      ]
+    }
+  }
+}

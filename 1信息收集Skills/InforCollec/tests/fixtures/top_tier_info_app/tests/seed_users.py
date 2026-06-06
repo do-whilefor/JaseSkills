@@ -1,1 +1,0 @@
-users=[{"email":"admin@example.test","password":"ChangeMe123","role":"admin","tenant_id":"tenant-a"}]

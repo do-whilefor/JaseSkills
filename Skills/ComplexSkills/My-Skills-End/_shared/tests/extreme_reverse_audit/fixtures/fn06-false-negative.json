@@ -1,0 +1,5 @@
+{
+  "id": "FN06",
+  "risk": "只看常规权限，漏租户边界",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

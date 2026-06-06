@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/claude-skills/info-exposure/asset-ledger.schema.json",
+  "title": "Information Exposure Asset Ledger",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "asset_id",
+    "asset_type",
+    "source",
+    "verification_status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "asset_id": {
+      "type": "string",
+      "pattern": "^(AS|SC|RT|FE|DOC|RPC|BR|DO|EV)-[A-Za-z0-9_.-]+$"
+    },
+    "asset_type": {
+      "type": "string",
+      "enum": [
+        "web_route",
+        "api_endpoint",
+        "static_resource",
+        "graphql_endpoint",
+        "grpc_service",
+        "rpc_endpoint",
+        "websocket",
+        "sse",
+        "file_download",
+        "export_endpoint",
+        "browser_storage",
+        "cookie",
+        "indexeddb",
+        "cache_storage",
+        "service_worker",
+        "deployment_config",
+        "docker_container",
+        "volume",
+        "package_artifact",
+        "source_map",
+        "openapi_doc",
+        "swagger_doc",
+        "runtime_port",
+        "unknown"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "source_code",
+            "frontend_bundle",
+            "runtime_probe",
+            "docs",
+            "config",
+            "container",
+            "browser",
+            "test_collection",
+            "manual_input",
+            "derived"
+          ]
+        },
+        "file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "line": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "tool": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_asset_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "static_location": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "host": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "port": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "protocol": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "auth_required": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "auth_state": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "unauthenticated",
+        "authenticated",
+        "low_privilege",
+        "admin",
+        "logged_out",
+        "removed_member",
+        "not_tested"
+      ]
+    },
+    "role": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "exposed_info_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "credential",
+          "infrastructure",
+          "business_data",
+          "security_mechanism",
+          "version_fingerprint",
+          "metadata",
+          "none",
+          "unknown"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "static_candidate",
+        "runtime_accessible",
+        "verified_reportable",
+        "pending_confirmation",
+        "non_reportable",
+        "out_of_scope",
+        "blocked_by_missing_tool",
+        "blocked_by_missing_account"
+      ]
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "info",
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "why_suspicious": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "why_reportable_or_not": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "non_reportable_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "qg_status": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "enum": [
+          "PASS",
+          "UNKNOWN",
+          "FAIL"
+        ]
+      }
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updated_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

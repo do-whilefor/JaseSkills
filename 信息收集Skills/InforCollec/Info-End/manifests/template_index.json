@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "template_root": "templates",
+  "templates": [
+    {
+      "path": "templates/api-spec-inventory.md",
+      "purpose": "api spec inventory"
+    },
+    {
+      "path": "templates/asset-ledger.md",
+      "purpose": "asset ledger"
+    },
+    {
+      "path": "templates/cannot-deliver-reasons.md",
+      "purpose": "cannot deliver reasons"
+    },
+    {
+      "path": "templates/cross-skill-handoff.md",
+      "purpose": "cross skill handoff"
+    },
+    {
+      "path": "templates/dashboard-drilldown.md",
+      "purpose": "dashboard drilldown"
+    },
+    {
+      "path": "templates/deployment-surface-checklist.md",
+      "purpose": "deployment surface checklist"
+    },
+    {
+      "path": "templates/final-report.md",
+      "purpose": "final report"
+    },
+    {
+      "path": "templates/finding-detail.md",
+      "purpose": "finding detail"
+    },
+    {
+      "path": "templates/finding-qg-score.md",
+      "purpose": "finding qg score"
+    },
+    {
+      "path": "templates/graphql-nondestructive-validation.md",
+      "purpose": "graphql nondestructive validation"
+    },
+    {
+      "path": "templates/grpc-rpc-schema-aware-readonly-validation.md",
+      "purpose": "grpc rpc schema aware readonly validation"
+    },
+    {
+      "path": "templates/hidden-info-evidence.md",
+      "purpose": "hidden info evidence"
+    },
+    {
+      "path": "templates/info-collection-audit-report.md",
+      "purpose": "info collection audit report"
+    },
+    {
+      "path": "templates/info-type-reverse-checklist.md",
+      "purpose": "info type reverse checklist"
+    },
+    {
+      "path": "templates/non-reportable-decision-tree.md",
+      "purpose": "non reportable decision tree"
+    },
+    {
+      "path": "templates/orchestrator-phase-report.md",
+      "purpose": "orchestrator phase report"
+    },
+    {
+      "path": "templates/playwright-browser-storage-collection.md",
+      "purpose": "playwright browser storage collection"
+    },
+    {
+      "path": "templates/playwright-mcp-browser-storage-runbook.md",
+      "purpose": "playwright mcp browser storage runbook"
+    },
+    {
+      "path": "templates/protocol-surface-validation.md",
+      "purpose": "protocol surface validation"
+    },
+    {
+      "path": "templates/redaction-rules.md",
+      "purpose": "redaction rules"
+    },
+    {
+      "path": "templates/reflection-checklist.md",
+      "purpose": "reflection checklist"
+    },
+    {
+      "path": "templates/second-pass-reflection-runbook.md",
+      "purpose": "second pass reflection runbook"
+    },
+    {
+      "path": "templates/top-tier-human-review-queue.md",
+      "purpose": "top tier human review queue"
+    },
+    {
+      "path": "templates/top-tier-info-collection-report.md",
+      "purpose": "top tier info collection report"
+    },
+    {
+      "path": "templates/unified-quality-gate.md",
+      "purpose": "unified quality gate"
+    }
+  ],
+  "validation_rules": [
+    "Every template path must exist.",
+    "Every templates/*.md file must be indexed exactly once.",
+    "Every reportable finding must reference evidence and QG scoring templates.",
+    "Templates are not detectors; detector coverage is declared separately in detectors/*.yaml."
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "C12-file-upload-code-exec-or-overwrite-candidate-positive",
+  "expected_template_id": "C12-file-upload-code-exec-or-overwrite",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C12-file-upload-code-exec-or-overwrite.py",
+          "line": 1,
+          "route": "/fixture/C12-file-upload-code-exec-or-overwrite",
+          "method": "GET",
+          "handler": "upload multipart formdata filename mime extension overwrite plugin upload"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C12-file-upload-code-exec-or-overwrite.sink",
+          "line": 2,
+          "sink": "upload multipart formdata filename mime extension overwrite plugin upload"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C12-file-upload-code-exec-or-overwrite.js",
+          "line": 1,
+          "target": "/api/C12-file-upload-code-exec-or-overwrite",
+          "client": "fetch upload multipart formdata filename mime extension overwrite plugin upload"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C12-file-upload-code-exec-or-overwrite.js",
+          "line": 2,
+          "target": "/api/C12-file-upload-code-exec-or-overwrite",
+          "type": "upload multipart formdata filename mime extension overwrite plugin upload"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C12-file-upload-code-exec-or-overwrite.js",
+          "line": 3,
+          "operation_or_fragment": "upload multipart formdata filename mime extension overwrite plugin upload"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C12-file-upload-code-exec-or-overwrite.md",
+          "signal": "upload multipart formdata filename mime extension overwrite plugin upload"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C12-file-upload-code-exec-or-overwrite.worker",
+          "signal": "upload multipart formdata filename mime extension overwrite plugin upload"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "upload multipart formdata filename mime extension overwrite plugin upload"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "upload multipart formdata filename mime extension overwrite plugin upload"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C12-file-upload-code-exec-or-overwrite.surface",
+          "route": "/surface/C12-file-upload-code-exec-or-overwrite",
+          "method": "GET",
+          "evidence": "upload multipart formdata filename mime extension overwrite plugin upload"
+        }
+      ]
+    }
+  }
+}

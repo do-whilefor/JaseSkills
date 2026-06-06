@@ -1,0 +1,39 @@
+schema_version: "3.4"
+thresholds:
+  confirmed_minimum_score: 85
+  confirmed_minimum_reproduction_count: 3
+  blocked_maximum_score: 84
+  rejected_maximum_score: 84
+  needs_human_review_minimum_score: 30
+hard_blocks:
+  - out_of_scope
+  - destructive_validation
+  - missing_authorization_scope
+  - missing_code_evidence_for_confirmed
+  - missing_dynamic_evidence_for_confirmed
+  - missing_negative_control_for_confirmed
+  - missing_tool_snapshot_for_confirmed
+  - invalid_state_transition
+  - missing_or_invalid_dynamic_artifacts
+  - insufficient_independent_reproduction_groups
+  - missing_template_specific_evidence
+  - prompt_injection_taint
+  - candidate_or_tool_alert_cannot_confirm
+scoring:
+  schema_valid: 5
+  code_evidence: 15
+  route_parameter_mapping: 8
+  auth_role_tenant_context: 8
+  dynamic_request_response: 15
+  negative_control: 10
+  reproduction_stability: 10
+  security_impact: 8
+  non_destructive_boundary: 6
+  false_positive_filter: 5
+  specialized_evidence: 5
+  report_traceability: 5
+status_rules:
+  confirmed: "Requires schema-valid manifest, >=85 score, valid state machine, template-specific evidence fields from template_index, at least 3 verified independent dynamic artifact groups, code evidence, negative control, tool snapshot, non-destructive boundary, false-positive notes, report traceability, and prompt-injection taint review."
+  rejected: "Must not pass confirmation threshold; usually no confirmed dynamic impact or failed negative controls."
+  blocked: "Used when validation would violate authorization or non-destructive boundaries."
+  needs_human_review: "Used when evidence is plausible but tool availability, scope, or ambiguous business logic prevents automated confirmation."

@@ -1,0 +1,9 @@
+{
+  "id": "JS-COLLECT-ACCIDENT-20",
+  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
+  "missed_asset": "localStorage/IndexedDB 敏感缓存",
+  "required_collector": "scripts/browser_storage_collector.py",
+  "required_replay": "replay/final-court/localStorage/IndexedDB-敏感缓存.yaml",
+  "acceptance": "导出 local/session/IndexedDB/CacheStorage 证据",
+  "status": "needs_implementation"
+}

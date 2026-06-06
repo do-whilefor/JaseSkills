@@ -1,0 +1,5 @@
+{
+  "id": "H15",
+  "risk": "dashboard fixture 态伪装真实运行态",
+  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
+}

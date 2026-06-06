@@ -1,0 +1,77 @@
+[
+  {
+    "script": "route_extractor",
+    "input": "源码/框架路由文件",
+    "output": "Route→Handler→Middleware 表"
+  },
+  {
+    "script": "js_asset_extractor",
+    "input": "HTML/HAR/manifest/build产物",
+    "output": "JS asset ledger"
+  },
+  {
+    "script": "sourcemap_parser",
+    "input": "*.map/sourceMappingURL",
+    "output": "原始路径、源码、泄露索引"
+  },
+  {
+    "script": "endpoint_extractor",
+    "input": "JS/TS AST 或 bundle",
+    "output": "REST/GraphQL/WebSocket/SSE endpoint"
+  },
+  {
+    "script": "knowledge_graph_builder",
+    "input": "路由、参数、权限、sink、证据",
+    "output": "安全知识图谱"
+  },
+  {
+    "script": "evidence_manifest_generator",
+    "input": "证据目录/候选/验证记录",
+    "output": "evidence manifest"
+  },
+  {
+    "script": "quality_gate",
+    "input": "manifest",
+    "output": "pass/fail/downgrade"
+  },
+  {
+    "script": "dashboard_generator",
+    "input": "manifest/security graph/quality result",
+    "output": "HTML dashboard"
+  },
+  {
+    "script": "selftest/integrity check",
+    "input": "skills 包目录",
+    "output": "结构与冗余检查"
+  },
+  {
+    "script": "replay harness",
+    "input": "fixtures/真实项目样本",
+    "output": "回放结果"
+  },
+  {
+    "script": "AST parser backend",
+    "input": "JS/TS/多语言源码",
+    "output": "AST/CFG/DFG/source-sink graph"
+  },
+  {
+    "script": "Playwright/Burp/HAR bridge",
+    "input": "浏览器会话/HAR/Burp sitemap",
+    "output": "运行态资产与请求证据"
+  },
+  {
+    "script": "report generator",
+    "input": "verified manifest/quality result",
+    "output": "最终报告"
+  },
+  {
+    "script": "template index checker",
+    "input": "templates/index",
+    "output": "模板绑定检查"
+  },
+  {
+    "script": "knowledge index checker",
+    "input": "knowledge/index",
+    "output": "知识库绑定检查"
+  }
+]

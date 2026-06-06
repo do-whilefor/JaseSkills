@@ -1,0 +1,12 @@
+{
+  "id": "JS04-built-assets-js",
+  "input_sample": {
+    "js_fixture": "_shared/tests/samples/fixture_project",
+    "signal": "bundle classifier"
+  },
+  "expected_output": {
+    "bundle_assets[]": "non_empty_or_unsupported_with_reason"
+  },
+  "manifest_field": "js_sources.bundle_assets",
+  "quality_gate": "QG-JS-chain-required; JS-derived confirmed finding must have candidate_to_manifest_link, original span when sourcemap exists, and template-specific evidence"
+}

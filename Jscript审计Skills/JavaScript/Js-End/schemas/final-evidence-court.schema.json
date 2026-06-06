@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Final Evidence Court Review",
+  "type": "object",
+  "required": [
+    "score",
+    "prior_conclusion_trial",
+    "js_collection_incidents",
+    "pseudo_capabilities",
+    "severe_miss_risks",
+    "engineering_autopsy",
+    "p0_nonnegotiable",
+    "final_findings"
+  ],
+  "properties": {
+    "score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "prior_conclusion_trial": {
+      "type": "array"
+    },
+    "js_collection_incidents": {
+      "type": "array",
+      "minItems": 20
+    },
+    "pseudo_capabilities": {
+      "type": "array",
+      "minItems": 10
+    },
+    "severe_miss_risks": {
+      "type": "array",
+      "minItems": 30
+    },
+    "engineering_autopsy": {
+      "type": "array",
+      "minItems": 10
+    },
+    "score_penalties": {
+      "type": "array"
+    },
+    "p0_nonnegotiable": {
+      "type": "array"
+    },
+    "final_findings": {
+      "type": "object"
+    },
+    "evidence_scan": {
+      "type": "object"
+    }
+  }
+}

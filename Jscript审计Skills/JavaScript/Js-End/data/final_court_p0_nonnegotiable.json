@@ -1,0 +1,210 @@
+[
+  {
+    "id": "P0-COURT-01",
+    "problem": "真实 JS AST backend 缺失",
+    "evidence": "未发现 Babel/TypeScript/tree-sitter adapter",
+    "consequence": "复杂 wrapper、route、sink/source 全部可能漏报",
+    "modify": [
+      "03-js-source-sink-authz-graph/SKILL.md",
+      "scripts/strict_quality_gate.py"
+    ],
+    "add": [
+      "parsers/js_ast_parser_backend.py",
+      "scripts/runtime_availability_check.py"
+    ],
+    "tests": [
+      "fixtures/final-court-p0/ast-positive.js",
+      "fixtures/final-court-p0/ast-negative.js"
+    ],
+    "acceptance": "运行 availability check 和 AST fixture 后输出 AST node/sink/source 证据"
+  },
+  {
+    "id": "P0-COURT-02",
+    "problem": "Source Map parser 缺失",
+    "evidence": "未发现 sourcemap_parser.py",
+    "consequence": "源码、secret、hidden API、monorepo path 泄露漏报",
+    "modify": [
+      "05-js-frontend-build-exposure/SKILL.md"
+    ],
+    "add": [
+      "scripts/sourcemap_parser.py"
+    ],
+    "tests": [
+      "fixtures/final-court-p0/sourcemap-with-sourcesContent.map"
+    ],
+    "acceptance": "输出 sources/sourcesContent/sourceRoot/hash/path 账本"
+  },
+  {
+    "id": "P0-COURT-03",
+    "problem": "Playwright/Burp/HAR 动态证据桥缺失",
+    "evidence": "未发现 playwright_bridge.py/burp_har_bridge.py/har_importer.py",
+    "consequence": "静态候选被误报为 verified，证据链不可复核",
+    "modify": [
+      "07-js-dynamic-validator/SKILL.md",
+      "08-js-evidence-manifest-gate/SKILL.md"
+    ],
+    "add": [
+      "scripts/dynamic_evidence_bridge.py",
+      "schemas/dynamic-evidence.schema.json"
+    ],
+    "tests": [
+      "fixtures/final-court-p0/har-sample.json"
+    ],
+    "acceptance": "生成 HAR、截图、request/response、trace 证据字段"
+  },
+  {
+    "id": "P0-COURT-04",
+    "problem": "role/tenant replay 缺失",
+    "evidence": "未发现 role_tenant_replay.py",
+    "consequence": "admin chunk、tenant chunk、BOLA/IDOR 大量漏报",
+    "modify": [
+      "07-js-dynamic-validator/SKILL.md"
+    ],
+    "add": [
+      "scripts/role_tenant_replay.py",
+      "replay/contracts/role-tenant-replay.yaml"
+    ],
+    "tests": [
+      "fixtures/final-court-p0/role-tenant-diff.json"
+    ],
+    "acceptance": "至少输出 user/admin/tenantA/tenantB endpoint/chunk diff"
+  },
+  {
+    "id": "P0-COURT-05",
+    "problem": "严重 JS 漏洞 detector harness 缺失",
+    "evidence": "未发现 detectors/ 或 detector registry",
+    "consequence": "30 类严重漏洞只能候选化，无法稳定发现",
+    "modify": [
+      "06-js-high-risk-candidate-hunter/SKILL.md"
+    ],
+    "add": [
+      "detectors/js_detector_registry.py",
+      "detectors/dom_xss_semantic_detector.py",
+      "detectors/graphql_operation_detector.py"
+    ],
+    "tests": [
+      "fixtures/final-court-p0/detector-positive.json"
+    ],
+    "acceptance": "每个 detector 输出 evidence id、confidence、blocked/review/verified 状态"
+  },
+  {
+    "id": "P0-COURT-06",
+    "problem": "schema 强校验未统一接入",
+    "evidence": "schemas 存在但缺统一 validator",
+    "consequence": "manifest/report 字段漂移，证据不可强校验",
+    "modify": [
+      "08-js-evidence-manifest-gate/SKILL.md",
+      "scripts/package_self_check.py"
+    ],
+    "add": [
+      "scripts/schema_validator.py"
+    ],
+    "tests": [
+      "fixtures/final-court-p0/schema-invalid.json"
+    ],
+    "acceptance": "无效 manifest 必须失败并列出字段路径"
+  },
+  {
+    "id": "P0-COURT-07",
+    "problem": "report mapping 缺失",
+    "evidence": "模板存在但缺 report_generator.py",
+    "consequence": "漏洞无法从证据闭环进入报告，报告污染风险高",
+    "modify": [
+      "10-js-final-report/SKILL.md"
+    ],
+    "add": [
+      "scripts/report_generator.py",
+      "data/report_mapping.json"
+    ],
+    "tests": [
+      "fixtures/final-court-p0/report-mapping.json"
+    ],
+    "acceptance": "candidate/review/verified 状态在报告中分区输出"
+  },
+  {
+    "id": "P0-COURT-08",
+    "problem": "dashboard 未读取真实产物",
+    "evidence": "未发现 dashboard_generator.py 或 dashboard/",
+    "consequence": "展示层伪闭环，无法追踪 route→evidence→quality",
+    "modify": [
+      "docs/CAPABILITY_INDEX.md"
+    ],
+    "add": [
+      "scripts/dashboard_generator.py",
+      "dashboard/index.html"
+    ],
+    "tests": [
+      "fixtures/final-court-p0/dashboard-input.json"
+    ],
+    "acceptance": "dashboard 从 last-final-evidence-court.json 生成页面"
+  },
+  {
+    "id": "P0-COURT-09",
+    "problem": "positive/negative/blocked/review 样本不足",
+    "evidence": "fixtures 多为 README 或单个 JSON 占位",
+    "consequence": "误报/漏报无法量化",
+    "modify": [
+      "tests/regression-test-plan.md"
+    ],
+    "add": [
+      "fixtures/final-court-matrix/positive",
+      "fixtures/final-court-matrix/negative",
+      "fixtures/final-court-matrix/blocked",
+      "fixtures/final-court-matrix/needs-review"
+    ],
+    "tests": [
+      "tests/final-court-fixture-matrix.json"
+    ],
+    "acceptance": "每类严重漏洞至少四类样本各 1 个"
+  },
+  {
+    "id": "P0-COURT-10",
+    "problem": "知识库/模板保真度未强证据化",
+    "evidence": "缺 hash baseline、knowledge/template index checker",
+    "consequence": "可能误删、误路由或模板孤岛",
+    "modify": [
+      "docs/DOCUMENT_MAPPING_MATRIX.md"
+    ],
+    "add": [
+      "scripts/knowledge_template_index_checker.py",
+      "data/knowledge_template_hash_baseline.json"
+    ],
+    "tests": [
+      "fixtures/final-court-p0/template-index-conflict.json"
+    ],
+    "acceptance": "before/after hash 和索引引用一致"
+  },
+  {
+    "id": "P0-COURT-11",
+    "problem": "真实 OSS replay 缺失",
+    "evidence": "未发现 replay/real-oss/",
+    "consequence": "复杂框架覆盖率不可证实",
+    "modify": [
+      "tests/regression-test-plan.md"
+    ],
+    "add": [
+      "replay/real-oss/README.md",
+      "scripts/replay_harness.py"
+    ],
+    "tests": [
+      "replay/contracts/real-oss-replay.schema.json"
+    ],
+    "acceptance": "至少 10 个授权/本地 OSS replay 合同通过"
+  },
+  {
+    "id": "P0-COURT-12",
+    "problem": "伪 ready 文档一致性 gate 缺失",
+    "evidence": "缺 fake_ready_grep_gate.py",
+    "consequence": "README/SKILL.md 可能把 doc-only 写成 ready",
+    "modify": [
+      "docs/QUALITY_GATE_SPEC.md"
+    ],
+    "add": [
+      "scripts/fake_ready_grep_gate.py"
+    ],
+    "tests": [
+      "fixtures/final-court-p0/fake-ready-doc.md"
+    ],
+    "acceptance": "任何无 backend 证据的 ready 表述导致 CI 失败"
+  }
+]

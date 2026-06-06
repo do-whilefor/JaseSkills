@@ -1,6 +1,0 @@
-{
-  "claimed_capability": "source-sink dataflow",
-  "status": "negative_fixture_detects_pseudo_or_missing_runtime",
-  "real_implementation": "未发现 CFG/DFG 或 source→transform→sink 输出 schema",
-  "upgrade_required": "新增 js_dataflow_engine.py"
-}

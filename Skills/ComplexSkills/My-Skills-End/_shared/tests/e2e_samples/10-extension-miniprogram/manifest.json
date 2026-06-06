@@ -1,0 +1,1 @@
+{"manifest_version":3,"content_scripts":[{"js":["content.js"]}],"background":{"service_worker":"bg.js"}}

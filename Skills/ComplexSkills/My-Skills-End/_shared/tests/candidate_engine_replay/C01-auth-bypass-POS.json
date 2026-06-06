@@ -1,0 +1,85 @@
+{
+  "id": "C01-auth-bypass-candidate-positive",
+  "expected_template_id": "C01-auth-bypass",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C01-auth-bypass.py",
+          "line": 1,
+          "route": "/fixture/C01-auth-bypass",
+          "method": "GET",
+          "handler": "login auth anonymous permitAll public magic link callback session"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C01-auth-bypass.sink",
+          "line": 2,
+          "sink": "login auth anonymous permitAll public magic link callback session"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C01-auth-bypass.js",
+          "line": 1,
+          "target": "/api/C01-auth-bypass",
+          "client": "fetch login auth anonymous permitAll public magic link callback session"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C01-auth-bypass.js",
+          "line": 2,
+          "target": "/api/C01-auth-bypass",
+          "type": "login auth anonymous permitAll public magic link callback session"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C01-auth-bypass.js",
+          "line": 3,
+          "operation_or_fragment": "login auth anonymous permitAll public magic link callback session"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C01-auth-bypass.md",
+          "signal": "login auth anonymous permitAll public magic link callback session"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C01-auth-bypass.worker",
+          "signal": "login auth anonymous permitAll public magic link callback session"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "login auth anonymous permitAll public magic link callback session"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "login auth anonymous permitAll public magic link callback session"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C01-auth-bypass.surface",
+          "route": "/surface/C01-auth-bypass",
+          "method": "GET",
+          "evidence": "login auth anonymous permitAll public magic link callback session"
+        }
+      ]
+    }
+  }
+}

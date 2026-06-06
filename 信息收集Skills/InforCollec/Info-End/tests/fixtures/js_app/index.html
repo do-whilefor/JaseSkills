@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="modulepreload" href="/_next/static/chunks/app.js">
+  <script id="__NEXT_DATA__" type="application/json">{"buildId":"fixture","props":{}}</script>
+</head>
+<body>
+  <script src="/static/runtime.js"></script>
+  <script>
+    import('/static/lazy-admin.js').then(m => m.load());
+    fetch('/api/users?tenantId=tenant-1', {headers: {Authorization: 'Bearer redacted-fixture-token'}});
+  </script>
+</body>
+</html>

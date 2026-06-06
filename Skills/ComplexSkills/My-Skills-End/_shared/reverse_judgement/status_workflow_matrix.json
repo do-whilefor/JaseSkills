@@ -1,0 +1,34 @@
+{
+  "states": [
+    "discovered",
+    "mapped",
+    "triaged",
+    "validation_planned",
+    "validation_blocked",
+    "reproduced",
+    "negative_control_passed",
+    "quality_gate_passed",
+    "confirmed",
+    "rejected",
+    "blocked",
+    "needs_human_review"
+  ],
+  "promoted": {
+    "allowed_when": "runtime probe ready + replay pass + template-specific evidence + no hard blocks",
+    "human_review_required": false
+  },
+  "needs_review": {
+    "allowed_when": "evidence incomplete, conflict, degraded parser/browser, or taint not fully resolved",
+    "queue_file": "_shared/review_queue/queue.json"
+  },
+  "conflict": {
+    "allowed_when": "knowledge/source/current project evidence conflict or tool disagreement",
+    "resolution": "knowledge_freshness_conflict_gate.py + human review"
+  },
+  "rejected": {
+    "allowed_when": "negative control passes as safe, unreachable/mock/test-only, or false-positive exclusion triggered"
+  },
+  "blocked": {
+    "allowed_when": "out-of-scope, destructive, third-party target, or authorization boundary not proven"
+  }
+}

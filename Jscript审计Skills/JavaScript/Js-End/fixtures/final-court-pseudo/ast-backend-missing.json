@@ -1,0 +1,6 @@
+{
+  "claimed_capability": "AST 审计",
+  "status": "negative_fixture_detects_pseudo_or_missing_runtime",
+  "real_implementation": "未发现 scripts/js_ast_parser_backend.py、babel/ts/tree-sitter backend",
+  "upgrade_required": "新增 parser backend + AST snapshot fixture + backend availability check"
+}

@@ -1,0 +1,154 @@
+[
+  {
+    "id": "C01",
+    "original_conclusion": "第一轮新增了极限评审 Skill 入口",
+    "file_evidence": "12-js-skills-extreme-reviewer/SKILL.md",
+    "test_evidence": "scripts/verify_extreme_review_assets.py",
+    "corrected_conclusion": "保留，但只能证明评审入口存在",
+    "required_fields": [
+      "具体文件路径",
+      "具体问题位置",
+      "具体失败原因",
+      "安全影响",
+      "工程影响",
+      "修复文件",
+      "规则变更",
+      "模板变更",
+      "测试用例",
+      "验收标准"
+    ]
+  },
+  {
+    "id": "C02",
+    "original_conclusion": "JS 收集能力矩阵已覆盖核心资产点",
+    "file_evidence": "data/js_collection_points.json",
+    "test_evidence": "tests/last-extreme-review.json",
+    "corrected_conclusion": "修正为：矩阵覆盖，真实采集器未证实",
+    "required_fields": [
+      "具体文件路径",
+      "具体问题位置",
+      "具体失败原因",
+      "安全影响",
+      "工程影响",
+      "修复文件",
+      "规则变更",
+      "模板变更",
+      "测试用例",
+      "验收标准"
+    ]
+  },
+  {
+    "id": "C03",
+    "original_conclusion": "JS AST/语义审计能力已被纳入评审",
+    "file_evidence": "data/js_audit_capabilities.json",
+    "test_evidence": "无 parser backend 测试",
+    "corrected_conclusion": "修正为：评审项存在，不等于语义审计实现",
+    "required_fields": [
+      "具体文件路径",
+      "具体问题位置",
+      "具体失败原因",
+      "安全影响",
+      "工程影响",
+      "修复文件",
+      "规则变更",
+      "模板变更",
+      "测试用例",
+      "验收标准"
+    ]
+  },
+  {
+    "id": "C04",
+    "original_conclusion": "严重 JS 漏洞链已覆盖 30 类",
+    "file_evidence": "data/js_severe_vulnerability_chains.json",
+    "test_evidence": "无 detector 级测试",
+    "corrected_conclusion": "修正为：知识/评审链覆盖，漏洞发现能力未证实",
+    "required_fields": [
+      "具体文件路径",
+      "具体问题位置",
+      "具体失败原因",
+      "安全影响",
+      "工程影响",
+      "修复文件",
+      "规则变更",
+      "模板变更",
+      "测试用例",
+      "验收标准"
+    ]
+  },
+  {
+    "id": "C05",
+    "original_conclusion": "动态验证与证据链已有规则",
+    "file_evidence": "07-js-dynamic-validator/SKILL.md;08-js-evidence-manifest-gate/SKILL.md",
+    "test_evidence": "缺 Playwright/Burp/HAR runtime bridge 测试",
+    "corrected_conclusion": "修正为：规则存在，动态验证未工程闭环",
+    "required_fields": [
+      "具体文件路径",
+      "具体问题位置",
+      "具体失败原因",
+      "安全影响",
+      "工程影响",
+      "修复文件",
+      "规则变更",
+      "模板变更",
+      "测试用例",
+      "验收标准"
+    ]
+  },
+  {
+    "id": "C06",
+    "original_conclusion": "质量门禁和报告模板已存在",
+    "file_evidence": "scripts/strict_quality_gate.py;templates/final-report.md",
+    "test_evidence": "缺 detector→manifest→report→dashboard 端到端测试",
+    "corrected_conclusion": "修正为：局部门禁存在，完整闭环未证实",
+    "required_fields": [
+      "具体文件路径",
+      "具体问题位置",
+      "具体失败原因",
+      "安全影响",
+      "工程影响",
+      "修复文件",
+      "规则变更",
+      "模板变更",
+      "测试用例",
+      "验收标准"
+    ]
+  },
+  {
+    "id": "C07",
+    "original_conclusion": "测试与 replay 已补充",
+    "file_evidence": "tests/trigger-test-cases.json;fixtures/",
+    "test_evidence": "缺真实 OSS replay、positive/negative/blocked/needs_review 全矩阵",
+    "corrected_conclusion": "修正为：触发测试存在，漏洞 replay 测试不足",
+    "required_fields": [
+      "具体文件路径",
+      "具体问题位置",
+      "具体失败原因",
+      "安全影响",
+      "工程影响",
+      "修复文件",
+      "规则变更",
+      "模板变更",
+      "测试用例",
+      "验收标准"
+    ]
+  },
+  {
+    "id": "C08",
+    "original_conclusion": "知识库和漏洞模板已保留",
+    "file_evidence": "knowledge/;templates/",
+    "test_evidence": "缺强制索引一致性与调用证据",
+    "corrected_conclusion": "修正为：文件保留，真实检索调用未证实",
+    "required_fields": [
+      "具体文件路径",
+      "具体问题位置",
+      "具体失败原因",
+      "安全影响",
+      "工程影响",
+      "修复文件",
+      "规则变更",
+      "模板变更",
+      "测试用例",
+      "验收标准"
+    ]
+  }
+]

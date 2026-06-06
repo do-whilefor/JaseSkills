@@ -1,0 +1,5 @@
+{
+  "schema_version": "js-browser-replay-actions/v1",
+  "required_actions": ["first_paint", "full_scroll", "menu_click", "submenu_expand", "tab_switch", "search_input", "form_open", "dialog_open", "hover_menu", "spa_route", "back_forward", "mobile_viewport", "desktop_viewport", "locale", "role_matrix", "tenant_matrix", "upload_entry", "import_export_entry", "settings_billing_members_permissions_auditlog"],
+  "forbidden_actions": ["delete", "real_payment", "approval_commit", "large_enum", "external_callback"]
+}

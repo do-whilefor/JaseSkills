@@ -1,0 +1,85 @@
+{
+  "id": "C13-ssrf-candidate-positive",
+  "expected_template_id": "C13-ssrf",
+  "input": {
+    "code_graph": {
+      "routes": [
+        {
+          "file": "C13-ssrf.py",
+          "line": 1,
+          "route": "/fixture/C13-ssrf",
+          "method": "GET",
+          "handler": "fetch axios requests httpx webhook url callback metadata 169.254"
+        }
+      ],
+      "sinks": [
+        {
+          "file": "C13-ssrf.sink",
+          "line": 2,
+          "sink": "fetch axios requests httpx webhook url callback metadata 169.254"
+        }
+      ]
+    },
+    "js_audit": {
+      "api_clients": [
+        {
+          "file": "C13-ssrf.js",
+          "line": 1,
+          "target": "/api/C13-ssrf",
+          "client": "fetch fetch axios requests httpx webhook url callback metadata 169.254"
+        }
+      ],
+      "candidate_signals": [
+        {
+          "file": "C13-ssrf.js",
+          "line": 2,
+          "target": "/api/C13-ssrf",
+          "type": "fetch axios requests httpx webhook url callback metadata 169.254"
+        }
+      ],
+      "graphql": [
+        {
+          "file": "C13-ssrf.js",
+          "line": 3,
+          "operation_or_fragment": "fetch axios requests httpx webhook url callback metadata 169.254"
+        }
+      ]
+    },
+    "inventory": {
+      "auth_signals": [
+        {
+          "path": "C13-ssrf.md",
+          "signal": "fetch axios requests httpx webhook url callback metadata 169.254"
+        }
+      ],
+      "worker_queue_cron_rpc_webhook": [
+        {
+          "path": "C13-ssrf.worker",
+          "signal": "fetch axios requests httpx webhook url callback metadata 169.254"
+        }
+      ],
+      "dependency_files": [
+        {
+          "path": "package.json",
+          "content": "fetch axios requests httpx webhook url callback metadata 169.254"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "config.yml",
+          "content": "fetch axios requests httpx webhook url callback metadata 169.254"
+        }
+      ]
+    },
+    "surface": {
+      "attack_surface": [
+        {
+          "file": "C13-ssrf.surface",
+          "route": "/surface/C13-ssrf",
+          "method": "GET",
+          "evidence": "fetch axios requests httpx webhook url callback metadata 169.254"
+        }
+      ]
+    }
+  }
+}
