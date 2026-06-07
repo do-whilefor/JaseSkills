@@ -1,0 +1,74 @@
+{
+  "schema": "capability-promotion-status",
+  "policy": "No target-project severe vulnerability can be confirmed without target-specific dynamic evidence, negative controls, evidence manifest schema validation and report mapping. Fixture proof only promotes the engine, not target findings.",
+  "capabilities": [
+    {
+      "capability": "scoped_file_iteration",
+      "status": "promoted",
+      "evidence": [
+        "tools/_scope.py",
+        "scripts/_scope.py"
+      ]
+    },
+    {
+      "capability": "real_ast_python_js_ts_graph",
+      "status": "promoted",
+      "evidence": [
+        "scripts/ast_semantic_graph_builder.py",
+        "ast_plugins/python/python_security_graph_bridge.py",
+        "ast_plugins/js/typescript_security_graph_bridge.js",
+        "tests/fixtures/ast_project",
+        "outputs/current/ast_semantic_selftest.json"
+      ],
+      "scope": "real AST for Python via ast and JS/TS/JSX/TSX via TypeScript Compiler API; other languages remain needs_review unless their bridges run successfully on target"
+    },
+    {
+      "capability": "dynamic_browser_har_screenshot_replay",
+      "status": "promoted_engine_only",
+      "evidence": [
+        "scripts/browser_role_tenant_matrix_replay.py",
+        "outputs/current/browser_matrix/matrix_result.json",
+        "outputs/current/browser_matrix/evidence_manifest_v4_dynamic.json"
+      ],
+      "scope": "engine verified on local non-destructive fixture; target findings remain needs_review until run against authorized target"
+    },
+    {
+      "capability": "role_tenant_matrix_negative_controls",
+      "status": "promoted_engine_only",
+      "evidence": [
+        "scripts/browser_role_tenant_matrix_replay.py",
+        "config/role_tenant_matrix.example.json",
+        "outputs/current/browser_matrix/matrix_result.json"
+      ],
+      "scope": "matrix engine verifies admin/user/viewer and tenant controls on fixture"
+    },
+    {
+      "capability": "js_asset_collection",
+      "status": "promoted_candidate_only",
+      "evidence": [
+        "tools/js_asset_extractor.py",
+        "schemas/js_asset.schema.json",
+        "tests/fixtures/minimal_project"
+      ],
+      "reason": "asset and endpoint extraction is candidate evidence, not backend reachability proof"
+    },
+    {
+      "capability": "severe_vuln_38_detectors",
+      "status": "needs_review",
+      "evidence": [
+        "scripts/detectors/registry.json",
+        "tests/fixtures/severe_vuln_matrix"
+      ],
+      "reason": "detectors generate candidate risk until source-sink-dataflow-auth/tenant evidence and dynamic replay exist for target"
+    },
+    {
+      "capability": "confirmed_vulnerability_reporting",
+      "status": "blocked_without_target_runtime_evidence",
+      "evidence": [
+        "tools/quality_gate.py",
+        "schemas/EVIDENCE_MANIFEST_SCHEMA.json"
+      ],
+      "reason": "confirmed report requires request/response, HAR/screenshot/log/code path and negative controls on target"
+    }
+  ]
+}

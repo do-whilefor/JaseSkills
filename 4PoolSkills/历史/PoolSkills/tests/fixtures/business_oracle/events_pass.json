@@ -1,0 +1,1 @@
+{"events":[{"tenant_id":"t1","owner_tenant_id":"t1","role":"manager","action":"export","amount":10,"from":"draft","to":"submitted"},{"from":"submitted","to":"approved"},{"from":"approved","to":"paid"}]}

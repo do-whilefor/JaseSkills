@@ -1,0 +1,7 @@
+{
+  "case_id": "file-read-needs-review",
+  "type": "任意文件读取",
+  "state": "needs_review",
+  "sink": "sendFile(req.query.path)",
+  "expected": "non_destructive_local_fixture_only"
+}

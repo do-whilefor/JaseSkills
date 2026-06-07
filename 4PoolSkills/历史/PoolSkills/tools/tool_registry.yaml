@@ -1,0 +1,221 @@
+version: tool-registry-v1
+policy: no_fake_results_unavailable_is_not_success
+tools:
+  ripgrep:
+    executable: rg
+    default_args: [--json]
+    category: static_search
+    requires_network: false
+    output_kind: ndjson
+  semgrep:
+    executable: semgrep
+    default_args: [--json]
+    category: sast
+    requires_network: false
+    output_kind: json
+  tree-sitter:
+    executable: tree-sitter
+    default_args: []
+    category: parser
+    requires_network: false
+    output_kind: text
+  eslint:
+    executable: npx
+    default_args: [eslint, --format, json]
+    category: js_lint
+    requires_network: false
+    output_kind: json
+  npm-audit:
+    executable: npm
+    default_args: [audit, --json]
+    category: dependency
+    requires_network: false
+    output_kind: json
+  pnpm-audit:
+    executable: pnpm
+    default_args: [audit, --json]
+    category: dependency
+    requires_network: false
+    output_kind: json
+  yarn-audit:
+    executable: yarn
+    default_args: [npm, audit, --json]
+    category: dependency
+    requires_network: false
+    output_kind: json
+  pip-audit:
+    executable: pip-audit
+    default_args: [--format, json]
+    category: dependency
+    requires_network: false
+    output_kind: json
+  cargo-audit:
+    executable: cargo
+    default_args: [audit, --json]
+    category: dependency
+    requires_network: false
+    output_kind: json
+  gosec:
+    executable: gosec
+    default_args: [-fmt, json]
+    category: sast
+    requires_network: false
+    output_kind: json
+  govulncheck:
+    executable: govulncheck
+    default_args: [-json]
+    category: dependency
+    requires_network: false
+    output_kind: ndjson
+  bandit:
+    executable: bandit
+    default_args: [-f, json, -r]
+    category: sast
+    requires_network: false
+    output_kind: json
+  trivy:
+    executable: trivy
+    default_args: [fs, --format, json]
+    category: container_iac_dependency
+    requires_network: false
+    output_kind: json
+  grype:
+    executable: grype
+    default_args: [-o, json]
+    category: dependency
+    requires_network: false
+    output_kind: json
+  syft:
+    executable: syft
+    default_args: [-o, json]
+    category: sbom
+    requires_network: false
+    output_kind: json
+  osv-scanner:
+    executable: osv-scanner
+    default_args: [--format, json]
+    category: dependency
+    requires_network: false
+    output_kind: json
+  gitleaks:
+    executable: gitleaks
+    default_args: [detect, --no-git, --redact, --report-format, json]
+    category: secrets
+    requires_network: false
+    output_kind: json
+  trufflehog:
+    executable: trufflehog
+    default_args: [filesystem, --json]
+    category: secrets
+    requires_network: false
+    output_kind: ndjson
+  nuclei:
+    executable: nuclei
+    default_args: [-jsonl]
+    category: dynamic_template_scan
+    requires_network: true
+    require_non_destructive_templates: true
+    output_kind: ndjson
+  httpx:
+    executable: httpx
+    default_args: [-json]
+    category: authorized_http_probe
+    requires_network: true
+    output_kind: ndjson
+  katana:
+    executable: katana
+    default_args: [-jsonl]
+    category: authorized_crawl
+    requires_network: true
+    output_kind: ndjson
+  wayback:
+    executable: waybackurls
+    default_args: []
+    category: authorized_archive_discovery
+    requires_network: true
+    output_kind: text
+  gau:
+    executable: gau
+    default_args: []
+    category: authorized_archive_discovery
+    requires_network: true
+    output_kind: text
+  playwright:
+    executable: npx
+    default_args: [playwright]
+    category: browser_validation
+    requires_network: true
+    output_kind: text
+  burp-har-import:
+    executable: python3
+    default_args: [dynamic/har_importer.py]
+    category: har_import
+    requires_network: false
+    output_kind: json
+  cdp:
+    executable: node
+    default_args: []
+    category: chrome_devtools_protocol
+    requires_network: true
+    output_kind: json
+  graphql-introspection:
+    executable: python3
+    default_args: [dynamic/graphql_introspection.py]
+    category: graphql
+    requires_network: true
+    output_kind: json
+  websocket-replay:
+    executable: python3
+    default_args: [dynamic/websocket_replay.py]
+    category: websocket
+    requires_network: true
+    output_kind: json
+  python-version:
+    executable: python3
+    default_args: [--version]
+    category: selftest
+    requires_network: false
+    output_kind: text
+
+  js-deep-pipeline:
+    executable: python3
+    default_args: [js/js_deep_pipeline.py]
+    category: js_deep_audit
+    requires_network: false
+    output_kind: json
+  sourcemap-restorer:
+    executable: python3
+    default_args: [js/sourcemap_restorer.py]
+    category: js_deep_audit
+    requires_network: false
+    output_kind: json
+  chunk-lineage:
+    executable: python3
+    default_args: [js/chunk_lineage_builder.py]
+    category: js_deep_audit
+    requires_network: false
+    output_kind: json
+  taint-engine:
+    executable: python3
+    default_args: [analyzers/taint_engine.py]
+    category: source_sink_dataflow
+    requires_network: false
+    output_kind: json
+  property-oracle:
+    executable: python3
+    default_args: [business_logic/property_oracle.py]
+    category: business_logic_oracle
+    requires_network: false
+    output_kind: json
+  state-machine-replay:
+    executable: python3
+    default_args: [business_logic/state_machine_replay.py]
+    category: business_logic_oracle
+    requires_network: false
+    output_kind: json
+  windows-preflight:
+    executable: python3
+    default_args: [scripts/windows_preflight.py]
+    category: windows_runtime
+    requires_network: false
+    output_kind: json

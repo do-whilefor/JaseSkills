@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Route extraction v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_root",
+    "routes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "route-inventory-v1"
+    },
+    "source_root": {
+      "type": "string"
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "framework",
+          "method",
+          "path",
+          "file",
+          "line"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "framework": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string"
+          },
+          "line": {
+            "type": "integer"
+          },
+          "handler": {
+            "type": "string"
+          },
+          "authn_hint": {
+            "type": "string"
+          },
+          "authz_hint": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

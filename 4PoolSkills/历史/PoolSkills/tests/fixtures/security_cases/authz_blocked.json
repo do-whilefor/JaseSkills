@@ -1,0 +1,7 @@
+{
+  "case_id": "authz-blocked",
+  "type": "权限绕过",
+  "state": "blocked",
+  "response_status": 403,
+  "expected": "DYNAMIC_BLOCKED"
+}

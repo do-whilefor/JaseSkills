@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tool result",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "tool",
+    "status",
+    "available",
+    "command",
+    "scope_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "tool-result-v1"
+    },
+    "tool": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "succeeded",
+        "failed",
+        "blocked",
+        "unavailable",
+        "unknown"
+      ]
+    },
+    "available": {
+      "type": "boolean"
+    },
+    "command": {
+      "type": "array"
+    },
+    "exit_code": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "duration_ms": {
+      "type": "integer"
+    },
+    "stdout_summary": {
+      "type": "string"
+    },
+    "stderr_summary": {
+      "type": "string"
+    },
+    "scope_status": {
+      "type": "string"
+    },
+    "error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array"
+    },
+    "version_command": {
+      "type": [
+        "string",
+        "array",
+        "integer",
+        "boolean",
+        "null"
+      ]
+    },
+    "version_exit_code": {
+      "type": [
+        "string",
+        "array",
+        "integer",
+        "boolean",
+        "null"
+      ]
+    },
+    "version_stdout_summary": {
+      "type": [
+        "string",
+        "array",
+        "integer",
+        "boolean",
+        "null"
+      ]
+    },
+    "version_stderr_summary": {
+      "type": [
+        "string",
+        "array",
+        "integer",
+        "boolean",
+        "null"
+      ]
+    },
+    "result_is_success": {
+      "type": [
+        "string",
+        "array",
+        "integer",
+        "boolean",
+        "null"
+      ]
+    },
+    "raw_stdout_path": {
+      "type": [
+        "string",
+        "array",
+        "integer",
+        "boolean",
+        "null"
+      ]
+    },
+    "raw_stderr_path": {
+      "type": [
+        "string",
+        "array",
+        "integer",
+        "boolean",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+# Sensitive output — never commit these
+findings/
+recon/
+reports/
+hunt-memory/
+config.json
+*.burp
+*.json.bak
+
+# API keys and tokens
+.env
+secrets.txt
+api_keys.txt
+.private/
+
+# Nested local clones / sub-repos (not tracked)
+claude-bug-bounty/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# Logs
+*.log
+*.txt.bak
+
+# Tool output
+*.out
+nmap-output/

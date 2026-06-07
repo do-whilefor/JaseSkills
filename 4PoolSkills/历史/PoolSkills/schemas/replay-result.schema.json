@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Replay result with Playwright artifacts",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "playwright_available",
+    "role_tenant_matrix",
+    "results",
+    "policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "replay-result-v2"
+    },
+    "playwright_available": {
+      "type": "boolean"
+    },
+    "role_tenant_matrix": {
+      "type": "object"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "replay_plan_id",
+          "status",
+          "request_ref",
+          "response_ref",
+          "screenshot_ref",
+          "trace_ref",
+          "har_ref",
+          "console_ref",
+          "dom_ref",
+          "errors",
+          "negative_status",
+          "blocked_status"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "replay_plan_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "passed",
+              "needs_review",
+              "blocked",
+              "unavailable",
+              "needs_manual_target",
+              "not_reproducible",
+              "confirmed_non_destructive"
+            ]
+          },
+          "role": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tenant": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "request_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "response_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "screenshot_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "trace_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "har_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "console_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "dom_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "matrix_results": {
+            "type": "array"
+          },
+          "errors": {
+            "type": "array"
+          },
+          "negative_status": {
+            "enum": [
+              "passed",
+              "failed",
+              "not_executed",
+              "not_applicable"
+            ]
+          },
+          "blocked_status": {
+            "enum": [
+              "passed",
+              "failed",
+              "blocked_expected",
+              "not_executed",
+              "not_applicable"
+            ]
+          }
+        }
+      }
+    },
+    "policy": {
+      "type": "string"
+    },
+    "blocked_controls": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

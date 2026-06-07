@@ -1,0 +1,10 @@
+{
+  "fixture_id": "no_manifest_dashboard",
+  "description": "dashboard 无真实数据源",
+  "input_summary": "dashboard 不得展示伪数据",
+  "expected_status": "validation_blocked",
+  "evidence_manifest_minimal": {
+    "manifest_version": "audit-contract",
+    "candidates": []
+  }
+}

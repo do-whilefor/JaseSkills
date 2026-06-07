@@ -1,0 +1,34 @@
+{
+  "chain_id": "03-import-export-file-read-path-traversal",
+  "title": "import/export/download → path traversal → arbitrary file read/write candidate",
+  "required_nodes": [
+    {
+      "node_id": "file_feature_route_found",
+      "required": true
+    },
+    {
+      "node_id": "path_or_filename_parameter_found",
+      "required": true
+    },
+    {
+      "node_id": "server_side_path_join_analyzed",
+      "required": true
+    },
+    {
+      "node_id": "normal_file_negative_control",
+      "required": true
+    },
+    {
+      "node_id": "safe_traversal_probe",
+      "required": true
+    },
+    {
+      "node_id": "impact_limited_to_test_file",
+      "required": true
+    },
+    {
+      "node_id": "quality_gate_passed",
+      "required": true
+    }
+  ]
+}

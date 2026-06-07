@@ -1,0 +1,19 @@
+{
+  "detector_id": "cicd_leak_abuse",
+  "title": "CI/CD leak or abuse candidate",
+  "fixture_state": "negative",
+  "expected_review_status": "false_positive",
+  "positive_sample": false,
+  "negative_sample": true,
+  "blocked_sample": false,
+  "needs_review_sample": false,
+  "non_destructive": true,
+  "evidence_requirements": [
+    "source_line",
+    "sanitized_evidence_manifest",
+    "request",
+    "response",
+    "screenshot_or_dom"
+  ],
+  "confirmed_standard": "Only confirmed after quality_gate passes with static evidence, dynamic request/response, screenshot_or_dom, negative test, replay success, role/tenant where required, and readable sanitized evidence refs."
+}

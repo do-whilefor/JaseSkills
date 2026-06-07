@@ -1,0 +1,270 @@
+{
+  "schema_version": "skill-capability-bindings-v1",
+  "policy": "Promotion is evidence-bound. Compatibility skills are wrappers; they cannot upgrade static candidates to confirmed. Missing local toolchain caps AST/dynamic capability at needs_review.",
+  "bindings": {
+    "01-authorized-maximum-orchestrator": {
+      "implementations": [
+        "scripts/info_collect_orchestrator.py"
+      ],
+      "schemas": [
+        "schemas/replay_plan.schema.json"
+      ],
+      "tests": [
+        "outputs/current/orchestrator/orchestrator_result.json"
+      ],
+      "status": "promoted_candidate_only"
+    },
+    "02-project-intelligence": {
+      "implementations": [
+        "scripts/project_inventory.py",
+        "knowledge/information_collection_attack_surface_matrix.md"
+      ],
+      "schemas": [
+        "schemas/asset.schema.json"
+      ],
+      "tests": [
+        "tests/fixtures/minimal_project"
+      ],
+      "status": "promoted_candidate_only"
+    },
+    "03-code-knowledge-graph": {
+      "implementations": [
+        "scripts/ast_semantic_graph_builder.py"
+      ],
+      "schemas": [
+        "schemas/ast-security-graph.schema.json"
+      ],
+      "tests": [
+        "tests/fixtures/ast_project"
+      ],
+      "status": "promoted"
+    },
+    "04-attack-surface-mapping": {
+      "implementations": [
+        "tools/route_extractor.py",
+        "scripts/auth_graph_builder.py"
+      ],
+      "schemas": [
+        "schemas/route.schema.json",
+        "schemas/auth_graph.schema.json"
+      ],
+      "tests": [
+        "outputs/current/selftest_routes.json",
+        "outputs/current/selftest_auth_graph.json"
+      ],
+      "status": "promoted_candidate_only"
+    },
+    "05-js-audit-runtime": {
+      "implementations": [
+        "tools/js_asset_extractor.py",
+        "scripts/js_audit_graph_builder.py"
+      ],
+      "schemas": [
+        "schemas/js_asset.schema.json",
+        "schemas/js_audit_graph.schema.json"
+      ],
+      "tests": [
+        "outputs/current/selftest_js_assets.json",
+        "outputs/current/selftest_js_audit_graph.json"
+      ],
+      "status": "needs_review"
+    },
+    "06-dynamic-browser-burp-mcp": {
+      "implementations": [
+        "scripts/browser_role_tenant_matrix_replay.py",
+        "scripts/playwright_flow_runner.py"
+      ],
+      "schemas": [
+        "schemas/dynamic-browser-evidence.schema.json"
+      ],
+      "tests": [
+        "config/role_tenant_matrix.example.json"
+      ],
+      "status": "promoted_engine_only"
+    },
+    "07-vulnerability-hunting-engine": {
+      "implementations": [
+        "scripts/detectors/detector_runner.py"
+      ],
+      "schemas": [
+        "schemas/vulnerability_candidate.schema.json"
+      ],
+      "tests": [
+        "tests/fixtures/severe_vuln_matrix",
+        "outputs/current/severe_vuln_matrix_check.json"
+      ],
+      "status": "promoted_candidate_only"
+    },
+    "08-evidence-quality-gate": {
+      "implementations": [
+        "tools/evidence_builder.py",
+        "tools/quality_gate.py",
+        "scripts/evidence_manifest_validate.py"
+      ],
+      "schemas": [
+        "schemas/evidence_manifest.schema.json",
+        "schemas/quality_result.schema.json",
+        "schemas/EVIDENCE_MANIFEST_SCHEMA.json"
+      ],
+      "tests": [
+        "outputs/current/selftest_evidence_manifest.json",
+        "outputs/current/selftest_quality_result.json"
+      ],
+      "status": "promoted"
+    },
+    "09-reporting-disclosure": {
+      "implementations": [
+        "tools/dashboard_builder.py",
+        "scripts/evidence_report_generator.py"
+      ],
+      "schemas": [
+        "reports/mapping/report_mapping.json"
+      ],
+      "tests": [
+        "dashboard/current/index.html"
+      ],
+      "status": "promoted_candidate_only"
+    },
+    "10-regression-selftest-dashboard": {
+      "implementations": [
+        "tools/selftest.py",
+        "scripts/severe_vuln_matrix_check.py",
+        "scripts/capability_auditor.py"
+      ],
+      "schemas": [
+        "schemas/capability_audit.schema.json"
+      ],
+      "tests": [
+        "outputs/current/selftest_result_after.json"
+      ],
+      "status": "promoted"
+    },
+    "info-collection": {
+      "implementations": [
+        "scripts/project_inventory.py",
+        "tools/route_extractor.py",
+        "scripts/auth_graph_builder.py",
+        "scripts/info_collect_orchestrator.py"
+      ],
+      "schemas": [
+        "schemas/asset.schema.json",
+        "schemas/route.schema.json",
+        "schemas/auth_graph.schema.json"
+      ],
+      "tests": [
+        "outputs/current/selftest_routes.json",
+        "outputs/current/selftest_auth_graph.json"
+      ],
+      "status": "promoted_candidate_only"
+    },
+    "js-collection": {
+      "implementations": [
+        "tools/js_asset_extractor.py"
+      ],
+      "schemas": [
+        "schemas/js_asset.schema.json"
+      ],
+      "tests": [
+        "outputs/current/selftest_js_assets.json"
+      ],
+      "status": "promoted_candidate_only"
+    },
+    "js-audit": {
+      "implementations": [
+        "scripts/ast_semantic_graph_builder.py",
+        "ast_plugins/js/typescript_security_graph_bridge.js"
+      ],
+      "schemas": [
+        "schemas/ast-security-graph.schema.json"
+      ],
+      "tests": [
+        "tests/fixtures/ast_project/client.ts"
+      ],
+      "status": "promoted_candidate_only"
+    },
+    "code-audit": {
+      "implementations": [
+        "scripts/ast_semantic_graph_builder.py",
+        "scripts/ast_semantic_selftest.py"
+      ],
+      "schemas": [
+        "schemas/ast-security-graph.schema.json"
+      ],
+      "tests": [
+        "tests/fixtures/ast_project"
+      ],
+      "status": "promoted"
+    },
+    "dynamic-validation": {
+      "implementations": [
+        "scripts/browser_role_tenant_matrix_replay.py"
+      ],
+      "schemas": [
+        "schemas/dynamic-browser-evidence.schema.json"
+      ],
+      "tests": [
+        "tests/fixtures/ast_project"
+      ],
+      "status": "promoted_engine_only"
+    },
+    "severe-vuln-detection": {
+      "implementations": [
+        "scripts/detectors/detector_runner.py",
+        "scripts/severe_vuln_matrix_check.py"
+      ],
+      "schemas": [
+        "schemas/vulnerability_candidate.schema.json"
+      ],
+      "tests": [
+        "tests/fixtures/severe_vuln_matrix",
+        "outputs/current/severe_vuln_matrix_check.json"
+      ],
+      "status": "promoted_candidate_only"
+    },
+    "quality-gate": {
+      "implementations": [
+        "tools/quality_gate.py",
+        "tools/evidence_builder.py",
+        "scripts/evidence_manifest_validate.py",
+        "scripts/quality_gate_hard_enforcer.py"
+      ],
+      "schemas": [
+        "schemas/evidence_manifest.schema.json",
+        "schemas/quality_result.schema.json"
+      ],
+      "tests": [
+        "outputs/current/selftest_quality_result.json"
+      ],
+      "status": "promoted"
+    },
+    "reporting": {
+      "implementations": [
+        "tools/dashboard_builder.py",
+        "scripts/evidence_report_generator.py"
+      ],
+      "schemas": [
+        "reports/mapping/report_mapping.json",
+        "schemas/quality_result.schema.json"
+      ],
+      "tests": [
+        "dashboard/current/index.html"
+      ],
+      "status": "promoted_candidate_only"
+    },
+    "selftest": {
+      "implementations": [
+        "tools/selftest.py",
+        "scripts/skill_selftest.py",
+        "scripts/capability_auditor.py",
+        "scripts/severe_vuln_matrix_check.py"
+      ],
+      "schemas": [
+        "schemas/capability_audit.schema.json"
+      ],
+      "tests": [
+        "outputs/current/selftest_result_after.json"
+      ],
+      "status": "promoted"
+    }
+  }
+}

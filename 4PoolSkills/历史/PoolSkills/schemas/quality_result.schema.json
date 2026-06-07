@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quality gate result v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "overall_status",
+    "findings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "quality-result-v1"
+    },
+    "overall_status": {
+      "enum": [
+        "pass",
+        "needs_review",
+        "blocked",
+        "failed",
+        "inconclusive"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "candidate_id": "CAND-HARD-JUMP",
+  "vulnerability_type": "IDOR / BOLA",
+  "state": "confirmed",
+  "target_scope": "local_authorized",
+  "destructive_action_or_dos": false,
+  "source_file": "src/routes/projects.ts",
+  "source_line": 42,
+  "route": "/api/projects/{project_id}",
+  "method": "GET",
+  "parameter": "project_id",
+  "auth_context": {
+    "tested": [
+      "normal_user_A",
+      "normal_user_B",
+      "admin"
+    ]
+  },
+  "tenant_context": {
+    "same_tenant": "tenant-a",
+    "cross_tenant": "tenant-b"
+  },
+  "request_summary": "local test request only",
+  "response_summary": "fixture response only",
+  "code_evidence": [
+    {
+      "file": "src/routes/projects.ts",
+      "line": 42
+    }
+  ],
+  "dynamic_evidence": [
+    {
+      "run": 1
+    },
+    {
+      "run": 2
+    },
+    {
+      "run": 3
+    }
+  ],
+  "negative_control": {
+    "status": "passed"
+  },
+  "reproduction_count": 3,
+  "impact": "Unauthorized read of test fixture object.",
+  "risk": "high",
+  "quality_gate_score": 91,
+  "tool_alert_only": false,
+  "error_only": false,
+  "state_transition_history": [
+    "discovered",
+    "confirmed"
+  ],
+  "false_positive_notes": [
+    "not tool alert only",
+    "not public resource",
+    "negative control reviewed"
+  ]
+}

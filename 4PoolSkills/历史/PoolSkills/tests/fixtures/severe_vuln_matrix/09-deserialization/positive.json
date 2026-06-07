@@ -1,0 +1,60 @@
+{
+  "manifest_version": "4.0",
+  "scope": {
+    "mode": "local_authorized",
+    "project_root": "tests/fixtures/minimal_project",
+    "allowed_hosts": [
+      "localhost",
+      "127.0.0.1"
+    ],
+    "forbidden_actions": [
+      "destructive_state_change",
+      "dos",
+      "third_party_targeting"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "09-deserialization-positive",
+      "type": "deserialization",
+      "severity": "unknown",
+      "status": "needs_review",
+      "source": "manual",
+      "route": "/fixture",
+      "method": "GET",
+      "code_evidence": [
+        {
+          "id": "code",
+          "source": "fixture",
+          "file": "README.md",
+          "line": 1,
+          "summary": "positive fixture for 反序列化漏洞"
+        }
+      ],
+      "js_evidence": [],
+      "dynamic_evidence": [],
+      "negative_controls": [],
+      "dynamic_state": "STATIC_CANDIDATE",
+      "state_history": [],
+      "impact_proof": {},
+      "false_positive_exclusions": [
+        "fixture"
+      ],
+      "quality_gate": {
+        "score": 20,
+        "status": "needs_review",
+        "hard_failures": [
+          "fixture_only"
+        ]
+      },
+      "report_mapping": {
+        "template": "vulnerability_templates/09-deserialization.md"
+      },
+      "non_destructive": {
+        "is_non_destructive": true,
+        "data_modified": false,
+        "boundary": "fixture only"
+      }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "candidate_id": "C-IDOR-001",
+  "vulnerability_type": "IDOR / BOLA",
+  "scope": {
+    "authorized": true,
+    "target_type": "local_project",
+    "project_path": "examples/sample_project"
+  },
+  "source_file": "examples/sample_project/src/app.js",
+  "source_line": 6,
+  "sink_file": "examples/sample_project/src/app.js",
+  "sink_line": 8,
+  "route": "/api/orders/:id",
+  "method": "GET",
+  "parameter": "id",
+  "auth_context": {
+    "actor": "user_a",
+    "role": "ordinary_user",
+    "login_state": "authenticated"
+  },
+  "tenant_context": {
+    "tenant_id": "tenant_a",
+    "comparison": "cross_tenant"
+  },
+  "request_summary": "GET /api/orders/order_b as user_a",
+  "response_summary": "200 returned test order_b summary",
+  "code_evidence": [
+    {
+      "file": "examples/sample_project/src/app.js",
+      "line": 8,
+      "reason": "find by id without owner/tenant check"
+    }
+  ],
+  "dynamic_evidence": [
+    {
+      "attempt_id": "a1",
+      "request_ref": "req1",
+      "response_ref": "res1",
+      "observed_result": "cross-tenant test order returned"
+    },
+    {
+      "attempt_id": "a2",
+      "request_ref": "req2",
+      "response_ref": "res2",
+      "observed_result": "same result"
+    },
+    {
+      "attempt_id": "a3",
+      "request_ref": "req3",
+      "response_ref": "res3",
+      "observed_result": "same result"
+    }
+  ],
+  "negative_control": {
+    "performed": true,
+    "description": "nonexistent order and own order controls",
+    "expected_result": "404 or own order only",
+    "observed_result": "as expected"
+  },
+  "reproduction_count": 3,
+  "reproduction_attempts": [
+    {
+      "attempt_id": "a1",
+      "result": "same_result",
+      "evidence_ref": "res1"
+    },
+    {
+      "attempt_id": "a2",
+      "result": "same_result",
+      "evidence_ref": "res2"
+    },
+    {
+      "attempt_id": "a3",
+      "result": "same_result",
+      "evidence_ref": "res3"
+    }
+  ],
+  "impact": "ordinary user can read another tenant test order summary in local fixture",
+  "risk": "high",
+  "false_positive_notes": "not admin-only; negative control passed",
+  "quality_gate_score": 0,
+  "final_status": "candidate",
+  "non_destructive": {
+    "is_non_destructive": true,
+    "data_modified": false,
+    "rollback_required": false
+  },
+  "tool_context": {
+    "tool_alert_only": false,
+    "tools_used": [
+      "manual_har_fixture"
+    ],
+    "unavailable_tools": []
+  },
+  "report_refs": [
+    "report_templates/03-idor_bola.report.md"
+  ]
+}

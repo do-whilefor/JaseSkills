@@ -1,0 +1,10 @@
+{
+  "fixture_id": "safe_upload",
+  "description": "上传接口存在但不可执行",
+  "input_summary": "上传存在不等于高危",
+  "expected_status": "rejected",
+  "evidence_manifest_minimal": {
+    "manifest_version": "audit-contract",
+    "candidates": []
+  }
+}

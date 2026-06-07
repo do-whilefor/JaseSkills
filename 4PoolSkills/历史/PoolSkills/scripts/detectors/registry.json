@@ -1,0 +1,401 @@
+{
+  "schema_version": "detector-registry-v3",
+  "policy": "detectors produce candidates only. They never confirm vulnerabilities without source evidence, non-destructive runtime evidence, role/tenant negative controls, and report mapping.",
+  "detectors": [
+    {
+      "id": "01-auth_bypass",
+      "type": "authentication_bypass",
+      "title": "认证绕过",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/01-auth_bypass.md"
+    },
+    {
+      "id": "02-authz_bypass",
+      "type": "authorization_bypass",
+      "title": "权限绕过",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/02-authz_bypass.md"
+    },
+    {
+      "id": "03-idor_bola",
+      "type": "idor_bola",
+      "title": "IDOR / 越权访问",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/03-idor_bola.md"
+    },
+    {
+      "id": "04-tenant_isolation_bypass",
+      "type": "tenant_isolation_bypass",
+      "title": "租户隔离绕过",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/04-tenant_isolation_bypass.md"
+    },
+    {
+      "id": "05-admin_privilege_escalation",
+      "type": "admin_privilege_escalation",
+      "title": "管理员权限提升",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/05-admin_privilege_escalation.md"
+    },
+    {
+      "id": "06-rce",
+      "type": "rce",
+      "title": "远程代码执行 RCE",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/06-rce.md"
+    },
+    {
+      "id": "07-command_injection",
+      "type": "command_injection",
+      "title": "命令注入",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/07-command_injection.md"
+    },
+    {
+      "id": "08-ssti",
+      "type": "ssti",
+      "title": "模板注入",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/08-ssti.md"
+    },
+    {
+      "id": "09-deserialization",
+      "type": "deserialization",
+      "title": "反序列化漏洞",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/09-deserialization.md"
+    },
+    {
+      "id": "10-arbitrary_file_read",
+      "type": "arbitrary_file_read",
+      "title": "任意文件读取",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/10-arbitrary_file_read.md"
+    },
+    {
+      "id": "11-arbitrary_file_write",
+      "type": "arbitrary_file_write",
+      "title": "任意文件写入",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/11-arbitrary_file_write.md"
+    },
+    {
+      "id": "12-file_upload_rce_or_overwrite",
+      "type": "file_upload_rce_or_overwrite",
+      "title": "文件上传导致代码执行或敏感文件覆盖",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/12-file_upload_rce_or_overwrite.md"
+    },
+    {
+      "id": "13-ssrf",
+      "type": "ssrf",
+      "title": "SSRF",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/13-ssrf.md"
+    },
+    {
+      "id": "14-sql_injection",
+      "type": "sql_injection",
+      "title": "SQL 注入",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/14-sql_injection.md"
+    },
+    {
+      "id": "15-nosql_injection",
+      "type": "nosql_injection",
+      "title": "NoSQL 注入",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/15-nosql_injection.md"
+    },
+    {
+      "id": "16-orm_raw_query_injection",
+      "type": "orm_raw_query_injection",
+      "title": "ORM raw query 注入",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/16-orm_raw_query_injection.md"
+    },
+    {
+      "id": "17-graphql_abuse",
+      "type": "graphql_authz_batch_introspection",
+      "title": "GraphQL 权限绕过 / 批量查询滥用 / introspection 暴露",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/17-graphql_abuse.md"
+    },
+    {
+      "id": "18-webhook_signature_bypass",
+      "type": "webhook_signature_bypass",
+      "title": "Webhook 签名绕过",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/18-webhook_signature_bypass.md"
+    },
+    {
+      "id": "19-jwt_token_validation",
+      "type": "jwt_token_validation",
+      "title": "JWT / token 校验缺陷",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/19-jwt_token_validation.md"
+    },
+    {
+      "id": "20-oauth_sso_redirect",
+      "type": "oauth_sso_redirect",
+      "title": "OAuth / SSO / callback / redirect_uri 缺陷",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/20-oauth_sso_redirect.md"
+    },
+    {
+      "id": "21-cors_misconfiguration",
+      "type": "cors_misconfiguration",
+      "title": "CORS 高危误配置",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/21-cors_misconfiguration.md"
+    },
+    {
+      "id": "22-sensitive_info_disclosure",
+      "type": "sensitive_info_disclosure",
+      "title": "敏感信息泄露",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/22-sensitive_info_disclosure.md"
+    },
+    {
+      "id": "23-supply_chain_dependency_plugin",
+      "type": "supply_chain_dependency_plugin",
+      "title": "供应链、插件加载、依赖混淆、构建脚本风险",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control"
+      ],
+      "template": "vulnerability_templates/23-supply_chain_dependency_plugin.md"
+    },
+    {
+      "id": "24-cache_key_confusion",
+      "type": "cache_key_confusion",
+      "title": "缓存投毒 / cache key confusion",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/24-cache_key_confusion.md"
+    },
+    {
+      "id": "25-graphql_authz_bypass",
+      "type": "graphql_authz_bypass",
+      "title": "GraphQL 权限绕过",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/25-graphql_authz_bypass.md"
+    },
+    {
+      "id": "26-websocket_authz_bypass",
+      "type": "websocket_authz_bypass",
+      "title": "WebSocket 权限绕过",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/26-websocket_authz_bypass.md"
+    },
+    {
+      "id": "27-cicd_secret_supply_chain",
+      "type": "cicd_secret_supply_chain",
+      "title": "CI/CD secret 泄露与供应链风险",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/27-cicd_secret_supply_chain.md"
+    },
+    {
+      "id": "28-debug_internal_admin_exposure",
+      "type": "debug_internal_admin_exposure",
+      "title": "Debug / dev mode / internal admin 暴露",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/28-debug_internal_admin_exposure.md"
+    },
+    {
+      "id": "29-state_machine_bypass",
+      "type": "state_machine_bypass",
+      "title": "多步骤状态机绕过",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/29-state_machine_bypass.md"
+    },
+    {
+      "id": "30-mass_assignment",
+      "type": "mass_assignment",
+      "title": "批量赋值 / mass assignment",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/30-mass_assignment.md"
+    },
+    {
+      "id": "31-http_parameter_pollution",
+      "type": "http_parameter_pollution",
+      "title": "参数污染 / HTTP parameter pollution",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/31-http_parameter_pollution.md"
+    },
+    {
+      "id": "32-ssrf_metadata_internal",
+      "type": "ssrf_metadata_internal",
+      "title": "SSRF 到 metadata / internal service 非破坏性验证链路",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/32-ssrf_metadata_internal.md"
+    },
+    {
+      "id": "33-import_export_data_authz",
+      "type": "import_export_data_authz",
+      "title": "文件导入导出导致的数据越权",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/33-import_export_data_authz.md"
+    },
+    {
+      "id": "34-report_search_filter_authz",
+      "type": "report_search_filter_authz",
+      "title": "报表、搜索、筛选、排序、分页参数越权",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/34-report_search_filter_authz.md"
+    },
+    {
+      "id": "35-soft_delete_history_draft_authz",
+      "type": "soft_delete_history_draft_authz",
+      "title": "软删除、历史版本、草稿、回收站对象越权",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/35-soft_delete_history_draft_authz.md"
+    },
+    {
+      "id": "36-org_workspace_switch_bypass",
+      "type": "org_workspace_switch_bypass",
+      "title": "组织、团队、项目、空间、租户切换绕过",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/36-org_workspace_switch_bypass.md"
+    },
+    {
+      "id": "37-invite_share_magic_reset_logic",
+      "type": "invite_share_magic_reset_logic",
+      "title": "邀请码、分享链接、magic/reset/verify token 逻辑漏洞",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/37-invite_share_magic_reset_logic.md"
+    },
+    {
+      "id": "38-pricing_order_coupon_balance_logic",
+      "type": "pricing_order_coupon_balance_logic",
+      "title": "价格、订单、优惠券、积分、余额、订阅状态业务漏洞",
+      "default_status": "needs_review",
+      "required_negative_controls": [
+        "role_or_tenant_or_boundary_negative_control",
+        "positive_and_negative_business_control"
+      ],
+      "template": "vulnerability_templates/38-pricing_order_coupon_balance_logic.md"
+    }
+  ]
+}

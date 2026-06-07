@@ -1,0 +1,37 @@
+{
+  "scope": "local_authorized_only",
+  "base_url": "http://127.0.0.1:PORT",
+  "contexts": [
+    {
+      "role": "admin",
+      "tenant": "t1",
+      "user": "admin_t1"
+    },
+    {
+      "role": "user",
+      "tenant": "t1",
+      "user": "user_t1"
+    },
+    {
+      "role": "user",
+      "tenant": "t2",
+      "user": "user_t2"
+    }
+  ],
+  "negative_controls": [
+    "cross_tenant_non_admin_must_403",
+    "admin_endpoint_non_admin_must_403"
+  ],
+  "non_destructive_methods": [
+    "GET",
+    "HEAD",
+    "OPTIONS"
+  ],
+  "evidence_required": [
+    "HAR",
+    "screenshot",
+    "storageState",
+    "response_matrix",
+    "evidence_manifest_v4_dynamic.json"
+  ]
+}

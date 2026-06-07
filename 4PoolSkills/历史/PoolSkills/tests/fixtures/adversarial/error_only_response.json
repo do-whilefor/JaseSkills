@@ -1,0 +1,10 @@
+{
+  "fixture_id": "error_only_response",
+  "description": "只有报错但无安全影响",
+  "input_summary": "报错不等于漏洞",
+  "expected_status": "rejected",
+  "evidence_manifest_minimal": {
+    "manifest_version": "audit-contract",
+    "candidates": []
+  }
+}

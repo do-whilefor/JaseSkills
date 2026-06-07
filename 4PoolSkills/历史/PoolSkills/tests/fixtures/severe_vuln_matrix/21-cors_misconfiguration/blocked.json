@@ -1,0 +1,52 @@
+{
+  "manifest_version": "4.0",
+  "scope": {
+    "mode": "local_authorized",
+    "project_root": "tests/fixtures/minimal_project",
+    "allowed_hosts": [
+      "localhost",
+      "127.0.0.1"
+    ],
+    "forbidden_actions": [
+      "destructive_state_change",
+      "dos",
+      "third_party_targeting"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "21-cors_misconfiguration-blocked",
+      "type": "cors_misconfiguration",
+      "severity": "unknown",
+      "status": "blocked",
+      "source": "manual",
+      "route": "/fixture",
+      "method": "GET",
+      "code_evidence": [],
+      "js_evidence": [],
+      "dynamic_evidence": [],
+      "negative_controls": [],
+      "dynamic_state": "STATIC_CANDIDATE",
+      "state_history": [],
+      "impact_proof": {},
+      "false_positive_exclusions": [
+        "fixture"
+      ],
+      "quality_gate": {
+        "score": 20,
+        "status": "needs_review",
+        "hard_failures": [
+          "fixture_only"
+        ]
+      },
+      "report_mapping": {
+        "template": "vulnerability_templates/21-cors_misconfiguration.md"
+      },
+      "non_destructive": {
+        "is_non_destructive": true,
+        "data_modified": false,
+        "boundary": "fixture only"
+      }
+    }
+  ]
+}

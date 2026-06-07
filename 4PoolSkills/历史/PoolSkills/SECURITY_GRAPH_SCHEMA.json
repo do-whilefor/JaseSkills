@@ -1,0 +1,39 @@
+{
+  "schema_version": "phase4-security-graph-v1",
+  "required_chain": "Route -> Handler -> Middleware -> AuthN -> AuthZ -> Parameter -> Model -> Sink -> Evidence",
+  "node_types": [
+    "file",
+    "module",
+    "class",
+    "function",
+    "route",
+    "handler",
+    "middleware",
+    "authn",
+    "authz",
+    "parameter",
+    "model",
+    "sink",
+    "actor",
+    "asset",
+    "trust_boundary",
+    "guard",
+    "bypass_candidate",
+    "evidence",
+    "report_section"
+  ],
+  "edge_types": [
+    "ROUTE_TO_HANDLER",
+    "USES_MIDDLEWARE",
+    "ENFORCES_AUTHN",
+    "ENFORCES_AUTHZ",
+    "READS_PARAMETER",
+    "TOUCHES_MODEL",
+    "FLOWS_TO_SINK",
+    "HAS_EVIDENCE",
+    "CROSSES_BOUNDARY",
+    "ACCESSES_ASSET",
+    "HAS_ACTOR_CONTEXT"
+  ],
+  "confirmation_rule": "Graph evidence alone cannot confirm vulnerabilities; dynamic evidence, negative controls, and hard quality gate are required."
+}

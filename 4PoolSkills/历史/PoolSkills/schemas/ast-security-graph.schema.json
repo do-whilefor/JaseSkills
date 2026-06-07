@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AST Security Graph",
+  "type": "object",
+  "required": [
+    "schema",
+    "project",
+    "status",
+    "nodes",
+    "edges",
+    "backend_results",
+    "required_checks"
+  ],
+  "properties": {
+    "schema": {
+      "const": "ast-security-graph"
+    },
+    "status": {
+      "enum": [
+        "promoted",
+        "needs_review",
+        "blocked"
+      ]
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "file",
+          "real_ast"
+        ]
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "type",
+          "real_ast"
+        ]
+      }
+    },
+    "backend_results": {
+      "type": "array"
+    },
+    "required_checks": {
+      "type": "object"
+    }
+  }
+}

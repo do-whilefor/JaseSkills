@@ -1,0 +1,16 @@
+id: 35-soft_delete_history_draft_authz
+title: 软删除、历史版本、草稿、回收站对象越权
+policy: local_authorized_non_destructive_only
+status: needs_review
+required_evidence:
+  - source_file_line
+  - route_handler_auth_graph
+  - positive_control
+  - negative_control
+  - har_or_request_response
+  - role_tenant_matrix
+blocked_if:
+  - target_not_local_authorized
+  - destructive_state_change_required
+  - no_negative_control_available
+  - no_runtime_evidence_available

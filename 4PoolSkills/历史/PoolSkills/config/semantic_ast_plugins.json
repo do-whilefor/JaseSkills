@@ -1,0 +1,90 @@
+{
+  "version": "phase4-topline-20260605",
+  "principle": "Use real parser integrations when available; never claim ready when missing. Regex fallback is degraded, not equivalent.",
+  "required_chain": "Route -> Handler -> Middleware -> AuthN -> AuthZ -> Parameter -> Model -> Sink -> Evidence",
+  "plugins": [
+    {
+      "id": "babel_js",
+      "language": "javascript",
+      "bridge": "ast_plugins/js/babel_route_bridge.js",
+      "requires": [
+        "node",
+        "@babel/parser",
+        "@babel/traverse"
+      ]
+    },
+    {
+      "id": "typescript_compiler",
+      "language": "typescript",
+      "bridge": "ast_plugins/js/typescript_route_bridge.js",
+      "requires": [
+        "node",
+        "typescript"
+      ]
+    },
+    {
+      "id": "tree_sitter",
+      "language": "multi",
+      "bridge": "ast_plugins/python/tree_sitter_bridge.py",
+      "requires": [
+        "python",
+        "tree_sitter",
+        "language grammar"
+      ]
+    },
+    {
+      "id": "python_ast_libcst",
+      "language": "python",
+      "bridge": "ast_plugins/python/python_ast_libcst_bridge.py",
+      "requires": [
+        "python",
+        "ast",
+        "libcst optional"
+      ]
+    },
+    {
+      "id": "javaparser",
+      "language": "java",
+      "bridge": "ast_plugins/java/javaparser_bridge.java",
+      "requires": [
+        "java",
+        "JavaParser jar"
+      ]
+    },
+    {
+      "id": "php_parser",
+      "language": "php",
+      "bridge": "ast_plugins/php/php_parser_bridge.php",
+      "requires": [
+        "php",
+        "nikic/php-parser"
+      ]
+    },
+    {
+      "id": "ruby_ripper",
+      "language": "ruby",
+      "bridge": "ast_plugins/ruby/ripper_bridge.rb",
+      "requires": [
+        "ruby",
+        "ripper"
+      ]
+    },
+    {
+      "id": "go_parser",
+      "language": "go",
+      "bridge": "ast_plugins/go/go_parser_bridge.go",
+      "requires": [
+        "go"
+      ]
+    },
+    {
+      "id": "rust_syn",
+      "language": "rust",
+      "bridge": "ast_plugins/rust/rust_syn_bridge",
+      "requires": [
+        "cargo",
+        "syn crate"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+version: role-tenant-matrix-v1
+roles:
+  - anonymous
+  - user
+  - manager
+  - admin
+tenants:
+  - tenant_a
+  - tenant_b
+policy:
+  authz_findings_require_cross_role_negative_test: true
+  tenant_findings_require_cross_tenant_negative_test: true

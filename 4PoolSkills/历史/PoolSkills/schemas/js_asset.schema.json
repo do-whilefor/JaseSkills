@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JS asset extraction v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_root",
+    "assets",
+    "endpoints",
+    "graphql_operations",
+    "storage_uses",
+    "post_messages",
+    "secret_like_tokens"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "js-asset-v1"
+    },
+    "source_root": {
+      "type": "string"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "endpoints": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "graphql_operations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "storage_uses": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "post_messages": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "secret_like_tokens": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "dom_sinks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "sourcemaps": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "service_workers": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

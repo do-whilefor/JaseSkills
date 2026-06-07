@@ -1,0 +1,15 @@
+{
+  "authorized_hosts": [
+    "localhost",
+    "127.0.0.1",
+    "::1"
+  ],
+  "allowed_schemes": [
+    "http",
+    "https",
+    "file"
+  ],
+  "default_dry_run": true,
+  "block_destructive_methods": true,
+  "notes": "Add only local authorized lab hosts here. Third-party targets are out of scope."
+}

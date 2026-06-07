@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "evidence",
+    "policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "evidence-manifest-v1"
+    },
+    "policy": {
+      "type": "object"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "type",
+          "source_tool",
+          "timestamp",
+          "scope_status",
+          "redaction_status",
+          "raw_path",
+          "sanitized_path",
+          "related_finding",
+          "request_ref",
+          "response_ref",
+          "screenshot_ref",
+          "trace_ref",
+          "har_ref",
+          "console_ref",
+          "dom_ref"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "source_file": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_tool": {
+            "type": "string"
+          },
+          "command": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "hash": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "scope_status": {
+            "type": "string"
+          },
+          "redaction_status": {
+            "type": "string"
+          },
+          "raw_path": {
+            "type": "string"
+          },
+          "sanitized_path": {
+            "type": "string"
+          },
+          "related_finding": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "related_route": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "related_role": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "related_tenant": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "request_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "response_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "screenshot_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "trace_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "har_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "console_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "dom_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+6: socket.emit("admin:update", { userId: 1 });
+7: import("./lazy-admin.js");
+8: localStorage.setItem("token", "abc");
+9: //# sourceMappingURL=app.js.map

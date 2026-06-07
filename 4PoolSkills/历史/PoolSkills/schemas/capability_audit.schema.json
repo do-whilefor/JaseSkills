@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Capability audit v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "skills",
+    "summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "capability-audit-v1"
+    },
+    "skills": {
+      "type": "array"
+    },
+    "summary": {
+      "type": "object"
+    }
+  }
+}

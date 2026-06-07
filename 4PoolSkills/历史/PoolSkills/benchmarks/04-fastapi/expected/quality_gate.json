@@ -1,0 +1,9 @@
+{
+  "confirmed_allowed": false,
+  "required_missing": [
+    "dynamic_evidence",
+    "negative_control",
+    "reproduction_count>=3"
+  ],
+  "expected_status": "rejected_or_validation_blocked"
+}

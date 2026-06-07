@@ -1,0 +1,38 @@
+---
+name: server-side
+description: Server-side vulnerability testing - SSRF, HTTP Request Smuggling, Path Traversal, File Upload, Insecure Deserialization, and Host Header injection.
+---
+
+# Server-Side
+
+Test for server-side vulnerabilities that allow unauthorized access, RCE, or data exfiltration.
+
+## Techniques
+
+| Type | Key Vectors |
+|------|-------------|
+| **SSRF** | Internal service access, cloud metadata, protocol smuggling |
+| **HTTP Smuggling** | CL.TE, TE.CL, TE.TE, CL.0, H2.CL, h2c, multi-layer proxy chains, connection pooling desync |
+| **Path Traversal** | Directory traversal, null bytes, encoding bypass |
+| **File Upload** | Extension bypass, content-type manipulation, polyglot files |
+| **Deserialization** | Java, PHP, Python, .NET gadget chains |
+| **Host Header** | Password reset poisoning, cache poisoning, routing-based SSRF |
+| **CUPS / cups-browsed** | CVE-2024-47076/47175/47176/47177 — UDP browse → IPP injection → PPD injection → foomatic-rip RCE (see `skills/infrastructure/reference/scenarios/network-recon/cups-browsed-rce.md`) |
+
+## Workflow
+
+1. Identify server-side processing points
+2. Test for vulnerability class indicators
+3. Bypass protections (WAF, allowlists, encoding filters)
+4. Demonstrate impact (file read, RCE, internal access)
+5. Capture evidence with PoC
+
+## Reference
+
+- `reference/scenarios/ssrf/*.md` - SSRF techniques and labs
+- `reference/http-request-smuggling*.md` - Smuggling techniques
+- `reference/scenarios/path-traversal/*.md` - Path traversal bypass methods
+- `reference/file-upload*.md` - File upload exploitation
+- `reference/insecure-deserialization*.md` - Deserialization attacks
+- `reference/http-host-header*.md` - Host header injection
+- `skills/infrastructure/reference/scenarios/network-recon/cups-browsed-rce.md` - CUPS RCE chain (CVE-2024-47076/175/176/177); ipptool false positives vs libcups runtime parser; ippserver Python lib version-1.1 hardcode bug

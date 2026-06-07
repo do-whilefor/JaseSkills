@@ -1,0 +1,16 @@
+{
+  "required_metrics": [
+    "candidate_count",
+    "rejected_count",
+    "confirmed_count",
+    "needs_human_review_count",
+    "validation_blocked_count",
+    "false_positive_rate",
+    "false_negative_rate",
+    "average_evidence_completeness_by_vulnerability_type",
+    "skill_trigger_accuracy",
+    "extractor_hit_rate",
+    "framework_coverage"
+  ],
+  "unknown_policy": "If ground truth is missing, emit unknown rather than estimated."
+}

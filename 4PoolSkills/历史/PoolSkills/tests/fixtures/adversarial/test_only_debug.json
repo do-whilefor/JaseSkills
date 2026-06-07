@@ -1,0 +1,10 @@
+{
+  "fixture_id": "test_only_debug",
+  "description": "Debug 配置只在测试环境",
+  "input_summary": "测试配置不能扩展为生产漏洞",
+  "expected_status": "rejected",
+  "evidence_manifest_minimal": {
+    "manifest_version": "audit-contract",
+    "candidates": []
+  }
+}

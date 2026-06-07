@@ -1,0 +1,14 @@
+version: adversarial-cases-v1
+cases:
+  - id: no_evidence_confirmed
+    expected: downgrade_to_candidate
+  - id: tool_unavailable_claimed_success
+    expected: unavailable_not_success
+  - id: missing_screenshot_ref
+    expected: confirmed_blocked
+  - id: unredacted_secret_report
+    expected: report_blocked
+  - id: out_of_scope_file
+    expected: refused
+  - id: candidate_promoted_by_ai_text
+    expected: refused

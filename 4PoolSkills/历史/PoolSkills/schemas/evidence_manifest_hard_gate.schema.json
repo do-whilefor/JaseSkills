@@ -1,0 +1,372 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "local://authorized-security-audit/evidence_manifest.audit.schema.json",
+  "title": "Evidence Manifest Audit",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "generated_at",
+    "scope",
+    "candidates"
+  ],
+  "properties": {
+    "manifest_version": {
+      "const": "audit-contract"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "authorization_boundary",
+        "project_root",
+        "out_of_scope"
+      ],
+      "properties": {
+        "authorization_boundary": {
+          "type": "string"
+        },
+        "project_root": {
+          "type": "string"
+        },
+        "out_of_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "tool_health": {
+      "type": "object"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    },
+    "security_graph_ref": {
+      "type": "string"
+    },
+    "quality_gate_result_ref": {
+      "type": "string"
+    },
+    "dashboard_data_ref": {
+      "type": "string"
+    },
+    "target_scope": {
+      "type": "string"
+    },
+    "destructive_action_or_dos": {
+      "type": "boolean"
+    },
+    "state_transition_history": {
+      "type": "array"
+    },
+    "chain_evidence_nodes": {
+      "type": "array"
+    },
+    "hard_gate": {
+      "type": "object"
+    },
+    "tool_alert_only": {
+      "type": "boolean"
+    },
+    "error_only": {
+      "type": "boolean"
+    }
+  },
+  "$defs": {
+    "state": {
+      "enum": [
+        "discovered",
+        "mapped",
+        "triaged",
+        "validation_planned",
+        "validation_blocked",
+        "reproduced",
+        "negative_control_passed",
+        "quality_gate_passed",
+        "confirmed",
+        "rejected",
+        "needs_human_review"
+      ]
+    },
+    "candidate": {
+      "type": "object",
+      "required": [
+        "candidate_id",
+        "vulnerability_type",
+        "state",
+        "state_history",
+        "source_file",
+        "source_line",
+        "code_evidence",
+        "non_destructive_boundary",
+        "false_positive_notes"
+      ],
+      "properties": {
+        "candidate_id": {
+          "type": "string"
+        },
+        "vulnerability_type": {
+          "type": "string"
+        },
+        "research_unit": {
+          "type": "string"
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "state_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "from",
+              "to",
+              "reason",
+              "timestamp"
+            ],
+            "properties": {
+              "from": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "to": {
+                "$ref": "#/$defs/state"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "source_file": {
+          "type": "string"
+        },
+        "source_line": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "route": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parameter": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "auth_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tenant_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "role_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "asset": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trust_boundary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "guard": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "request_summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "response_summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "screenshot_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "log_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "har_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "code_evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "file",
+              "line",
+              "summary"
+            ],
+            "properties": {
+              "file": {
+                "type": "string"
+              },
+              "line": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "summary": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "dynamic_evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "request_ref": {
+                "type": "string"
+              },
+              "response_ref": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "non_destructive": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "negative_control": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "negative_control_result": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reproduction_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "impact": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "risk": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "quality_gate_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "quality_gate_result": {
+          "enum": [
+            "pass",
+            "fail",
+            "blocked",
+            "not_run",
+            null
+          ]
+        },
+        "report_section": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fix_guidance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "false_positive_notes": {
+          "type": "string"
+        },
+        "non_destructive_boundary": {
+          "type": "string"
+        },
+        "blocked_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "final_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence manifest v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "scope",
+    "findings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "evidence-manifest-v1"
+    },
+    "scope": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

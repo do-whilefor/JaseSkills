@@ -1,0 +1,99 @@
+{
+  "candidate_id": "CAND-CHAIN-MISSING",
+  "vulnerability_type": "IDOR / BOLA",
+  "state": "confirmed",
+  "target_scope": "local_authorized",
+  "destructive_action_or_dos": false,
+  "source_file": "src/routes/projects.ts",
+  "source_line": 42,
+  "route": "/api/projects/{project_id}",
+  "method": "GET",
+  "parameter": "project_id",
+  "auth_context": {
+    "tested": [
+      "normal_user_A",
+      "normal_user_B",
+      "admin"
+    ]
+  },
+  "tenant_context": {
+    "same_tenant": "tenant-a",
+    "cross_tenant": "tenant-b"
+  },
+  "request_summary": "local test request only",
+  "response_summary": "fixture response only",
+  "code_evidence": [
+    {
+      "file": "src/routes/projects.ts",
+      "line": 42
+    }
+  ],
+  "dynamic_evidence": [
+    {
+      "run": 1
+    },
+    {
+      "run": 2
+    },
+    {
+      "run": 3
+    }
+  ],
+  "negative_control": {
+    "status": "passed"
+  },
+  "reproduction_count": 3,
+  "impact": "Unauthorized read of test fixture object.",
+  "risk": "high",
+  "quality_gate_score": 91,
+  "tool_alert_only": false,
+  "error_only": false,
+  "state_transition_history": [
+    "discovered",
+    "mapped",
+    "triaged",
+    "validation_planned",
+    "reproduced",
+    "negative_control_passed",
+    "quality_gate_passed",
+    "confirmed"
+  ],
+  "vulnerability_chain": "01-sourcemap-hidden-api-idor",
+  "chain_evidence_nodes": [
+    {
+      "node_id": "js_asset_or_sourcemap_discovered",
+      "status": "present",
+      "manifest_ref": "evidence/js_asset_or_sourcemap_discovered.json"
+    },
+    {
+      "node_id": "hidden_route_extracted",
+      "status": "present",
+      "manifest_ref": "evidence/hidden_route_extracted.json"
+    },
+    {
+      "node_id": "route_mapped_to_handler",
+      "status": "present",
+      "manifest_ref": "evidence/route_mapped_to_handler.json"
+    },
+    {
+      "node_id": "object_identifier_parameter_found",
+      "status": "present",
+      "manifest_ref": "evidence/object_identifier_parameter_found.json"
+    },
+    {
+      "node_id": "authz_guard_absent_or_incomplete",
+      "status": "present",
+      "manifest_ref": "evidence/authz_guard_absent_or_incomplete.json"
+    },
+    {
+      "node_id": "same_tenant_negative_control",
+      "status": "present",
+      "manifest_ref": "evidence/same_tenant_negative_control.json"
+    },
+    {
+      "node_id": "cross_actor_non_destructive_reproduction",
+      "status": "present",
+      "manifest_ref": "evidence/cross_actor_non_destructive_reproduction.json"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+version: role-tenant-matrix-v2
+roles: [user, manager, admin]
+tenants: [tenant_a, tenant_b]
+accounts:
+  user:
+    username: user@example.local
+    password: change-me
+  manager:
+    username: manager@example.local
+    password: change-me
+  admin:
+    username: admin@example.local
+    password: change-me
+login:
+  url: /login
+  timeout_ms: 20000
+  steps:
+    - action: fill
+      selector: "input[name=email]"
+      value: "$account.username"
+    - action: fill
+      selector: "input[name=password]"
+      value: "$account.password"
+    - action: click
+      selector: "button[type=submit]"
+    - action: wait_for_selector
+      selector: "body"
+tenant_switch:
+  steps:
+    - action: goto
+      url: "/switch-tenant/$tenant"
+policy:
+  authz_findings_require_cross_role_negative_test: true
+  tenant_findings_require_cross_tenant_negative_test: true

@@ -1,0 +1,5 @@
+7:     return {"query": query, "tenantId": tenantId}
+8: 
+9: @app.post("/api/admin/update")
+10: def update_admin(request: Request):
+11:     body = request.__dict__  # role/isAdmin mass assignment signal

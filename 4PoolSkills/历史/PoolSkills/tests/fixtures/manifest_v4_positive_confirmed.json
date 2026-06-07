@@ -1,0 +1,138 @@
+{
+  "manifest_version": "4.0",
+  "generated_at": "T00:00:00Z",
+  "scope": {
+    "mode": "local_authorized",
+    "project_root": "tests/fixtures",
+    "allowed_hosts": [
+      "127.0.0.1",
+      "localhost"
+    ],
+    "forbidden_actions": [
+      "destructive_state_change",
+      "dos",
+      "third_party_targeting"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "cand-positive-local",
+      "type": "idor_bola",
+      "severity": "high",
+      "status": "confirmed",
+      "source": "manual",
+      "route": "/api/projects/{id}",
+      "method": "GET",
+      "parameter": "id",
+      "auth_context": {
+        "role": "user"
+      },
+      "tenant_context": {
+        "tenant": "fixture"
+      },
+      "role_matrix": [
+        {
+          "role": "owner",
+          "result": "allowed"
+        },
+        {
+          "role": "other_user",
+          "result": "denied_expected_but_fixture_demonstrates_issue"
+        }
+      ],
+      "tenant_matrix": [],
+      "code_evidence": [
+        {
+          "id": "code-1",
+          "source": "unit_fixture",
+          "file": "fixtures/app.js",
+          "line": 10,
+          "summary": "Route reads object id and reaches model without owner filter in local fixture"
+        }
+      ],
+      "js_evidence": [],
+      "dynamic_evidence": [
+        {
+          "id": "dyn-1",
+          "source": "local_har",
+          "route": "/api/projects/2",
+          "method": "GET",
+          "request": {
+            "role": "other_user"
+          },
+          "response": {
+            "status": 200
+          },
+          "summary": "Local fixture response shows cross-object access"
+        }
+      ],
+      "negative_controls": [
+        {
+          "id": "neg-1",
+          "control": "same endpoint with unrelated denied object",
+          "status": "passed"
+        }
+      ],
+      "state_history": [
+        {
+          "from": null,
+          "to": "mapped",
+          "reason": "route mapped",
+          "timestamp": "T00:00:00Z"
+        },
+        {
+          "from": "mapped",
+          "to": "triaged",
+          "reason": "candidate triaged",
+          "timestamp": "T00:00:01Z"
+        },
+        {
+          "from": "triaged",
+          "to": "validation_planned",
+          "reason": "non-destructive read plan",
+          "timestamp": "T00:00:02Z"
+        },
+        {
+          "from": "validation_planned",
+          "to": "reproduced",
+          "reason": "local fixture reproduced",
+          "timestamp": "T00:00:03Z"
+        },
+        {
+          "from": "reproduced",
+          "to": "negative_control_passed",
+          "reason": "negative control compared",
+          "timestamp": "T00:00:04Z"
+        },
+        {
+          "from": "negative_control_passed",
+          "to": "quality_gate_passed",
+          "reason": "hard gate passed",
+          "timestamp": "T00:00:05Z"
+        }
+      ],
+      "impact_proof": {
+        "summary": "cross-object read in local fixture"
+      },
+      "false_positive_exclusions": [
+        "not a public object",
+        "not same owner",
+        "not tool alert only"
+      ],
+      "quality_gate": {
+        "score": 90,
+        "status": "pass",
+        "hard_failures": []
+      },
+      "report_mapping": {
+        "section": "authorization findings",
+        "template": "vulnerability_templates/03-idor_bola.md"
+      },
+      "non_destructive": {
+        "is_non_destructive": true,
+        "data_modified": false,
+        "boundary": "local fixture read-only"
+      }
+    }
+  ]
+}

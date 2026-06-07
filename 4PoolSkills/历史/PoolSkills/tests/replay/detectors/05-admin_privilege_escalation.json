@@ -1,0 +1,16 @@
+{
+  "detector_id": "05-admin_privilege_escalation",
+  "vulnerability_type": "admin_privilege_escalation",
+  "expected": {
+    "candidate_status": "needs_review",
+    "must_not_confirm": true,
+    "required_failures": [
+      "missing_dynamic_evidence",
+      "missing_negative_controls"
+    ]
+  },
+  "input_sample": {
+    "scope": "local_authorized",
+    "note": "non-weaponized static replay fixture"
+  }
+}

@@ -1,0 +1,16 @@
+id: 32-ssrf_metadata_internal
+title: SSRF 到 metadata / internal service 非破坏性验证链路
+policy: local_authorized_non_destructive_only
+status: needs_review
+required_evidence:
+  - source_file_line
+  - route_handler_auth_graph
+  - positive_control
+  - negative_control
+  - har_or_request_response
+  - role_tenant_matrix
+blocked_if:
+  - target_not_local_authorized
+  - destructive_state_change_required
+  - no_negative_control_available
+  - no_runtime_evidence_available

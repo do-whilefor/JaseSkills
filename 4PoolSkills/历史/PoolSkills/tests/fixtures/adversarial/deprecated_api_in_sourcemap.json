@@ -1,0 +1,10 @@
+{
+  "fixture_id": "deprecated_api_in_sourcemap",
+  "description": "source map 有接口但服务端已废弃",
+  "input_summary": "废弃接口不可达不能确认",
+  "expected_status": "rejected",
+  "evidence_manifest_minimal": {
+    "manifest_version": "audit-contract",
+    "candidates": []
+  }
+}

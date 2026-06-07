@@ -1,0 +1,13 @@
+{
+  "name": "authorized-security-audit-system",
+  "private": true,
+  "description": "Local authorized security audit skill runtime dependencies for AST bridges.",
+  "scripts": {
+    "verify:js-ast": "node ast_plugins/js/typescript_security_graph_bridge.js tests/fixtures/ast_project/app.js"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.26.0",
+    "@babel/traverse": "^7.26.0",
+    "typescript": "^5.7.0"
+  }
+}

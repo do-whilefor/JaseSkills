@@ -1,0 +1,8 @@
+{
+  "schema_version": "report-mapping-v1",
+  "candidate": "reports/templates/vulnerability_candidate.md",
+  "confirmed": "reports/templates/vulnerability_confirmed.md",
+  "inconclusive": "reports/templates/vulnerability_inconclusive.md",
+  "quality_gate": "tools/quality_gate.py",
+  "evidence_schema": "schemas/evidence_manifest.schema.json"
+}

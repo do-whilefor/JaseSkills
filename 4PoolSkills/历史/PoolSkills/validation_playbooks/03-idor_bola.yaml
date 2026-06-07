@@ -1,0 +1,47 @@
+id: 03-idor_bola
+title: IDOR / BOLA / 越权访问
+scope: local_authorized_non_destructive_only
+target_interface: from_attack_surface_mapping
+auth_contexts:
+  - unauthenticated
+  - normal_user
+  - same_tenant_user
+  - cross_tenant_user
+  - admin
+role_context: must_be_recorded_or_marked_not_applicable
+tenant_context: must_be_recorded_or_marked_not_applicable
+preconditions:
+  - local_test_environment_ready
+  - test_accounts_available_or_blocked
+  - test_data_available_or_blocked
+request_construction:
+  strategy: minimal_change_from_normal_business_request
+  destructive_actions: forbidden
+samples:
+  normal_sample: authorized_actor_accesses_own_test_asset
+  abnormal_sample: boundary_variation_without_destruction
+  negative_control: known_safe_or_denied_flow
+success_criteria:
+  - code_evidence_present
+  - request_response_summary_present
+  - negative_control_passed
+  - reproduction_count_at_least_3_or_justified
+  - quality_gate_score_at_least_85
+failure_criteria:
+  - only_error_without_impact
+  - tool_warning_only
+  - frontend_exposure_only
+  - insufficient_context
+not_executable_if:
+  - out_of_scope
+  - unsafe_to_execute
+  - tool_missing
+  - environment_missing
+evidence_paths:
+  manifest: outputs/evidence_manifest.json
+  dynamic: outputs/dynamic_evidence/03-idor_bola/
+  har: outputs/har/03-idor_bola/
+  screenshots: outputs/screenshots/03-idor_bola/
+rollback:
+  required_for_any_test_write: true
+  deletion_or_data_damage: forbidden

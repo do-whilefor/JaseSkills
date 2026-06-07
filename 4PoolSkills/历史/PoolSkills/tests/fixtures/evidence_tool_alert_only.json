@@ -1,0 +1,57 @@
+{
+  "candidate_id": "C-TOOL-ONLY-001",
+  "vulnerability_type": "IDOR / BOLA",
+  "scope": {
+    "authorized": true,
+    "target_type": "local_project",
+    "project_path": "examples/sample_project"
+  },
+  "source_file": "examples/sample_project/src/app.js",
+  "source_line": 6,
+  "sink_file": "examples/sample_project/src/app.js",
+  "sink_line": 8,
+  "route": "/api/orders/:id",
+  "method": "GET",
+  "parameter": "id",
+  "auth_context": {
+    "actor": "user_a",
+    "role": "ordinary_user",
+    "login_state": "authenticated"
+  },
+  "tenant_context": {
+    "tenant_id": "tenant_a",
+    "comparison": "cross_tenant"
+  },
+  "request_summary": "GET /api/orders/order_b as user_a",
+  "response_summary": "200 returned test order_b summary",
+  "code_evidence": [],
+  "dynamic_evidence": [],
+  "negative_control": {
+    "performed": false,
+    "description": "not run",
+    "expected_result": "",
+    "observed_result": ""
+  },
+  "reproduction_count": 0,
+  "reproduction_attempts": [],
+  "impact": "scanner alert only without demonstrated impact",
+  "risk": "high",
+  "false_positive_notes": "not admin-only; negative control passed",
+  "quality_gate_score": 0,
+  "final_status": "candidate",
+  "non_destructive": {
+    "is_non_destructive": true,
+    "data_modified": false,
+    "rollback_required": false
+  },
+  "tool_context": {
+    "tool_alert_only": true,
+    "tools_used": [
+      "scanner"
+    ],
+    "unavailable_tools": []
+  },
+  "report_refs": [
+    "report_templates/03-idor_bola.report.md"
+  ]
+}

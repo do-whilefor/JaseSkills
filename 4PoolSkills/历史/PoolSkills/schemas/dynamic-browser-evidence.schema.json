@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dynamic Browser Role Tenant Matrix Evidence",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "generated_by",
+    "status",
+    "scope",
+    "dynamic_evidence",
+    "role_tenant_matrix",
+    "negative_controls",
+    "quality_gate"
+  ],
+  "properties": {
+    "manifest_version": {
+      "type": "string"
+    },
+    "generated_by": {
+      "const": "browser_role_tenant_matrix_replay.py"
+    },
+    "status": {
+      "enum": [
+        "reproduced",
+        "needs_review",
+        "blocked"
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "mode",
+        "non_destructive",
+        "methods_used"
+      ]
+    },
+    "dynamic_evidence": {
+      "type": "array"
+    },
+    "role_tenant_matrix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "tenant",
+          "user"
+        ]
+      }
+    },
+    "negative_controls": {
+      "type": "array"
+    },
+    "quality_gate": {
+      "type": "object",
+      "required": [
+        "status",
+        "hard_failures"
+      ]
+    }
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "01-authorized-maximum-orchestrator": {
+    "purpose": "作为本机授权安全审计系统总入口，确认边界、分发任务、串联 evidence manifest 与 quality gate。",
+    "must": [
+      "用户请求完整授权项目审计、漏洞验证、报告生成、跨 skill 编排时必须触发",
+      "任何涉及高危漏洞确认前必须经过本入口的状态机约束"
+    ],
+    "forbid": [
+      "非授权第三方目标、MITM、DoS、破坏性写入、真实第三方数据访问",
+      "用户只询问安装/解释且不要求执行审计时不得强制触发"
+    ],
+    "inputs": [
+      "授权范围说明",
+      "项目路径",
+      "审计目标",
+      "允许工具清单",
+      "现有 evidence manifest"
+    ],
+    "outputs": [
+      "outputs/run_context.json",
+      "outputs/orchestration_plan.json",
+      "outputs/candidate_registry.json",
+      "outputs/final_status.json"
+    ],
+    "modules": [
+      "config/core_skill_routing.json",
+      "config/candidate_state_machine.json",
+      "scripts/evidence_manifest_validate.py",
+      "scripts/quality_gate_score.py"
+    ],
+    "regression": [
+      "tests/adversarial_regression_cases.json: empty_directory_task",
+      "tests/adversarial_regression_cases.json: prompt_injection_in_readme"
+    ]
+  },
+  "02-project-intelligence": {
+    "purpose": "识别项目结构、语言、框架、配置、依赖、入口、运行方式。",
+    "must": [
+      "用户给出项目目录并要求结构分析、框架识别、配置/依赖识别时必须触发"
+    ],
+    "forbid": [
+      "没有本机路径、没有授权项目、只需单个报告润色时禁止触发"
+    ],
+    "inputs": [
+      "项目根目录",
+      "可选环境说明",
+      "package/lock/config/CI/Docker 文件"
+    ],
+    "outputs": [
+      "outputs/project_inventory.json",
+      "outputs/framework_fingerprint.json",
+      "outputs/dependency_inventory.json"
+    ],
+    "modules": [
+      "scripts/project_inventory.py",
+      "config/toolchain_requirements.json"
+    ],
+    "regression": [
+      "tests/adversarial_regression_cases.json: empty_directory_task",
+      "tests/regression_cases.json"
+    ]
+  },
+  "03-code-knowledge-graph": {
+    "purpose": "构建代码结构图与安全语义图，输出 Route→Handler→Guard→Sink→Evidence 链路。",
+    "must": [
+      "用户要求代码知识图谱、调用图、AST、source/sink、权限边界、危险函数索引时必须触发"
+    ],
+    "forbid": [
+      "工具缺失且无法读取源码时不得伪造 AST 结果；只能输出 degraded 状态"
+    ],
+    "inputs": [
+      "项目 inventory",
+      "源码文件",
+      "AST 工具健康度",
+      "框架 fingerprint"
+    ],
+    "outputs": [
+      "outputs/code_graph.json",
+      "outputs/security_graph.json",
+      "outputs/dangerous_sinks.json"
+    ],
+    "modules": [
+      "scripts/knowledge_graph_builder.py",
+      "scripts/route_extractor.py",
+      "schemas/SECURITY_GRAPH_SCHEMA.json"
+    ],
+    "regression": [
+      "tests/adversarial_regression_cases.json: command_exec_uncontrolled_false_positive",
+      "tests/adversarial_regression_cases.json: sql_raw_query_parameterized"
+    ]
+  },
+  "04-attack-surface-mapping": {
+    "purpose": "汇总 HTTP/API/GraphQL/WebSocket/RPC/CLI/文件处理/上传下载/队列任务暴露面。",
+    "must": [
+      "用户要求暴露面、接口表、路由清单、API 攻击面、租户/管理员边界映射时必须触发"
+    ],
+    "forbid": [
+      "不得把前端发现的接口直接当作后端存在；必须标记 source 和验证状态"
+    ],
+    "inputs": [
+      "project_inventory.json",
+      "code_graph.json",
+      "js_asset_findings.json",
+      "OpenAPI/GraphQL schema"
+    ],
+    "outputs": [
+      "outputs/attack_surface.json",
+      "outputs/route_parameter_map.json",
+      "outputs/boundary_map.json"
+    ],
+    "modules": [
+      "scripts/route_extractor.py",
+      "scripts/js_asset_extractor.py"
+    ],
+    "regression": [
+      "tests/adversarial_regression_cases.json: source_map_deprecated_api",
+      "tests/adversarial_regression_cases.json: frontend_interface_backend_auth"
+    ]
+  },
+  "05-js-audit-runtime": {
+    "purpose": "收集、解析、回流 JS/SourceMap/API/签名函数/前端权限和运行时请求。",
+    "must": [
+      "用户要求 JS 审计、前端资源、source map、bundle、隐藏接口、签名函数时必须触发"
+    ],
+    "forbid": [
+      "不得把 JS 暴露信息直接确认为漏洞；必须回流到 attack surface 并经动态验证"
+    ],
+    "inputs": [
+      "HTML 页面",
+      "静态资源目录",
+      "URL 清单",
+      "source map",
+      "bundle 文件"
+    ],
+    "outputs": [
+      "outputs/js_asset_findings.json",
+      "outputs/js_discovered_endpoints.json",
+      "outputs/js_security_observations.json"
+    ],
+    "modules": [
+      "scripts/js_asset_extractor.py",
+      "rules/JS_ASSET_AUDIT_RULES.md"
+    ],
+    "regression": [
+      "tests/adversarial_regression_cases.json: source_map_deprecated_api",
+      "tests/adversarial_regression_cases.json: frontend_interface_backend_auth"
+    ]
+  },
+  "06-dynamic-browser-burp-mcp": {
+    "purpose": "以 Playwright/浏览器/Burp/MCP/HAR 采集非破坏性动态证据。",
+    "must": [
+      "用户要求动态验证、浏览器业务流、Burp 联动、HAR 采集、截图证据时必须触发"
+    ],
+    "forbid": [
+      "工具缺失时不得伪造请求/响应；禁止 DoS、删除、破坏性状态变更、第三方目标"
+    ],
+    "inputs": [
+      "validation_plan.json",
+      "auth_contexts.json",
+      "测试账号",
+      "本机服务地址",
+      "工具健康度"
+    ],
+    "outputs": [
+      "outputs/dynamic_evidence/*.json",
+      "outputs/har/*.har",
+      "outputs/screenshots/*",
+      "outputs/logs/*"
+    ],
+    "modules": [
+      "scripts/tool_health_score.py",
+      "scripts/dynamic_validation_plan.py",
+      "playbooks/DYNAMIC_VALIDATION_CLOSED_LOOP.md"
+    ],
+    "regression": [
+      "tests/adversarial_regression_cases.json: only_error_no_impact",
+      "tests/adversarial_regression_cases.json: three_reproduction_failed"
+    ]
+  },
+  "07-vulnerability-hunting-engine": {
+    "purpose": "按 23 类研究单元生成候选、链路风险、验证计划和误报过滤。",
+    "must": [
+      "用户要求高危漏洞挖掘、某类漏洞审计、漏洞链路、候选排序时必须触发"
+    ],
+    "forbid": [
+      "禁止 discovered 直接 confirmed；禁止只有工具告警、没有代码和动态证据的确认"
+    ],
+    "inputs": [
+      "security_graph.json",
+      "attack_surface.json",
+      "vulnerability_research_units/*",
+      "tool_health_score.json"
+    ],
+    "outputs": [
+      "outputs/candidates/*.json",
+      "outputs/validation_plans/*.json",
+      "outputs/chain_candidates.json"
+    ],
+    "modules": [
+      "scripts/dynamic_validation_plan.py",
+      "config/candidate_state_machine.json",
+      "vulnerability_research_units/*"
+    ],
+    "regression": [
+      "tests/adversarial_regression_cases.json: tool_warning_false_positive",
+      "tests/adversarial_regression_cases.json: exaggerated_vulnerability_description"
+    ]
+  },
+  "08-evidence-quality-gate": {
+    "purpose": "校验证据 schema、状态机、三次复现、负样本、评分和报告准入。",
+    "must": [
+      "任何候选进入 reproduced、quality_gate_passed、confirmed 或报告前必须触发"
+    ],
+    "forbid": [
+      "缺少 manifest、缺负样本、缺认证上下文、缺影响证明时不得通过"
+    ],
+    "inputs": [
+      "EVIDENCE_MANIFEST_SCHEMA.json",
+      "outputs/evidence_manifest.json",
+      "config/candidate_state_machine.json"
+    ],
+    "outputs": [
+      "outputs/quality_gate_result.json",
+      "outputs/rejected_candidates.json",
+      "outputs/needs_human_review.json"
+    ],
+    "modules": [
+      "scripts/evidence_manifest_validate.py",
+      "scripts/quality_gate_score.py",
+      "scripts/state_machine_validate.py"
+    ],
+    "regression": [
+      "tests/fixtures/quality_gate_pass.json",
+      "tests/fixtures/quality_gate_fail_missing_negative.json"
+    ]
+  },
+  "09-reporting-disclosure": {
+    "purpose": "仅从 evidence manifest 生成证据驱动报告、观察项和修复定位。",
+    "must": [
+      "用户要求漏洞报告、复现步骤、修复建议、披露材料时必须触发"
+    ],
+    "forbid": [
+      "禁止凭记忆写 confirmed 漏洞；没有 manifest 的内容只能作为 observation"
+    ],
+    "inputs": [
+      "outputs/evidence_manifest.json",
+      "outputs/quality_gate_result.json",
+      "report_templates/*"
+    ],
+    "outputs": [
+      "outputs/reports/*.md",
+      "outputs/report_index.json"
+    ],
+    "modules": [
+      "scripts/evidence_report_generator.py",
+      "REPORT_GENERATION_CONTRACT.md"
+    ],
+    "regression": [
+      "tests/adversarial_regression_cases.json: insufficient_evidence_report_claim"
+    ]
+  },
+  "10-regression-selftest-dashboard": {
+    "purpose": "运行自测、对抗回放、健康度评分、dashboard 生成和索引一致性检查。",
+    "must": [
+      "用户要求验收、自检、回归、dashboard、持续进化检查时必须触发"
+    ],
+    "forbid": [
+      "禁止将未执行测试写成通过；不可执行必须标记 blocked/tool_missing/environment_missing"
+    ],
+    "inputs": [
+      "tests/*.json",
+      "outputs/evidence_manifest.json",
+      "outputs/security_graph.json",
+      "outputs/quality_gate_result.json"
+    ],
+    "outputs": [
+      "outputs/regression_result.json",
+      "outputs/tool_health_score.json",
+      "dashboard/index.html"
+    ],
+    "modules": [
+      "scripts/adversarial_regression_runner.py",
+      "scripts/tool_health_score.py",
+      "scripts/dashboard_status_generator.py",
+      "scripts/acceptance_check.py"
+    ],
+    "regression": [
+      "tests/adversarial_regression_cases.json"
+    ]
+  }
+}

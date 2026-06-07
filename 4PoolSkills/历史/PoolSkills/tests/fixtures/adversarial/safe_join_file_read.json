@@ -1,0 +1,10 @@
+{
+  "fixture_id": "safe_join_file_read",
+  "description": "文件读取 filename 参数但安全 join",
+  "input_summary": "安全路径规范化不能误报",
+  "expected_status": "rejected",
+  "evidence_manifest_minimal": {
+    "manifest_version": "audit-contract",
+    "candidates": []
+  }
+}

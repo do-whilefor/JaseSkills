@@ -1,0 +1,339 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "local://authorized-security-audit/evidence_manifest.v4.schema.json",
+  "title": "Evidence Manifest v4 - Local Authorized Security Audit",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "generated_at",
+    "scope",
+    "candidates"
+  ],
+  "properties": {
+    "manifest_version": {
+      "const": "4.0"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "mode",
+        "project_root",
+        "allowed_hosts",
+        "forbidden_actions"
+      ],
+      "properties": {
+        "mode": {
+          "const": "local_authorized"
+        },
+        "project_root": {
+          "type": "string"
+        },
+        "allowed_hosts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbidden_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "out_of_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "security_graph_ref": {
+      "type": "string"
+    },
+    "asset_ledger_ref": {
+      "type": "string"
+    },
+    "quality_gate_result_ref": {
+      "type": "string"
+    },
+    "dashboard_data_ref": {
+      "type": "string"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    }
+  },
+  "$defs": {
+    "status": {
+      "enum": [
+        "discovered",
+        "mapped",
+        "triaged",
+        "validation_planned",
+        "validation_blocked",
+        "blocked",
+        "reproduced",
+        "negative_control_passed",
+        "quality_gate_passed",
+        "confirmed",
+        "promoted",
+        "rejected",
+        "needs_review"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "id",
+        "source",
+        "summary"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "line": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "route": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "request": {
+          "type": "object"
+        },
+        "response": {
+          "type": "object"
+        },
+        "screenshot_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "har_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "severity",
+        "status",
+        "source",
+        "code_evidence",
+        "dynamic_evidence",
+        "negative_controls",
+        "state_history",
+        "impact_proof",
+        "false_positive_exclusions",
+        "quality_gate",
+        "report_mapping",
+        "non_destructive"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "critical",
+            "high",
+            "medium",
+            "low",
+            "info",
+            "unknown"
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "source": {
+          "enum": [
+            "code",
+            "js",
+            "dynamic",
+            "kb",
+            "manual",
+            "detector",
+            "har"
+          ]
+        },
+        "route": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parameter": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "auth_context": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "tenant_context": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "role_matrix": {
+          "type": "array"
+        },
+        "tenant_matrix": {
+          "type": "array"
+        },
+        "code_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "js_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "dynamic_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "negative_controls": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "state_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "from",
+              "to",
+              "reason",
+              "timestamp"
+            ]
+          }
+        },
+        "impact_proof": {
+          "type": "object"
+        },
+        "false_positive_exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "quality_gate": {
+          "type": "object",
+          "required": [
+            "score",
+            "status",
+            "hard_failures"
+          ],
+          "properties": {
+            "score": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "status": {
+              "enum": [
+                "pass",
+                "fail",
+                "needs_review",
+                "blocked"
+              ]
+            },
+            "hard_failures": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "report_mapping": {
+          "type": "object"
+        },
+        "non_destructive": {
+          "type": "object",
+          "required": [
+            "is_non_destructive",
+            "data_modified",
+            "boundary"
+          ],
+          "properties": {
+            "is_non_destructive": {
+              "type": "boolean"
+            },
+            "data_modified": {
+              "type": "boolean"
+            },
+            "boundary": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

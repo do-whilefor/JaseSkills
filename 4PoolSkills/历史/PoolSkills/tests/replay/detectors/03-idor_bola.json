@@ -1,0 +1,16 @@
+{
+  "detector_id": "03-idor_bola",
+  "vulnerability_type": "idor_bola",
+  "expected": {
+    "candidate_status": "needs_review",
+    "must_not_confirm": true,
+    "required_failures": [
+      "missing_dynamic_evidence",
+      "missing_negative_controls"
+    ]
+  },
+  "input_sample": {
+    "scope": "local_authorized",
+    "note": "non-weaponized static replay fixture"
+  }
+}
