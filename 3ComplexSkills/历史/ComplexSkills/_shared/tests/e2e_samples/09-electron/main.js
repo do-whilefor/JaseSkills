@@ -1,1 +1,0 @@
-ipcMain.handle("readFile",(_,p)=>fs.readFileSync(p));

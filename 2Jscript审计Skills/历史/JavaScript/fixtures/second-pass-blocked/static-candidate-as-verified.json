@@ -1,6 +1,0 @@
-{
-  "case": "static-candidate-as-verified",
-  "candidate": "JS 中发现 /admin/refund endpoint",
-  "blocked_output": "verified",
-  "expected_second_pass_status": "candidate-only，不是语义审计；未动态验证；缺少 role/tenant replay"
-}

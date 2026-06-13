@@ -1,6 +1,0 @@
-{
-  "id": "AR14",
-  "title": "上传接口存在但不可执行",
-  "scenario": "upload stored outside executable path",
-  "expected_status": "rejected"
-}

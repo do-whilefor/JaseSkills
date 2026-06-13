@@ -1,6 +1,0 @@
-{
-  "id": "AR07",
-  "title": "跨租户越权样本",
-  "scenario": "cross-tenant object access candidate requires validation plan",
-  "expected_status": "validation_planned"
-}

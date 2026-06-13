@@ -1,6 +1,0 @@
-{
-  "id": "AR12",
-  "title": "SQL raw query 但参数化安全",
-  "scenario": "parameterized raw query not injection",
-  "expected_status": "rejected"
-}

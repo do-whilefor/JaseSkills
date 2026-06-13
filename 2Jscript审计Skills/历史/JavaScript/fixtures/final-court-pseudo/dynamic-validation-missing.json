@@ -1,6 +1,0 @@
-{
-  "claimed_capability": "dynamic validation",
-  "status": "negative_fixture_detects_pseudo_or_missing_runtime",
-  "real_implementation": "未发现 Playwright/Burp/HAR bridge 和截图/请求响应证据",
-  "upgrade_required": "新增 dynamic_evidence_bridge.py"
-}

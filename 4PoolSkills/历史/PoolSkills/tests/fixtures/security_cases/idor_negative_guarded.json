@@ -1,7 +1,0 @@
-{
-  "case_id": "idor-negative-guarded",
-  "type": "IDOR / 越权访问",
-  "state": "negative",
-  "guard": "requireOwner",
-  "expected": "do_not_report_confirmed"
-}

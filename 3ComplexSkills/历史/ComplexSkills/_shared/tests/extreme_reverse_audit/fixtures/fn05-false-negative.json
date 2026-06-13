@@ -1,5 +1,0 @@
-{
-  "id": "FN05",
-  "risk": "只看显式 API，漏 feature flag 功能",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

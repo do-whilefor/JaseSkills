@@ -1,5 +1,0 @@
-{
-  "id": "H08",
-  "risk": "无复现稳定性输出漏洞",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

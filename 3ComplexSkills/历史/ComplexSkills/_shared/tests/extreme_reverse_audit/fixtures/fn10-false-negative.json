@@ -1,5 +1,0 @@
-{
-  "id": "FN10",
-  "risk": "只看 Web，漏 Electron/extension/小程序",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

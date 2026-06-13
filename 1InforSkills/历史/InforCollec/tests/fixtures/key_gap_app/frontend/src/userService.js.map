@@ -1,1 +1,0 @@
-{"version":3,"file":"userService.js","sources":["webpack://app/./src/userService.ts","webpack://app/./src/oldAdmin.ts"],"sourcesContent":["export const hidden='/api/admin/users'","fetch('/api/legacy/deleted-admin')"],"mappings":""}

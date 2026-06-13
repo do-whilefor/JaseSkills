@@ -1,1 +1,0 @@
-from tests.test_quality_gate import QualityGateTest

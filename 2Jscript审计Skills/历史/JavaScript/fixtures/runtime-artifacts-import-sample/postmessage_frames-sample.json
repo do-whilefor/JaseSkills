@@ -1,3 +1,0 @@
-[
-  {"direction":"received","origin":"https://app.example.test","messageType":"object","preview":"{\"type\":\"audit-ready\"}","role":"admin_t1","tenant":"t1"}
-]

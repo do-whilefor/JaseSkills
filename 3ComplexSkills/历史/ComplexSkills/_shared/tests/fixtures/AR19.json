@@ -1,6 +1,0 @@
-{
-  "id": "AR19",
-  "title": "漏洞描述夸大但证据不足",
-  "scenario": "claim without evidence cannot confirm",
-  "expected_status": "needs_human_review"
-}

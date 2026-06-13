@@ -1,7 +1,0 @@
-{
-  "case": "doc-only-runtime-bridge",
-  "claim": "Playwright/Burp/HAR dynamic validation supported",
-  "evidence": ["SKILL.md mentions tools"],
-  "expected_second_pass_status": "doc-only；未动态验证",
-  "needs_review": true
-}

@@ -1,9 +1,0 @@
-{
-  "case_id": "idor-positive-candidate",
-  "type": "IDOR / 越权访问",
-  "state": "positive_candidate",
-  "safe": true,
-  "request_a": "GET /api/v1/projects/123",
-  "request_b": "GET /api/v1/projects/456",
-  "expected": "needs_review_until_multi_role_replay"
-}

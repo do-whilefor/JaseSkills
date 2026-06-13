@@ -1,5 +1,0 @@
-{
-  "id": "FN03",
-  "risk": "只看源码，漏 sourcemap",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

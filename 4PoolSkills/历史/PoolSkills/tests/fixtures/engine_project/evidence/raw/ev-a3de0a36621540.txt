@@ -1,5 +1,0 @@
-2: api.interceptors.request.use(x => x);
-3: export async function loadUser(id) { return fetch(`/api/users/${id}?tenantId=tenant_a`); }
-4: const hidden = { isAdmin: false, role: "admin", workspaceId: "w1" };
-5: const q = `query UserHidden { user { id email tenantId } }`;
-6: socket.emit("admin:update", { userId: 1 });

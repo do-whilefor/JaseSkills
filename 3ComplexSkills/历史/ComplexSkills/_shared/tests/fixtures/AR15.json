@@ -1,6 +1,0 @@
-{
-  "id": "AR15",
-  "title": "Debug 配置只在测试环境",
-  "scenario": "test-only debug config is not production vuln",
-  "expected_status": "needs_human_review"
-}

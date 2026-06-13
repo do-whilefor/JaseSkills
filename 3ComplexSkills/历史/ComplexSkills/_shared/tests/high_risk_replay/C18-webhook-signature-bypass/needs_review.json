@@ -1,6 +1,0 @@
-{
-  "template_id": "C18-webhook-signature-bypass",
-  "case_type": "needs_human_review",
-  "expected": "needs_human_review",
-  "reason": "ambiguous auth/tenant/business impact"
-}

@@ -1,1 +1,0 @@
-const q=gql`query GetUser($id:ID!){ user(id:$id){ id tenantId role } }`; client.query({query:q});

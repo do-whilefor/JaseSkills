@@ -1,7 +1,0 @@
-{
-  "case_id": "ssrf-needs-review",
-  "type": "SSRF",
-  "state": "needs_review",
-  "sink": "url fetch",
-  "expected": "UNSAFE_TO_TEST_without_local_mock"
-}

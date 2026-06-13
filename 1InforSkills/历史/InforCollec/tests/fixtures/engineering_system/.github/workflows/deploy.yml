@@ -1,8 +1,0 @@
-name: deploy
-on: [push]
-jobs:
-  deploy:
-    permissions: write-all
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo ${{ secrets.DEPLOY_TOKEN }}

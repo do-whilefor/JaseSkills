@@ -1,1 +1,0 @@
-../../../../tools/slack-send.py

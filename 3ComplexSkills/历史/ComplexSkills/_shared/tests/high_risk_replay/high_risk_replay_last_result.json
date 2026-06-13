@@ -1,7 +1,0 @@
-{
-  "schema_version": "high_risk_replay_result_v4.3",
-  "passed": true,
-  "case_count": 28,
-  "errors": [],
-  "quality_gate": "C03/C04/C17/C18/C20/C21/C23 require positive, negative, blocked and needs_review cases"
-}

@@ -1,5 +1,0 @@
-4: const hidden = { isAdmin: false, role: "admin", workspaceId: "w1" };
-5: const q = `query UserHidden { user { id email tenantId } }`;
-6: socket.emit("admin:update", { userId: 1 });
-7: import("./lazy-admin.js");
-8: localStorage.setItem("token", "abc");

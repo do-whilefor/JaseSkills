@@ -1,1 +1,0 @@
-{"candidate_vulnerability":"idor_parameter_requires_ownership_check","review_status":"needs_review","source_file":"app.js","source_line":2,"evidence":{"source_record_type":"js_ast_endpoint_candidate"},"limitation":"requires role replay"}

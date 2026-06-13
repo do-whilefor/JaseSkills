@@ -1,1 +1,0 @@
-const API='/api/orders/:id'; const graphql='/graphql'; function isAdmin(){return false}; //# sourceMappingURL=app.bundle.js.map

@@ -1,5 +1,0 @@
-{
-  "id": "template-renderer-specificity",
-  "expected": "covered by extreme_reverse_audit.py",
-  "non_destructive": true
-}

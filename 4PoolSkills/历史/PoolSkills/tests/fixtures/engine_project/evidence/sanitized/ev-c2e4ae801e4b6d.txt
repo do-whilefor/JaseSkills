@@ -1,5 +1,0 @@
-9:   allowed_hosts: [127.0.0.1, localhost]
-10: destructive_action_blocklist: ["DROP TABLE", "rm -rf", "DELETE FROM"]
-11: secret_redaction_policy:
-12:   enabled: true
-13:   fail_on_unredacted_secret: true

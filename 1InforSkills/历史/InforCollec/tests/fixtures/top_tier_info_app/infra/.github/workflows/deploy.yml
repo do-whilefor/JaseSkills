@@ -1,6 +1,0 @@
-name: deploy
-on: push
-jobs:
-  deploy:
-    steps:
-      - run: echo deploy https://staging.internal.example.test ${{ secrets.PROD_API_TOKEN }}
