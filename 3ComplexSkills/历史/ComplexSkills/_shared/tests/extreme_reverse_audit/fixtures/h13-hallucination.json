@@ -1,5 +1,0 @@
-{
-  "id": "H13",
-  "risk": "过期知识库覆盖当前证据",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

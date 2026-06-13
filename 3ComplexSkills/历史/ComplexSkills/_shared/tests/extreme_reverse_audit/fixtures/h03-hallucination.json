@@ -1,5 +1,0 @@
-{
-  "id": "H03",
-  "risk": "异常响应直接当漏洞",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

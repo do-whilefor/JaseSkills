@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"Business property oracle result","type":"object","required":["schema_version","status","results","policy"],"properties":{"schema_version":{"const":"business-property-oracle-v1"},"status":{"enum":["passed","failed","needs_review"]},"results":{"type":"array"},"policy":{"type":"string"}}}

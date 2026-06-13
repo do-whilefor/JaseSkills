@@ -1,1 +1,0 @@
-self.__WB_MANIFEST=['/admin/offline','/api/cache-only']; workbox.routing.registerRoute('/api/sw-only',()=>{});

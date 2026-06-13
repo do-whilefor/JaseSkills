@@ -1,1 +1,0 @@
-../../../../tools/nvd-lookup.py

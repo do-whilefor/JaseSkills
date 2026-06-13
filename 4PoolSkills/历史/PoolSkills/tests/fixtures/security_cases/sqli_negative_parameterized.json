@@ -1,7 +1,0 @@
-{
-  "case_id": "sqli-negative-parameterized",
-  "type": "SQL 注入",
-  "state": "negative",
-  "guard": "parameterized_query",
-  "expected": "suppress_false_positive"
-}

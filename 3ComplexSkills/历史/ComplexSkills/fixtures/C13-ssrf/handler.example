@@ -1,3 +1,0 @@
-// synthetic source placeholder for C13-ssrf fixture.
-// This file exists only to make fixture source path traceability explicit.
-function handler(req, res) { return res; }

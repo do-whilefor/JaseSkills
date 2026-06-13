@@ -1,5 +1,0 @@
-{
-  "id": "FN15",
-  "risk": "只看当前版本，漏 legacy route",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

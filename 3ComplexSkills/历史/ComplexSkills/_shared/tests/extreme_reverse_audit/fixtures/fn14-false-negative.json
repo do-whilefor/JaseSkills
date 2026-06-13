@@ -1,5 +1,0 @@
-{
-  "id": "FN14",
-  "risk": "只看 auth required，漏 auth optional fallback",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

@@ -1,5 +1,0 @@
-{
-  "id": "FN11",
-  "risk": "只看数据库查询，漏 ORM raw query",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

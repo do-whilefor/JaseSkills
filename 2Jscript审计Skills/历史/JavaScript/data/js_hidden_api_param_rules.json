@@ -1,6 +1,0 @@
-{
-  "schema_version": "js-hidden-api-param-rules/v1",
-  "risk_params": ["role", "permission", "isAdmin", "tenantId", "orgId", "ownerId", "userId", "projectId", "status", "price", "quota", "plan", "balance", "callback", "redirect", "url", "path", "file", "template", "command", "filter", "sort", "include", "expand", "fields", "debug", "dryRun", "force", "override"],
-  "protocols": ["REST", "GraphQL", "WebSocket", "SSE", "gRPC-web", "JSON-RPC"],
-  "required_outputs": ["js_api_parameter_model.json", "js_backend_param_diff.json", "js_severe_candidate_map.json"]
-}

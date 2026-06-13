@@ -1,5 +1,0 @@
-{
-  "id": "FN13",
-  "risk": "只看同步请求，漏异步任务",
-  "expected": "must hard-block, downgrade, or produce explicit unsupported_reason"
-}

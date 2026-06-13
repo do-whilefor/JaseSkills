@@ -1,6 +1,0 @@
-{
-  "template_id": "C04-tenant-isolation-bypass",
-  "case_type": "blocked_destructive_or_out_of_scope",
-  "expected": "validation_blocked",
-  "reason": "destructive method or non-local target"
-}

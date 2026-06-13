@@ -1,1 +1,0 @@
-{"openapi":"3.0.0","paths":{"/api/reports/export":{"post":{"parameters":[{"name":"tenantId","in":"query"}]}}}}

@@ -1,3 +1,0 @@
-1: const api = axios.create({ baseURL: "/api" });
-2: api.interceptors.request.use(x => x);
-3: export async function loadUser(id) { return fetch(`/api/users/${id}?tenantId=tenant_a`); }

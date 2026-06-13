@@ -1,1 +1,0 @@
-class ReportWorker; def perform(path); system("convert #{path}"); end; end

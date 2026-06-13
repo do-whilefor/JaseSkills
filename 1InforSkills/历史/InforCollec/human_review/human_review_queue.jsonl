@@ -1,1 +1,0 @@
-{"id":"HRQ-0001","status":"open","reason":"Initial queue placeholder. Add needs_review/conflict knowledge, stale detectors, runtime gaps, and ambiguous findings here.","affected_files":["manifests/knowledge_index.json"],"required_decision":"promote / keep_needs_review / mark_conflict / reject","created_at":null}

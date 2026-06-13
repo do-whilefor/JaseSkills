@@ -1,7 +1,0 @@
-{
-  "scope_id": "local-fixture",
-  "contract_only": true,
-  "roles": [{"name": "anonymous"}, {"name": "user"}, {"name": "admin"}],
-  "tenants": [{"name": "tenant_a"}, {"name": "tenant_b"}],
-  "urls": ["http://127.0.0.1:3000/api/admin/export?token=redacted", "http://127.0.0.1:3000/api/projects/1"]
-}

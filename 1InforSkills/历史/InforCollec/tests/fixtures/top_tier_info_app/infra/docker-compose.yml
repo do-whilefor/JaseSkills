@@ -1,8 +1,0 @@
-services:
-  internal-redis:
-    image: redis
-    ports: ["6379:6379"]
-  api:
-    environment:
-      DATABASE_PASSWORD: SuperSecretValue123
-      S3_BUCKET: tenant-audit-bucket

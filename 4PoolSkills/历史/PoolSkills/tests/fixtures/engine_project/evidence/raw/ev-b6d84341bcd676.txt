@@ -1,2 +1,0 @@
-1: securityContext:
-2:   privileged: true

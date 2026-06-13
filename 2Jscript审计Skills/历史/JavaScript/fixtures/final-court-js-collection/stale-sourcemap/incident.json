@@ -1,9 +1,0 @@
-{
-  "id": "JS-COLLECT-ACCIDENT-05",
-  "purpose": "synthetic placeholder for final evidence court acceptance; not a real exploit",
-  "missed_asset": "stale source map",
-  "required_collector": "scripts/stale_sourcemap_collector.py",
-  "required_replay": "replay/final-court/stale-source-map.yaml",
-  "acceptance": "发现旧 map 并还原 sourcesContent/path",
-  "status": "needs_implementation"
-}

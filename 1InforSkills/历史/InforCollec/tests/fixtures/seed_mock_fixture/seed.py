@@ -1,1 +1,0 @@
-admin={"email":"admin@example.test","password":"ChangeMe123"}

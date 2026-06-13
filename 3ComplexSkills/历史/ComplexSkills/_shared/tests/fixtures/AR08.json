@@ -1,6 +1,0 @@
-{
-  "id": "AR08",
-  "title": "管理员接口普通用户不可访问",
-  "scenario": "admin endpoint denied to user is negative control",
-  "expected_status": "rejected"
-}

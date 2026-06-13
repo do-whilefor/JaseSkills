@@ -1,7 +1,0 @@
-{
-  "case": "fake-ready-ast",
-  "input_claim": "Babel AST ready",
-  "actual_evidence": ["tool name appears in Markdown only"],
-  "expected_second_pass_status": "doc-only",
-  "required_demotion_reason": "没有 parser backend、AST 输出和正负样本"
-}

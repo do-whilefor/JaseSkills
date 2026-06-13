@@ -1,1 +1,0 @@
-const app=require('express')(); const client=axios.create({baseURL:'/api'}); app.get('/api/users/:id',(req,res)=>db.query('select * from users where id='+req.params.id)); client.get('/admin/export'); //# sourceMappingURL=app.js.map

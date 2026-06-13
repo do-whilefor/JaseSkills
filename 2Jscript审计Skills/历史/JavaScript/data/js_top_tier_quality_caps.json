@@ -1,8 +1,0 @@
-{
-  "no_ast_backend": "JS semantic audit <= 40",
-  "no_sourcemap_parse": "JS collection <= 70",
-  "no_dynamic_evidence": "dynamic validation <= 30",
-  "no_role_tenant_replay": "severe JS vuln discovery <= 60",
-  "no_sample_matrix": "tests <= 40",
-  "fake_ready": "block promotion"
-}

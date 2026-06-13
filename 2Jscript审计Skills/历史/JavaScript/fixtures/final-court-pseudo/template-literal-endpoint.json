@@ -1,6 +1,0 @@
-{
-  "claimed_capability": "endpoint resolver",
-  "status": "negative_fixture_detects_pseudo_or_missing_runtime",
-  "real_implementation": "未发现 baseURL/env/template literal/URLSearchParams resolver",
-  "upgrade_required": "新增 endpoint_resolver.py 和拼接用例"
-}

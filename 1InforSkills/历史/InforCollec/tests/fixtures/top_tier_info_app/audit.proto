@@ -1,1 +1,0 @@
-service AuditService { rpc ExportTenantAudit (AuditRequest) returns (AuditReply); }

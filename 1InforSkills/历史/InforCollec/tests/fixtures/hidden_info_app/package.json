@@ -1,1 +1,0 @@
-{"scripts":{"seed:admin":"node scripts/seed-admin.js","debug:proxy":"vite --host 0.0.0.0"},"dependencies":{"@sentry/browser":"1.0.0"}}

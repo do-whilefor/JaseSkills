@@ -1,1 +1,0 @@
-{"private": true, "workspaces": ["apps/*", "packages/*"], "devDependencies": {"turbo": "latest", "nx": "latest"}}

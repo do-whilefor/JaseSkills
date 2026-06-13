@@ -1,1 +1,0 @@
-{"openapi": "3.0.0", "paths": {"/api/spec-only": {"get": {}}, "/admin/spec-admin": {"post": {}}}}

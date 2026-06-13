@@ -1,7 +1,0 @@
-{
-  "schema_version": "phase4-benchmark",
-  "benchmark": "07-go-gin-fiber",
-  "expected_status": "observation_or_rejected_until_dynamic_evidence",
-  "expected_quality_gate": "must_not_confirm_without_dynamic_evidence",
-  "route": "/api/files/:id"
-}

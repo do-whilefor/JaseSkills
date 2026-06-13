@@ -1,5 +1,0 @@
-3: 
-4: @app.get("/api/users/{user_id}")
-5: def get_user(user_id: str, tenantId: str = None):
-6:     query = "select * from users where id = " + user_id
-7:     return {"query": query, "tenantId": tenantId}

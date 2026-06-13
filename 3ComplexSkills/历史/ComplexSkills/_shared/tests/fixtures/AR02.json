@@ -1,6 +1,0 @@
-{
-  "id": "AR02",
-  "title": "没有漏洞的正常鉴权样本",
-  "scenario": "normal authorization must not become vulnerability",
-  "expected_status": "rejected"
-}

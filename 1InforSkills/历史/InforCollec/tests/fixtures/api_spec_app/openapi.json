@@ -1,1 +1,0 @@
-{"openapi":"3.0.0","servers":[{"url":"http://127.0.0.1:8080"}],"paths":{"/api/admin/users":{"get":{"operationId":"listAdminUsers","parameters":[{"name":"tenantId","in":"query"}]},"post":{"operationId":"createAdminUser"}},"/internal/export":{"get":{}}}}

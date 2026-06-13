@@ -1,2 +1,0 @@
-securityContext:
-  privileged: true

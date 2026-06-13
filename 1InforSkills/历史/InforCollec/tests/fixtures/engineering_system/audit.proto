@@ -1,4 +1,0 @@
-syntax = "proto3";
-service AuditService { rpc ExportAudit (ExportAuditRequest) returns (ExportAuditReply); }
-message ExportAuditRequest { string tenant_id = 1; }
-message ExportAuditReply { string url = 1; }

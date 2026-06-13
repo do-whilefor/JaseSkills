@@ -1,5 +1,0 @@
-4: excluded_extensions: [.png, .zip, .db]
-5: max_file_size: 2000000
-6: symlink_policy: no_follow
-7: network_policy:
-8:   default: deny
