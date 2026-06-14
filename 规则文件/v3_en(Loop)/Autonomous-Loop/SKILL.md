@@ -1,6 +1,8 @@
 ---
 name: Autonomous-Loop
-summary: Less is more: let the AI proactively diverge and use a Soft Loop to prevent idle spinning.
+description: Less is more: let the AI proactively diverge and use a Soft Loop to prevent idle spinning.
+metadata:
+  short-description: Autonomous SRC loop
 ---
 
 # Autonomous SRC Soft Loop

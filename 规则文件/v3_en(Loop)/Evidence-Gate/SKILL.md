@@ -1,6 +1,8 @@
 ---
 name: Evidence-Gate
-summary: Phenomena are not vulnerabilities; only conclusions supported by evidence may enter reports, with mandatory severity backpressure.
+description: Phenomena are not vulnerabilities; only conclusions supported by evidence may enter reports, with mandatory severity backpressure.
+metadata:
+  short-description: Evidence gate
 ---
 
 # Evidence Quality Gate

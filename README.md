@@ -278,7 +278,6 @@ Expand-Archive -Path .\YourSkill.zip -DestinationPath $skillsRoot -Force
 如果本地内容就是最终内容，推荐使用：
 
 ```powershell
-cd "D:\Users\21452\Desktop\Skill"
 
 git config --global core.longpaths true
 git config core.longpaths true

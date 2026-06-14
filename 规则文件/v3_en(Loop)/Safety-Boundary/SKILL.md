@@ -1,6 +1,8 @@
 ---
 name: Safety-Boundary
-summary: Safety boundaries are execution guardrails, not brakes on thinking; candidates broad, verification steady, reporting strict.
+description: Safety boundaries are execution guardrails, not brakes on thinking; candidates broad, verification steady, reporting strict.
+metadata:
+  short-description: Safety boundary
 ---
 
 # Safety Boundary
