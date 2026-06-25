@@ -1,5 +1,5 @@
 ---
-name: ai-vuln-core-lite
+name: Ai-Lite
 description: 授权漏洞挖掘的轻量核心技能；只约束边界、垃圾洞、证据、报告和终态，不限制 AI 自主发散。
 ---
 
