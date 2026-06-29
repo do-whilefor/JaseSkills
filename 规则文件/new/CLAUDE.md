@@ -22,7 +22,7 @@
 
 ## 1. 运行循环
 
-检查黑板，如果项目下没有黑板就复制state/blackboard.md到项目下，如果有就读黑板 → Scope Gate → 发散生成 Intent → Metacog 预审 → Reason 选 1 条 → Explore 验证 → Guardian → Metacog 复审 → 更新黑板
+读取黑板state\blackboard.md文件 → Scope Gate → 发散生成 Intent → Metacog 预审 → Reason 选 1 条 → Explore 验证 → Guardian → Metacog 复审 → 更新黑板
 
 角色：
 - Reason：从黑板选 1 条路线，负责收敛。
