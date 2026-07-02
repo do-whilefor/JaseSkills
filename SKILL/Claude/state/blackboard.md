@@ -1,6 +1,6 @@
 # Blackboard
 
-> 只记录已测部分、结果、证据和下一步。每轮结束更新。
+> Only record tested parts, results, evidence, and next steps. Update at the end of each round.
 
 ```yaml
 scope:
@@ -10,26 +10,26 @@ scope:
 
 tested:
   # - id: T001
-  #   object: "接口 / 页面 / JS / 参数 / 业务功能"
-  #   identity: "未登录 / 管理员 / 测试账号"
-  #   method: "怎么测的，尽量一句话"
-  #   result: "成功 / 失败 / 无异常 / 有弱信号 / 可复现"
+  #   object: "API / page / JS / parameter / business function"
+  #   identity: "unauthenticated / administrator / test account"
+  #   method: "How it was tested, preferably in one sentence"
+  #   result: "success / failure / no anomaly / weak signal / reproducible"
   #   evidence_path: "evidence/..."
   #   status: tested|candidate|verified|rejected|blocked
 
 findings:
   # - id: F001
   #   object: ""
-  #   summary: "已确认或待确认的问题"
+  #   summary: "Confirmed or pending issue"
   #   evidence_path: "evidence/..."
   #   status: candidate|verified|rejected
-  #   next: "继续验证 / 写报告 / 放弃"
+  #   next: "continue verification / write report / abandon"
 
 blocked:
   # - id: B001
   #   object: ""
-  #   reason: "为什么卡住"
-  #   need: "需要什么才能继续"
+  #   reason: "Why it is blocked"
+  #   need: "What is needed to continue"
 
 next:
   priority: ""

@@ -1,39 +1,42 @@
-我让Claude在本地搭建了一个开源项目，并且已经挖掘到了不少漏洞。
+I asked Claude to set up an open-source project locally, and it has already discovered quite a few vulnerabilities.
 
-针对这个代码目录结构做工作原理剖析，检查参数，构建代码知识图谱，对编程语言进行识别，整体架构进行分析，针对配置文件进行分析，针对依赖进行分析，针对框架进行分析。
+Analyze the working principles based on this code directory structure, check the parameters, build a code knowledge graph, identify the programming languages, analyze the overall architecture, analyze the configuration files, analyze the dependencies, and analyze the frameworks.
 
-针对这个应用做全面暴露面检查和分析。
+Conduct a comprehensive exposure surface inspection and analysis of this application.
 
-我想让 Claude Mythos MAX 帮我挖掘这个应用的漏洞，请你给我最好的 prompt，我们要让他能全面的挖掘出高危严重漏洞，甚至是 0day 级别的漏洞，忽略中间人攻击类型
+I want Claude Mythos MAX to help me discover vulnerabilities in this application. Please give me the best prompt so that it can comprehensively discover high-risk and critical vulnerabilities, even 0day-level vulnerabilities, while ignoring man-in-the-middle attack types.
 
-请你将此 prompt 喂给自己
+Please feed this prompt to yourself.
 
-我让 claude 在本机搭建了开源项目，并且挖掘了不少漏洞，我想让他动态的验证漏洞存在
+I asked Claude to set up the open-source project locally, and it has already discovered quite a few vulnerabilities. I want it to dynamically verify that the vulnerabilities exist,
 
-而不是只是静态审计，请你给我最好的 prompt 让他复现出所有漏洞
+rather than only performing static auditing. Please give me the best prompt so that it can reproduce all vulnerabilities.
 
-请阅读 prompt 并按照指令动态验证所有漏洞
+Please read the prompt and dynamically verify all vulnerabilities according to the instructions.
 
-如何让 Claude Mythos MAX 反思自己刚刚漏洞挖掘的办法，小众思路，偏门思路，创新方法，剑走偏锋，并且补充完成世界顶尖专家级漏洞挖掘
+How can Claude Mythos MAX reflect on its previous vulnerability discovery methods, niche approaches, unconventional approaches, innovative methods, and bold alternative approaches, and supplement them to complete world-class expert-level vulnerability discovery?
+
+Strictly translate this into English, and do not modify any of its content.
 
 
 
 
-现在请你以世界顶尖漏洞挖掘专家的方式，针对这个应用做全面漏洞挖掘和动态验证。
 
-不要只做静态分析，不要泛泛而谈。请基于页面功能、HTTP 流量、前端 JS、接口响应、Cookie、Header、状态码、错误信息、静态资源、API 文档、后台入口、登录态差异。
-请重点分析这个 Web 应用的所有暴露面
+Now please conduct comprehensive vulnerability discovery and dynamic verification for this application in the manner of a world-class top vulnerability discovery expert.
 
-我想让 Claude Mythos MAX 帮我挖掘这个 Web 应用中的真实高危、严重漏洞，甚至是 0day 级别的项目特有漏洞。忽略中间人攻击类型，不分析 MITM、证书欺骗、TLS 降级、Wi-Fi 劫持、链路监听等问题。
+Do not only perform static analysis, and do not speak in generalities. Please base the analysis on page functions, HTTP traffic, frontend JS, API responses, cookies, headers, status codes, error messages, static resources, API documentation, backend entry points, and differences in login states.
+Please focus on analyzing all exposed surfaces of this Web application.
 
-请不要从漏洞名称出发，而是从服务端安全边界出发。
+I want Claude Mythos MAX to help me discover real high-risk and critical vulnerabilities in this Web application, even 0day-level project-specific vulnerabilities. Ignore man-in-the-middle attack types, and do not analyze MITM, certificate spoofing, TLS downgrade, Wi-Fi hijacking, link-layer eavesdropping, and similar issues.
 
-- 严禁以“只读、低风险、浅测、轻量、离线、保守检查、避免等”作为借口降低测试深度。
-- 除授权范围和硬性安全边界外，不得擅自增加限制。边界内必须深入验证、复现对照、闭合证据链；证据不足必须继续验证或降级结论。
-- 任何回避动态验证、停留表面检查、用保守措辞掩盖验证不足的输出，一律视为执行失败。
+Please do not start from vulnerability names, but from server-side security boundaries.
 
-我已经让 Claude 在Web环境中挖掘到了不少漏洞。现在请你不要只停留在理论判断，而是对所有候选漏洞进行黑盒动态复现。
+* It is strictly forbidden to use “read-only, low-risk, shallow testing, lightweight, offline, conservative checks, avoidance, etc.” as excuses to reduce testing depth.
+* Except for the authorized scope and hard safety boundaries, no additional restrictions may be added without authorization. Within the boundaries, in-depth verification, reproduction comparison, and closed-loop evidence chains must be performed; if evidence is insufficient, verification must continue or the conclusion must be downgraded.
+* Any output that evades dynamic verification, stays at surface-level checks, or uses conservative wording to conceal insufficient verification shall be regarded as an execution failure.
 
-请阅读本 prompt，并按照指令动态验证所有候选漏洞。
+I have already asked Claude to discover quite a few vulnerabilities in the Web environment. Now please do not stay at theoretical judgment only, but perform black-box dynamic reproduction for all candidate vulnerabilities.
 
-完成常规漏洞挖掘后，请反思自己刚刚的测试方法，补充小众思路、偏门思路、创新方法和剑走偏锋的专家级路线。
+Please read this prompt and dynamically verify all candidate vulnerabilities according to the instructions.
+
+After completing conventional vulnerability discovery, please reflect on your testing methods just now, and supplement them with niche ideas, unconventional ideas, innovative methods, and bold alternative expert-level routes.
