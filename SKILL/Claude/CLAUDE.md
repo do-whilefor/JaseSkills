@@ -34,32 +34,34 @@
 - Metacog：反驳 Reason / Explore，输出 Kill / Survive / Branch。
 - Guardian：过滤垃圾洞、断链、夸大评级。
 
-## 2. 黑板：轻量状态机
-所有状态写入 `state/blackboard.md`，不得依赖模型记忆。
+## 2. 黑板：已测记录
+所有测试状态写入 `state/blackboard.md`，不得依赖模型记忆。
+
+黑板只记录恢复测试和避免重复验证所必需的信息：
+* 测过的对象；
+* 使用的身份；
+* 做过的方法；
+* 得到的结果；
+* 证据路径；
+* 是否还需要继续。
 
 黑板不变量：
-- 无黑板记录，不算已验证。
-- OutOfScope 不得生成 Intent，除非用户重新授权。
-- Intent 必须有目标、方法、成功信号、反证、停止条件。
-- Attempt 必须绑定 Intent，并写 evidence_path 或失败原因。
-- Verified 必须同时满足 Guardian accepted 与 Metacog 未 kill。
-- 报告结论必须能回指 Fact / Attempt / Guardian。
-- Guardian rejected 的线索不得换名重测；除非有新授权或新证据。
+* 每条记录必须有对象、方法、结果和证据路径；失败项必须写失败原因。
+* 黑板只做状态记录，不负责完整推理；完整判断仍由垃圾洞过滤、等级回压和报告门完成。
 
 最小对象：
 ```yaml
-scope: {authorized_by, targets, identities, allowed_actions, forbidden_actions}
-hint: {id, effect: boundary|priority|stop|downgrade|focus, content}
-out_of_scope: {id, object, reason, decision}
-fact: {id, type, object, summary, evidence_path}
-intent: {id, chain, source, inspiration, tags, goal, method, success, negative, stop, status}
-attempt: {id, intent, action, result, evidence_path|failure, next}
-chain: {id, theme, facts, intents, attempts, status, conclusion}
-metacog: {id, target, kill, survive, branch, anti_evidence, decision}
-guardian: {id, target, result: accepted|demoted|rejected, reason, next}
+scope: {targets, identities, note}
+tested: {id, object, identity, method, result, evidence_path, status}
+finding: {id, object, summary, evidence_path, status, next}
+blocked: {id, object, reason, need}
+next: {priority, object, action, reason}
 ```
 
-状态：`Phenomenon → Candidate → Verified`；也可被 `demoted / rejected / blocked`。
+状态只允许：
+```text
+untested / tested / candidate / verified / rejected / blocked
+```
 
 ## 3. 发散：
 - 业务价值逆向：账号、订单、资金、权限、配置、消息、文件、导出、跨租户。
