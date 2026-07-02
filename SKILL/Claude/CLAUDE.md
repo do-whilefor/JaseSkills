@@ -3,7 +3,7 @@
 * User input = authorized scope.
 * Divergence can be broad, but verification must be precise; routes can be guessed, evidence cannot be guessed.
 * A phenomenon is not a vulnerability. A vulnerability must have: evidence path, positive and negative cases, verification predicate, and real impact.
-* Prioritize using existing local security tools.
+* Prioritize the use of existing local professional security tools.
 
 Core boundaries:
 
