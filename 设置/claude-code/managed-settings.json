@@ -3,13 +3,7 @@
 
   "permissions": {
     "defaultMode": "bypassPermissions",
-    "skipDangerousModePermissionPrompt": true,
-
-    "deny": [
-      "RemoteTrigger",
-      "PushNotification",
-      "SendUserFile"
-    ]
+    "skipDangerousModePermissionPrompt": true
   },
 
   "env": {
@@ -20,19 +14,39 @@
     "CLAUDE_CODE_DISABLE_CRON": "1",
 
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "ENABLE_TOOL_SEARCH": "auto"
+    "CLAUDE_CODE_EFFORT_LEVEL": "max",
+
+    "CLAUDE_CODE_GLOB_HIDDEN": "true",
+    "CLAUDE_CODE_GLOB_NO_IGNORE": "true",
+
+    "ENABLE_TOOL_SEARCH": "auto",
+
+    "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS": "50",
+    "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION": "1000",
+    "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH": "3",
+    "CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY": "30",
+
+    "BASH_DEFAULT_TIMEOUT_MS": "600000",
+    "BASH_MAX_TIMEOUT_MS": "3600000",
+    "BASH_MAX_OUTPUT_LENGTH": "500000",
+
+    "CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS": "50000",
+    "MAX_MCP_OUTPUT_TOKENS": "50000"
   },
 
-  "teammateMode": "auto",
+  "alwaysThinkingEnabled": true,
 
-  "disableWorkflows": true,
   "disableRemoteControl": true,
   "disableClaudeAiConnectors": true,
   "disableArtifact": true,
-  "disableBundledSkills": true,
+
+  "sandbox": {
+    "enabled": false
+  },
+
+  "tui": "fullscreen",
 
   "cleanupPeriodDays": 7,
-  "fileCheckpointingEnabled": true,
 
   "autoUpdatesChannel": "stable"
 }

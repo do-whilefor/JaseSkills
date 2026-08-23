@@ -105,7 +105,7 @@ Jase-SecKit/
 ├── 常见漏洞.md                    # 常见漏洞方向与研究参考
 ├── AI辅助漏洞挖掘系统设计指南.pdf
 ├── 围绕Loop的AI SRC系统设计.pptx
-├── 客户端漏洞挖掘 Agent 的设计与实践--w1th0ut.md
+├── 客户端漏洞挖掘 Agent 的设计与实践.md
 ├── README.md
 └── LICENSE
 ```
